@@ -1,0 +1,50 @@
+{
+  "french": {
+    "type": "chat",
+    "opts": {
+      "template": "Corrige les fautes d'orthographe de texte suivant en Français:\n\n{{input}}",
+      "strategy": "replace",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    }
+  },
+  "gpt4max": {
+    "type": "chat",
+    "opts": {
+      "title": " Gpt4max Helper",
+      "template": "Help me resolve the following problem: \n {{input}}\n",
+      "strategy": "edit",
+      "params": { 
+        "model": "gpt-4", 
+        "temperature": 0.2,
+        "stop": [
+          "```" 
+        ]
+      }
+    }
+  },
+	"gpt3maxwarg": {
+		"type": "chat",
+		"opts": {
+			"title": " Gpt4max Helper",
+			"template": "Help me resolve the following problem: \n {{input}}\n ",
+			"strategy": "edit",
+			"params": {
+				"model": "gpt-3.5-turbo",
+				"temperature": 0.2,
+				"stop": [
+					"```"
+				]
+			}
+		},
+    "args": {
+      "argument": {
+          "type": "string",
+          "optional": "true",
+          "default": "You are a json assistant"
+      }
+    }
+	}
+} 
+

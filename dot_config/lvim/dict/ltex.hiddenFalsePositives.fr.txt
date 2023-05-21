@@ -1,0 +1,4 @@
+{"rule":"VIRGULE_DEBUT_DE_PHRASE","sentence":"^\\QDedans il faut vérifier plusieurs choses :\\E$"}
+{"rule":"VIRG_NON_TROUVEE","sentence":"^\\QJ'installe le paquet puis comme pour un client linux depuis le serveur je crée une clé que j'ajoute dans mon pfsense.\\E$"}
+{"rule":"PLACE_DE_LA_VIRGULE","sentence":"^\\QC'est pratique mais très peu clair et là doc est non existante comme les guides en lignes.\\E$"}
+{"rule":"PLACE_DE_LA_VIRGULE","sentence":"^\\QPlusieurs erreurs de saisie ce n'est pas très clair car il n'y a pas de documentation précise et parfois il faut des \"\" et parfois non.\\E$"}
