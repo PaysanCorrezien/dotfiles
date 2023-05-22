@@ -20,7 +20,8 @@ vim.opt.cursorline = false -- highlight the current line
 --Configuration du spelling z=
 -- vim.opt.spell = true
 vim.opt.spelllang = { "fr" }
-vim.opt.spellfile = "/home/dylan/.config/lvim/dict/spell.utf-8.add"
+-- vim.opt.spellfile = "/home/dylan/.config/lvim/dict/spell.utf-8.add"
+vim.opt.spellfile = "~/.local/share/chezmoi/dot_config/lvim/spell/fr.utf-8.add"
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false

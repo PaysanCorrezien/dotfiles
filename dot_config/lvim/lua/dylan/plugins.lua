@@ -292,4 +292,5 @@ lvim.plugins = {
 			require("neoclip").setup()
 		end,
 	},
+-- { "f3fora/cmp-spell" }
 }

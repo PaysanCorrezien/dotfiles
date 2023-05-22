@@ -113,9 +113,6 @@ lvim.colorscheme = "kanagawa"
 --   "lua_ls",
 -- }
 
-
-
-
 --
 -- vim.api.nvim_set_keymap('n', '<Leader>e', '<Cmd>lua exec_luafile()<CR>', { noremap = true, silent = true })
 
@@ -141,4 +138,30 @@ lvim.colorscheme = "kanagawa"
 --   treesitter = true
 -- })
 
--- require('ObsidianExtra').hello()
+-- codeium setup
+-- table.insert(lvim.builtin.cmp.sources, { name = "dictionnary" })
+-- lvim.builtin.cmp.formatting.source_names.dictionnary = "(Dictionnary)"
+          local kind = require "dylan/kind" -- Icones perso 
+
+-- table.insert(lvim.builtin.cmp.sources, { name = "spell" })
+-- lvim.builtin.cmp.formatting.source_names.spell = "(Spell)"
+table.insert(lvim.builtin.cmp.sources, { name = "codeium" })
+lvim.builtin.cmp.formatting.source_names.codeium = "(Codeium)"
+local default_format = lvim.builtin.cmp.formatting.format
+lvim.builtin.cmp.formatting.format = function(entry, vim_item)
+  vim_item = default_format(entry, vim_item)
+  if entry.source.name == "codeium" then
+    vim_item.kind = ""
+    vim_item.kind_hl_group = "CmpItemKindTabnine"
+  end
+  if entry.source.name == "spell" then
+    vim_item.kind = kind.cmp_kind.TypeParameter
+    vim_item.kind_hl_group = "CmpItemKindTabnine"
+  end
+  -- if entry.source.name == "Dictionnary" then
+  --   vim_item.kind = kind.icons.repo
+  --   vim_item.kind_hl_group = "CmpItemKindTabnine"
+  -- end
+  return vim_item
+end
+

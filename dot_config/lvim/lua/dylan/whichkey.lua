@@ -75,9 +75,10 @@ lvim.builtin.which_key.mappings["Y"] = { "<cmd>Telescope neoclip<cr>", "ClipBoar
 lvim.builtin.which_key.mappings["sm"] = { "<cmd>Telescope marks<CR>", "marks" }
 lvim.builtin.which_key.mappings["Ln"] = { "<cmd>Noice<CR>", "Noice Alerts" }
 -- TODO: make function with both repo location for w or linux or find function that do just that
-lvim.builtin.which_key.mappings["LC"] = { "<cmd>Telescope fd cwd=~/.config/lvim<CR>", "Config Folder" }
-lvim.builtin.which_key.mappings["LD"] = { "<cmd>Telescope file_browser cwd=~/.config<CR>", ".config/" }
-lvim.builtin.which_key.mappings["Lx"] = { "<cmd>Telescope file_browser cwd=~/Documents/Dotfiles<CR>", "Dotfiles" }
+lvim.builtin.which_key.mappings["LC"] = { "<cmd>Telescope fd cwd=~/.local/share/chezmoi/dot_config/lvim<CR>", "Config Folder" }
+lvim.builtin.which_key.mappings["Lc"] = { "<cmd>edit ~/.local/share/chezmoi/dot_config/lvim/executable_config.lua<cr>", "config.lua" }
+lvim.builtin.which_key.mappings["LD"] = { "<cmd>Telescope file_browser cwd=~/.local/share/chezmoi/dot_config/lvim<cr>", ".config/" }
+lvim.builtin.which_key.mappings["Lx"] = { "<cmd>Telescope file_browser cwd=~/.local/share/chezmoi/<CR>", "Dotfiles" }
 
 
 lvim.builtin.which_key.mappings["t"] = {

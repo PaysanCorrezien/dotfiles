@@ -32,7 +32,6 @@ elseif vim.fn.has "win32" == 1 then
   local handle = io.popen([[powershell -Command "& { (Get-ChildItem -Directory $HOME\.local\share\lunarvim\site\pack\lazy\opt).Count }"]])
   plugins = handle:read "*a"
   handle:close()
-  
   local thingy = io.popen([[powershell -Command "& { Get-Date -Format 'ddd dd MMM' }"]])
   date = thingy:read "*a"
   thingy:close()
@@ -113,8 +112,8 @@ local buttons = {
       ":lua require('lvim.core.terminal')._exec_toggle({cmd = 'lazygit', count = 1, direction = 'float'})<CR>"
     ),
     button("r", " " .. kind.icons.clock .. " Recents", ":Telescope oldfiles<CR>"),
-    button("c", " " .. kind.icons.settings .. " Config", ":e ~/.config/lvim/config.lua<CR>"),
-    button("d", " " .. kind.icons.dart .. " Dotfiles", ":Telescope file_browser cwd=~/Documents/Dotfiles<CR>"),
+    button("c", " " .. kind.icons.settings .. " Config", ":e Telescope file_browser cwd=~/.local/share/chezmoi/dot_config/lvim/executable_config.lua<CR>"),
+    button("d", " " .. kind.icons.dart .. " Dotfiles", ":Telescope file_browser cwd=~/.local/share/chezmoi/<CR>"),
     -- button("C", " " .. kind.cmp_kind.Color .. " Colorscheme Config", ":e ~/.config/lvim/lua/dylan/colorscheme.lua<CR>"),
     button("q", " " .. kind.icons.exit .. " Quit", ":q<CR>"),
   },
