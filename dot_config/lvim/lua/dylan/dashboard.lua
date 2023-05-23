@@ -1,9 +1,10 @@
 -- https://github.com/IfCodingWereNatural/minimal-nvim
 -- 
-local kind = require("dylan/kind")
-
 lvim.builtin.alpha.active = true
+
 lvim.builtin.alpha.mode = "custom"
+
+local kind = require("dylan/kind")
 
 local header = {
   type = "text",
@@ -112,7 +113,7 @@ local buttons = {
       ":lua require('lvim.core.terminal')._exec_toggle({cmd = 'lazygit', count = 1, direction = 'float'})<CR>"
     ),
     button("r", " " .. kind.icons.clock .. " Recents", ":Telescope oldfiles<CR>"),
-    button("c", " " .. kind.icons.settings .. " Config", ":e Telescope file_browser cwd=~/.local/share/chezmoi/dot_config/lvim/executable_config.lua<CR>"),
+    button("c", " " .. kind.icons.settings .. " Config", ":e ~/.local/share/chezmoi/dot_config/lvim/executable_config.lua<CR>"),
     button("d", " " .. kind.icons.dart .. " Dotfiles", ":Telescope file_browser cwd=~/.local/share/chezmoi/<CR>"),
     -- button("C", " " .. kind.cmp_kind.Color .. " Colorscheme Config", ":e ~/.config/lvim/lua/dylan/colorscheme.lua<CR>"),
     button("q", " " .. kind.icons.exit .. " Quit", ":q<CR>"),

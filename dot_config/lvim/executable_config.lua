@@ -1,24 +1,78 @@
-reload("dylan/whichkey")
-reload("dylan/options")
-reload("dylan/keymap")
-reload("dylan/plugins")
-reload("dylan/lsp")
-reload("dylan/linters")
-reload("dylan/formatters")
-reload("dylan/leap")
-reload("dylan/telescope")
-reload("dylan/neocomposer")
-reload("dylan/lvim_config")
--- reload("dylan/harpoon")
-reload("dylan/colorscheme")
-reload("dylan/noice")
-reload("dylan/telekasten")
-reload("dylan/dashboard")
-reload("dylan/spell")
+-- reload("dylan/whichkey")
+-- reload("dylan/options")
+-- reload("dylan/keymap")
+-- reload("dylan/plugins")
+-- reload("dylan/lsp")
+-- reload("dylan/linters")
+-- reload("dylan/formatters")
+-- reload("dylan/leap")
+-- reload("dylan/telescope")
+-- reload("dylan/neocomposer")
+-- reload("dylan/lvim_config")
+-- -- reload("dylan/harpoon")
+-- reload("dylan/colorscheme")
+-- reload("dylan/noice")
+-- reload("dylan/telekasten")
+-- require("dylan/dashboard")
+-- reload("dylan/spell")
+-- -- usefull functions
+-- reload("utils")
+-- -- require('codeium').setup();
+-- HACK: 
+-- Windows
+local modules = {
+	["dylan/whichkey"] = true,
+	-- ["dylan/dashboard"] = true,
+	["dylan/options"] = true,
+	["dylan/keymap"] = true,
+	["dylan/plugins"] = true,
+	["dylan/lsp"] = true,
+	["dylan/linters"] = true,
+	["dylan/formatters"] = true,
+	["dylan/leap"] = true,
+	["dylan/telescope"] = true,
+	["dylan/neocomposer"] = true,
+	["dylan/lvim_config"] = true,
+	-- ["dylan/harpoon"] = true,  -- Uncomment if you want this module
+	["dylan/colorscheme"] = true,
+	["dylan/noice"] = true,
+	["dylan/telekasten"] = false, -- Don't load this on Windows
+	["dylan/spell"] = true,
+	-- ['codeium'] = true,  -- Uncomment if you want this module
+}
+-- vim.opt.spellfile = "/home/dylan/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add"
 -- usefull functions
-reload("utils")
--- require('codeium').setup();
+require("utils")
+--  function inside utiles chack only load certain modules on linux to not use some on work computer
+_G.load_modules(modules)
+-- TODO: Remplacer par bon path
+_G.CONFIG_PATH = (package.config:sub(1,1) == '\\') and "windows_config_path" or "/home/dylan/.config/"
+-- Paths for different operating systems
+local paths = {
+    linux = {
+        ltex = "/home/dylan/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
+        spell = "/home/dylan/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
+        chezmoi_config = "/home/dylan/.local/share/chezmoi/dot_config/lvim/executable_config.lua"
+    },
+    windows = {
+        ltex = "C:/Users/Username/AppData/Local/nvim/dict/ltex.dictionary.fr.txt",
+        spell = "C:/Users/Username/AppData/Local/nvim/dict/spell.utf-8.add",
+        chezmoi_config = "C:/Users/Username/AppData/Local/nvim/dict/executable_config.lua"
+    },
+}
+
+-- Detect the operating system
+local os = package.config:sub(1,1) == '\\' and 'windows' or 'linux'
+
+-- Use the paths table to get the correct paths
+vim.g.my_ltexfile_path = paths[os].ltex
+vim.g.my_spellfile_path = paths[os].spell
+vim.g.my_chezmoi_config_path = paths[os].chezmoi_config
+
+-- use the file defined before as spellfile 
+vim.opt.spellfile = vim.g.my_spellfile_path
 --
+-- For working with windows
 --
 lvim.colorscheme = "kanagawa"
 -- vim.keymap.set("i", "<C-a>", function()
@@ -38,7 +92,6 @@ lvim.colorscheme = "kanagawa"
 -- end, { expr = true })
 
 -- autocmd ColorScheme * lua require('leap').init_highlight(true)
-
 
 -- setup must be called before loading
 -- -- always installed on startup, useful for parsers without a strict filetype
@@ -88,7 +141,6 @@ lvim.colorscheme = "kanagawa"
 --     command = "shellcheck",
 --     args = { "--severity", "warning" },
 --   },
-
 
 -- lvim.builtin.treesitter.ensure_installed = {
 -- 	"bash",
@@ -141,7 +193,7 @@ lvim.colorscheme = "kanagawa"
 -- codeium setup
 -- table.insert(lvim.builtin.cmp.sources, { name = "dictionnary" })
 -- lvim.builtin.cmp.formatting.source_names.dictionnary = "(Dictionnary)"
-          local kind = require "dylan/kind" -- Icones perso 
+local kind = require("dylan/kind") -- Icones perso
 
 -- table.insert(lvim.builtin.cmp.sources, { name = "spell" })
 -- lvim.builtin.cmp.formatting.source_names.spell = "(Spell)"
@@ -149,19 +201,22 @@ table.insert(lvim.builtin.cmp.sources, { name = "codeium" })
 lvim.builtin.cmp.formatting.source_names.codeium = "(Codeium)"
 local default_format = lvim.builtin.cmp.formatting.format
 lvim.builtin.cmp.formatting.format = function(entry, vim_item)
-  vim_item = default_format(entry, vim_item)
-  if entry.source.name == "codeium" then
-    vim_item.kind = ""
-    vim_item.kind_hl_group = "CmpItemKindTabnine"
-  end
-  if entry.source.name == "spell" then
-    vim_item.kind = kind.cmp_kind.TypeParameter
-    vim_item.kind_hl_group = "CmpItemKindTabnine"
-  end
-  -- if entry.source.name == "Dictionnary" then
-  --   vim_item.kind = kind.icons.repo
-  --   vim_item.kind_hl_group = "CmpItemKindTabnine"
-  -- end
-  return vim_item
+	vim_item = default_format(entry, vim_item)
+	if entry.source.name == "codeium" then
+		vim_item.kind = ""
+		vim_item.kind_hl_group = "CmpItemKindTabnine"
+	end
+	if entry.source.name == "spell" then
+		vim_item.kind = kind.cmp_kind.TypeParameter
+		vim_item.kind_hl_group = "CmpItemKindTabnine"
+	end
+	-- if entry.source.name == "Dictionnary" then
+	--   vim_item.kind = kind.icons.repo
+	--   vim_item.kind_hl_group = "CmpItemKindTabnine"
+	-- end
+	return vim_item
 end
 
+-- TODO: 
+-- need to require here or it break 
+require("dylan/dashboard")

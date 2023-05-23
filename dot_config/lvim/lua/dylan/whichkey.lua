@@ -143,3 +143,15 @@ lvim.builtin.which_key.mappings["z"] = {
 -- local opts = require('telescope.pickers').new({}, {'vimgrep_arguments'=='rg','--no-heading','with-filename','--vimgrep'})
 
 -- lvim.builtin.which_key.mappings["9"] = { "<cmd>lua require('telescope.builtin').find_files(opts)<cr>", "Custom Finder" }
+-- HACK:
+-- Windows 
+ if package.config:sub(1,1) == '\\' then  -- If the OS is Windows
+    local project_dir = os.getenv("project_dir") or "C:/Temp/"
+    local notes = os.getenv("notes") or "C:/Temp"
+    local todo = os.getenv("TODO") or "C:/Temp"
+
+    lvim.builtin.which_key.mappings["LP"] = { "<cmd>Telescope file_browser cwd=" .. project_dir .. "<cr>", "Projects" }
+    lvim.builtin.which_key.mappings["LN"] = { "<cmd>Telescope file_browser cwd=" .. notes .. "<cr>", "Notes" }
+    lvim.builtin.which_key.mappings["LT"] = { "<cmd>Telescope file_browser cwd=" .. todo .. "<cr>", "TODOs" }
+end
+

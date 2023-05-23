@@ -12,10 +12,25 @@ function _G.exec_luafile()
 end
 
 function _G.reload_config()
-	vim.cmd("source ~/.config/lvim/config.lua") -- Change this path to the path of your lvim configuration file
-	vim.cmd("silent! :bufdo e")
-	print("Config reloaded.")
+    local handle = io.popen("chezmoi apply") -- Run the chezmoi apply command
+    local result = handle:read("*a") -- Get the result of the command
+    handle:close()
+    print(result) -- Print the result of the chezmoi apply command
+
+  -- global var defined in config.lua
+    vim.cmd("source " .. vim.g.my_chezmoi_config_path)
+
+    -- The ':bufdo e' command will re-read every buffer
+    -- The ':wa' command will write all modified buffers
+    vim.cmd("silent! :wa")
+    vim.cmd("silent! :bufdo e")
+
+    -- Reload all plugins with Lazy.nvim.
+    vim.cmd("LazyReload")
+
+    print("Config and plugins reloaded.")
 end
+
 --TODO check if break register
 function _G.insert_change()
 	local current_line = vim.api.nvim_get_current_line()
@@ -129,6 +144,7 @@ function _G.find_recent_note()
 end
 
 -- Opens the file based on the date format and ensures that the required directories exist.
+-- Find my daily note based on format define on Obsidian that generate note every day on startup
 local function openFile()
   -- Parameters
   local base_path = "/home/dylan/Documents/Obsidian Vault/Tasks/"
@@ -207,4 +223,39 @@ function _G.CreateNote()
     vim.api.nvim_notify("Heading not found.", 2, {})
   end
 end
+-- For working with windows
+function _G.load_modules(modules)
+    local is_windows = (package.config:sub(1,1) == '\\')
+    for module, load_on_windows in pairs(modules) do
+        if is_windows then
+            if load_on_windows then
+                reload(module)
+            end
+        else
+            reload(module)
+        end
+    end
+end
+
+-- For working with windows
+function _G.remove_plugins_for_windows(plugins_not_on_windows)
+    if package.config:sub(1,1) == '\\' then  -- If the OS is Windows
+        for _, plugin_to_remove in ipairs(plugins_not_on_windows) do
+            for i, plugin in ipairs(lvim.plugins) do
+                if type(plugin) == "table" then
+                    if plugin[1] == plugin_to_remove then
+                        table.remove(lvim.plugins, i)
+                        break
+                    end
+                elseif type(plugin) == "string" then
+                    if plugin == plugin_to_remove then
+                        table.remove(lvim.plugins, i)
+                        break
+                    end
+                end
+            end
+        end
+    end
+end
+
 

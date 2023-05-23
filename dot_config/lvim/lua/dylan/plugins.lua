@@ -294,3 +294,15 @@ lvim.plugins = {
 	},
 -- { "f3fora/cmp-spell" }
 }
+-- end of lvim.plugins{}
+
+require('utils')
+
+local plugins_not_on_windows = {
+		"iamcco/markdown-preview.nvim",
+		"jackMort/ChatGPT.nvim",
+    -- More plugins...
+}
+
+_G.remove_plugins_for_windows(plugins_not_on_windows)
+
