@@ -10,4 +10,6 @@
 # Files starting with a '_' or having '_.' followed by any character
 _config.*
 *._*
+# Perso
+exports.zsh
 
