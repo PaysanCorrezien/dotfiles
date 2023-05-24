@@ -1,0 +1,13 @@
+# Linux-specific files
+*~
+.DS_Store
+.Trash-*
+.cache
+.local/share/Trash
+*.swp
+*.swo
+
+# Files starting with a '_' or having '_.' followed by any character
+_config.*
+*._*
+

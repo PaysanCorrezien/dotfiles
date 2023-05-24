@@ -1,0 +1,7 @@
+#Dylan M specific 
+
+exports.zsh
+*._dm
+*._Dm
+*._dM
+*._DM
