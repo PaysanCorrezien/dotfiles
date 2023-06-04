@@ -38,6 +38,7 @@ local modules = {
 	["dylan/noice"] = true,
 	["dylan/telekasten"] = false, -- Don't load this on Windows
 	["dylan/spell"] = true,
+	["dylan/rust"] = true,
 	-- ['codeium'] = true,  -- Uncomment if you want this module
 }
 -- vim.opt.spellfile = "/home/dylan/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add"
@@ -195,7 +196,6 @@ lvim.colorscheme = "kanagawa"
 --   spellcheckfile = "~/.config/lvim/spell/fr.utf-8.spl",
 --   treesitter = true
 -- })
-
 -- codeium setup
 -- table.insert(lvim.builtin.cmp.sources, { name = "dictionnary" })
 -- lvim.builtin.cmp.formatting.source_names.dictionnary = "(Dictionnary)"

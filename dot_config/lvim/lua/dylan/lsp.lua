@@ -6,10 +6,11 @@ lvim.lsp.installer.setup.ensure_installed = {
 	"tailwindcss",
 	"yamlls",
 	"bashls",
+  -- "rust_analyzer"
 }
 require("lvim.lsp.manager").setup("bashls")
 require("lvim.lsp.manager").setup("lua_ls")
--- require("lvim.lsp.manager").setup("jsonls")
+-- require("lvim.lsp.manager").setup("rust_analyzer")
 
 require("lspconfig").jsonls.setup({
 	cmd = { "vscode-json-language-server", "--stdio" },
@@ -20,11 +21,10 @@ require("lspconfig").jsonls.setup({
 	single_file_support = true,
 })
 
-
 local code_actions = require("lvim.lsp.null-ls.code_actions")
 code_actions.setup({
-
 	{
 		command = "shellcheck",
 	},
 })
+

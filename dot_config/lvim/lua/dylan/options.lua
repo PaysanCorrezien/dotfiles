@@ -47,6 +47,7 @@ lvim.builtin.bufferline.options.numbers = "ordinal"
 lvim.builtin.treesitter.highlight.enable = true
 -- Enble cmp completion for command line
 lvim.builtin.cmp.cmdline.enable = true
+lvim.builtin.cmp.crates.enable = true
 
 -- lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
 -- table.insert(lvim.builtin.cmp.sources,1,{ name = "copilot" })
