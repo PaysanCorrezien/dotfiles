@@ -34,3 +34,25 @@ precmd() { echo -ne "\033]0;${PWD}\007" }
 
 eval "$(tmuxifier init -)"
 eval "$(zoxide init zsh)"
+
+GPG_TTY=$(tty)
+export GPG_TTY
+
+
+# Provides gitignorrr completion for zsh
+_gitignorrr_get_command_list() {
+    # gi cmd cache file
+    cache=~/.config/.gitignorrr_cmd_list
+
+    # check if cache file exists and is younger than half a month
+    if [[ ! -f "$cache" || $(($(date +%s) - $(date -r "$cache" +%s))) -gt 1296000 ]]; then
+        curl -sL https://www.toptal.com/developers/gitignore/api/list | tr "," "\n" > "$cache"
+    fi
+    cat "$cache"
+}
+
+_gitignorrr () {
+    compset -P '*,'
+    compadd -S '' $(_gitignorrr_get_command_list)
+}
+compdef _gitignorrr gitignorrr
