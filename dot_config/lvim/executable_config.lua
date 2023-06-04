@@ -72,7 +72,13 @@ vim.g.my_chezmoi_config_path = paths[os].chezmoi_config
 -- use the file defined before as spellfile 
 vim.opt.spellfile = vim.g.my_spellfile_path
 --
+-- Test Tmux rename auto
+vim.o.title = true
+vim.o.titlestring = "%t"
+
+vim.api.nvim_command('autocmd BufEnter,BufRead,BufNewFile * echom "Setting title to: " . expand("%:t")')
 -- For working with windows
+
 --
 lvim.colorscheme = "kanagawa"
 -- vim.keymap.set("i", "<C-a>", function()

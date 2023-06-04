@@ -62,6 +62,8 @@ alias q="exit"
 alias rm="rm -irv"
 alias rmf="rm -rf"
 
+alias x="chmod +x"
+
 # systemd
 alias sysd="sudo systemctl disable"
 alias syse="sudo systemctl enable"
@@ -72,6 +74,7 @@ alias systo="sudo systemctl stop"
 # tmux
 alias tmux="tmux -u"
 alias tmuxm="tmux new-session \; split-window -h \; split-window -v \; attach"
+alias sync='chezmoi apply && tmux source-file ~/.tmux.conf && source ~/.zshrc'
 
 alias ..="cd ../"
 alias ...="cd ../../"

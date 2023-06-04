@@ -22,4 +22,15 @@ setopt hist_verify            # show command with history expansion to user befo
 autoload -Uz compinit
 compinit
 
+# HACK: 
+# test debut lvim tmux
+export LUNARVIM_CONFIG_DIR="${LUNARVIM_CONFIG_DIR:-"/home/dylan/.config/lvim"}"
+export LUNARVIM_CACHE_DIR="${LUNARVIM_CACHE_DIR:-"/home/dylan/.cache/lvim"}"
+export LUNARVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-"/home/dylan/.local/share/lunarvim"}"
+# HACK: 
+# Set the window title to the current directory
+precmd() { echo -ne "\033]0;${PWD}\007" }
+
+
+eval "$(tmuxifier init -)"
 eval "$(zoxide init zsh)"
