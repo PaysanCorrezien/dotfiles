@@ -1,6 +1,7 @@
 [user]
   name = "{{ .git.name }}"
-  email = "{{ .git.email }}"
+  email = "{{ .git.email }}"\
+  signingkey = "{{ .git.gpg }}"
 
 [core]
     editor = lvim
@@ -55,6 +56,11 @@
 
 [commit]
     template = ~/.config/git/commit_template.txt
+    gpgsign = true
 
 [fetch]
     prune = true
+
+[gpg "program"]
+    gpg = gpg
+    gpgAgent = true
