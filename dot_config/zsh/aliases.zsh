@@ -74,6 +74,7 @@ alias systo="sudo systemctl stop"
 # tmux
 alias tmux="tmux -u"
 alias tmuxm="tmux new-session \; split-window -h \; split-window -v \; attach"
+alias ta ="tmux a"
 alias sync='chezmoi apply && tmux source-file ~/.tmux.conf && source ~/.zshrc'
 
 alias ..="cd ../"
