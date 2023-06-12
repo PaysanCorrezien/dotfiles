@@ -1,7 +1,7 @@
 [user]
-  name = "{{ if .git }}{{ if .git.name }}{{ .git.name }}{{ else }}Default Name{{ end }}{{ else }}Default Name{{ end }}"
-  email = "{{ if .git }}{{ if .git.email }}{{ .git.email }}{{ else }}default@email.com{{ end }}{{ else }}default@email.com{{ end }}"
-  signingkey = "{{ if .git }}{{ if .git.gpg }}{{ .git.gpg }}{{ else }}DefaultKey{{ end }}{{ else }}DefaultKey{{ end }}"
+  name = "{{ default "Default Name" .git.name }}"
+  email = "{{ default "default@email.com" .git.email }}"
+  signingkey = "{{ default "DefaultKey" .git.gpg }}"
 
 [core]
     editor = lvim
