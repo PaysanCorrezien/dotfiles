@@ -7,6 +7,9 @@ vim.keymap.set("n", "zj", "o<Esc>k") -- insert line down without leaver n mode
 vim.keymap.set("n", "zk", "O<Esc>j") -- insert line up without leaver n mode
 vim.keymap.set("n", "<leader>Zd", '"_d')
 vim.keymap.set("v", "<leader>Zd", '"_d')
+-- Use <C-B> (or <C-S-b> in some terminals) for visual block mode
+vim.keymap.set('n', '<C-b>', '<C-v>')
+
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 -- vim.keymap.set("i", "<leader>cu", "<esc>mzgUiw`za") --current word in huppercase in insert mode a
