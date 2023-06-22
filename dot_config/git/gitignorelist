@@ -1,6 +1,6 @@
 #Dylan M specific 
 
-exports.zsh
+secrets.zsh
 *._dm
 *._Dm
 *._dM

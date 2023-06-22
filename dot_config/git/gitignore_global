@@ -11,5 +11,5 @@
 _config.*
 *._*
 # Perso
-exports.zsh
+secrets.zsh
 
