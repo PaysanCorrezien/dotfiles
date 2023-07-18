@@ -25,20 +25,20 @@ lvim.plugins = {
 	},
 	-- { "OmniSharp/omnisharp-vim" },
 	{
-	  "folke/persistence.nvim",
-	  event = "BufReadPre", -- this will only start session saving when an actual file was opened
-    lazy = true,
-	  config = function()
-	    require("persistence").setup {
-	      dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
-	      options = { "buffers", "curdir", "tabpages", "winsize" },
-	    }
-	  end,
+		"folke/persistence.nvim",
+		event = "BufReadPre", -- this will only start session saving when an actual file was opened
+		lazy = true,
+		config = function()
+			require("persistence").setup({
+				dir = vim.fn.expand(vim.fn.stdpath("config") .. "/session/"),
+				options = { "buffers", "curdir", "tabpages", "winsize" },
+			})
+		end,
 	},
-  {
-  "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-},
+	{
+		"folke/trouble.nvim",
+		cmd = "TroubleToggle",
+	},
 
 	-- {
 	-- 	"epwalsh/obsidian.nvim",
@@ -277,11 +277,11 @@ lvim.plugins = {
 	},
 	{ "debugloop/telescope-undo.nvim" },
 	{ dir = "~/Documents/Projets/NeovimPlugins/ObsidianExtra.nvim" },
-  --lazy
-{
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-},
+	--lazy
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	},
 	{
 		"AckslD/nvim-neoclip.lua",
 		dependencies = {
@@ -293,40 +293,53 @@ lvim.plugins = {
 			require("neoclip").setup()
 		end,
 	},
-  { 'simrat39/rust-tools.nvim' },
--- { "f3fora/cmp-spell" }
-  {
-    "saecki/crates.nvim",
-    version = "v0.3.0",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("crates").setup {
-        null_ls = {
-          enabled = true,
-          name = "crates.nvim",
-        },
-        popup = {
-          border = "rounded",
-        },
-      }
-    end,
-  },
-  {
-    "j-hui/fidget.nvim",
-    config = function()
-      require("fidget").setup()
-    end,
-  },
+	{ "simrat39/rust-tools.nvim" },
+	-- { "f3fora/cmp-spell" }
+	{
+		"saecki/crates.nvim",
+		version = "v0.3.0",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("crates").setup({
+				null_ls = {
+					enabled = true,
+					name = "crates.nvim",
+				},
+				popup = {
+					border = "rounded",
+				},
+			})
+		end,
+	},
+
+	{
+		"j-hui/fidget.nvim",
+		config = function()
+			require("fidget").setup()
+		end,
+	},
+	{
+		"bennypowers/nvim-regexplainer",
+		config = function()
+			require("regexplainer").setup()
+		end,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"MunifTanjim/nui.nvim",
+		},
+	},
+	{
+		"subnut/nvim-ghost.nvim",
+	},
 }
 -- end of lvim.plugins{}
 
-require('utils')
+require("utils")
 
 local plugins_not_on_windows = {
-		"iamcco/markdown-preview.nvim",
-		"jackMort/ChatGPT.nvim",
-    -- More plugins...
+	"iamcco/markdown-preview.nvim",
+	"jackMort/ChatGPT.nvim",
+	-- More plugins...
 }
 
 _G.remove_plugins_for_windows(plugins_not_on_windows)
-

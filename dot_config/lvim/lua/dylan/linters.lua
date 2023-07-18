@@ -17,3 +17,8 @@ linters.setup({
 	-- 	filetypes = { "javascript", "python" },
 	-- },
 })
+
+linters.setup {
+  { command = "eslint_d", filetypes = { "typescript", "typescriptreact" } }
+}
+

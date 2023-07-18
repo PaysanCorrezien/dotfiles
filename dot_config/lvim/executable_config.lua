@@ -223,6 +223,18 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
 	return vim_item
 end
 
+-- TODO:
+-- Find a way to write this in lua directly and make this work on all website by default
+-- au nvim_ghost_user_autocommands User *github.com setfiletype markdown
+vim.api.nvim_exec([[
+augroup nvim_ghost_user_autocommands
+  au!
+  au User *.com setfiletype markdown | lua vim.cmd('LspStart')
+  au User *.fr setfiletype markdown | lua vim.cmd('LspStart')
+augroup END
+]], false)
+
+
 -- TODO: 
 -- need to require here or it break 
-require("dylan/dashboard")
+require("dylan/dashboard") lua vim.cmd('LspRestart')
