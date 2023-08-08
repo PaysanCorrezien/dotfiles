@@ -10,6 +10,7 @@ export EDITOR="lvim"
 export PATH="$PATH:/var/lib/snapd/desktop/applications"
 export PATH="$PATH:$HOME/bin/"
 export PATH="$PATH:/usr/bin/"
+export PATH="$PATH:/usr/local/nvim-linux64/bin"
 export PATH="$PATH:$HOME/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin/ltex-ls"
 # tmuxifier plugins setup
 export PATH="$PATH:$HOME/.tmux/plugins/tmuxifier/bin"
