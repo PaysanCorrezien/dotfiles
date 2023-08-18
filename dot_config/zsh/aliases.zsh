@@ -16,6 +16,7 @@ alias ll='exa -lbGF --git --sort=modified --icons'                            # 
 # alias llm='exa -lbGF --git --sort=modified --icons'                            # long list, modified date sort
 alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'  # all list
 alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons' # all + extended list
+alias s='sudo'
 
 # speciality views
 alias lS='exa -1 --icons'			                                                  # one column, just names
@@ -55,8 +56,8 @@ alias gsv="git status -v"
 alias gtop='cd "$(git rev-parse --show-toplevel)"'
 alias grep="grep --color=auto"
 # kitty
-alias icat="kitty +kitten icat"
-alias s="kitty +kitten ssh"
+# alias icat="kitty +kitten icat"
+# alias s="kitty +kitten ssh"
 
 alias q="exit"
 alias rm="rm -irv"
@@ -74,6 +75,8 @@ alias systo="sudo systemctl stop"
 # tmux
 alias tmux="tmux -u"
 alias tmuxm="tmux new-session \; split-window -h \; split-window -v \; attach"
+alias t="tmux list-sessions &> /dev/null && tmux attach || tmux new-session"
+
 alias sync='chezmoi apply && tmux source-file ~/.tmux.conf && source ~/.zshrc'
 
 alias ..="cd ../"
