@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# System Updater
+
+sudo apt update -y
+echo ''
+sudo apt-get install aptitude -y
+echo ''
+sudo apt upgrade -y
+echo ''
+# update-manager;
+sudo apt dist-upgrade -y
+echo ''
+polybar-msg action updates module_hide

@@ -1,0 +1,5 @@
+KERNEL=="sd*", ACTION=="add", ATTR{removable}=="1", \
+    RUN+="/home/dylan/.config/polybar/system-usb-udev.sh --update"
+KERNEL=="sd*", ACTION=="remove", \
+    RUN+="/home/dylan/.config/polybar/system-usb-udev.sh --update"
+

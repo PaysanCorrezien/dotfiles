@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## chosen=$(find ~/UniNotes -name '*.tex' | rofi -dmenu -i "Test" )
+
+chosen=$(find ~/Documents/CheatSheat -name '*.pdf' | rofi -dmenu -theme $HOME/.config/rofi/applets/dylan/cheatsheet.rasi -i "CheatSheet" )
+
+zathura $chosen 

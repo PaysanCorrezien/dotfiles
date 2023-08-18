@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+egrep ^bind ~/.config/i3/config  | cut -d " " -f 2- | rofi -i -dmenu -theme $HOME/.config/rofi/applets/dylan/cheatsheet.rasi -p "Shortcuts" ;
