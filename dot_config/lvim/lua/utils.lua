@@ -11,6 +11,17 @@ function _G.exec_luafile()
 	end
 end
 
+function _G.search_and_replace()
+  local word = vim.fn.expand("<cword>")
+  local cmd = ":%s/\\<" .. word .. "\\>/" .. word .. "/gIc"
+  vim.cmd("echo") -- Clear any messages
+  vim.api.nvim_feedkeys(":", "n", false)
+  vim.api.nvim_feedkeys(cmd, "m", false)
+  for i = 1, 5 do
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Left>", true, false, true), "n", false)
+  end
+end
+
 function _G.reload_config()
     local handle = io.popen("chezmoi apply") -- Run the chezmoi apply command
     local result = handle:read("*a") -- Get the result of the command

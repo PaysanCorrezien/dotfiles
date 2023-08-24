@@ -3,16 +3,21 @@ lvim.builtin.which_key.opts.mode = { "n", "v", "R" }
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
+lvim.builtin.which_key.mappings["S"] = { ":lua search_and_replace()<CR>", "Search and replace" }
+
+lvim.builtin.which_key.mappings["a"] = {"<cmd>:lua require('harpoon.mark').add_file()<cr>", "Harp Add"}
+lvim.builtin.which_key.mappings["j"] = { "<cmd>Telescope jumplist<cr>", "Jumplist" }
+lvim.builtin.which_key.mappings["H"] = { "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<cr>", "Jumplist" }
 -- override a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 lvim.builtin.which_key.mappings["x"] = {
 	name = "Dylan",
-	j = { "<cmd>Telescope jumplist<cr>", "jumplist" },
+	-- j = { "<cmd>Telescope jumplist<cr>", "jumplist" },
 	o = { "<cmd>Telescope vim_options<cr>", "vimoptions" },
 	l = { "<cmd>builtin.loclist<cr>", "loclist" },
-	a = { "<cmd>:lua require('harpoon.mark').add_file()<cr>", "Harp_add" },
+	-- a = { "<cmd>:lua require('harpoon.mark').add_file()<cr>", "Harp_add" },
 	h = { "<cmd>:Telescope harpoon marks<cr>", "list Harp" },
-	H = { "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<cr>", "list Harp" },
+	-- H = { "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<cr>", "list Harp" },
 	m = { "<cmd>:Telescope macros<cr>", "Neo Macros" },
 	e = { "<cmd><cr>", "Neo Macros Edit" },
 	c = { "<cmd>Codeium Enable<cr>", "Codeium Enable" },
@@ -62,7 +67,10 @@ lvim.builtin.which_key.mappings["2"] = { "<cmd>BufferLineGoToBuffer 2<cr>", "Go 
 lvim.builtin.which_key.mappings["3"] = { "<cmd>BufferLineGoToBuffer 3<cr>", "Go To Tab 3" }
 lvim.builtin.which_key.mappings["4"] = { "<cmd>BufferLineGoToBuffer 4<cr>", "Go To Tab 4" }
 lvim.builtin.which_key.mappings["5"] = { "<cmd>BufferLineGoToBuffer 5<cr>", "Go To Tab 5" }
+lvim.builtin.which_key.mappings["6"] = { "<cmd>BufferLineGoToBuffer 6<cr>", "Go To Tab 6" }
+lvim.builtin.which_key.mappings["7"] = { "<cmd>BufferLineGoToBuffer 7<cr>", "Go To Tab 7" }
 
+-- TODO: symlink windows and wsl doc 
 lvim.builtin.which_key.mappings["8"] = { "<cmd>:TodoTrouble cwd=~/Documents/Projets<cr>", "Todo on All Project" }
 -- lvim.builtin.which_key.mappings["8"] = { "<cmd>require ('telescope').extensions.file_browser.file_browser(path=%:p:h select_buffer=true)<cr>", "Telescope explorer" }
 lvim.builtin.which_key.mappings["E"] = { "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", "Telescope explorer" }
@@ -79,7 +87,8 @@ lvim.builtin.which_key.mappings["LC"] = { "<cmd>Telescope fd cwd=~/.local/share/
 lvim.builtin.which_key.mappings["Lc"] = { "<cmd>edit ~/.local/share/chezmoi/dot_config/lvim/executable_config.lua<cr>", "config.lua" }
 lvim.builtin.which_key.mappings["LD"] = { "<cmd>Telescope file_browser cwd=~/.local/share/chezmoi/dot_config/lvim<cr>", ".config/" }
 lvim.builtin.which_key.mappings["Lx"] = { "<cmd>Telescope file_browser cwd=~/.local/share/chezmoi/<CR>", "Dotfiles" }
-
+-- lvim.builtin.which_key.mappings["S"] = { "<cmd>%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gIc<Left><Left><Left><Left><Left><CR>", "Replace Word" }
+-- lvim.builtin.which_key.mappings["S"] = { [[:%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gIc<Left><Left><Left><Left><Left><cr>]], "Search/replace Word" }
 
 lvim.builtin.which_key.mappings["t"] = {
 	name = "+Trouble",
