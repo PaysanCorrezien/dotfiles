@@ -18,6 +18,7 @@ setopt hist_expire_dups_first # delete duplicates first when HISTFILE size excee
 setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
+setopt inc_append_history     # save after each command, needed for tmux 
 
 # Load and initialise completion system
 autoload -Uz compinit
