@@ -40,3 +40,10 @@ export FZF_CTRL_R_OPTS="
   export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# NOTE: Open pwsh process on windows from withing tmux in wsl 
+p() {
+# Full path to PowerShell executable
+tmux new-window -n powershell "cmd.exe /K \\\\\\\\wsl.localhost\\\\Debian\\\\home\\\\dylan\\\\.config\\\\windows\\\\launchpwsh.bat"
+}
+

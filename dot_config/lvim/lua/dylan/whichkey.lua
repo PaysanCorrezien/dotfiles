@@ -8,6 +8,7 @@ lvim.builtin.which_key.mappings["S"] = { ":lua search_and_replace()<CR>", "Searc
 lvim.builtin.which_key.mappings["a"] = {"<cmd>:lua require('harpoon.mark').add_file()<cr>", "Harp Add"}
 lvim.builtin.which_key.mappings["j"] = { "<cmd>Telescope jumplist<cr>", "Jumplist" }
 lvim.builtin.which_key.mappings["H"] = { "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<cr>", "Jumplist" }
+lvim.builtin.which_key.mappings["X"] = { ":lua RunPowershellCommand()<cr>", "Run PowerShell Command" }
 -- override a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 lvim.builtin.which_key.mappings["x"] = {
