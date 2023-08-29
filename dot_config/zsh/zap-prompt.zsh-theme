@@ -31,4 +31,5 @@ function prompt_dir {
 # Prompt configuration
 PROMPT="%B% %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}\$(prompt_dir)%{$reset_color%}"
 PROMPT+="\$vcs_info_msg_0_ "
-PROMPT+="%{$fg[yellow]%}⚡%{$reset_color%}" # ⚡ icon added at the end
+PROMPT+="%{$fg[yellow]%}--> %{$reset_color%}" # ⚡ icon added at the end
+
