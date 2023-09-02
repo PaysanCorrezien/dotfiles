@@ -34,6 +34,11 @@ export LUNARVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-"/home/dylan/.local/share/l
 # Set the window title to the current directory
 precmd() { echo -ne "\033]0;${PWD}\007" }
 
+# Work automount script 
+if [ -f ~/networkdrive.sh ]; then
+    ~/networkdrive.sh
+fi
+
 # attempt with fzf tab
 source ~/.local/share/fzf-tab/fzf-tab.plugin.zsh
 
