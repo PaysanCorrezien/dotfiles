@@ -7,6 +7,7 @@ alias ai="sgpt --repl temp --shell"
 # alias ll='ls -l'
 # alias la='ls -A'
 # alias l='ls -CF'
+alias md="mkdir"
 
 # general use
 alias ls='exa --icons'                                                         # ls
@@ -77,6 +78,7 @@ alias tmux="tmux -u"
 alias tmuxm="tmux new-session \; split-window -h \; split-window -v \; attach"
 alias t="tmux list-sessions &> /dev/null && tmux attach || tmux new-session"
 
+# BUG:
 alias sync='chezmoi apply && tmux source-file ~/.tmux.conf && source ~/.zshrc'
 
 alias ..="cd ../"
