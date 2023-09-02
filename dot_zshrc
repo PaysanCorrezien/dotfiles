@@ -11,6 +11,7 @@ source $HOME/.config/zsh/zap-prompt.zsh-theme
 source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/exports.zsh
 source $HOME/.config/zsh/secrets.zsh
+source $HOME/.config/zsh/wsl.zsh
 
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
@@ -33,11 +34,6 @@ export LUNARVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-"/home/dylan/.local/share/l
 # HACK: 
 # Set the window title to the current directory
 precmd() { echo -ne "\033]0;${PWD}\007" }
-
-# Work automount script 
-if [ -f ~/networkdrive.sh ]; then
-    ~/networkdrive.sh
-fi
 
 # attempt with fzf tab
 source ~/.local/share/fzf-tab/fzf-tab.plugin.zsh
