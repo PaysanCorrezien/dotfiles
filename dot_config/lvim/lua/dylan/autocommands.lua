@@ -5,3 +5,12 @@ vim.api.nvim_create_autocmd("FileType", {
 		require("nvim-treesitter.highlight").attach(0, "bash")
 	end,
 })
+
+-- for nnn to redraw on enter
+vim.api.nvim_create_autocmd("VimEnter", {
+    pattern = "*",
+    callback = function()
+        vim.cmd("silent! exec '!kill -s WINCH " .. vim.fn.expand("$PPID") .. "'")
+    end,
+})
+

@@ -74,7 +74,8 @@ lvim.builtin.which_key.mappings["7"] = { "<cmd>BufferLineGoToBuffer 7<cr>", "Go 
 -- TODO: symlink windows and wsl doc 
 lvim.builtin.which_key.mappings["8"] = { "<cmd>:TodoTrouble cwd=~/Documents/Projets<cr>", "Todo on All Project" }
 -- lvim.builtin.which_key.mappings["8"] = { "<cmd>require ('telescope').extensions.file_browser.file_browser(path=%:p:h select_buffer=true)<cr>", "Telescope explorer" }
-lvim.builtin.which_key.mappings["E"] = { "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", "Telescope explorer" }
+-- lvim.builtin.which_key.mappings["E"] = { "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", "Telescope explorer" }
+lvim.builtin.which_key.mappings["E"] = { "<cmd>NnnPicker<cr>", "NNN File Browser"}
 
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.vmappings["y"] ={ '\"+y', "Copy Y "}

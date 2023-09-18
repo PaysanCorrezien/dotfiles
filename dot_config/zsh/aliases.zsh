@@ -8,12 +8,13 @@ alias ai="sgpt --repl temp --shell"
 # alias la='ls -A'
 # alias l='ls -CF'
 alias md="mkdir"
+alias cat='batcat'
+alias bat='batcat'
 
 # general use
-alias ls='exa --icons'                                                         # ls
-alias l='exa -lbF --git --icons'                                               # list, size, type, git
+# alias l='exa -lbF --git --icons'                                               # list, size, type, git
 # alias ll='exa -lbGF --git --icons'                                             # long list
-alias ll='exa -lbGF --git --sort=modified --icons'                            # long list, modified date sort
+alias ls='exa -lbGF --git --sort=modified --icons'                            # long list, modified date sort
 # alias llm='exa -lbGF --git --sort=modified --icons'                            # long list, modified date sort
 alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'  # all list
 alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons' # all + extended list
