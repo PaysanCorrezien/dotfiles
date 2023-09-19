@@ -34,19 +34,43 @@ nnn_cd()
         printf "%s\0" "0c${PWD}" > "${NNN_PIPE}" !&
     fi  
 }
-export NNN_PLUG='f:finder;o:fzopen;p:preview-tabbed;P:preview-tui;d:diffs;i:imgview;z:autojump;m:~/.config/nnn/plugins/fzf_context_menu.sh'
+export NNN_PLUG='f:finder;o:fzopen;P:preview-tui;d:diffs;i:imgview;z:autojump;m:wsl_contextmenu;'
 export NNN_FIFO=/tmp/nnn.fifo
 # H for hidden, d for detail 
 export NNN_OPTS="Hd"
 export NNN_ICONLOOKUP="1"
-export NNN_BMS="d:/mnt/c/Users/dylan/Downloads/;t:/mnt/c/temp/;p:/mnt/c/Users/dylan/Documents/Projet/Work/Projet/;U:/mnt/c/userconfig/"
+export NNN_BMS_PERSONAL="d:/mnt/c/Users/dylan/Downloads/;t:/mnt/c/temp/;p:/mnt/c/Users/dylan/Documents/Projet/Work/Projet/;U:/mnt/c/userconfig/"
 
 BLK="0B" CHR="0B" DIR="04" EXE="06" REG="00" HARDLINK="06" SYMLINK="06" MISSING="00" ORPHAN="09" FIFO="06" SOCK="0B" OTHER="06"
 export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 
+# Check the value of the SITUATION environment variable and set NNN_BMS accordingly
+# Allow to use different bookmark depending on workstation or home
+# NOTE: on secret.zsh the following need to be set :
+# export NNN_BMS_WORK=""
+# export SITUATION="work" # or personnal
+if [[ "$SITUATION" == "work" ]]; then
+  if [[ -n "$NNN_BMS_WORK" ]]; then
+    export NNN_BMS=$NNN_BMS_WORK
+  else
+    echo "NNN_BMS_WORK is not set."
+  fi
+elif [[ "$SITUATION" == "personal" ]]; then
+  if [[ -n "$NNN_BMS_PERSONAL" ]]; then
+    export NNN_BMS=$NNN_BMS_PERSONAL
+  else
+    echo "NNN_BMS_PERSONAL is not set."
+  fi
+else
+  echo "SITUATION variable is not set to 'work' or 'personal'. NNN_BMS will not be updated."
+fi
 
-# this not needed , made change on script itself
-# export NNN_PAGER="batcat"
-# export NNN_BATSTYLE="header,grid,numbers"
-# export NNN_BATTHEME="TwoDark"
+
+
+# Personal-related drive map
+declare -A drive_map_personal
+drive_map_personal["C:"]="/mnt/c"
+drive_map_personal["D:"]="/mnt/d"
+#Serialize array as local env variable
+export DRIVE_MAP_PERSONAL_STR=$(declare -p drive_map_personal)
 

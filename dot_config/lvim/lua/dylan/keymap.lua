@@ -36,6 +36,7 @@ vim.keymap.set("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", icons_opts) 
 vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<cr>", icons_opts)
 -- vim.keymap.set("i", "<C-I>", "<cmd>IconPickerInsert<cr>", icons_opts) -- not working with kitty
 -- vim.keymap.set("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u") --syntaxe correction du dernier mot saisi
+--
 
 
 -- Set up the key mapping
