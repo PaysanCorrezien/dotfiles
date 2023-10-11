@@ -79,7 +79,7 @@ vim.opt.spellfile = vim.g.my_spellfile_path
 vim.o.title = true
 vim.o.titlestring = "%t"
 
-vim.api.nvim_command('autocmd BufEnter,BufRead,BufNewFile * echom "Setting title to: " . expand("%:t")')
+-- vim.api.nvim_command('autocmd BufEnter,BufRead,BufNewFile * echom "Setting title to: " . expand("%:t")')
 -- For working with windows
 
 --
