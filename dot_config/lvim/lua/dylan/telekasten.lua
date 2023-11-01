@@ -1,3 +1,4 @@
 require('telekasten').setup({
-  home = vim.fn.expand("~/Documents/Obsidian Vault/"), -- Put the name of your notes directory here
+  --HACK: wont work on work computer
+  home = vim.fn.expand("/mnt/c/Users/dylan/Mes documents/Obsidian Vault/"), -- Put the name of your notes directory here
 })
