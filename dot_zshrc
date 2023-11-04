@@ -35,8 +35,12 @@ export LUNARVIM_CONFIG_DIR="${LUNARVIM_CONFIG_DIR:-"/home/dylan/.config/lvim"}"
 export LUNARVIM_CACHE_DIR="${LUNARVIM_CACHE_DIR:-"/home/dylan/.cache/lvim"}"
 export LUNARVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-"/home/dylan/.local/share/lunarvim"}"
 # HACK: 
-# Set the window title to the current directory
-precmd() { echo -ne "\033]0;${PWD}\007" }
+# Set the tmux pane to the current directory
+precmd() {
+    local parent_dir=$(dirname "${PWD}")
+    local current_dir="${PWD##*/}"
+    tmux rename-window " ${parent_dir##*/}/${current_dir}"
+}
 
 # attempt with fzf tab
 source ~/.local/share/fzf-tab/fzf-tab.plugin.zsh

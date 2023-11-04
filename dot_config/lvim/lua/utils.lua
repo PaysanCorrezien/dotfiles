@@ -23,6 +23,26 @@ function _G.search_and_replace()
 	end
 end
 
+-- on open
+function _G.rename_tmux_pane()
+    local current_file = vim.fn.expand("%:t")  -- Get the current file name
+    local parent_dir = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h:t")  -- Get the parent directory name
+    if current_file ~= "" and parent_dir ~= "" then
+        os.execute('tmux rename-window " ' .. parent_dir .. '/' .. current_file .. '"')
+    end
+end
+
+-- on quit
+function _G.reset_tmux_pane()
+    -- Get the parent directory and current directory from within Neovim
+    local parent_dir = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h:h:t")
+    local current_dir = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h:t")
+    -- Update the tmux window title to reflect the parent and current directory with the folder icon
+    os.execute('tmux rename-window " ' .. parent_dir .. '/' .. current_dir .. '"')
+end
+
+
+
 function _G.reload_config()
 	local handle = io.popen("chezmoi apply") -- Run the chezmoi apply command
 	local result = handle:read("*a") -- Get the result of the command

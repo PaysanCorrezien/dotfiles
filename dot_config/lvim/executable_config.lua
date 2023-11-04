@@ -224,6 +224,16 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
 	-- end
 	return vim_item
 end
+-- rename pane tmux attempt
+vim.cmd [[
+augroup TmuxRenaming
+    autocmd!
+    autocmd BufEnter * lua _G.rename_tmux_pane()
+    autocmd BufLeave * lua _G.reset_tmux_pane()
+augroup END
+]]
+
+
 
 -- TODO: 
 -- need to require here or it break 
