@@ -23,44 +23,44 @@ function _G.search_and_replace()
 	end
 end
 
--- on open
+-- for autocommand on open  
 function _G.rename_tmux_pane()
-    local current_file = vim.fn.expand("%:t")  -- Get the current file name
-    local parent_dir = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h:t")  -- Get the parent directory name
-    if current_file ~= "" and parent_dir ~= "" then
-        os.execute('tmux rename-window " ' .. parent_dir .. '/' .. current_file .. '"')
-    end
+	local current_file = vim.fn.expand("%:t") -- Get the current file name
+	local parent_dir = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h:t") -- Get the parent directory name
+	if current_file ~= "" and parent_dir ~= "" then
+		os.execute('tmux rename-window " ' .. parent_dir .. "/" .. current_file .. '"')
+	end
 end
 
--- on quit
+-- for autocommand on quit
 function _G.reset_tmux_pane()
-    -- Get the parent directory and current directory from within Neovim
-    local parent_dir = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h:h:t")
-    local current_dir = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h:t")
-    -- Update the tmux window title to reflect the parent and current directory with the folder icon
-    os.execute('tmux rename-window " ' .. parent_dir .. '/' .. current_dir .. '"')
+	-- Get the parent directory and current directory from within Neovim
+	local parent_dir = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h:h:t")
+	local current_dir = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h:t")
+	-- Update the tmux window title to reflect the parent and current directory with the folder icon
+	os.execute('tmux rename-window " ' .. parent_dir .. "/" .. current_dir .. '"')
 end
-
-
 
 function _G.reload_config()
-	local handle = io.popen("chezmoi apply") -- Run the chezmoi apply command
-	local result = handle:read("*a") -- Get the result of the command
-	handle:close()
-	print(result) -- Print the result of the chezmoi apply command
+    -- Step 1: Execute the command sequence
+    local command_output = vim.fn.system('chezmoi apply && tmux source-file ~/.tmux.conf && source ~/.zshrc')
+    if vim.v.shell_error ~= 0 then
+        print("Error executing command sequence:", command_output)
+        return
+    end
 
-	-- global var defined in config.lua
-	vim.cmd("source " .. vim.g.my_chezmoi_config_path)
+    -- Save all open buffers
+    vim.cmd("wa")
 
-	-- The ':bufdo e' command will re-read every buffer
-	-- The ':wa' command will write all modified buffers
-	vim.cmd("silent! :wa")
-	vim.cmd("silent! :bufdo e")
+    -- Get the PID of the current nvim instance
+    local nvim_pid = vim.fn.getpid()
 
-	-- Reload all plugins with Lazy.nvim.
-	vim.cmd("LazyReload")
+    -- Start the restart script in the background, passing the current nvim PID as an argument, and disassociate from the current process
+    local restart_command = string.format('!nohup ~/.config/scripts/reload-nvim.sh %d > /dev/null 2>&1 &', nvim_pid)
+    vim.cmd(restart_command)
 
-	print("Config and plugins reloaded.")
+    -- Quit the current nvim instance
+    vim.cmd('qa!')
 end
 
 --TODO check if break register
@@ -351,18 +351,18 @@ end
 
 -- Function to convert WSL path to Windows path
 function wsl_to_win_path(wsl_path)
-    local handle = io.popen("wslpath -w '" .. wsl_path .. "'")
-    if not handle then
-        vim.cmd('echoerr "Failed to open handle for path conversion"')
-        return nil
-    end
-    local win_path = handle:read("*a")
-    handle:close()
-    if not win_path then
-        vim.cmd('echoerr "Failed to read from handle for path conversion"')
-        return nil
-    end
-    return win_path:gsub("\n", "")
+	local handle = io.popen("wslpath -w '" .. wsl_path .. "'")
+	if not handle then
+		vim.cmd('echoerr "Failed to open handle for path conversion"')
+		return nil
+	end
+	local win_path = handle:read("*a")
+	handle:close()
+	if not win_path then
+		vim.cmd('echoerr "Failed to read from handle for path conversion"')
+		return nil
+	end
+	return win_path:gsub("\n", "")
 end
 
 function _G.SaveWindowsCreds()
@@ -388,16 +388,16 @@ function _G.SaveWindowsCreds()
 
 	local home_dir = os.getenv("HOME")
 	local wsl_ps_script_path = home_dir .. "/.config/windows/SaveAsAdmin.ps1"
-  -- Translate WSL paths to Windows paths using wsl_to_win_path function
-    local windows_tmp_file_path = wsl_to_win_path(wsl_tmp_file_path)
-    local windows_file_path = wsl_to_win_path(file_path)
-    local ps_script_path = wsl_to_win_path(wsl_ps_script_path)
-    
-    -- Check if the conversion was successful
-    if not windows_tmp_file_path or not windows_file_path or not ps_script_path then
-        vim.cmd('echoerr "Path conversion failed"')
-        return
-    end
+	-- Translate WSL paths to Windows paths using wsl_to_win_path function
+	local windows_tmp_file_path = wsl_to_win_path(wsl_tmp_file_path)
+	local windows_file_path = wsl_to_win_path(file_path)
+	local ps_script_path = wsl_to_win_path(wsl_ps_script_path)
+
+	-- Check if the conversion was successful
+	if not windows_tmp_file_path or not windows_file_path or not ps_script_path then
+		vim.cmd('echoerr "Path conversion failed"')
+		return
+	end
 
 	-- PowerShell script to prompt for credentials in a new window and copy the file
 	-- Path to the PowerShell script

@@ -40,6 +40,8 @@ local modules = {
 	["dylan/spell"] = true,
 	["dylan/rust"] = true,
   ["dylan/autocmd"] = true,
+  ["dylan/lualine"] = true,
+  ["dylan/gitsigns"] = true,
 	-- ['codeium'] = true,  -- Uncomment if you want this module
 }
 -- vim.opt.spellfile = "/home/dylan/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add"
@@ -70,8 +72,10 @@ local os = package.config:sub(1,1) == '\\' and 'windows' or 'linux'
 -- Use the paths table to get the correct paths
 vim.g.my_ltexfile_path = paths[os].ltex
 vim.g.my_spellfile_path = paths[os].spell
-vim.g.my_chezmoi_config_path = paths[os].chezmoi_config
+-- vim.g.my_chezmoi_config_path = paths[os].chezmoi_config
 
+--HACK: correct this too
+vim.g.my_chezmoi_config_path = '/home/dylan/.config/lvim/config.lua'
 -- use the file defined before as spellfile 
 vim.opt.spellfile = vim.g.my_spellfile_path
 --

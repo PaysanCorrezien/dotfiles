@@ -195,9 +195,9 @@ $isAdmin = $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administ
 # and appends [ADMIN] if appropriate for easy taskbar identification
 function prompt { 
     if ($isAdmin) {
-        "[" + (Get-Location) + "] # " 
+        "PS [" + (Get-Location) + "] # -->" 
     } else {
-        "[" + (Get-Location) + "] $ "
+        "PS [" + (Get-Location) + "] $ -->"
     }
 }
 

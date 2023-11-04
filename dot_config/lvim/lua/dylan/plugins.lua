@@ -343,6 +343,18 @@ lvim.plugins = {
 			})
 		end,
 	},
+{
+    "tpope/vim-fugitive"
+  },
+  {
+    --HACK: until lvim do it 
+  "j-hui/fidget.nvim",
+  tag = "legacy",
+  event = "LspAttach",
+  opts = {
+    -- options
+  },
+}
 }
 -- end of lvim.plugins{}
 

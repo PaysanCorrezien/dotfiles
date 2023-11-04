@@ -11,6 +11,7 @@ lvim.builtin.which_key.mappings["H"] = { "<cmd>:lua require('harpoon.ui').toggle
 lvim.builtin.which_key.mappings["X"] = { ":lua RunPowershellCommand()<cr>", "Run PowerShell Command" }
 lvim.builtin.which_key.mappings["W"] = { ":lua SudoSave()<cr>", "Save with Sudo" }
 lvim.builtin.which_key.mappings["M"] = { ":lua SaveWindowsCreds()<cr>", "Save with Windows Credentials" }
+lvim.builtin.which_key.mappings["R"] = { ":lua reload_config()<cr>", "Reload Conf" }
 -- override a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 lvim.builtin.which_key.mappings["x"] = {
@@ -74,7 +75,7 @@ lvim.builtin.which_key.mappings["6"] = { "<cmd>BufferLineGoToBuffer 6<cr>", "Go 
 lvim.builtin.which_key.mappings["7"] = { "<cmd>BufferLineGoToBuffer 7<cr>", "Go To Tab 7" }
 
 -- TODO: symlink windows and wsl doc 
-lvim.builtin.which_key.mappings["8"] = { "<cmd>:TodoTrouble cwd=~/Documents/Projets<cr>", "Todo on All Project" }
+lvim.builtin.which_key.mappings["8"] = { "<cmd>:TodoTrouble cwd=/mnt/c/Users/dylan/Documents/Projet/Work/Projet/<cr>", "Todo on All Project" }
 -- lvim.builtin.which_key.mappings["8"] = { "<cmd>require ('telescope').extensions.file_browser.file_browser(path=%:p:h select_buffer=true)<cr>", "Telescope explorer" }
 -- lvim.builtin.which_key.mappings["E"] = { "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", "Telescope explorer" }
 lvim.builtin.which_key.mappings["E"] = { "<cmd>NnnPicker<cr>", "NNN File Browser"}
@@ -94,6 +95,12 @@ lvim.builtin.which_key.mappings["LD"] = { "<cmd>Telescope file_browser cwd=~/.lo
 lvim.builtin.which_key.mappings["Lx"] = { "<cmd>Telescope file_browser cwd=~/.local/share/chezmoi/<CR>", "Dotfiles" }
 -- lvim.builtin.which_key.mappings["S"] = { "<cmd>%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gIc<Left><Left><Left><Left><Left><CR>", "Replace Word" }
 -- lvim.builtin.which_key.mappings["S"] = { [[:%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gIc<Left><Left><Left><Left><Left><cr>]], "Search/replace Word" }
+-- GIT part 
+lvim.builtin.which_key.mappings["G"] = { "<cmd>Git<CR>", "Git" }
+lvim.builtin.which_key.mappings["gv"] = { "<cmd>!git commit -S<CR>", "Git commit" }
+lvim.builtin.which_key.mappings["ga"] = { "<cmd>Git add .<CR>", "Git Add ALL" }
+lvim.builtin.which_key.mappings["gL"] = { "<cmd>Gitsigns setloclist<CR>", "Git LocList" }
+lvim.builtin.which_key.mappings["gg"] = {}
 
 lvim.builtin.which_key.mappings["t"] = {
 	name = "+Trouble",
@@ -116,10 +123,10 @@ lvim.builtin.which_key.mappings["u"] = {
 }
 -- Reactive registre infos
 lvim.builtin.which_key.setup.plugins.registers = true
--- same w marks
 lvim.builtin.which_key.setup.plugins.marks = true
 lvim.builtin.which_key.setup.plugins.spelling = true
 lvim.builtin.which_key.setup.plugins.presets = true
+
 
 lvim.builtin.which_key.mappings["z"] = {
 	name = "+Telekasten",

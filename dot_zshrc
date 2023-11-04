@@ -51,6 +51,16 @@ eval "$(zoxide init zsh)"
 GPG_TTY=$(tty)
 export GPG_TTY
 
+# Copy current prompt to clipboard with ctrl A
+if [[ -n $DISPLAY ]]; then
+    copy_line_to_x_clipboard() {
+        echo -n $BUFFER | xclip -selection clipboard
+        zle reset-prompt
+    }
+    zle -N copy_line_to_x_clipboard
+    bindkey '^A' copy_line_to_x_clipboard
+fi
+
 
 # Provides gitignorrr completion for zsh
 _gitignorrr_get_command_list() {
