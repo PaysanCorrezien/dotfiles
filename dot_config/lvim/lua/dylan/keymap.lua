@@ -5,8 +5,8 @@ vim.keymap.set("n", "N", "NZzzv")
 --une erreur de syntaxe
 vim.keymap.set("n", "zj", "o<Esc>k") -- insert line down without leaver n mode
 vim.keymap.set("n", "zk", "O<Esc>j") -- insert line up without leaver n mode
-vim.keymap.set("n", "<leader>Zd", '"_d')
-vim.keymap.set("v", "<leader>Zd", '"_d')
+-- vim.keymap.set("n", "<leader>Zd", '"_d')
+-- vim.keymap.set("v", "<leader>Zd", '"_d')
 -- Use <C-B> (or <C-S-b> in some terminals) for visual block mode
 vim.keymap.set('n', '<C-b>', '<C-v>')
 
@@ -29,14 +29,7 @@ vim.keymap.set("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u") --accetp first suggest
 -- vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 -- vim.keymap.set({ "n", "v" }, "<leader>Y", [["+Y]])
 
-local icons_opts = { noremap = true, silent = true }
--- BUG: 
-vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal<cr>", icons_opts)
-vim.keymap.set("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", icons_opts) --> Yank the selected icon into register
-vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<cr>", icons_opts)
--- vim.keymap.set("i", "<C-I>", "<cmd>IconPickerInsert<cr>", icons_opts) -- not working with kitty
--- vim.keymap.set("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u") --syntaxe correction du dernier mot saisi
---
+vim.api.nvim_set_keymap('i', '<C-e>', '<Cmd>IconPickerInsert<CR>', { noremap = true })
 
 
 -- Set up the key mapping

@@ -8,8 +8,10 @@ alias ai="sgpt --repl temp --shell"
 # alias la='ls -A'
 # alias l='ls -CF'
 alias md="mkdir"
+alias mcd='f() { mkdir -p "$1" && cd "$1"; unset -f f; }; f'
 alias cat='batcat'
 alias bat='batcat'
+alias h='lvim $HISTFILE'
 
 # general use
 # alias l='exa -lbF --git --icons'                                               # list, size, type, git

@@ -13,6 +13,10 @@ lvim.lsp.installer.setup.ensure_installed = {
 	"tailwindcss",
 	"yamlls",
 	"tsserver",
+	"yamlls",
+  
+  -- TODO: set yaml, vim, and check others
+	"vimls",
 	-- "rust_analyzer"
 }
 require("lvim.lsp.manager").setup("bashls")

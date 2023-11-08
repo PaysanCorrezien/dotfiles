@@ -9,7 +9,7 @@ linters.setup({
 		-- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
 		extra_args = { "--severity", "warning" },
 	},
-	{ command = "jsonlint", filetype = { "json" } },
+	-- { command = "jsonlint", filetype = { "json" } },
 	-- Useless {  command = "csharpier", filetype = { "cs"}},
 	-- {
 	-- 	command = "codespell",

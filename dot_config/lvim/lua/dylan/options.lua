@@ -18,8 +18,10 @@ vim.opt.mouse = "a" -- allow the mouse to be used in Neovim
 --
 vim.opt.cursorline = false -- highlight the current line
 --Configuration du spelling z=
--- vim.opt.spell = true
-vim.opt.spelllang = { "fr" }
+vim.opt.spell = true
+-- BUG: enforcing install ok each launch ??
+-- vim.opt.spelllang = { "fr" , "en" }
+
 -- vim.opt.spellfile = "/home/dylan/.config/lvim/dict/spell.utf-8.add"
 -- vim.opt.spellfile = "~/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add"
 -- general
@@ -47,7 +49,7 @@ lvim.builtin.bufferline.options.numbers = "ordinal"
 lvim.builtin.treesitter.highlight.enable = true
 -- Enble cmp completion for command line
 lvim.builtin.cmp.cmdline.enable = true
-lvim.builtin.cmp.crates.enable = true
+-- lvim.builtin.cmp.crates.enable = true
 
 -- lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
 -- table.insert(lvim.builtin.cmp.sources,1,{ name = "copilot" })

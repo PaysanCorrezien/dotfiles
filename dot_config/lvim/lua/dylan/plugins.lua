@@ -143,10 +143,6 @@ lvim.plugins = {
 	{ "ggandor/flit.nvim" },
 
 	-- {
-	--   "jcdickinson/http.nvim",
-	--   build = "cargo build --workspace --release"
-	-- },
-	-- {
 	--   "jcdickinson/codeium.nvim",
 	--   dependencies = {
 	--     -- "jcdickinson/http.nvim",
@@ -172,24 +168,33 @@ lvim.plugins = {
 		},
 		config = function()
 			require("chatgpt").setup({
-				chat = {
-					keymaps = {
-						close = "<C-c>",
-						yank_last = "<C-y>",
-						scroll_up = "<C-u>",
-						scroll_down = "<C-d>",
-						toggle_settings = "<C-o>",
-						new_session = "<C-n>",
-						cycle_windows = "<Tab>",
-						select_session = "<C-g>",
-					},
+				-- chat = {
+				-- 	keymaps = {
+				-- 		close = "<C-c>",
+				-- 		yank_last = "<C-y>",
+				-- 		scroll_up = "<C-u>",
+				-- 		scroll_down = "<C-d>",
+				-- 		toggle_settings = "<C-o>",
+				-- 		new_session = "<C-n>",
+				-- 		cycle_windows = "<Tab>",
+				-- 		select_session = "<C-g>",
+				-- 	},
+				-- },
+				openai_params = {
+					model = "gpt-4-1106-preview",
+					frequency_penalty = 0,
+					presence_penalty = 0,
+					max_tokens = 1000,
+					temperature = 0,
+					top_p = 1,
+					n = 1,
 				},
 
 				actions_paths = { "/home/dylan/.config/lvim/correct_french.json" },
-				predefined_chat_gpt_prompts = "http://127.0.0.1:8080/prompts.csv",
-				popup_input = {
-					submit = "<CR>",
-				},
+				predefined_chat_gpt_prompts = "https://raw.githubusercontent.com/PaysanCorrezien/dotfiles/main/dot_config/lvim/prompts.csv",
+				-- popup_input = {
+				-- 	submit = "<CR>",
+				-- },
 			})
 		end,
 	},
@@ -267,16 +272,17 @@ lvim.plugins = {
 			end,
 		},
 	},
-	{
-		"iamcco/markdown-preview.nvim",
-		build = "cd app && npm install",
-		init = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = { "markdown" },
-	},
+	-- {
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	build = "cd app && npm install",
+	-- 	init = function()
+	-- 		vim.g.mkdp_filetypes = { "markdown" }
+	-- 	end,
+	-- 	ft = { "markdown" },
+	-- },
 	{ "debugloop/telescope-undo.nvim" },
-	{ dir = "~/Documents/Projets/NeovimPlugins/ObsidianExtra.nvim" },
+	-- TODO : cleanup this
+	-- { dir = "~/Documents/Projets/NeovimPlugins/ObsidianExtra.nvim" },
 	--lazy
 	{
 		"nvim-telescope/telescope-file-browser.nvim",
@@ -343,27 +349,19 @@ lvim.plugins = {
 			})
 		end,
 	},
-{
-    "tpope/vim-fugitive"
-  },
-  {
-    --HACK: until lvim do it 
-  "j-hui/fidget.nvim",
-  tag = "legacy",
-  event = "LspAttach",
-  opts = {
-    -- options
-  },
-}
+	{
+		"tpope/vim-fugitive",
+	},
+	{
+		--HACK: until lvim do it
+		"j-hui/fidget.nvim",
+		tag = "legacy",
+		event = "LspAttach",
+		opts = {
+			-- options
+		},
+	},
 }
 -- end of lvim.plugins{}
 
-require("utils")
-
-local plugins_not_on_windows = {
-	"iamcco/markdown-preview.nvim",
-	"jackMort/ChatGPT.nvim",
-	-- More plugins...
-}
-
-_G.remove_plugins_for_windows(plugins_not_on_windows)
+-- require("utils")
