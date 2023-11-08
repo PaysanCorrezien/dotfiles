@@ -2,8 +2,9 @@
 # Chezmoi in WSL directly install few windows config files 
 
 # Directly obtaining the username using whoami
-windowsUsername=$(whoami)
-
+# windowsUsername=$(whoami)
+# Because im stupid and cant use same wsl user name as my windows user
+windowsUsername=$(cmd.exe /C "echo %USERNAME%" 2>/dev/null | tr -d '\r')
 # Dynamic path construction to handle different usernames
 windowsPath="/mnt/c/Users/${windowsUsername}"
 

@@ -355,7 +355,7 @@ lvim.plugins = {
 	{
 		--HACK: until lvim do it
 		"j-hui/fidget.nvim",
-		tag = "legacy",
+		version= "legacy",
 		event = "LspAttach",
 		opts = {
 			-- options

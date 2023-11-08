@@ -47,7 +47,8 @@ code_actions.setup({
 	},
 })
 
-lvim.lsp.automatic_configuration.skipped_servers = { "svelte" }
+lvim.lsp.automatic_configuration.skipped_servers = { "svelte",
+"sourcery", "jedi_language_server","ruff_lsp"}
 
 -- lvim.lsp.override = { "svelte" }
 require("lspconfig").svelte.setup({
