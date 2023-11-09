@@ -23,7 +23,7 @@ function _G.search_and_replace()
 	end
 end
 
--- for autocommand on open  
+-- for autocommand on open
 function _G.rename_tmux_pane()
 	local current_file = vim.fn.expand("%:t") -- Get the current file name
 	local parent_dir = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h:t") -- Get the parent directory name
@@ -42,25 +42,25 @@ function _G.reset_tmux_pane()
 end
 
 function _G.reload_config()
-    -- Step 1: Execute the command sequence
-    local command_output = vim.fn.system('chezmoi apply && tmux source-file ~/.tmux.conf && source ~/.zshrc')
-    if vim.v.shell_error ~= 0 then
-        print("Error executing command sequence:", command_output)
-        return
-    end
+	-- Step 1: Execute the command sequence
+	local command_output = vim.fn.system("chezmoi apply && tmux source-file ~/.tmux.conf && source ~/.zshrc")
+	if vim.v.shell_error ~= 0 then
+		print("Error executing command sequence:", command_output)
+		return
+	end
 
-    -- Save all open buffers
-    vim.cmd("wa")
+	-- Save all open buffers
+	vim.cmd("wa")
 
-    -- Get the PID of the current nvim instance
-    local nvim_pid = vim.fn.getpid()
+	-- Get the PID of the current nvim instance
+	local nvim_pid = vim.fn.getpid()
 
-    -- Start the restart script in the background, passing the current nvim PID as an argument, and disassociate from the current process
-    local restart_command = string.format('!nohup ~/.config/scripts/reload-nvim.sh %d > /dev/null 2>&1 &', nvim_pid)
-    vim.cmd(restart_command)
+	-- Start the restart script in the background, passing the current nvim PID as an argument, and disassociate from the current process
+	local restart_command = string.format("!nohup ~/.config/scripts/reload-nvim.sh %d > /dev/null 2>&1 &", nvim_pid)
+	vim.cmd(restart_command)
 
-    -- Quit the current nvim instance
-    vim.cmd('qa!')
+	-- Quit the current nvim instance
+	vim.cmd("qa!")
 end
 
 --TODO check if break register
@@ -349,20 +349,19 @@ function _G.SudoSave()
 	vim.cmd(cmd)
 end
 
--- Function to convert WSL path to Windows path
 function wsl_to_win_path(wsl_path)
-	local handle = io.popen("wslpath -w '" .. wsl_path .. "'")
-	if not handle then
-		vim.cmd('echoerr "Failed to open handle for path conversion"')
-		return nil
-	end
-	local win_path = handle:read("*a")
-	handle:close()
-	if not win_path then
-		vim.cmd('echoerr "Failed to read from handle for path conversion"')
-		return nil
-	end
-	return win_path:gsub("\n", "")
+    local handle = io.popen("wslpath -w '" .. wsl_path .. "'")
+    if not handle then
+        vim.cmd('echoerr "Failed to open handle for path conversion"')
+        return nil
+    end
+    local win_path = handle:read("*a")
+    handle:close()
+    if not win_path then
+        vim.cmd('echoerr "Failed to read from handle for path conversion"')
+        return nil
+    end
+    return win_path:gsub("\n", "")
 end
 
 function _G.SaveWindowsCreds()
@@ -387,17 +386,17 @@ function _G.SaveWindowsCreds()
 	vim.cmd("w " .. wsl_tmp_file_path)
 
 	local home_dir = os.getenv("HOME")
-	local wsl_ps_script_path = home_dir .. "/.config/windows/SaveAsAdmin.ps1"
-	-- Translate WSL paths to Windows paths using wsl_to_win_path function
-	local windows_tmp_file_path = wsl_to_win_path(wsl_tmp_file_path)
-	local windows_file_path = wsl_to_win_path(file_path)
-	local ps_script_path = wsl_to_win_path(wsl_ps_script_path)
-
-	-- Check if the conversion was successful
-	if not windows_tmp_file_path or not windows_file_path or not ps_script_path then
-		vim.cmd('echoerr "Path conversion failed"')
-		return
-	end
+	local wsl_ps_script_path = home_dir .. "/.config/windows/PowershellScripts/SaveAsAdmin.ps1"
+  -- Translate WSL paths to Windows paths using wsl_to_win_path function
+    local windows_tmp_file_path = wsl_to_win_path(wsl_tmp_file_path)
+    local windows_file_path = wsl_to_win_path(file_path)
+    local ps_script_path = wsl_to_win_path(wsl_ps_script_path)
+    
+    -- Check if the conversion was successful
+    if not windows_tmp_file_path or not windows_file_path or not ps_script_path then
+        vim.cmd('echoerr "Path conversion failed"')
+        return
+    end
 
 	-- PowerShell script to prompt for credentials in a new window and copy the file
 	-- Path to the PowerShell script
