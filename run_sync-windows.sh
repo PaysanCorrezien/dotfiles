@@ -32,3 +32,8 @@ destDir="${windowsPath}/.glaze-wm"
 check_and_create_dir "$destDir"
 cp "${sourceDir}/config.yaml" "${destDir}/config.yaml"
 
+# New section to copy Desktop Shortcuts
+sourceDir="$HOME/.local/share/chezmoi/dot_windows/DesktopShortcut"
+destDir="${windowsPath}/Desktop"
+check_and_create_dir "$destDir"
+cp "${sourceDir}"/* "${destDir}/"
