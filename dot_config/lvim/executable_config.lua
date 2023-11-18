@@ -7,7 +7,9 @@ vim.g.my_ltexfile_path = home .. "/.local/share/chezmoi/dot_config/lvim/dict/lte
 vim.g.my_spellfile_path = home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add"
 vim.g.my_chezmoi_config_path = home .. "/.local/share/chezmoi/dot_config/lvim/executable_config.lua"
 -- 10:58:39 AM msg_show Warning: Cannot find word list "fr.utf-8.spl" or "fr.ascii.spl"
---
+--TODO: prevent hardcode somehow ? install pynvim before lvim ?
+vim.g.python3_host_prog = home .. "/.pyenv/versions/3.10.4/bin/python"
+
 
 -- use the file defined before as spellfile
 -- vim.opt.spellfile = vim.g.my_spellfile_path
@@ -34,6 +36,7 @@ require("dylan/autocommands")
 require("dylan/lualine")
 require("dylan/gitsigns")
 require("dylan/treesitter")
+-- require("dylan/python")
 -- ['codeium'] = true,  -- Uncomment if you want this module
 -- vim.opt.spellfile = "/home/dylan/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add"
 -- usefull functions

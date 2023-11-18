@@ -9,7 +9,7 @@ fi
 
 #Mount network drive 
 if [ -f ~/networkdrive.sh ]; then
-    ~/networkdrive.sh
+  sudo ~/networkdrive.sh
 fi
 
 # keepass windows key authen without password

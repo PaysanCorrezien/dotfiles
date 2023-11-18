@@ -14,11 +14,14 @@ lvim.lsp.installer.setup.ensure_installed = {
 	"yamlls",
 	"tsserver",
 	"yamlls",
-  
-  -- TODO: set yaml, vim, and check others
+	"pyright",
+  "ruff_lsp",
+  "dockerls",
 	"vimls",
-	-- "rust_analyzer"
 }
+-- Disable automatic serv install
+lvim.lsp.installer.setup.automatic_installation = false
+lvim.lsp.automatic_configuration.skipped_servers = { "svelte","tsserver","pylsp","pyright","jsonls","eslink_d" }
 require("lvim.lsp.manager").setup("bashls")
 require("lvim.lsp.manager").setup("cssls")
 require("lvim.lsp.manager").setup("html")
@@ -31,14 +34,23 @@ require("lvim.lsp.manager").setup("tsserver")
 require("lvim.lsp.manager").setup("yamlls")
 -- require("lvim.lsp.manager").setup("rust_analyzer")
 
-require("lspconfig").jsonls.setup({
-	cmd = { "vscode-json-language-server", "--stdio" },
-	filetypes = { "json", "jsonc" },
-	init_options = {
-		provideFormatter = true,
-	},
-	single_file_support = true,
+
+require("lspconfig").yamlls.setup({
+    settings = {
+        yaml = {
+            schemas = { kubernetes = "*.yaml" },  -- example schema configuration
+            hover = true,
+            completion = true,
+            validate = true,
+            format = {
+                enable = true,
+                bracketSpacing = true,
+                printWidth = 80,
+            },
+        },
+    },
 })
+
 
 local code_actions = require("lvim.lsp.null-ls.code_actions")
 code_actions.setup({
@@ -47,8 +59,37 @@ code_actions.setup({
 	},
 })
 
-lvim.lsp.automatic_configuration.skipped_servers = { "svelte",
-"sourcery", "jedi_language_server","ruff_lsp"}
+-- Advanced pyright configuration
+
+local pyright_opts = {
+  single_file_support = true,
+  settings = {
+    pyright = {
+      disableLanguageServices = false,
+      disableOrganizeImports = false,
+    },
+    python = {
+      analysis = {
+        autoImportCompletions = true,
+        autoSearchPaths = true,
+        diagnosticMode = "workspace", -- openFilesOnly, workspace
+        typeCheckingMode = "basic", -- off, basic, strict
+        useLibraryCodeForTypes = true,
+      },
+    },
+  },
+}
+
+require("lvim.lsp.manager").setup("pyright", pyright_opts)
+
+require("lspconfig").jsonls.setup({
+	cmd = { "vscode-json-language-server", "--stdio" },
+	filetypes = { "json", "jsonc" },
+	init_options = {
+		provideFormatter = true,
+	},
+	single_file_support = true,
+})
 
 -- lvim.lsp.override = { "svelte" }
 require("lspconfig").svelte.setup({
@@ -106,7 +147,7 @@ require("lspconfig").svelte.setup({
 		},
 	},
 })
-lvim.lsp.automatic_configuration.skipped_servers = { "tsserver" }
+
 -- lvim.lsp.override = { "tsserver" }
 require("lspconfig").tsserver.setup({
 	cmd = { "typescript-language-server", "--stdio" },
