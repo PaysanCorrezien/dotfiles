@@ -438,3 +438,24 @@ function _G.SaveWindowsCreds()
 		vim.cmd('echoerr "Copy failed"')
 	end
 end
+
+function _G.PushNotes()
+    local home_dir = os.getenv("HOME")
+    local file_path = vim.fn.expand('%:p') -- Get the full path of the current file
+    -- Update the command to include -f and -blog arguments
+    local command = home_dir .. "/.config/scripts/obsidiantodocusaurus.sh -f '" .. file_path .. "' -blog"
+    local handle = io.popen(command)
+    local result = handle:read("*a")
+    handle:close()
+
+    -- The rest of the function remains the same...
+    vim.cmd('vsplit')
+    vim.cmd('enew') -- Open a new empty buffer
+
+    vim.bo.buftype = 'nofile'
+    vim.bo.bufhidden = 'hide'
+    vim.bo.swapfile = false
+    vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(result, '\n')) -- Set the lines of the buffer to the command output
+end
+
+

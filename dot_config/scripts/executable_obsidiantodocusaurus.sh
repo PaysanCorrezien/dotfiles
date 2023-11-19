@@ -10,6 +10,7 @@ debug_echo() {
     fi
 }
 # Hardcoded paths
+# TODO: replace with a cmd.exe whoami + an arg for windows user folder dir /Documents/Obsidian ..
 image_source_path="/mnt/c/Users/dylan/Documents/Obsidian Vault/Zettelkasten/Files/"
 blog_destination_path="/mnt/c/Users/dylan/Documents/Projet/Work/Projet/blog2023/blog/"
 docs_destination_path="/mnt/c/Users/dylan/Documents/Projet/Work/Projet/blog2023/docs/KnowledgeBase/"
@@ -21,27 +22,39 @@ debug_echo "Paths set. Image source: $image_source_path, Blog dest: $blog_destin
 update_image_links() {
     local file=$1
     local image_name
+    local new_image_name
 
-    debug_echo "Updating image links in file: $file"
+    grep -oP '\!\[\[\K.*?(?=\]\])' "$file" | while read -r image_name; do
+        debug_echo "Processing image: $image_name"
 
-    # Extract image names and update links
-    grep -oP '!\[.*?\]\(\K.*?(?=\))' "$file" | while read -r image_link; do
-        image_name=$(basename "$image_link")
+        # Replace spaces with dashes in the image name
+        new_image_name=$(echo "$image_name" | sed 's/ /-/g')
 
-        debug_echo "Processing image: $image_name from link: $image_link"
+        # Copy image from source to remote path with updated image name
+        cp "${image_source_path}/${image_name}" "${remote_image_path}/${new_image_name}"
+        debug_echo "Copied $image_name to $remote_image_path/$new_image_name"
 
-        # Copy image from source to remote path
-        cp "${image_source_path}/${image_name}" "${remote_image_path}/${image_name}"
-        debug_echo "Copied $image_name to $remote_image_path"
-
-        # Build new link
-        new_link="/static/img/${image_name}"  # Updated link format
+        # Build new link with correct path for Docusaurus and updated image name
+        new_link=".././static/img/${new_image_name}"
         debug_echo "New link: $new_link"
 
-        # Update link in the file
-        sed -i "s|${image_link}|${new_link}|g" "$file"
+        # Update link in the file with the new image name
+        sed -i "s|\!\[\[${image_name}\]\]|![${new_image_name}](${new_link})|g" "$file"
         debug_echo "Updated link in file: $file"
     done
+}
+
+
+remove_html_title() {
+    local file=$1
+    debug_echo "Removing HTML Title"
+    sed -i '/<h1> <center><u>.*<\/u><\/center><\/h1>/d' "$file"
+}
+
+remove_tldr_lines() {
+    local file=$1
+    debug_echo "Removing TLDR "
+    sed -i '/^> \[!tldr\].*/d' "$file"
 }
 
 # Parse arguments
@@ -79,5 +92,13 @@ debug_echo "Arguments parsed. Filepath: $filepath, Destination: $destination"
 cp "$filepath" "$destination"
 debug_echo "Copied $filepath to $destination"
 
+# Full path of the file at the destination
+dest_file="${destination}/$(basename "$filepath")"
+
+# Call functions to modify the file at the destination
+remove_html_title "$dest_file"
+emove_tldr_lines "$dest_file"
+
 # Update image links in the copied file
-update_image_links "${destination}/$(basename "$filepath")"
+update_image_links "$dest_file"
+

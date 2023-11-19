@@ -112,6 +112,7 @@ lvim.builtin.which_key.setup.plugins.presets = true
 lvim.builtin.which_key.mappings["z"] = {
 	name = "+Telekasten",
 	f = { ":lua require('telekasten').find_notes()<CR>", "Find Notes" },
+  P = { ":lua PushNotes()<CR>", "Push Notes" }, --
 	-- Z = { "lua require('telekasten').panel()<CR>", "Telekasten Panel" },
 	-- d = { ":lua require('telekasten').find_daily_notes()<CR>", ".find_daily_notes" },
 	g = { ":lua require('telekasten').search_notes()<CR>", "Search W under cursor in notes" },
