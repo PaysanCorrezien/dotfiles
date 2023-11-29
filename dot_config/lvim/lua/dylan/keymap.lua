@@ -1,3 +1,19 @@
+local ls = require("luasnip")
+
+-- Jump forward with Ctrl+L
+vim.keymap.set({"i", "s"}, "<C-l>", function()
+    if ls.jumpable(1) then
+        ls.jump(1)
+    end
+end, {silent = true})
+
+-- Jump backward with Ctrl+H
+vim.keymap.set({"i", "s"}, "<C-h>", function()
+    if ls.jumpable(-1) then
+        ls.jump(-1)
+    end
+end, {silent = true})
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
@@ -23,14 +39,12 @@ vim.keymap.set("n", "<S-Down>", "ddp") --move line down on normal mode with shif
 vim.api.nvim_set_keymap("n", "<C-a>", ':lua vim.cmd("normal! ggVG")<CR>', { noremap = true }) -- Select ALL
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>" -- KEKW ctrl s sickness
 
-vim.keymap.set("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u") --accetp first suggestion from :spellcheck for last word that the spellchecker find wrong
-
+-- vim.keymap.set("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u") --accetp first suggestion from :spellcheck for last word that the spellchecker find wrong
 
 -- vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 -- vim.keymap.set({ "n", "v" }, "<leader>Y", [["+Y]])
 
 vim.api.nvim_set_keymap('i', '<C-e>', '<Cmd>IconPickerInsert<CR>', { noremap = true })
-
 
 -- Set up the key mapping
 vim.api.nvim_set_keymap(

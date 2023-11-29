@@ -81,6 +81,8 @@ alias tmux="tmux -u"
 alias tmuxm="tmux new-session \; split-window -h \; split-window -v \; attach"
 alias t="tmux list-sessions &> /dev/null && tmux attach || tmux new-session"
 
+alias dk="lazydocker"
+
 # BUG:
 alias sync='chezmoi apply && tmux source-file ~/.tmux.conf && source ~/.zshrc'
 

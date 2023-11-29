@@ -1,4 +1,4 @@
-#Fichier export 
+#Fichier export
 export PATH=$HOME/.config/rofi/bin:$PATH
 export PATH=$HOME/.config/rofi/applets/bin:$PATH
 export PATH=$HOME/.config/rofi/scripts:$PATH
@@ -53,4 +53,5 @@ p() {
 # Full path to PowerShell executable
 tmux new-window -n powershell "cmd.exe /K \\\\\\\\wsl.localhost\\\\Debian\\\\home\\\\dylan\\\\.config\\\\windows\\\\launchpwsh.bat"
 }
+
 

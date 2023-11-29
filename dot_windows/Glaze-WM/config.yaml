@@ -131,7 +131,7 @@ window_rules:
   - command: "move to workspace 7"
     match_process_name: "KeePassXC"
 
- # Rule for sending Windows Explorer to workspace 3
+  # Rule for sending Windows Explorer to workspace 3
   - command: "move to workspace 3"
     match_process_name: "Obsidian"
 
@@ -159,60 +159,69 @@ window_rules:
   - command: "move to workspace 5"
     match_process_name: "msedge"
     match_class_name: "Chrome_WidgetWin_1"
-    match_title: "/^(?!.*ChatGPT).*/"  # Negative lookahead to exclude ChatGPT
-  
+    match_title: "/^(?!.*ChatGPT).*/" # Negative lookahead to exclude ChatGPT
+
   # Rule for specific Edge window (e.g., ChatGPT) on workspace 4
   - command: "move to workspace 4"
     match_process_name: "msedge"
     match_class_name: "Chrome_WidgetWin_1"
     match_title: "/ChatGPT/"
 
+  # Rule for Edge windows with the Readwise app to workspace 8
+  - command: "move to workspace 8"
+    match_process_name: "msedge"
+    match_class_name: "Chrome_WidgetWin_1"
+    match_title: "/Readwise/"
+
   # Rule for floating Windows Terminal with a title starting with "fzf-"
   - command: "set floating"
     match_process_name: "WindowsTerminal"
     match_title: "/^FZF-.*/"
 
-  # Powershell Menu always float 
+  - command: "set floating"
+    match_process_name: "wezterm-gui"
+    # match_title: "/^TUI.*/"
+
+  # Powershell Menu always float
   - command: "set floating"
     match_title: "/MenuList/"
-
 
 binding_modes:
   - name: "resize"
     keybindings:
       # Resize focused window by a percentage or pixel amount.
       - command: "resize width -2%"
-        bindings: [ "H", "Left" ]
+        bindings: ["H", "Left"]
       - command: "resize width +2%"
-        bindings: [ "L", "Right" ]
+        bindings: ["L", "Right"]
       - command: "resize height +2%"
-        bindings: [ "K", "Up" ]
+        bindings: ["K", "Up"]
       - command: "resize height -2%"
-        bindings: [ "J", "Down" ]
+        bindings: ["J", "Down"]
       # Press enter/escape to return to default keybindings.
       - command: "binding mode none"
-        bindings: [ "Escape", "Enter" ]
+        bindings: ["Escape", "Enter"]
 
 keybindings:
   # Shift focus in a given direction.
   - command: "focus left"
-    bindings: [ "Alt+H", "Alt+Left" ]
+    bindings: ["Alt+H", "Alt+Left"]
   - command: "focus right"
-    bindings: [ "Alt+L", "Alt+Right" ]
+    bindings: ["Alt+L", "Alt+Right"]
   - command: "focus up"
-    bindings: [ "Alt+K", "Alt+Up" ]
+    bindings: ["Alt+K", "Alt+Up"]
   - command: "focus down"
-    bindings: [ "Alt+J", "Alt+Down" ]
+    bindings: ["Alt+J", "Alt+Down"]
 
   # Move focused window in a given direction.
   - command: "move left"
-    bindings: [ "Alt+Shift+H", "Alt+Shift+Left" ]
+    bindings: ["Alt+Shift+H", "Alt+Shift+Left"]
   - command: "move right"
-    bindings: [ "Alt+Shift+L", "Alt+Shift+Right" ]
+    bindings: ["Alt+Shift+L", "Alt+Shift+Right"]
   - command: "move up"
-    bindings: [ "Alt+Shift+K", "Alt+Shift+Up" ]
+    bindings: ["Alt+Shift+K", "Alt+Shift+Up"]
   - command: "move down"
-    bindings: [ "Alt+Shift+J", "Alt+Shift+Down" ]
+    bindings: ["Alt+Shift+J", "Alt+Shift+Down"]
 
   # Resize focused window by a percentage or pixel amount.
   - command: "resize width -2%"
@@ -308,22 +317,24 @@ keybindings:
     binding: "Alt+S"
 
   # Move focused window to a workspace defined in `workspaces` config.
-  - commands: [ "move to workspace 1", "focus workspace 1" ]
+  - commands: ["move to workspace 1", "focus workspace 1"]
     binding: "Alt+Shift+1"
-  - commands: [ "move to workspace 2", "focus workspace 2" ]
+  - commands: ["move to workspace 2", "focus workspace 2"]
     binding: "Alt+Shift+2"
-  - commands: [ "move to workspace 3", "focus workspace 3" ]
+  - commands: ["move to workspace 3", "focus workspace 3"]
     binding: "Alt+Shift+3"
-  - commands: [ "move to workspace 4", "focus workspace 4" ]
+  - commands: ["move to workspace 4", "focus workspace 4"]
     binding: "Alt+Shift+4"
-  - commands: [ "move to workspace 5", "focus workspace 5" ]
+  - commands: ["move to workspace 5", "focus workspace 5"]
     binding: "Alt+Shift+5"
-  - commands: [ "move to workspace 6", "focus workspace 6" ]
+  - commands: ["move to workspace 6", "focus workspace 6"]
     binding: "Alt+Shift+6"
-  - commands: [ "move to workspace 7", "focus workspace 7" ]
+  - commands: ["move to workspace 7", "focus workspace 7"]
     binding: "Alt+Shift+7"
-  - commands: [ "move to workspace 8", "focus workspace 8" ]
+  - commands: ["move to workspace 8", "focus workspace 8"]
     binding: "Alt+Shift+8"
-  - commands: [ "move to workspace 9", "focus workspace 9" ]
-    bindings: [ "Alt+Shift+9" ]
+  - commands: ["move to workspace 9", "focus workspace 9"]
+    bindings: ["Alt+Shift+9"]
   #Dylan Cooking
+  - command: "exec powershell -WindowStyle Hidden -File '//wsl.localhost/Debian/home/dylan/.config/windows/PowershellScripts/OpenTerminalAsFloating.ps1'"
+    binding: "Alt+E"

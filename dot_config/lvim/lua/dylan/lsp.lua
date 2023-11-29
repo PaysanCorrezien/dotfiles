@@ -21,7 +21,7 @@ lvim.lsp.installer.setup.ensure_installed = {
 }
 -- Disable automatic serv install
 lvim.lsp.installer.setup.automatic_installation = false
-lvim.lsp.automatic_configuration.skipped_servers = { "svelte","tsserver","pylsp","pyright","jsonls","eslink_d" }
+lvim.lsp.automatic_configuration.skipped_servers = { "svelte","tsserver","pylsp","pyright","jsonls","eslink_d","yamlls" }
 require("lvim.lsp.manager").setup("bashls")
 require("lvim.lsp.manager").setup("cssls")
 require("lvim.lsp.manager").setup("html")
@@ -38,7 +38,10 @@ require("lvim.lsp.manager").setup("yamlls")
 require("lspconfig").yamlls.setup({
     settings = {
         yaml = {
-            schemas = { kubernetes = "*.yaml" },  -- example schema configuration
+            schemas = {
+                ["https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml"] = "*.yaml", -- Path to your OpenAI schema
+                -- kubernetes = "*.yaml" -- Retain the existing Kubernetes configuration
+            },
             hover = true,
             completion = true,
             validate = true,
@@ -50,6 +53,7 @@ require("lspconfig").yamlls.setup({
         },
     },
 })
+
 
 
 local code_actions = require("lvim.lsp.null-ls.code_actions")

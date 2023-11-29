@@ -86,3 +86,61 @@ function FzF-FilePath {
     # Call Start-CustomTerm with the combined script content
     Start-CustomTerm -ScriptContent $scriptContent
 }
+
+<#
+.SYNOPSIS
+Starts a custom terminal to run fzf with specified options and performs an action on the selected item.
+
+.DESCRIPTION
+The Start-FZFCustomTerm function starts a custom terminal, runs fzf with specified options, and executes a provided action script block on the selected item.
+
+.PARAMETER windowTitle
+Specifies the title of the custom terminal window.
+
+.PARAMETER FzfArgumentList
+Specifies the arguments for fzf command.
+
+.PARAMETER List
+Specifies the items to be listed in fzf.
+
+.PARAMETER ActionCommand
+Specifies a script block to run on the selected item.
+
+.EXAMPLE
+Start-FZFCustomTerm -windowTitle "Custom Terminal" -FzfArgumentList "--reverse" -List $(Get-ChildItem) -Action { param($item) Start-Process $item }
+
+.INPUTS
+None
+
+.OUTPUTS
+None
+#>
+function Start-FZFCustomTerm
+{
+    param(
+        [string]$windowTitle = "Custom FZF Terminal",
+        [string]$FzfArgumentList,
+        [System.Collections.IEnumerable]$List,
+        [string]$ActionCommand
+    )
+
+    # Convert the list to a newline-separated string
+    $ListAsString = $List | Out-String
+
+    # Define the script content
+    $scriptContent = @"
+        `$ListAsString = 'LIST_AS_STRING_PLACEHOLDER'
+        `$List = `$ListAsString -split "`r`n" | Where-Object {`$_ -ne ''}
+        `$selectedItem = `$List | fzf $FzfArgumentList
+        if (`$selectedItem) {
+            `$commandToRun = "{0} '{1}'" -f "$ActionCommand", `$selectedItem
+            Invoke-Expression `$commandToRun
+        }
+"@
+
+    # Replace placeholder with actual list string
+    $scriptContent = $scriptContent.Replace('LIST_AS_STRING_PLACEHOLDER', $ListAsString)
+
+    # Call Start-CustomTerm with the script content
+    Start-CustomTerm -windowTitle $windowTitle -ScriptContent $scriptContent
+}
