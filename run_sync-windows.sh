@@ -1,6 +1,5 @@
 #!/bin/bash
 # Chezmoi in WSL directly install few windows config files 
-
 # Directly obtaining the username using whoami
 # windowsUsername=$(whoami)
 # Because im stupid and cant use same wsl user name as my windows user
@@ -37,3 +36,10 @@ sourceDir="$HOME/.local/share/chezmoi/dot_windows/DesktopShortcut"
 destDir="${windowsPath}/Desktop"
 check_and_create_dir "$destDir"
 cp "${sourceDir}"/* "${destDir}/"
+
+sourceDir="$HOME/.local/share/chezmoi/dot_windows/Wezterm"
+destDir="${windowsPath}/.config/wezterm"
+check_and_create_dir "$destDir"
+# Find all directories in the source directory and replicate them in the destination
+mkdir -p "${destDir}/Fonts"
+rsync -au --ignore-existing "${sourceDir}/" "${destDir}/"
