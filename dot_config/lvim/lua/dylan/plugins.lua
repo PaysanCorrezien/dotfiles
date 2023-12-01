@@ -1,5 +1,6 @@
 lvim.plugins = {
 	{ "lunarvim/colorschemes" },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	-- { "codethread/qmk.nvim",
 	-- config = function()
 
@@ -126,7 +127,6 @@ lvim.plugins = {
 		dependencies = { "nvim-telescope/telescope.nvim" },
 	},
 	-- { "renerocksai/calendar-vim" },
-	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "theprimeagen/harpoon" },
 	{ "christoomey/vim-tmux-navigator" },
 	{

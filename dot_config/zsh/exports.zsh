@@ -5,7 +5,8 @@ export PATH=$HOME/.config/rofi/scripts:$PATH
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/snap/bin:$PATH"
 
-[[ $TMUX != "" ]] && export TERM="screen-256color"
+# export TERM=xterm-256color
+# [[ $TMUX != "" ]] && export TERM="screen-256color"
 export EDITOR="lvim"
 export PATH="$PATH:/var/lib/snapd/desktop/applications"
 export PATH="$PATH:$HOME/bin/"

@@ -44,8 +44,6 @@ require("utils")
 --  function inside utiles chack only load certain modules on linux to not use some on work computer
 -- TODO: Remplacer par bon path
 
-
-
 --
 -- Test Tmux rename auto
 vim.o.title = true

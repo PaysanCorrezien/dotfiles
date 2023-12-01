@@ -31,7 +31,9 @@ compinit
 
 # HACK: 
 # test debut lvim tmux
+
 export LUNARVIM_CONFIG_DIR="${LUNARVIM_CONFIG_DIR:-"/home/dylan/.config/lvim"}"
+
 export LUNARVIM_CACHE_DIR="${LUNARVIM_CACHE_DIR:-"/home/dylan/.cache/lvim"}"
 export LUNARVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-"/home/dylan/.local/share/lunarvim"}"
 # HACK: 
