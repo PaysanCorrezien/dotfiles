@@ -137,10 +137,11 @@ lvim.builtin.which_key.mappings["z"] = {
 	-- t = { "<Cmd>lua CreateDailyTask()<CR>", "CreateTask" },
 	N = { "<Cmd>lua NewNoteWithCustomTemplate()<CR>", "NewNoteWithCustomTemplate" },
 	r = { "<Cmd>lua find_recent_note()<CR>", "OpenRecentNotes" },
-  -- TODO: 
+  -- TODO:
 	F = { "<cmd>ChatGPTRun french<cr>", "Syntaxe Correction FR" },
 	L = { "<cmd>ChatGPTRun markdownFormatter<cr>", "Format MD note" },
 	S = { "<cmd>ChatGPTRun completeFromSkeleton<cr>", "Draft Poste" },
+	C = { "<Cmd>lua PdfToImage()<CR>", "Convert Pdf to image" },
   B = { "<Cmd>lua find_recent_note()<CR>", "Send to Blog" },
 
 }

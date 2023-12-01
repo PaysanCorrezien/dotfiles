@@ -40,81 +40,87 @@ lvim.plugins = {
 		cmd = "TroubleToggle",
 	},
 
-	-- {
-	-- 	"epwalsh/obsidian.nvim",
-	-- 	lazy = false,
-	-- 	-- event = { "BufReadPre /home/dylan/Documents/Vault/**.md" },
-	-- 	-- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand':
-	-- 	event = { "BufReadPre " .. vim.fn.expand("~") .. "/Documents/Obsidian Vault/**.md" },
-	-- 	dependencies = {
-	-- 		-- Required.
-	-- 		"nvim-lua/plenary.nvim",
+	{
+		"epwalsh/obsidian.nvim",
+		lazy = false,
+		-- event = { "BufReadPre /home/dylan/Documents/Vault/**.md" },
+		-- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand':
+		event = { "BufReadPre " .. vim.fn.expand("~") .. "/Documents/Obsidian Vault/**.md" },
+		dependencies = {
+			-- Required.
+			"nvim-lua/plenary.nvim",
 
-	-- 		-- Optional, for completion.
-	-- 		"hrsh7th/nvim-cmp",
+			-- Optional, for completion.
+			"hrsh7th/nvim-cmp",
 
-	-- 		-- Optional, for search and quick-switch functionality.
-	-- 		"nvim-telescope/telescope.nvim",
+			-- Optional, for search and quick-switch functionality.
+			"nvim-telescope/telescope.nvim",
 
-	-- 		-- Optional, alternative to nvim-treesitter for syntax highlighting.
-	-- 		-- "godlygeek/tabular",
-	-- 		-- "preservim/vim-markdown",
-	-- 	},
-	-- 	opts = {
-	-- 		dir = "~/Documents/Obsidian Vault/", -- no need to call 'vim.fn.expand' here
+			-- Optional, alternative to nvim-treesitter for syntax highlighting.
+			-- "godlygeek/tabular",
+			-- "preservim/vim-markdown",
+		},
+		opts = {
+			dir = "~/Obsidian_Vault", -- no need to call 'vim.fn.expand' here
 
-	-- 		-- Optional, if you keep notes in a specific subdirectory of your vault.
-	-- 		notes_subdir = "Zettelkasten/Main",
+			-- Optional, if you keep notes in a specific subdirectory of your vault.
+			notes_subdir = "Zettelkasten/Main",
 
-	-- 		-- Optional, if you keep daily notes in a separate directory.
-	-- 		daily_notes = {
-	-- 			folder = "Tasks",
-	-- 		},
+			-- Optional, if you keep daily notes in a separate directory.
+			daily_notes = {
+				folder = "Tasks",
+			},
 
-	-- 		-- Optional, completion.
-	-- 		completion = {
-	-- 			nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
-	-- 		},
-	-- 		-- Optional, customize how names/IDs for new notes are created.
-	-- 		note_id_func = function(title)
-	-- 			-- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
-	-- 			-- In this case a note with the title 'My new note' will given an ID that looks
-	-- 			-- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
-	-- 			local suffix = ""
-	-- 			if title ~= nil then
-	-- 				-- If title is given, transform it into valid file name.
-	-- 				suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
-	-- 			else
-	-- 				-- If title is nil, just add 4 random uppercase letters to the suffix.
-	-- 				for _ = 1, 4 do
-	-- 					suffix = suffix .. string.char(math.random(65, 90))
-	-- 				end
-	-- 			end
-	-- 			return tostring(os.time()) .. "-" .. suffix
-	-- 		end,
+			-- Optional, completion.
+			completion = {
+				nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+			},
+			attachments = {
+				-- The default folder to place images in via `:ObsidianPasteImg`.
+				-- If this is a relative path it will be interpreted as relative to the vault root.
+				-- You can always override this per image by passing a full path to the command instead of just a filename.
+				img_folder = "Zettelkasten/Files", -- This is the default
+			},
+			-- Optional, customize how names/IDs for new notes are created.
+			note_id_func = function(title)
+				-- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
+				-- In this case a note with the title 'My new note' will given an ID that looks
+				-- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
+				local suffix = ""
+				if title ~= nil then
+					-- If title is given, transform it into valid file name.
+					suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+				else
+					-- If title is nil, just add 4 random uppercase letters to the suffix.
+					for _ = 1, 4 do
+						suffix = suffix .. string.char(math.random(65, 90))
+					end
+				end
+				return tostring(os.time()) .. "-" .. suffix
+			end,
 
-	-- 		templates = {
-	-- 			subdir = "Zettelkasten/Templates",
-	-- 			-- date_format = "%Y-%m-%d-%a",
-	-- 			-- time_format = "%H:%M",
-	-- 		},
-	-- 		use_advanced_uri = true,
-	-- 		finder = "telescope.nvim",
-	-- 	},
-	-- 	config = function(_, opts)
-	-- 		require("obsidian").setup(opts)
+			templates = {
+				subdir = "Zettelkasten/Templates",
+				-- date_format = "%Y-%m-%d-%a",
+				-- time_format = "%H:%M",
+			},
+			use_advanced_uri = true,
+			finder = "telescope.nvim",
+		},
+		config = function(_, opts)
+			require("obsidian").setup(opts)
 
-	-- 		-- Optional, override the 'gf' keymap to utilize Obsidian's search functionality.
-	-- 		-- see also: 'follow_url_func' config option above.
-	-- 		vim.keymap.set("n", "gf", function()
-	-- 			if require("obsidian").util.cursor_on_markdown_link() then
-	-- 				return "<cmd>ObsidianFollowLink<CR>"
-	-- 			else
-	-- 				return "gf"
-	-- 			end
-	-- 		end, { noremap = false, expr = true })
-	-- 	end,
-	-- },
+			-- Optional, override the 'gf' keymap to utilize Obsidian's search functionality.
+			-- see also: 'follow_url_func' config option above.
+			vim.keymap.set("n", "gf", function()
+				if require("obsidian").util.cursor_on_markdown_link() then
+					return "<cmd>ObsidianFollowLink<CR>"
+				else
+					return "gf"
+				end
+			end, { noremap = false, expr = true })
+		end,
+	},
 	{
 		"renerocksai/telekasten.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim" },
@@ -272,14 +278,17 @@ lvim.plugins = {
 			end,
 		},
 	},
-	-- {
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	build = "cd app && npm install",
-	-- 	init = function()
-	-- 		vim.g.mkdp_filetypes = { "markdown" }
-	-- 	end,
-	-- 	ft = { "markdown" },
-	-- },
+	{
+		"iamcco/markdown-preview.nvim",
+		build = "cd app && npm install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+      -- Set the image path for markdown-preview
+        -- vim.api.nvim_set_var('mkdp_images_path', '~/Obsidian_Vault/Zettelkasten/Files')
+      vim.cmd("let g:mkdp_images_path = 'hone/dylan/Obsidian_Vault/Zettelkasten/Files'")
+		end,
+		ft = { "markdown" },
+	},
 	{ "debugloop/telescope-undo.nvim" },
 	-- TODO : cleanup this
 	-- { dir = "~/Documents/Projets/NeovimPlugins/ObsidianExtra.nvim" },
@@ -361,23 +370,23 @@ lvim.plugins = {
 			-- options
 		},
 	},
-  --PYTHON
+	--PYTHON
 	{
-    --conda env needed
+		--conda env needed
 		"ChristianChiarulli/swenv.nvim",
 	},
 	{
-    "mfussenegger/nvim-dap-python",
-    ft = "python",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "rcarriga/nvim-dap-ui",
-    },
-    config = function(_, opts)
-      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-      require("dap-python").setup(path)
-      -- require("core.utils").load_mappings("dap_python")
-    end,
+		"mfussenegger/nvim-dap-python",
+		ft = "python",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+			"rcarriga/nvim-dap-ui",
+		},
+		config = function(_, opts)
+			local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+			require("dap-python").setup(path)
+			-- require("core.utils").load_mappings("dap_python")
+		end,
 	},
 	{
 		"nvim-neotest/neotest",
@@ -402,57 +411,57 @@ lvim.plugins = {
 	{
 		"nvim-neotest/neotest-python",
 	},
-  -- extract automatic install formater/ linter
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    config = function()
-      require('mason-tool-installer').setup {
-      ensure_installed = {
-          -- Python tools
-        { 'pyright', auto_update = true },  -- LSP
-        { 'black', auto_update = true },    -- Formatter
-        { 'flake8', auto_update = true },   -- Linter
-        { 'mypy', auto_update = true },     -- Type Checker
-        -- { 'ruff', auto_update = true},
+	-- extract automatic install formater/ linter
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		config = function()
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+					-- Python tools
+					{ "pyright", auto_update = true }, -- LSP
+					{ "black", auto_update = true }, -- Formatter
+					{ "flake8", auto_update = true }, -- Linter
+					{ "mypy", auto_update = true }, -- Type Checker
+					-- { 'ruff', auto_update = true},
 
-        -- Bash tools
-        { 'bashls', auto_update = true },   -- LSP
-        { 'shellcheck', auto_update = true }, -- Linter
-        { 'shellharden', auto_update = true }, -- Linter
+					-- Bash tools
+					{ "bashls", auto_update = true }, -- LSP
+					{ "shellcheck", auto_update = true }, -- Linter
+					{ "shellharden", auto_update = true }, -- Linter
 
-        -- Svelte tools
-        { 'svelte', auto_update = true },   -- LSP
+					-- Svelte tools
+					{ "svelte", auto_update = true }, -- LSP
 
-        -- JSON tools
-        -- { 'jsonls', auto_update = true },   -- LSP
-        -- YAML tools
-        { 'yamllint', auto_update = true },   -- LSP
-        -- TOML tools
-        { 'taplo', auto_update = true },   -- LSP
-        -- Markdown tools
-        { 'ltex', auto_update = true },     -- LSP for LaTeX and Markdown
-        { 'markdownlint', auto_update = true }, -- Linter
+					-- JSON tools
+					-- { 'jsonls', auto_update = true },   -- LSP
+					-- YAML tools
+					{ "yamllint", auto_update = true }, -- LSP
+					-- TOML tools
+					{ "taplo", auto_update = true }, -- LSP
+					-- Markdown tools
+					{ "ltex", auto_update = true }, -- LSP for LaTeX and Markdown
+					{ "markdownlint", auto_update = true }, -- Linter
 
-        -- JavaScript / Web (HTML, CSS) tools
-        { 'eslint', auto_update = true },   -- Linter
-        { 'prettierd', auto_update = true }, -- Formatter
+					-- JavaScript / Web (HTML, CSS) tools
+					{ "eslint", auto_update = true }, -- Linter
+					{ "prettierd", auto_update = true }, -- Formatter
 
-        -- Others you might consider
-        { 'html', auto_update = true },     -- LSP for HTML
-        { 'cssls', auto_update = true },    -- LSP for CSS
-        -- lua
-        { 'luacheck', auto_update = true },    -- LSP for CSS
-        -- Misc
-          -- TODO: Test this ?
-        -- { 'gitleaks', auto_update = true },    -- LSP for CSS
-        },
-        auto_update = false,
-        run_on_start = true,
-        start_delay = 3000, -- 3 second delay
-        debounce_hours = 10, -- at least 5 hours between attempts to install/update
-      }
-    end
-  },
+					-- Others you might consider
+					{ "html", auto_update = true }, -- LSP for HTML
+					{ "cssls", auto_update = true }, -- LSP for CSS
+					-- lua
+					{ "luacheck", auto_update = true }, -- LSP for CSS
+					-- Misc
+					-- TODO: Test this ?
+					-- { 'gitleaks', auto_update = true },    -- LSP for CSS
+				},
+				auto_update = false,
+				run_on_start = true,
+				start_delay = 3000, -- 3 second delay
+				debounce_hours = 10, -- at least 5 hours between attempts to install/update
+			})
+		end,
+	},
 }
 -- end of lvim.plugins{}
 

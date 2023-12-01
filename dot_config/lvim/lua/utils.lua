@@ -458,4 +458,53 @@ function _G.PushNotes()
     vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(result, '\n')) -- Set the lines of the buffer to the command output
 end
 
+-- /usr/bin/pdftoppm
+-- What can be done :
+-- Insertfullpdf command that convert all page to image and chain insert them ?
+-- Automatic convert of all page / telescope scroll all page with image preview 
+-- cmp for cmp page=that list the page number ? preview the image????
+function _G.PdfToImage()
+    -- Get the current line
+    local line = vim.api.nvim_get_current_line()
+
+    -- Regular expression to match the Markdown link format and capture necessary parts
+    local pattern = "(.-)%[(.-)%]%((.-)%.pdf#page=(%d+)%)"
+
+    local prefix, text, pdf_file, page_number = string.match(line, pattern)
+
+    if pdf_file and page_number then
+        -- Full path to pdftoppm (replace with your actual path)
+        local pdftoppm_path = '/usr/bin/pdftoppm'  -- Get this path with 'which pdftoppm' in your terminal
+
+        -- Define your stored file path
+        local stored_file_path = '/home/dylan/Obsidian_Vault/Zettelkasten/Files/'
+
+        -- Construct the full path to the PDF file
+        local full_pdf_path = stored_file_path .. pdf_file .. ".pdf"
+
+        -- Format page number with leading zero if it's less than 10
+        local formatted_page_number = tonumber(page_number) < 10 and "0" .. page_number or page_number
+
+        -- Construct the output image file path (prefix)
+        local output_image_prefix = stored_file_path .. pdf_file
+
+        -- Construct the pdftoppm command
+        local command = pdftoppm_path .. ' -f ' .. page_number .. ' -l ' .. page_number .. ' -jpeg "' .. full_pdf_path .. '" "' .. output_image_prefix .. '"'
+
+        -- Execute the pdftoppm command
+        local success = os.execute(command)
+
+        -- Check success and show message
+        if success then
+            local generated_image_file = pdf_file .. "-" .. formatted_page_number .. ".jpg" -- Using formatted page number
+            print("File converted successfully: " .. generated_image_file)
+            local new_link = prefix .. "[" .. text .. "](" .. generated_image_file .. ")"
+            vim.api.nvim_set_current_line(new_link)
+        else
+            print("Error converting file.")
+        end
+    else
+        print("No suitable link found on the current line.")
+    end
+end
 
