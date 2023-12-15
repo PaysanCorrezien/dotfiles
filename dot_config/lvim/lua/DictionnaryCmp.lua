@@ -11,8 +11,10 @@ function source:get_metadata()
     priority = 20000,
     menu = '[dictionnary]',
     debounce = 0,
+    
   }
 end
+
 
 function source:is_available()
   local ft = vim.bo.filetype

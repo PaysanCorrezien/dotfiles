@@ -1,21 +1,3 @@
-
-# For zoxide v0.8.0+
-Invoke-Expression (& {
-
-    $hook = if ($PSVersionTable.PSVersion.Major -lt 6)
-
-    { 'prompt'
-
-    } else
-
-    { 'pwd'
-
-    }
-
-    (zoxide init --hook $hook powershell | Out-String)
-
-  })
-
 ## Configuration spécifique pour Psfzf
 
 ## Set https://github.com/kelleyma49/PSFzf/blob/master/docs/Set-PsFzfOption.md
@@ -68,10 +50,11 @@ function Open-Lvim {
 Set-Alias -Name lvim -Value Open-Lvim
 Set-Alias -Name v -Value Open-Lvim
 
-Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
-Import-Module 'C:\Users\dylan\Documents\Projet\Work\Projet\WSLExplorer\OpenFileProperty.ps1'
+Import-Module "$env:USERPROFILE\Documents\Projet\Work\Projet\WSLExplorer\OpenFileProperty.ps1"
 
+# Key
+Import-Module "$env:USERPROFILE\Documents\PowerShell\.secret.ps1"
 # Function to open files sorted by last access time (from "Recent Items" folder)
 
 $fzfOptions = @(
@@ -200,6 +183,17 @@ function prompt {
         "PS [" + (Get-Location) + "] $ -->"
     }
 }
+function ya
+{
+  $tmp = [System.IO.Path]::GetTempFileName()
+  yazi --cwd-file="$tmp"
+  $cwd = Get-Content -Path $tmp
+  if (-not [String]::IsNullOrEmpty($cwd) -and $cwd -ne $PWD.Path)
+  {
+    Set-Location -Path $cwd
+  }
+  Remove-Item -Path $tmp
+}
 
 $Host.UI.RawUI.WindowTitle = "PowerShell {0}" -f $PSVersionTable.PSVersion.ToString()
 if ($isAdmin) {
@@ -209,3 +203,5 @@ if ($isAdmin) {
 # Delete them to prevent cluttering up the user profile. 
 Remove-Variable identity
 Remove-Variable principal
+
+Invoke-Expression (& { (zoxide init powershell | Out-String) })

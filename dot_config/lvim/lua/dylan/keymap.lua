@@ -47,9 +47,9 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>" -- KEKW ctrl s sickness
 vim.api.nvim_set_keymap('i', '<C-e>', '<Cmd>IconPickerInsert<CR>', { noremap = true })
 
 -- Set up the key mapping
-vim.api.nvim_set_keymap(
-	"n",
-	"zg",
-	':lua require("DictionnaryManager").add_word_to_spell_and_sync()<CR>',
-	{ noremap = true, silent = false }
-)
+-- vim.api.nvim_set_keymap(
+-- 	"n",
+-- 	"zg",
+-- 	':lua require("DictionnaryManager").add_word_to_spell_and_sync()<CR>',
+-- 	{ noremap = true, silent = false }
+-- )

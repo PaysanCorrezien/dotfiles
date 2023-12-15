@@ -1,6 +1,142 @@
+local os_utils = require("os_utils")
+
+-- TODO: find a way to make this automatic with a single array and automatic conversion with a function
+local home = os.getenv("HOME") or "~"
+--- Define OS-specific paths for both the vault and attachments
+local obsidiannvim_settings = {
+	vault_paths = {
+		Windows = "C:\\Users\\dylan\\Documents\\KnowledgeBase",
+		Linux = "/mnt/c/users/dylan/Documents/KnowledgeBase/",
+	},
+	attachments_paths = {
+		Windows = "C:\\Users\\dylan\\Documents\\KnowledgeBase\\static\\img\\",
+		Linux = "/mnt/c/users/dylan/Documents/KnowledgeBase/static/img/",
+	},
+	pdftoppm_paths = {
+		Windows = "C:\\Users\\dylan\\scoop\\shims\\pdftoppm.exe",
+		Linux = "/usr/bin/pdftoppm",
+	},
+}
+
+-- Retrieve the correct paths based on the OS
+local obsidian_vault_path = os_utils.get_setting(obsidiannvim_settings.vault_paths)
+local obsidian_attachments_path = os_utils.get_setting(obsidiannvim_settings.attachments_paths)
+local pdftoppm__path = os_utils.get_setting(obsidiannvim_settings.pdftoppm_paths)
+-- - Retrieve the correct path based on the OS
+-- local obsidian_vault_path = os_utils.get_setting(obsidiannvim_paths)
+
+local pdf_paths = {
+	Windows = "C:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\pdf.nvim",
+	Linux = "/mnt/c/users/dylan/Documents/Projet/Work/Projet/pdf.nvim/",
+}
+
+local pdf_plugin_path = os_utils.get_setting(pdf_paths)
+
+local dictionary_path = {
+	Windows = "C:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\dictionary.nvim",
+	Linux = "/mnt/c/users/dylan/Documents/Projet/Work/Projet/dictionary.nvim/",
+}
+
+local dictionary_plugin_path = os_utils.get_setting(dictionary_path)
+local dictionaries_files_path = {
+	remote_ltex_ls = {
+		Windows = "\\\\wsl.localhost\\Debian\\home\\dylan\\local\\share\\chezmoi\\dot_config\\lvim\\dict\\ltex.dictionary.fr.txt",
+		Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
+	},
+	remote_spell = {
+		Windows = "\\\\wsl.localhost\\Debian\\home\\dylan\\local\\share\\chezmoi\\dot_config\\lvim\\dict\\spell.utf-8.add",
+		Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
+	},
+	local_ltex_ls = {
+		Windows = "\\\\wsl.localhost\\Debian\\home\\dylan\\.config\\lvim\\dict\\ltex.dictionary.fr.txt",
+		Linux = home .. "/.config/lvim/dict/ltex.dictionary.fr.txt", 
+  },
+	local_spell= {
+		Windows = "\\\\wsl.localhost\\Debian\\home\\dylan\\.config\\lvim\\dict\\spell.utf-8.add",
+		Linux =  home .. "/.config/lvim/dict/spell.utf-8.add",
+	},
+}
+local remote_ltex_ls = os_utils.get_setting(dictionaries_files_path.remote_ltex_ls)
+local remote_spell = os_utils.get_setting(dictionaries_files_path.remote_spell)
+local local_ltex_ls = os_utils.get_setting(dictionaries_files_path.local_ltex_ls)
+local local_spell = os_utils.get_setting(dictionaries_files_path.local_spell)
+
 lvim.plugins = {
+	{
+		dir = dictionary_plugin_path,
+		ft = "markdown",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		config = function()
+			require("dictionary").setup({
+				dictionary_paths = {
+					-- home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
+					-- home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
+					-- home .. "/.config/lvim/dict/ltex.dictionary.fr.txt",
+					-- home .. "/.config/lvim/dict/spell.utf-8.add",
+          remote_ltex_ls,
+          remote_spell,
+          local_ltex_ls,
+          local_spell,
+				},
+				override_zg = true,
+				ltex_dictionary = true, -- if you are use ltex-ls extra and want to use zg to also update ltex-ls dictionary
+				cmp = {
+					enabled = true,
+					custom_dict_path = home .. "/.config/lvim/dict/ltex.dictionary.fr.txt",
+					max_spell_suggestions = 10,
+					filetypes = { "markdown", "tex" },
+					priority = 20000,
+					name = "mydictionary",
+          source_label = "[Dict]",
+         	kind_icon = cmp.lsp.CompletionItemKind.Event, -- Icon for suggestions
+				},
+			})
+		end,
+	},
+	{
+		dir = pdf_plugin_path,
+		ft = "markdown",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		config = function()
+			require("pdf").setup({
+				-- Your configuration here
+				-- pdf_path = "/mnt/c/Users/dylan/Documents/Obsidian Vault/Zettelkasten/Files",
+				-- image_path = "/mnt/c/Users/dylan/Documents/Obsidian Vault/Zettelkasten/Files",
+				pdf_path = obsidian_attachments_path,
+				image_path = obsidian_attachments_path,
+				pdftoppm_path = pdftoppm__path,
+				new_link_format = function(prefix, text, generated_image_file)
+					return prefix .. "[" .. text .. "](/img/" .. generated_image_file .. ")"
+				end,
+			})
+		end,
+	},
+
+	-- {
+	-- 	"f3fora/cmp-spell",
+	-- 	config = function()
+	-- 		require("cmp").setup({
+	-- 			sources = {
+	-- 				{
+	-- 					name = "spell",
+	-- 					option = {
+	-- 						keep_all_entries = false,
+	-- 						enable_in_context = function()
+ --                return true
+	-- 							-- return require("cmp.config.context").in_treesitter_capture("spell")
+	-- 						end,
+	-- 					},
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 	{ "lunarvim/colorschemes" },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	-- { "codethread/qmk.nvim",
 	-- config = function()
 
@@ -14,6 +150,13 @@ lvim.plugins = {
 	--   }
 	--   require('qmk').setup(conf)
 	-- end
+	{
+		"folke/todo-comments.nvim",
+		event = "BufRead",
+		config = function()
+			require("todo-comments").setup()
+		end,
+	},
 	-- },
 	{ "folke/tokyonight.nvim" },
 	{ "rebelot/kanagawa.nvim" },
@@ -46,7 +189,7 @@ lvim.plugins = {
 		lazy = false,
 		-- event = { "BufReadPre /home/dylan/Documents/Vault/**.md" },
 		-- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand':
-		event = { "BufReadPre " .. vim.fn.expand("~") .. "/Documents/Obsidian Vault/**.md" },
+		-- event = { "BufReadPre " .. obsidian_vault_path .. "/**.md" },
 		dependencies = {
 			-- Required.
 			"nvim-lua/plenary.nvim",
@@ -62,10 +205,10 @@ lvim.plugins = {
 			-- "preservim/vim-markdown",
 		},
 		opts = {
-			dir = "~/Obsidian_Vault", -- no need to call 'vim.fn.expand' here
+			dir = obsidian_vault_path, -- no need to call 'vim.fn.expand' here
 
 			-- Optional, if you keep notes in a specific subdirectory of your vault.
-			notes_subdir = "Zettelkasten/Main",
+			notes_subdir = "Docs\\KnowledgeBase",
 
 			-- Optional, if you keep daily notes in a separate directory.
 			daily_notes = {
@@ -80,7 +223,31 @@ lvim.plugins = {
 				-- The default folder to place images in via `:ObsidianPasteImg`.
 				-- If this is a relative path it will be interpreted as relative to the vault root.
 				-- You can always override this per image by passing a full path to the command instead of just a filename.
-				img_folder = "Zettelkasten/Files", -- This is the default
+				img_folder = "static\\img", -- This is the default
+				-- A function that determines the text to insert in the note when pasting an image.
+				-- It takes two arguments, the `obsidian.Client` and a plenary `Path` to the image file.
+				-- This is the default implementation.
+				---@param client obsidian.Client
+				---@param path Path the absolute path to the image file
+				---@return string
+				img_text_func = function(client, path)
+					local link_path
+					local vault_relative_path = client:vault_relative_path(path)
+					if vault_relative_path ~= nil then
+						-- Use the modified path if the image is saved in the vault dir.
+						-- Strip off unwanted parts of the path and keep only '/img/' and the file name
+						link_path = string.match(vault_relative_path, "/img/.+$")
+					else
+						-- For absolute paths, extract only the '/img/' part and the file name.
+						link_path = string.match(tostring(path), "/img/.+$")
+					end
+					if not link_path then
+						-- Fallback in case the desired pattern is not found
+						link_path = tostring(path)
+					end
+					local display_name = vim.fs.basename(link_path)
+					return string.format("![%s](%s)", display_name, link_path)
+				end,
 			},
 			-- Optional, customize how names/IDs for new notes are created.
 			note_id_func = function(title)
@@ -101,7 +268,7 @@ lvim.plugins = {
 			end,
 
 			templates = {
-				subdir = "Zettelkasten/Templates",
+				subdir = "Projets/Templates",
 				-- date_format = "%Y-%m-%d-%a",
 				-- time_format = "%H:%M",
 			},
@@ -242,7 +409,7 @@ lvim.plugins = {
 								enablePickyRules = true,
 								motherTongue = "fr",
 							},
-							trace = { server = "verbose" },
+							-- trace = { server = "verbose" },
 							-- dictionary = "~/.config/lvim/dict/", -- added global dictionary path
 							completionEnabled = "true",
 							checkfrenquency = "edit",
@@ -278,20 +445,18 @@ lvim.plugins = {
 			end,
 		},
 	},
-	{
-		"iamcco/markdown-preview.nvim",
-		build = "cd app && npm install",
-		init = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-      -- Set the image path for markdown-preview
-        -- vim.api.nvim_set_var('mkdp_images_path', '~/Obsidian_Vault/Zettelkasten/Files')
-      vim.cmd("let g:mkdp_images_path = 'hone/dylan/Obsidian_Vault/Zettelkasten/Files'")
-		end,
-		ft = { "markdown" },
-	},
+	-- {
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	build = "cd app && npm install",
+	-- 	init = function()
+	-- 		vim.g.mkdp_filetypes = { "markdown" }
+	-- 		-- Set the image path for markdown-preview
+	-- 		-- vim.api.nvim_set_var('mkdp_images_path', '~/Obsidian_Vault/Zettelkasten/Files')
+	-- 		vim.cmd("let g:mkdp_images_path = 'home/dylan/Obsidian_Vault/Zettelkasten/Files'")
+	-- 	end,
+	-- 	ft = { "markdown" },
+	-- },
 	{ "debugloop/telescope-undo.nvim" },
-	-- TODO : cleanup this
-	-- { dir = "~/Documents/Projets/NeovimPlugins/ObsidianExtra.nvim" },
 	--lazy
 	{
 		"nvim-telescope/telescope-file-browser.nvim",

@@ -54,8 +54,6 @@ end
 
 
 local function sync_dictionaries(spellfile, ltexfile, word)
-  -- ...
-
   -- Read both files and merge their contents
   local spell_lines = read_file(spellfile)
   local ltex_lines = read_file(ltexfile)

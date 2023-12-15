@@ -178,8 +178,8 @@ window_rules:
     match_process_name: "WindowsTerminal"
     match_title: "/^FZF-.*/"
 
-  - command: "set floating"
-    match_process_name: "wezterm-gui"
+  # - command: "set floating"
+  #   match_process_name: "wezterm-gui"
     # match_title: "/^TUI.*/"
 
   # Powershell Menu always float

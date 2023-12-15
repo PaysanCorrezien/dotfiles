@@ -25,7 +25,7 @@ lvim.lsp.automatic_configuration.skipped_servers = { "svelte","tsserver","pylsp"
 require("lvim.lsp.manager").setup("bashls")
 require("lvim.lsp.manager").setup("cssls")
 require("lvim.lsp.manager").setup("html")
-require("lvim.lsp.manager").setup("ltex")
+-- require("lvim.lsp.manager").setup("ltex")
 require("lvim.lsp.manager").setup("powershell_es")
 require("lvim.lsp.manager").setup("pyright")
 require("lvim.lsp.manager").setup("svelte")

@@ -21,7 +21,7 @@ vim.opt.cursorline = false -- highlight the current line
 vim.opt.spell = true
 -- BUG: enforcing install ok each launch ??
 -- vim.opt.spelllang = { "fr" , "en" }
-
+vim.opt.spellsuggest = {'double', 9}
 -- vim.opt.spellfile = "/home/dylan/.config/lvim/dict/spell.utf-8.add"
 -- vim.opt.spellfile = "~/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add"
 -- general

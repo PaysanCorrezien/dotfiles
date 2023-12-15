@@ -1,16 +1,16 @@
 -- utils.lua
-function _G.exec_luafile()
-	local current_file = vim.fn.expand("%:p")
-	if vim.fn.filereadable(current_file) ~= 1 then
-		print("File not readable:", current_file)
+-- function _G.exec_luafile()
+-- 	local current_file = vim.fn.expand("%:p")
+-- 	if vim.fn.filereadable(current_file) ~= 1 then
+-- 		print("File not readable:", current_file)
 
-		return
-	end
-	local ok, err = pcall(dofile, current_file)
-	if not ok then
-		print("Error executing Lua file:", err)
-	end
-end
+-- 		return
+-- 	end
+-- 	local ok, err = pcall(dofile, current_file)
+-- 	if not ok then
+-- 		print("Error executing Lua file:", err)
+-- 	end
+-- end
 
 function _G.search_and_replace()
 	local word = vim.fn.expand("<cword>")
@@ -160,7 +160,7 @@ function _G.NewNoteWithCustomTemplate()
 end
 
 function _G.find_recent_note()
-	local base_path = "/mnt/c/Users/dylan/Mes documents/Obsidian Vault/Tasks/"
+	local base_path = "/mnt/c/Users/dylan/Mes documents/Obsidian Vault/"
 	local opts = {
 		prompt_title = "~ Recent Markdown Files ~",
 		cwd = base_path,
@@ -463,48 +463,69 @@ end
 -- Insertfullpdf command that convert all page to image and chain insert them ?
 -- Automatic convert of all page / telescope scroll all page with image preview 
 -- cmp for cmp page=that list the page number ? preview the image????
-function _G.PdfToImage()
-    -- Get the current line
-    local line = vim.api.nvim_get_current_line()
+-- function _G.PdfToImage()
+--     -- Get the current line
+--     local line = vim.api.nvim_get_current_line()
 
-    -- Regular expression to match the Markdown link format and capture necessary parts
-    local pattern = "(.-)%[(.-)%]%((.-)%.pdf#page=(%d+)%)"
+--     -- Regular expression to match the Markdown link format and capture necessary parts
+--     local pattern = "(.-)%[(.-)%]%((.-)%.pdf#page=(%d+)%)"
 
-    local prefix, text, pdf_file, page_number = string.match(line, pattern)
+--     local prefix, text, pdf_file, page_number = string.match(line, pattern)
 
-    if pdf_file and page_number then
-        -- Full path to pdftoppm (replace with your actual path)
-        local pdftoppm_path = '/usr/bin/pdftoppm'  -- Get this path with 'which pdftoppm' in your terminal
+--     if pdf_file and page_number then
+--         -- Full path to pdftoppm (replace with your actual path)
+--         local pdftoppm_path = '/usr/bin/pdftoppm'  -- Get this path with 'which pdftoppm' in your terminal
 
-        -- Define your stored file path
-        local stored_file_path = '/home/dylan/Obsidian_Vault/Zettelkasten/Files/'
+--         -- Define your stored file path
+--         local stored_file_path = '/home/dylan/Obsidian_Vault/Zettelkasten/Files/'
 
-        -- Construct the full path to the PDF file
-        local full_pdf_path = stored_file_path .. pdf_file .. ".pdf"
+--         -- Construct the full path to the PDF file
+--         local full_pdf_path = stored_file_path .. pdf_file .. ".pdf"
 
-        -- Format page number with leading zero if it's less than 10
-        local formatted_page_number = tonumber(page_number) < 10 and "0" .. page_number or page_number
+--         -- Format page number with leading zero if it's less than 10
+--         local formatted_page_number = tonumber(page_number) < 10 and "0" .. page_number or page_number
 
-        -- Construct the output image file path (prefix)
-        local output_image_prefix = stored_file_path .. pdf_file
+--         -- Construct the output image file path (prefix)
+--         local output_image_prefix = stored_file_path .. pdf_file
 
-        -- Construct the pdftoppm command
-        local command = pdftoppm_path .. ' -f ' .. page_number .. ' -l ' .. page_number .. ' -jpeg "' .. full_pdf_path .. '" "' .. output_image_prefix .. '"'
+--         -- Construct the pdftoppm command
+--         local command = pdftoppm_path .. ' -f ' .. page_number .. ' -l ' .. page_number .. ' -jpeg "' .. full_pdf_path .. '" "' .. output_image_prefix .. '"'
 
-        -- Execute the pdftoppm command
-        local success = os.execute(command)
+--         -- Execute the pdftoppm command
+--         local success = os.execute(command)
 
-        -- Check success and show message
-        if success then
-            local generated_image_file = pdf_file .. "-" .. formatted_page_number .. ".jpg" -- Using formatted page number
-            print("File converted successfully: " .. generated_image_file)
-            local new_link = prefix .. "[" .. text .. "](" .. generated_image_file .. ")"
-            vim.api.nvim_set_current_line(new_link)
-        else
-            print("Error converting file.")
-        end
-    else
-        print("No suitable link found on the current line.")
-    end
-end
+--         -- Check success and show message
+--         if success then
+--             local generated_image_file = pdf_file .. "-" .. formatted_page_number .. ".jpg" -- Using formatted page number
+--             print("File converted successfully: " .. generated_image_file)
+--             local new_link = prefix .. "[" .. text .. "](" .. generated_image_file .. ")"
+--             vim.api.nvim_set_current_line(new_link)
+--         else
+--             print("Error converting file.")
+--         end
+--     else
+--         print("No suitable link found on the current line.")
+--     end
+-- end
 
+-- TODO:test it 
+-- local function auto_git_commit()
+--     local filepath = vim.fn.expand('%:p')
+--     local notes_dir = vim.fn.expand('~/notes') -- Expand to the full path
+
+--     if filepath:sub(1, #notes_dir) == notes_dir then
+--         -- Change to the notes directory
+--         vim.fn.chdir(notes_dir)
+--         -- Add all changes to staging
+--         vim.fn.system('git add .')
+--         -- Commit with a timestamped message
+--         local commit_message = 'Auto-commit on save at ' .. os.date('%Y-%m-%d %H:%M:%S')
+--         vim.fn.system('git commit -m "' .. commit_message .. '"')
+--     end
+-- end
+
+-- -- Autocommand that triggers the function on file save in any subdirectory of ~/notes
+-- vim.api.nvim_create_autocmd('BufWritePost', {
+--     pattern = '*',
+--     callback = auto_git_commit
+-- })

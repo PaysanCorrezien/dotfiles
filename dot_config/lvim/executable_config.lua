@@ -1,4 +1,5 @@
 -- Attempt setting runtimepath before plug launch WORK
+local os_utils = require("os_utils")
 -- NOTE: runtime path of spellfile need to be set before option set spell: or it will install on each start of neovim
 -- Get the home directory path
 local home = os.getenv("HOME") or "~"
@@ -10,6 +11,25 @@ vim.g.my_chezmoi_config_path = home .. "/.local/share/chezmoi/dot_config/lvim/ex
 --TODO: prevent hardcode somehow ? install pynvim before lvim ?
 vim.g.python3_host_prog = home .. "/.pyenv/versions/3.10.4/bin/python"
 
+-- SQL LITE for neocomposer on windows
+-- Before setting
+-- print("OS uname: " .. vim.inspect(vim.loop.os_uname()))
+-- print("Detected OS: " .. os_utils.get_os())
+if os_utils.get_os() == "Windows" then
+	vim.api.nvim_set_var("sqlite_clib_path", "C:/Users/dylan/AppData/Roaming/sqlite-dll/sqlite3.dll")
+	vim.opt.shell = "pwsh.exe"
+	vim.opt.shellcmdflag = "-c"
+end
+
+if os_utils.get_os() == "Linux" then
+	vim.cmd([[
+augroup TmuxRenaming
+    autocmd!
+    autocmd BufEnter * lua _G.rename_tmux_pane()
+    autocmd BufLeave * lua _G.reset_tmux_pane()
+augroup END
+]])
+end
 
 -- use the file defined before as spellfile
 -- vim.opt.spellfile = vim.g.my_spellfile_path
@@ -37,44 +57,43 @@ require("dylan/lualine")
 require("dylan/gitsigns")
 require("dylan/treesitter")
 -- require("dylan/python")
--- ['codeium'] = true,  -- Uncomment if you want this module
--- vim.opt.spellfile = "/home/dylan/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add"
 -- usefull functions
 require("utils")
+-- require("DictionnaryManager")
+-- require("DictionnaryCmp")
 --  function inside utiles chack only load certain modules on linux to not use some on work computer
--- TODO: Remplacer par bon path
-
 --
 -- Test Tmux rename auto
 vim.o.title = true
 vim.o.titlestring = "%t"
-
 --
 lvim.colorscheme = "kanagawa"
 
 -- autocmd ColorScheme * lua require('leap').init_highlight(true)
 
---
--- TODO : advance on this
--- require('ObsidianExtra').setup({
---   obsidiandir = "~/documents/obsidian vault/",
---   dictionnarfile = "~/.config/lvim/dict/fr.txt",
---   spellcheckfile = "~/.config/lvim/spell/fr.utf-8.spl",
---   treesitter = true
--- })
-local kind = require("dylan/kind") -- Icones perso
+-- print("Before setting: " .. vim.inspect(vim.api.nvim_get_var('sqlite_clib_path')))
+
+-- if os_utils.get_os() == "Windows" then
+--     vim.api.nvim_set_var('sqlite_clib_path', "C:/Users/dylan/AppData/Roaming/sqlite-dll")
+--     -- After setting
+--     print("After setting: " .. vim.inspect(vim.api.nvim_get_var('sqlite_clib_path')))
+-- end
 
 -- table.insert(lvim.builtin.cmp.sources, { name = "spell" })
--- lvim.builtin.cmp.formatting.source_names.spell = "(Spell)"
--- rename pane tmux working
-vim.cmd([[
-augroup TmuxRenaming
-    autocmd!
-    autocmd BufEnter * lua _G.rename_tmux_pane()
-    autocmd BufLeave * lua _G.reset_tmux_pane()
-augroup END
-]])
+-- lvim.builtin.cmp.formatting.source_names.dictionary = "(Spell)"
+--
+-- table.insert(lvim.builtin.cmp.sources, { name = "spell" })
+table.insert(lvim.builtin.cmp.sources, { name = "dictionary" })
+lvim.builtin.cmp.formatting.source_names.dictionary = "(Dict)"
+-- Set fuzzy matching options for nvim-cmp
+lvim.builtin.cmp.matching = {
+    disallow_fuzzy_matching = false,
+    disallow_fullfuzzy_matching = false,
+    disallow_partial_fuzzy_matching = false,
+}
 
+-- rename pane tmux working
 -- TODO:
 -- need to require here or it break
+local kind = require("dylan/kind") -- Icones perso
 require("dylan/dashboard")
