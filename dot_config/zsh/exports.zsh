@@ -17,7 +17,7 @@ export PATH="$PATH:$HOME/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin/ltex-ls"
 export PATH="$PATH:$HOME/.tmux/plugins/tmuxifier/bin"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux/plugins/tmuxifier/layouts"
 
-source /usr/share/doc/fzf/examples/key-bindings.zsh
+# source /usr/share/doc/fzf/examples/key-bindings.zsh
 
 export FZF_DEFAULT_OPTS="
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
