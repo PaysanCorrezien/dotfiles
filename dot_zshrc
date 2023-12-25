@@ -1,11 +1,11 @@
 # Created by Zap installer
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 plug "zsh-users/zsh-autosuggestions"
-plug "zap-zsh/supercharge"
+# plug "zap-zsh/supercharge"
 # plug "zap-zsh/zap-prompt"
 plug "zsh-users/zsh-syntax-highlighting"
 ## Ajout personnel
-plug "MichaelAquilina/zsh-you-should-use"
+# plug "MichaelAquilina/zsh-you-should-use"
 
 source $HOME/.config/zsh/zap-prompt.zsh-theme
 source $HOME/.config/zsh/aliases.zsh
@@ -53,31 +53,21 @@ eval "$(zoxide init zsh)"
 GPG_TTY=$(tty)
 export GPG_TTY
 
-# Copy current prompt to clipboard with ctrl A
-if [[ -n $DISPLAY ]]; then
-    copy_line_to_x_clipboard() {
-        echo -n $BUFFER | xclip -selection clipboard
-        zle reset-prompt
-    }
-    zle -N copy_line_to_x_clipboard
-    bindkey '^A' copy_line_to_x_clipboard
-fi
+# # Provides gitignorrr completion for zsh
+# _gitignorrr_get_command_list() {
+#     # gi cmd cache file
+#     cache=~/.config/.gitignorrr_cmd_list
 
+#     # check if cache file exists and is younger than half a month
+#     if [[ ! -f "$cache" || $(($(date +%s) - $(date -r "$cache" +%s))) -gt 1296000 ]]; then
+#         curl -sL https://www.toptal.com/developers/gitignore/api/list | tr "," "\n" > "$cache"
+#     fi
+#     cat "$cache"
+# }
 
-# Provides gitignorrr completion for zsh
-_gitignorrr_get_command_list() {
-    # gi cmd cache file
-    cache=~/.config/.gitignorrr_cmd_list
+# _gitignorrr () {
+#     compset -P '*,'
+#     compadd -S '' $(_gitignorrr_get_command_list)
+# }
+# compdef _gitignorrr gitignorrr
 
-    # check if cache file exists and is younger than half a month
-    if [[ ! -f "$cache" || $(($(date +%s) - $(date -r "$cache" +%s))) -gt 1296000 ]]; then
-        curl -sL https://www.toptal.com/developers/gitignore/api/list | tr "," "\n" > "$cache"
-    fi
-    cat "$cache"
-}
-
-_gitignorrr () {
-    compset -P '*,'
-    compadd -S '' $(_gitignorrr_get_command_list)
-}
-compdef _gitignorrr gitignorrr
