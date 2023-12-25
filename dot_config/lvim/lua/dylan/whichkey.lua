@@ -145,11 +145,9 @@ lvim.builtin.which_key.mappings["z"] = {
 	-- t = { ":lua require('telekasten').toggle_todo()<CR>",".toggle_todo"},
 	b = { ":lua require('telekasten').show_backlinks()<CR>", "Show_backlinks" },
 	-- F = { ":lua require('telekasten').find_friends()<CR>",".find_friends"},
-	I = { ":lua require('telekasten').insert_img_link({ i=true })<CR>", "Insert IMG" },
-	p = { ":lua require('telekasten').preview_img()<CR>", ".preview_img" },
-	m = { ":lua require('telekasten').browse_media()<CR>", ".browse_media" },
-	a = { ":lua require('telekasten').show_tags()<CR>", ".show_tags" },
-	R = { ":lua require('telekasten').rename_note()<CR>", "Rename" },
+	-- I = { ":lua require('telekasten').insert_img_link({ i=true })<CR>", "Insert IMG" },
+  I = { "<cmd>ObsidianPasteImg<CR>", "Insert IMG" },
+	R = { "<cmd>ObsidianRename<CR>", "Rename" },
 	x = { "<cmd>:lua require('telekasten').toggle_todo()<CR>", "toggle_todo" },
 	n = { "<Cmd>lua CreateNote()<CR>", "CreateNoteInDaily" },
 	-- t = { "<Cmd>lua CreateDailyTask()<CR>", "CreateTask" },
@@ -160,7 +158,7 @@ lvim.builtin.which_key.mappings["z"] = {
 	L = { "<cmd>ChatGPTRun markdownFormatter<cr>", "Format MD note" },
 	S = { "<cmd>ChatGPTRun completeFromSkeleton<cr>", "Draft Poste" },
 	C = { "<Cmd>lua PdfToImage()<CR>", "Convert Pdf to image" },
-	B = { "<Cmd>lua find_recent_note()<CR>", "Send to Blog" },
+	-- B = { "<Cmd>lua find_recent_note()<CR>", "Find recents Notes" },
 }
 
 -- Python

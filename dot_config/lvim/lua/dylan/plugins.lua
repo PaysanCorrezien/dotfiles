@@ -5,7 +5,8 @@ local home = os.getenv("HOME") or "~"
 --- Define OS-specific paths for both the vault and attachments
 local obsidiannvim_settings = {
 	vault_paths = {
-		Windows = "C:\\Users\\dylan\\Documents\\KnowledgeBase",
+		-- Windows = "C:/Users/dylan/Documents/KnowledgeBase/",
+		Windows = "~/Documents/KnowledgeBase",
 		Linux = "/mnt/c/users/dylan/Documents/KnowledgeBase/",
 	},
 	attachments_paths = {
@@ -16,12 +17,18 @@ local obsidiannvim_settings = {
 		Windows = "C:\\Users\\dylan\\scoop\\shims\\pdftoppm.exe",
 		Linux = "/usr/bin/pdftoppm",
 	},
+	templates_paths = {
+		Windows = "C:\\Users\\dylan\\Documents\\KnowledgeBase\\Projets\\Templates\\",
+		Linux = "/mnt/c/users/dylan/Documents/KnowledgeBase/Projets/Templates/",
+	},
 }
 
 -- Retrieve the correct paths based on the OS
 local obsidian_vault_path = os_utils.get_setting(obsidiannvim_settings.vault_paths)
 local obsidian_attachments_path = os_utils.get_setting(obsidiannvim_settings.attachments_paths)
 local pdftoppm__path = os_utils.get_setting(obsidiannvim_settings.pdftoppm_paths)
+local templates_path = os_utils.get_setting(obsidiannvim_settings.templates_paths)
+
 -- - Retrieve the correct path based on the OS
 -- local obsidian_vault_path = os_utils.get_setting(obsidiannvim_paths)
 
@@ -38,7 +45,6 @@ local dictionary_path = {
 }
 local dictionary_plugin_path = os_utils.get_setting(dictionary_path)
 
-
 local dictionaries_files_path = {
 	remote_ltex_ls = {
 		Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\ltex.dictionary.fr.txt",
@@ -51,10 +57,10 @@ local dictionaries_files_path = {
 	local_ltex_ls = {
 		Windows = "L:\\home\\dylan\\.config\\lvim\\dict\\ltex.dictionary.fr.txt",
 		Linux = home .. "/.config/lvim/dict/ltex.dictionary.fr.txt",
-  },
-	local_spell= {
+	},
+	local_spell = {
 		Windows = "L:\\home\\dylan\\.config\\lvim\\dict\\spell.utf-8.add",
-		Linux =  home .. "/.config/lvim/dict/spell.utf-8.add",
+		Linux = home .. "/.config/lvim/dict/spell.utf-8.add",
 	},
 }
 local remote_ltex_ls = os_utils.get_setting(dictionaries_files_path.remote_ltex_ls)
@@ -64,8 +70,8 @@ local local_spell = os_utils.get_setting(dictionaries_files_path.local_spell)
 
 local ltex_extra_plugin_cwd = {
 
-  Windows = "L:\\home\\dylan\\.config\\lvim\\dict",
-  Linux = home .. "/.config/lvim/dict",
+	Windows = "L:\\home\\dylan\\.config\\lvim\\dict",
+	Linux = home .. "/.config/lvim/dict",
 }
 
 local ltex_extra_cwd = os_utils.get_setting(ltex_extra_plugin_cwd)
@@ -84,10 +90,10 @@ lvim.plugins = {
 					-- home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
 					-- home .. "/.config/lvim/dict/ltex.dictionary.fr.txt",
 					-- home .. "/.config/lvim/dict/spell.utf-8.add",
-          remote_ltex_ls,
-          remote_spell,
-          local_ltex_ls,
-          local_spell,
+					remote_ltex_ls,
+					remote_spell,
+					local_ltex_ls,
+					local_spell,
 				},
 				override_zg = true,
 				ltex_dictionary = true, -- if you are use ltex-ls extra and want to use zg to also update ltex-ls dictionary
@@ -98,9 +104,9 @@ lvim.plugins = {
 					filetypes = { "markdown", "tex" },
 					priority = 20000,
 					name = "mydictionary",
-          source_label = "[Dict]",
-         	kind_icon = cmp.lsp.CompletionItemKind.Event, -- Icon for suggestions
-          -- kind_icon = " "
+					source_label = "[Dict]",
+					-- kind_icon = cmp.lsp.CompletionItemKind.Event, -- Icon for suggestions
+					-- kind_icon = " "
 				},
 			})
 		end,
@@ -136,7 +142,7 @@ lvim.plugins = {
 	-- 					option = {
 	-- 						keep_all_entries = false,
 	-- 						enable_in_context = function()
- --                return true
+	--                return true
 	-- 							-- return require("cmp.config.context").in_treesitter_capture("spell")
 	-- 						end,
 	-- 					},
@@ -193,11 +199,11 @@ lvim.plugins = {
 		"folke/trouble.nvim",
 		cmd = "TroubleToggle",
 	},
-  {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    after = "nvim-treesitter",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-  },
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+	},
 	{
 		"epwalsh/obsidian.nvim",
 		lazy = false,
@@ -219,10 +225,11 @@ lvim.plugins = {
 			-- "preservim/vim-markdown",
 		},
 		opts = {
+			-- dir = "~/Documents/KnowledgeBase",
 			dir = obsidian_vault_path, -- no need to call 'vim.fn.expand' here
 
 			-- Optional, if you keep notes in a specific subdirectory of your vault.
-			notes_subdir = "Docs\\KnowledgeBase",
+			notes_subdir = "Docs/KnowledgeBase",
 
 			-- Optional, if you keep daily notes in a separate directory.
 			daily_notes = {
@@ -237,7 +244,7 @@ lvim.plugins = {
 				-- The default folder to place images in via `:ObsidianPasteImg`.
 				-- If this is a relative path it will be interpreted as relative to the vault root.
 				-- You can always override this per image by passing a full path to the command instead of just a filename.
-				img_folder = "static\\img", -- This is the default
+				img_folder = obsidian_attachments_path , -- This is the default
 				-- A function that determines the text to insert in the note when pasting an image.
 				-- It takes two arguments, the `obsidian.Client` and a plenary `Path` to the image file.
 				-- This is the default implementation.
@@ -286,7 +293,7 @@ lvim.plugins = {
 				-- date_format = "%Y-%m-%d-%a",
 				-- time_format = "%H:%M",
 			},
-			use_advanced_uri = true,
+			-- use_advanced_uri = true,
 			finder = "telescope.nvim",
 		},
 		config = function(_, opts)
@@ -389,8 +396,8 @@ lvim.plugins = {
 	{ "tpope/vim-obsession" },
 	{
 		"barreiroleo/ltex_extra.nvim",
-    -- TODO: remove when PR merged
-    commit = '6d00bf2fbd6fcecafd052c0e0f768b67ceb3307f',
+		-- TODO: remove when PR merged
+		commit = "6d00bf2fbd6fcecafd052c0e0f768b67ceb3307f",
 		ft = { "markdown", "tex" },
 		dependencies = { "neovim/nvim-lspconfig" },
 		-- yes, you can use the opts field, just I'm showing the setup explicitly
@@ -406,9 +413,9 @@ lvim.plugins = {
 				-- e.g. subfolder in current working directory: ".ltex"
 				-- e.g. shared files for all projects :  vim.fn.expand("~") .. "/.local/share/ltex"
 				-- path = "~/.config/lvim/dict", -- current working directory
-        path = ltex_extra_cwd,
-        -- cant work because \\\\ are poorly interpreted 
-        -- path = "\\\\wsl.localhost\\Debian\\home\\dylan\\.config\\lvim\\dict",
+				path = ltex_extra_cwd,
+				-- cant work because \\\\ are poorly interpreted
+				-- path = "\\\\wsl.localhost\\Debian\\home\\dylan\\.config\\lvim\\dict",
 				-- string : "none", "trace", "debug", "info", "warn", "error", "fatal"
 				log_level = "none",
 				-- table : configurations of the ltex language server.
@@ -646,7 +653,54 @@ lvim.plugins = {
 			})
 		end,
 	},
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				panel = {
+					enabled = true,
+					auto_refresh = false,
+					keymap = {
+						jump_prev = "[[",
+						jump_next = "]]",
+						accept = "<CR>",
+						refresh = "gr",
+						open = "<M-CR>",
+					},
+					layout = {
+						position = "bottom", -- | top | left | right
+						ratio = 0.5,
+					},
+				},
+				suggestion = {
+					enabled = true,
+					auto_trigger = true,
+					debounce = 75,
+					keymap = {
+						accept = "<C-a>",
+						accept_word = false,
+						accept_line = false,
+						next = "<C-l>",
+						prev = "<C-h>",
+						dismiss = "<C-d>",
+					},
+				},
+				filetypes = {
+					yaml = false,
+					markdown = false,
+					help = false,
+					gitcommit = false,
+					gitrebase = false,
+					hgcommit = false,
+					svn = false,
+					cvs = false,
+					["."] = false,
+				},
+				copilot_node_command = "node", -- Node.js version must be > 18.x
+				server_opts_overrides = {},
+			})
+		end,
+	},
 }
--- end of lvim.plugins{}
-
--- require("utils")
