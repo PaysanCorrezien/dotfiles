@@ -36,23 +36,24 @@ local dictionary_path = {
 	Windows = "C:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\dictionary.nvim",
 	Linux = "/mnt/c/users/dylan/Documents/Projet/Work/Projet/dictionary.nvim/",
 }
-
 local dictionary_plugin_path = os_utils.get_setting(dictionary_path)
+
+
 local dictionaries_files_path = {
 	remote_ltex_ls = {
-		Windows = "\\\\wsl.localhost\\Debian\\home\\dylan\\local\\share\\chezmoi\\dot_config\\lvim\\dict\\ltex.dictionary.fr.txt",
+		Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\ltex.dictionary.fr.txt",
 		Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
 	},
 	remote_spell = {
-		Windows = "\\\\wsl.localhost\\Debian\\home\\dylan\\local\\share\\chezmoi\\dot_config\\lvim\\dict\\spell.utf-8.add",
+		Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\spell.utf-8.add",
 		Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
 	},
 	local_ltex_ls = {
-		Windows = "\\\\wsl.localhost\\Debian\\home\\dylan\\.config\\lvim\\dict\\ltex.dictionary.fr.txt",
-		Linux = home .. "/.config/lvim/dict/ltex.dictionary.fr.txt", 
+		Windows = "L:\\home\\dylan\\.config\\lvim\\dict\\ltex.dictionary.fr.txt",
+		Linux = home .. "/.config/lvim/dict/ltex.dictionary.fr.txt",
   },
 	local_spell= {
-		Windows = "\\\\wsl.localhost\\Debian\\home\\dylan\\.config\\lvim\\dict\\spell.utf-8.add",
+		Windows = "L:\\home\\dylan\\.config\\lvim\\dict\\spell.utf-8.add",
 		Linux =  home .. "/.config/lvim/dict/spell.utf-8.add",
 	},
 }
@@ -60,6 +61,14 @@ local remote_ltex_ls = os_utils.get_setting(dictionaries_files_path.remote_ltex_
 local remote_spell = os_utils.get_setting(dictionaries_files_path.remote_spell)
 local local_ltex_ls = os_utils.get_setting(dictionaries_files_path.local_ltex_ls)
 local local_spell = os_utils.get_setting(dictionaries_files_path.local_spell)
+
+local ltex_extra_plugin_cwd = {
+
+  Windows = "L:\\home\\dylan\\.config\\lvim\\dict",
+  Linux = home .. "/.config/lvim/dict",
+}
+
+local ltex_extra_cwd = os_utils.get_setting(ltex_extra_plugin_cwd)
 
 lvim.plugins = {
 	{
@@ -84,13 +93,14 @@ lvim.plugins = {
 				ltex_dictionary = true, -- if you are use ltex-ls extra and want to use zg to also update ltex-ls dictionary
 				cmp = {
 					enabled = true,
-					custom_dict_path = home .. "/.config/lvim/dict/ltex.dictionary.fr.txt",
+					custom_dict_path = local_ltex_ls,
 					max_spell_suggestions = 10,
 					filetypes = { "markdown", "tex" },
 					priority = 20000,
 					name = "mydictionary",
           source_label = "[Dict]",
          	kind_icon = cmp.lsp.CompletionItemKind.Event, -- Icon for suggestions
+          -- kind_icon = " "
 				},
 			})
 		end,
@@ -183,7 +193,11 @@ lvim.plugins = {
 		"folke/trouble.nvim",
 		cmd = "TroubleToggle",
 	},
-
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    after = "nvim-treesitter",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+  },
 	{
 		"epwalsh/obsidian.nvim",
 		lazy = false,
@@ -375,6 +389,8 @@ lvim.plugins = {
 	{ "tpope/vim-obsession" },
 	{
 		"barreiroleo/ltex_extra.nvim",
+    -- TODO: remove when PR merged
+    commit = '6d00bf2fbd6fcecafd052c0e0f768b67ceb3307f',
 		ft = { "markdown", "tex" },
 		dependencies = { "neovim/nvim-lspconfig" },
 		-- yes, you can use the opts field, just I'm showing the setup explicitly
@@ -389,7 +405,10 @@ lvim.plugins = {
 				-- string : relative or absolute paths to store dictionaries
 				-- e.g. subfolder in current working directory: ".ltex"
 				-- e.g. shared files for all projects :  vim.fn.expand("~") .. "/.local/share/ltex"
-				path = "~/.config/lvim/dict", -- current working directory
+				-- path = "~/.config/lvim/dict", -- current working directory
+        path = ltex_extra_cwd,
+        -- cant work because \\\\ are poorly interpreted 
+        -- path = "\\\\wsl.localhost\\Debian\\home\\dylan\\.config\\lvim\\dict",
 				-- string : "none", "trace", "debug", "info", "warn", "error", "fatal"
 				log_level = "none",
 				-- table : configurations of the ltex language server.
@@ -584,7 +603,7 @@ lvim.plugins = {
 				ensure_installed = {
 					-- Python tools
 					{ "pyright", auto_update = true }, -- LSP
-					{ "black", auto_update = true }, -- Formatter
+					-- { "black", auto_update = true }, -- Formatter
 					{ "flake8", auto_update = true }, -- Linter
 					{ "mypy", auto_update = true }, -- Type Checker
 					-- { 'ruff', auto_update = true},
@@ -615,7 +634,7 @@ lvim.plugins = {
 					{ "html", auto_update = true }, -- LSP for HTML
 					{ "cssls", auto_update = true }, -- LSP for CSS
 					-- lua
-					{ "luacheck", auto_update = true }, -- LSP for CSS
+					-- { "luacheck", auto_update = true }, -- LSP for CSS
 					-- Misc
 					-- TODO: Test this ?
 					-- { 'gitleaks', auto_update = true },    -- LSP for CSS

@@ -29,6 +29,7 @@ lvim.builtin.which_key.mappings["x"] = {
 	-- F = { "<cmd>ChatGPTRun french<cr>", "ChatGPT Correct" }, --Only French
 	C = { "<cmd>ChatGPTRun complete_code<cr>", "ChatGPT End Code" },
 	P = { "<cmd>ChatGPTRun powershellDocs<cr>", "Generate Ps Docs" },
+	L = { "<cmd>ChatGPTRun luaEmmyDocs<cr>", "Generate Lua Docs" },
 	S = { "<cmd>ChatGPTRun summarize<cr>", "ChatGPT summarize" },
 	D = { "<cmd>ChatGPTRun docstrings<cr>", "ChatGPT Docs" },
 	H = { "<cmd>Telescope command_history <cr>", "Command history" },
@@ -116,7 +117,15 @@ lvim.builtin.which_key.mappings["u"] = {
 lvim.builtin.which_key.setup.plugins.registers = true
 lvim.builtin.which_key.setup.plugins.marks = true
 lvim.builtin.which_key.setup.plugins.spelling = true
-lvim.builtin.which_key.setup.plugins.presets = true
+lvim.builtin.which_key.setup.plugins.presets = {
+  operators = true, -- enable help for operators like d, y, ...
+      motions = true, -- enable help for motions
+      text_objects = true, -- enable help for text objects triggered after entering an operator
+      windows = true, -- enable default bindings on <c-w>
+      nav = true, -- enable misc bindings to work with windows
+      z = true, -- enable bindings for folds, spelling and others prefixed with z
+      g = true, -- enable bindings for prefixed with g
+}
 
 lvim.builtin.which_key.mappings["z"] = {
 	name = "+Telekasten",
@@ -179,3 +188,45 @@ lvim.builtin.which_key.mappings["xE"] = {
 -- TODO: faire fonctionner pour eviter d'avoir un script custom
 -- local opts = require('telescope.pickers').new({}, {'vimgrep_arguments'=='rg','--no-heading','with-filename','--vimgrep'})
 -- lvim.builtin.which_key.mappings["9"] = { "<cmd>lua require('telescope.builtin').find_files(opts)<cr>", "Custom Finder" }
+--
+--nvim treesitter TextObject
+---- Text Object Select Labels
+local select_labels = {
+    ['aa'] = { query = '@parameter.outer', desc = 'Select outer part of a parameter' },
+    ['ia'] = { query = '@parameter.inner', desc = 'Select inner part of a parameter' },
+    ['af'] = { query = '@function.outer', desc = 'Select outer part of a function' },
+    ['if'] = { query = '@function.inner', desc = 'Select inner part of a function' },
+    ['ac'] = { query = '@class.outer', desc = 'Select outer part of a class' },
+    ['ic'] = { query = '@class.inner', desc = 'Select inner part of a class' },
+    ['ii'] = { query = '@conditional.inner', desc = 'Select inner part of a conditional' },
+    ['ai'] = { query = '@conditional.outer', desc = 'Select outer part of a conditional' },
+    ['il'] = { query = '@loop.inner', desc = 'Select inner part of a loop' },
+    ['al'] = { query = '@loop.outer', desc = 'Select outer part of a loop' },
+    ['ak'] = { query = '@comment.outer', desc = 'Select outer part of a comment' },
+    ['ik'] = { query = '@comment.inner', desc = 'Select inner part of a comment' },
+}
+
+-- Move Labels
+local move_labels = {
+    ["]m"] = { query = '@function.outer', desc = 'Go to next function start' },
+    ["]]"] = { query = '@class.outer', desc = 'Go to next class start' },
+    ["]o"] = { query = '@loop.outer', desc = 'Go to next loop start' },
+    ["]s"] = { query = '@scope', desc = 'Go to next scope start' },
+    ["]z"] = { query = '@fold', desc = 'Go to next fold start' },
+    ["]F"] = { query = '@function.outer', desc = 'Go to next function end' },
+    ["]["] = { query = '@class.outer', desc = 'Go to next class end' },
+    ["[f"] = { query = '@function.outer', desc = 'Go to previous function start' },
+    ["[["] = { query = '@class.outer', desc = 'Go to previous class start' },
+    ["[M"] = { query = '@function.outer', desc = 'Go to previous function end' },
+    ["[]"] = { query = '@class.outer', desc = 'Go to previous class end' },
+}
+local lsp_ts_labels = {
+  ["gpof"] = "@function.outer",
+  ["gpoc"] = "@class.outer",
+}
+
+lvim.builtin.which_key.on_config_done = function(wk)
+    wk.register(select_labels, { mode = "o", prefix = "", preset = true })
+    wk.register(move_labels, { mode = "n", prefix = "", preset = true })
+    wk.register(lsp_ts_labels, { mode = "n", prefix = "", preset = true })
+end

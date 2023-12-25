@@ -8,6 +8,7 @@ lvim.builtin.lualine.sections.lualine_b = {
   components.diff,
   components.scrollbar,
 }
+
 lvim.builtin.lualine.sections.lualine_c = { require("NeoComposer.ui").status_recording }
 
 lvim.builtin.lualine.sections.lualine_y = {

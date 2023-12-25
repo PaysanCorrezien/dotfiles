@@ -7,6 +7,7 @@ linters.setup({
 		command = "shellcheck",
 		-- @usage arguments to pass to the formatter
 		-- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
+    -- TODO : make it work on all zsh file , same for lsp  ?
 		extra_args = { "--severity", "warning" },
 		filetypes = { "sh", "zsh" },
 	},
@@ -24,5 +25,6 @@ linters.setup({
   -- { command = "ruff", args= { "-n", "-e", "--stdin-filename", "$FILENAME", "-" },filetypes={"python"}},
 	{ command = "yamllint", filetypes = { "yaml" } },
 	{ command = "markdownlint", filetypes = { "markdown" } },
-	{ command = "luacheck", filetypes = { "lua" } },
+  -- SO SLOW ????
+	-- { command = "luacheck", filetypes = { "lua" } },
 })

@@ -24,7 +24,7 @@
   "completeFromSkeleton": {
     "type": "chat",
     "opts": {
-      "template": "For the provided markdown document, please generate detailed content under each heading. Complete any unfinished sections with accurate and relevant information. If a section is partially started, continue the text in a coherent manner. For fully written sections, enhance the explanations and ensure the technical accuracy and clarity of the content. The output should maintain the structure and style of the existing document and seamlessly integrate with it:\n\n{{input}}",
+      "template": "For the provided markdown document, please generate detailed content under each heading. Complete any unfinished sections with accurate and relevant information. If a section is partially started, continue the text in a coherent manner. For fully written sections, enhance the explanations and ensure the technical accuracy and clarity of the content.Please dont edit the code just add documentation on top of it. The output should maintain the structure and style of the existing document and seamlessly integrate with it:\n\n{{input}}",
       "strategy": "edit",
       "params": {
         "model": "gpt-3.5-turbo-1106",
@@ -37,6 +37,18 @@
     "type": "chat",
     "opts": {
       "template": "Generate standard PowerShell documentation comments for the following function. After the documentation, include the original function as it is:\n\n{{input}}",
+      "strategy": "edit",
+      "params": {
+        "model": "gpt-3.5-turbo",
+        "temperature": 0.1,
+        "max_tokens": 1024
+      }
+    }
+  },
+  "luaEmmyDocs": {
+    "type": "chat",
+    "opts": {
+      "template": "Generate EmmyLua documentation comments for the following Lua function. After the documentation, include the original function as it is:\n\n{{input}}\n\nEnsure that the documentation includes relevant class, parameter types, return types, and descriptions following EmmyLua annotation standards. Please dont edit the code just add documentation on top of it.",
       "strategy": "edit",
       "params": {
         "model": "gpt-3.5-turbo",

@@ -273,25 +273,25 @@ function _G.load_modules(modules)
 end
 
 -- For working with windows
-function _G.remove_plugins_for_windows(plugins_not_on_windows)
-	if package.config:sub(1, 1) == "\\" then -- If the OS is Windows
-		for _, plugin_to_remove in ipairs(plugins_not_on_windows) do
-			for i, plugin in ipairs(lvim.plugins) do
-				if type(plugin) == "table" then
-					if plugin[1] == plugin_to_remove then
-						table.remove(lvim.plugins, i)
-						break
-					end
-				elseif type(plugin) == "string" then
-					if plugin == plugin_to_remove then
-						table.remove(lvim.plugins, i)
-						break
-					end
-				end
-			end
-		end
-	end
-end
+-- function _G.remove_plugins_for_windows(plugins_not_on_windows)
+-- 	if package.config:sub(1, 1) == "\\" then -- If the OS is Windows
+-- 		for _, plugin_to_remove in ipairs(plugins_not_on_windows) do
+-- 			for i, plugin in ipairs(lvim.plugins) do
+-- 				if type(plugin) == "table" then
+-- 					if plugin[1] == plugin_to_remove then
+-- 						table.remove(lvim.plugins, i)
+-- 						break
+-- 					end
+-- 				elseif type(plugin) == "string" then
+-- 					if plugin == plugin_to_remove then
+-- 						table.remove(lvim.plugins, i)
+-- 						break
+-- 					end
+-- 				end
+-- 			end
+-- 		end
+-- 	end
+-- end
 
 -- Check if an argument was provided or use the current buffer
 -- BUG: not working because path env variable are not loaded this way, use fzfwindows exemple to correct this

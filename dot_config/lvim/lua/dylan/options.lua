@@ -51,5 +51,7 @@ lvim.builtin.treesitter.highlight.enable = true
 lvim.builtin.cmp.cmdline.enable = true
 -- lvim.builtin.cmp.crates.enable = true
 
+-- vim.env.NVIM_LOG_FILE = vim.fn.stdpath('data') .. '/log'
+-- vim.opt.verbose = 1
 -- lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
 -- table.insert(lvim.builtin.cmp.sources,1,{ name = "copilot" })

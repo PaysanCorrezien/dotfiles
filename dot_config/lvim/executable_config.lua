@@ -50,7 +50,7 @@ require("dylan/neocomposer")
 require("dylan/colorscheme")
 require("dylan/noice")
 require("dylan/telekasten")
-require("dylan/spell")
+-- require("dylan/spell")
 require("dylan/rust")
 require("dylan/autocommands")
 require("dylan/lualine")
@@ -59,8 +59,6 @@ require("dylan/treesitter")
 -- require("dylan/python")
 -- usefull functions
 require("utils")
--- require("DictionnaryManager")
--- require("DictionnaryCmp")
 --  function inside utiles chack only load certain modules on linux to not use some on work computer
 --
 -- Test Tmux rename auto
