@@ -10,8 +10,22 @@ end
 
 -- Function to get the current Windows username
 function M.get_windows_username()
-    -- Assuming you are using Neovim, you can use vim.fn to access environment variables
-    return vim.fn.getenv("USERNAME") or "default_username"
+    -- Check the operating system
+    local os_name = M.get_os()
+
+    if os_name == "Windows" then
+        -- Windows environment
+        return vim.fn.getenv("USERNAME") or "default_username"
+    elseif os_name == "Linux" then
+        -- WSL environment: execute 'cmd.exe /c echo %USERNAME%'
+        local handle = io.popen("cmd.exe /c echo %USERNAME%", "r")
+        if handle then
+            local username = handle:read("*a"):gsub("%s+", "") -- Remove extra whitespace
+            handle:close()
+            return username
+        end
+    end
+    return "default_username"
 end
 
 -- Function to convert paths
