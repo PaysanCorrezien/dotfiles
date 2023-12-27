@@ -72,7 +72,7 @@ lvim.builtin.which_key.mappings["E"] = { "<cmd>NnnPicker<cr>", "NNN File Browser
 lvim.builtin.which_key.mappings["I"] = { "<cmd>IconPickerInsert<cr>", "Icon Picker" } -- ctrl e in insert mode do the same
 
 lvim.builtin.which_key.vmappings["y"] = { '"+y', "Copy Y" }
-lvim.builtin.which_key.mappings["Y"] = { "<cmd>Telescope neoclip<cr>", "ClipBoard" }
+-- lvim.builtin.which_key.mappings["Y"] = { "<cmd>Telescope neoclip<cr>", "ClipBoard" }
 -- lvim.builtin.which_key.mappings["y"] = { '[["+y]]', "Copy To ClipBoard" }
 
 lvim.builtin.which_key.mappings["sm"] = { "<cmd>Telescope marks<CR>", "marks" }

@@ -20,7 +20,7 @@ local dictionaries_files_path = {
 		Linux = home .. "/.local/share/chezmoi/dot_config/lvim/executable_config.lua",
 	},
 	ltex_ls_folder = {
-		Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\",
+		Windows = "\\wsl.localhost\\Debian\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\",
 		Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/",
 	},
 }
@@ -30,13 +30,16 @@ local remote_spell = os_utils.get_setting(dictionaries_files_path.remote_spell)
 local chezmoi = os_utils.get_setting(dictionaries_files_path.chezmoi)
 local ltex_ls_folder = os_utils.get_setting(dictionaries_files_path.ltex_ls_folder)
 -- Define the paths directly using the home directory path
+-- vim.g.my_ltexfile_path = home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt"
+-- vim.g.my_spellfile_path = home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add"
+-- vim.g.my_chezmoi_config_path = home .. "/.local/share/chezmoi/dot_config/lvim/executable_config.lua"
 vim.g.my_ltexfile_path = remote_ltex_ls
 vim.g.my_spellfile_path = remote_spell
 vim.g.my_chezmoi_config_path = chezmoi
 
 -- Debug: Print the path to check
 -- print("Runtimepath before: " .. vim.o.runtimepath)
-vim.opt.runtimepath:append(ltex_ls_folder)
+-- -- vim.opt.runtimepath:append(ltex_ls_folder)
 -- print("Runtimepath after: " .. vim.o.runtimepath)
 -- Get the home directory path
 -- Set the spellfile option to the path of your .add file
@@ -51,11 +54,12 @@ if current_os == "Windows" then
 	-- Retrieve the Windows username dynamically
 	local windows_username = os_utils.get_windows_username()
 	-- Set the sqlite_clib_path with dynamic username
-	local sqlite_clib_path = "C:/Users/" .. windows_username .. "/AppData/Roaming/sqlite-dll/sqlite3.dll"
-	vim.api.nvim_set_var("sqlite_clib_path", sqlite_clib_path)
+	local sqlite_lib_path = "C:/Users/" .. windows_username .. "/AppData/Roaming/sqlite-dll/sqlite3.dll"
+	vim.api.nvim_set_var("sqlite_lib_path", sqlite_lib_path)
 	-- Set shell to PowerShell and the command flag
 	vim.opt.shell = "pwsh.exe"
 	vim.opt.shellcmdflag = "-c"
+	vim.opt.runtimepath:append("L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\")
 end
 
 -- if current_os == "Linux" then

@@ -174,13 +174,6 @@ lvim.plugins = {
 	--   }
 	--   require('qmk').setup(conf)
 	-- end
-	{
-		"folke/todo-comments.nvim",
-		event = "BufRead",
-		config = function()
-			require("todo-comments").setup()
-		end,
-	},
 	-- },
 	{ "folke/tokyonight.nvim" },
 	{ "rebelot/kanagawa.nvim" },
@@ -496,17 +489,17 @@ lvim.plugins = {
 		"nvim-telescope/telescope-file-browser.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	},
-	{
-		"AckslD/nvim-neoclip.lua",
-		dependencies = {
-			-- you'll need at least one of these
-			{ "nvim-telescope/telescope.nvim" },
-			-- {'ibhagwan/fzf-lua'},
-		},
-		config = function()
-			require("neoclip").setup()
-		end,
-	},
+	-- {
+	-- 	"AckslD/nvim-neoclip.lua",
+	-- 	dependencies = {
+	-- 		-- you'll need at least one of these
+	-- 		{ "nvim-telescope/telescope.nvim" },
+	-- 		-- {'ibhagwan/fzf-lua'},
+	-- 	},
+	-- 	config = function()
+	-- 		require("neoclip").setup()
+	-- 	end,
+	-- },
 	{ "simrat39/rust-tools.nvim" },
 	-- { "f3fora/cmp-spell" }
 	{
@@ -532,16 +525,16 @@ lvim.plugins = {
 			require("fidget").setup()
 		end,
 	},
-	{
-		"bennypowers/nvim-regexplainer",
-		config = function()
-			require("regexplainer").setup()
-		end,
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"MunifTanjim/nui.nvim",
-		},
-	},
+	-- {
+	-- 	"bennypowers/nvim-regexplainer",
+	-- 	config = function()
+	-- 		require("regexplainer").setup()
+	-- 	end,
+	-- 	dependencies = {
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 		"MunifTanjim/nui.nvim",
+	-- 	},
+	-- },
 	-- {
 	-- 	"subnut/nvim-ghost.nvim",
 	-- },
