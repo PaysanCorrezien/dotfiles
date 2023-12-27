@@ -2,8 +2,9 @@ local os_utils = require("os_utils")
 
 -- TODO: find a way to make this automatic with a single array and automatic conversion with a function
 local home = os.getenv("HOME") or "~"
---- Define OS-specific paths for both the vault and attachments
-local obsidiannvim_settings = {
+-- Define OS-specific paths for both the vault and attachments
+-- Settings with paths
+obsidiannvim_settings = {
 	vault_paths = {
 		-- Windows = "C:/Users/dylan/Documents/KnowledgeBase/",
 		Windows = "~/Documents/KnowledgeBase",
@@ -73,12 +74,18 @@ local ltex_extra_plugin_cwd = {
 	Windows = "L:\\home\\dylan\\.config\\lvim\\dict",
 	Linux = home .. "/.config/lvim/dict",
 }
+local gptnvim_action_paths = {
+  Windows = "L:\\home\\dylan\\.config\\lvim\\correct_french.json",
+  Linux = home .. "/.config/lvim/correct_french.json",
+}
+local gptnvim_action_path = os_utils.get_setting(gptnvim_action_paths)
 
 local ltex_extra_cwd = os_utils.get_setting(ltex_extra_plugin_cwd)
 
 lvim.plugins = {
 	{
-		dir = dictionary_plugin_path,
+		-- dir = dictionary_plugin_path, -- DEV : use local path
+    "paysancorrezien/dictionary.nvim", -- PROD : use remote path
 		ft = "markdown",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -112,7 +119,8 @@ lvim.plugins = {
 		end,
 	},
 	{
-		dir = pdf_plugin_path,
+		-- dir = pdf_plugin_path, -- DEV : use local path
+    "paysancorrezien/pdf.nvim", -- PROD : use remote path
 		ft = "markdown",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -244,7 +252,7 @@ lvim.plugins = {
 				-- The default folder to place images in via `:ObsidianPasteImg`.
 				-- If this is a relative path it will be interpreted as relative to the vault root.
 				-- You can always override this per image by passing a full path to the command instead of just a filename.
-				img_folder = obsidian_attachments_path , -- This is the default
+				img_folder = obsidian_attachments_path, -- This is the default
 				-- A function that determines the text to insert in the note when pasting an image.
 				-- It takes two arguments, the `obsidian.Client` and a plenary `Path` to the image file.
 				-- This is the default implementation.
@@ -384,7 +392,7 @@ lvim.plugins = {
 					n = 1,
 				},
 
-				actions_paths = { "/home/dylan/.config/lvim/correct_french.json" },
+				actions_paths = { gptnvim_action_path },
 				predefined_chat_gpt_prompts = "https://raw.githubusercontent.com/PaysanCorrezien/dotfiles/main/dot_config/lvim/prompts.csv",
 				-- popup_input = {
 				-- 	submit = "<CR>",
@@ -574,6 +582,7 @@ lvim.plugins = {
 			"rcarriga/nvim-dap-ui",
 		},
 		config = function(_, opts)
+      --TODO : adapt paths
 			local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
 			require("dap-python").setup(path)
 			-- require("core.utils").load_mappings("dap_python")
