@@ -1,5 +1,6 @@
 
 alias v="lvim"
+alias n="nvim"
 alias icat="kitty +kitten icat"
 # alias obsidian='sudo -- sh -c ~/.local/bin/Obsidian.AppImage'
 alias obsidian="/home/dylan/share/applications/Obsidian.AppImage"

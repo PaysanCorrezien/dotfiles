@@ -43,6 +43,12 @@ function c
 }
 
 $env:LUNARVIM_CONFIG_DIR = "\\wsl.localhost\Debian\home\dylan\.config\lvim"
+# Neovim
+$configPath = "\\wsl.localhost\Debian\home\dylan\.config\nvim\init.lua"
+function Open-NvimWithConfig {
+    nvim -u $configPath
+}
+set-alias -name n -value Open-NvimWithConfig
 
 function Open-Lvim
 {
