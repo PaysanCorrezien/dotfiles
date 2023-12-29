@@ -26,36 +26,36 @@
       "keys": "alt+shift+d"
     },
     {
-        "command": null,
-        "keys": "ctrl+shift+1"
+      "command": null,
+      "keys": "ctrl+shift+1"
     },
     {
-        "command": null,
-        "keys": "ctrl+shift+2"
+      "command": null,
+      "keys": "ctrl+shift+2"
     },
     {
-        "command": null,
-        "keys": "ctrl+shift+3"
+      "command": null,
+      "keys": "ctrl+shift+3"
     },
     {
-        "command": null,
-        "keys": "ctrl+shift+4"
+      "command": null,
+      "keys": "ctrl+shift+4"
     },
     {
-        "command": null,
-        "keys": "ctrl+shift+5"
+      "command": null,
+      "keys": "ctrl+shift+5"
     },
     {
-        "command": null,
-        "keys": "ctrl+shift+6"
+      "command": null,
+      "keys": "ctrl+shift+6"
     },
     {
-        "command": null,
-        "keys": "ctrl+shift+7"
+      "command": null,
+      "keys": "ctrl+shift+7"
     },
     {
-        "command": null,
-        "keys": "ctrl+shift+8"
+      "command": null,
+      "keys": "ctrl+shift+8"
     }
   ],
   "copyFormatting": "none",
@@ -73,7 +73,8 @@
       "backgroundImageOpacity": 0.42,
       "colorScheme": "Catppuccin Macchiato",
       "font": {
-        "face": "FiraCode Nerd Font"
+        "face": "FiraCode Nerd Font",
+        "size": 10
       },
       "opacity": 100
     },
