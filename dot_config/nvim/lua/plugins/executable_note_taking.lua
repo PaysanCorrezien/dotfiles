@@ -78,61 +78,61 @@ local ltex_extra_plugin_cwd = {
 local ltex_extra_cwd = os_utils.get_setting(ltex_extra_plugin_cwd)
 
 return {
-	-- {
-	--BUG: find where cmp is broken and fix it
-	--   "barreiroleo/ltex_extra.nvim",
-	--   -- TODO: remove when PR merged
-	--   commit = "6d00bf2fbd6fcecafd052c0e0f768b67ceb3307f",
-	--   ft = { "markdown", "tex" },
-	--   dependencies = { "neovim/nvim-lspconfig" },
-	--   -- yes, you can use the opts field, just I'm showing the setup explicitly
-	--   config = function()
-	--     require("ltex_extra").setup({
-	--       -- your_ltex_extra_opts,
-	--       -- table <string> : languages for witch dictionaries will be loaded, e.g. { "es-AR", "en-US" }
-	--       -- https://valentjn.github.io/ltex/supported-languages.html#natural-languages
-	--       load_langs = { "fr" }, -- en-US as default
-	--       -- boolean : whether to load dictionaries on startup
-	--       init_check = true,
-	--       -- string : relative or absolute paths to store dictionaries
-	--       -- e.g. subfolder in current working directory: ".ltex"
-	--       -- e.g. shared files for all projects :  vim.fn.expand("~") .. "/.local/share/ltex"
-	--       -- path = "~/.config/lvim/dict", -- current working directory
-	--       path = ltex_extra_cwd,
-	--       -- cant work because \\\\ are poorly interpreted
-	--       -- path = "\\\\wsl.localhost\\Debian\\home\\dylan\\.config\\lvim\\dict",
-	--       -- string : "none", "trace", "debug", "info", "warn", "error", "fatal"
-	--       log_level = "none",
-	--       -- table : configurations of the ltex language server.
-	--       -- Only if you are calling the server from ltex_extra
-	--       server_opts = {
-	--         -- capabilities = your_capabilities,
-	--         on_attach = function(client, bufnr)
-	--           -- your on_attach process
-	--         end,
-	--         settings = {
-	--           ltex = {
-	--             -- cmd = { "/home/dylan/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin/ltex-ls" },
-	--             language = "fr",
-	--             diagnosticSeverity = "information",
-	--             setenceCacheSize = 2000,
-	--             additionalRules = {
-	--               enablePickyRules = true,
-	--               motherTongue = "fr",
-	--             },
-	--             -- trace = { server = "verbose" },
-	--             -- dictionary = "~/.config/lvim/dict/", -- added global dictionary path
-	--             completionEnabled = "true",
-	--             checkfrenquency = "edit",
-	--             statusBarItem = "true",
-	--             disabledRules = {},
-	--             -- hiddenFalsePositives = {},
-	--           },
-	--         },
-	--       },
-	--     })
-	--   end,
-	-- },
+	{
+		-- BUG: find where cmp is broken and fix it
+		"barreiroleo/ltex_extra.nvim",
+		-- TODO: remove when PR merged
+		commit = "6d00bf2fbd6fcecafd052c0e0f768b67ceb3307f",
+		ft = { "markdown", "tex" },
+		dependencies = { "neovim/nvim-lspconfig" },
+		-- yes, you can use the opts field, just I'm showing the setup explicitly
+		config = function()
+			require("ltex_extra").setup({
+				-- your_ltex_extra_opts,
+				-- table <string> : languages for witch dictionaries will be loaded, e.g. { "es-AR", "en-US" }
+				-- https://valentjn.github.io/ltex/supported-languages.html#natural-languages
+				load_langs = { "fr" }, -- en-US as default
+				-- boolean : whether to load dictionaries on startup
+				init_check = true,
+				-- string : relative or absolute paths to store dictionaries
+				-- e.g. subfolder in current working directory: ".ltex"
+				-- e.g. shared files for all projects :  vim.fn.expand("~") .. "/.local/share/ltex"
+				-- path = "~/.config/lvim/dict", -- current working directory
+				path = ltex_extra_cwd,
+				-- cant work because \\\\ are poorly interpreted
+				-- path = "\\\\wsl.localhost\\Debian\\home\\dylan\\.config\\lvim\\dict",
+				-- string : "none", "trace", "debug", "info", "warn", "error", "fatal"
+				log_level = "none",
+				-- table : configurations of the ltex language server.
+				-- Only if you are calling the server from ltex_extra
+				server_opts = {
+					-- capabilities = your_capabilities,
+					on_attach = function(client, bufnr)
+						-- your on_attach process
+					end,
+					settings = {
+						ltex = {
+							-- cmd = { "/home/dylan/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin/ltex-ls" },
+							language = "fr",
+							diagnosticSeverity = "information",
+							setenceCacheSize = 2000,
+							additionalRules = {
+								enablePickyRules = true,
+								motherTongue = "fr",
+							},
+							-- trace = { server = "verbose" },
+							-- dictionary = "~/.config/lvim/dict/", -- added global dictionary path
+							completionEnabled = "true",
+							checkfrenquency = "edit",
+							statusBarItem = "true",
+							disabledRules = {},
+							-- hiddenFalsePositives = {},
+						},
+					},
+				},
+			})
+		end,
+	},
 	-- {
 	--   -- dir = dictionary_plugin_path, -- DEV : use local path
 	--   "paysancorrezien/dictionary.nvim", -- PROD : use remote path
