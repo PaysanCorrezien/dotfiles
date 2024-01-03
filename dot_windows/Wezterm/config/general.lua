@@ -31,22 +31,21 @@ if is_windows then
   }
 
   -- ref: https://wezfurlong.org/wezterm/config/lua/WslDomain.html
-  Config.wsl_domains = {}
-  -- {
-  --   {
-  --     name = "WSL:Ubuntu",
-  --     distribution = "Ubuntu",
-  --     username = "sravioli",
-  --     default_cwd = "/home/sRavioli",
-  --     default_prog = { "bash" },
-  --   },
-  --   {
-  --     name = "WSL:Alpine",
-  --     distribution = "Alpine",
-  --     username = "sravioli",
-  --     default_cwd = "/home/sravioli",
-  --   },
-  -- }
+  Config.wsl_domains = {
+    {
+      name = "WSL:Debian",
+      distribution = "Debian",
+      username = "dylan",
+      default_cwd = "/home/dylan",
+      default_prog = { "zsh" },
+    },
+    --   {
+    --     name = "WSL:Alpine",
+    --     distribution = "Alpine",
+    --     username = "sravioli",
+    --     default_cwd = "/home/sravioli",
+    --   },
+  }
 end
 
 Config.default_cwd = fun.home
