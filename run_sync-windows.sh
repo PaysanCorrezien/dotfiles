@@ -1,5 +1,5 @@
 #!/bin/bash
-# Chezmoi in WSL directly install few windows config files 
+# Chezmoi in WSL directly install few windows config files
 # Directly obtaining the username using whoami
 # windowsUsername=$(whoami)
 # Because im stupid and cant use same wsl user name as my windows user
@@ -9,9 +9,9 @@ windowsPath="/mnt/c/Users/${windowsUsername}"
 
 # Function to check and create directory if it doesn't exist
 check_and_create_dir() {
-    if [[ ! -d $1 ]]; then
-        mkdir -p "$1"
-    fi
+	if [[ ! -d $1 ]]; then
+		mkdir -p "$1"
+	fi
 }
 
 # Sync PowerShell Core Profile
@@ -27,7 +27,6 @@ cp ~/.local/share/chezmoi/dot_config/windows/PowershellScripts/FileWatcher.ps1 "
 destDir="${windowsPath}/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState"
 check_and_create_dir "$destDir"
 cp ~/.local/share/chezmoi/dot_windows/windowsterminal/settings.json "${destDir}/settings.json"
-
 
 # Sync Glaze-WM config
 sourceDir="$HOME/.local/share/chezmoi/dot_windows/Glaze-WM"
@@ -45,5 +44,5 @@ sourceDir="$HOME/.local/share/chezmoi/dot_windows/Wezterm"
 destDir="${windowsPath}/.config/wezterm"
 check_and_create_dir "$destDir"
 # Find all directories in the source directory and replicate them in the destination
-mkdir -p "${destDir}/Fonts"
+# mkdir -p "${destDir}/Fonts"
 rsync -au --ignore-existing "${sourceDir}/" "${destDir}/"
