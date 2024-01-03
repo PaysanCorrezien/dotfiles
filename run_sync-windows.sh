@@ -49,7 +49,6 @@ rsync -au --ignore-existing "${sourceDir}/" "${destDir}/"
 
 # Define source and destination directories
 sourceDir="$HOME/.config/nvim"
-windowsPath="/mnt/c/Users/<YourWindowsUsername>" # Replace with your actual Windows username
 destDir="${windowsPath}/AppData/Local/nvim"
 
 # Call the function for the destination directory
