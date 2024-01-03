@@ -46,3 +46,14 @@ check_and_create_dir "$destDir"
 # Find all directories in the source directory and replicate them in the destination
 # mkdir -p "${destDir}/Fonts"
 rsync -au --ignore-existing "${sourceDir}/" "${destDir}/"
+
+# Define source and destination directories
+sourceDir="$HOME/.config/nvim"
+windowsPath="/mnt/c/Users/<YourWindowsUsername>" # Replace with your actual Windows username
+destDir="${windowsPath}/AppData/Local/nvim"
+
+# Call the function for the destination directory
+check_and_create_dir "$destDir"
+
+# Use rsync to synchronize, excluding the session folder
+rsync -au --exclude 'session' "${sourceDir}/" "${destDir}/"
