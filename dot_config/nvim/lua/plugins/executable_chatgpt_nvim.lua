@@ -22,16 +22,26 @@ return {
 			predefined_chat_gpt_prompts = "https://raw.githubusercontent.com/PaysanCorrezien/dotfiles/main/dot_config/lvim/prompts.csv",
 		})
 	end,
+	init = function()
+		local wk = require("which-key")
+
+		wk.register({
+			["<leader>x"] = { name = "Misc + AI" },
+		}, { mode = "n" }) -- Register for normal mode
+
+		wk.register({
+			["<leader>x"] = { name = "Misc + AI" },
+		}, { mode = "v" }) -- Register for visual mode
+	end,
 	keys = {
-		{ "x", desc = "Misc + AI" },
-		{ "<leader>xg", "<cmd>ChatGPT<cr>", desc = "GPT Chat" },
-		{ "<leader>xA", "<cmd>ChatGPTActAs<cr>", desc = "ChatGPT Act As" },
-		{ "<leader>xt", "<cmd>ChatGPTEditWithInstructions<cr>", desc = "Edit with Instructions" },
-		{ "<leader>xC", "<cmd>ChatGPTRun complete_code<cr>", desc = "Complete Code" },
-		{ "<leader>xP", "<cmd>ChatGPTRun powershellDocs<cr>", desc = "Powershell Docs" },
-		{ "<leader>xL", "<cmd>ChatGPTRun luaEmmyDocs<cr>", desc = "Lua Docs" },
-		{ "<leader>xS", "<cmd>ChatGPTRun summarize<cr>", desc = "Summarize" },
-		{ "<leader>xD", "<cmd>ChatGPTRun docstrings<cr>", desc = "Docstrings" },
+		{ "<leader>xg", "<cmd>ChatGPT<cr>", desc = "GPT Chat", mode = { "n", "v" } },
+		{ "<leader>xA", "<cmd>ChatGPTActAs<cr>", desc = "ChatGPT Act As", mode = { "n", "v" } },
+		{ "<leader>xt", "<cmd>ChatGPTEditWithInstructions<cr>", desc = "Edit with Instructions", mode = { "n", "v" } },
+		{ "<leader>xC", "<cmd>ChatGPTRun complete_code<cr>", desc = "Complete Code", mode = { "n", "v" } },
+		{ "<leader>xP", "<cmd>ChatGPTRun powershellDocs<cr>", desc = "Powershell Docs", mode = { "n", "v" } },
+		{ "<leader>xL", "<cmd>ChatGPTRun luaEmmyDocs<cr>", desc = "Lua Docs", mode = { "n", "v" } },
+		{ "<leader>xS", "<cmd>ChatGPTRun summarize<cr>", desc = "Summarize", mode = { "n", "v" } },
+		{ "<leader>xD", "<cmd>ChatGPTRun docstrings<cr>", desc = "Docstrings", mode = { "n", "v" } },
 	},
 	-- {
 	--   "zbirenbaum/copilot.lua",

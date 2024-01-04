@@ -1,4 +1,38 @@
 --BUG: not in RTP ?
+--
+
+-- TODO:
+-- function _G.StartDocusaurusServer()
+-- 	local projectDir = "C:\\Users\\dylan\\Documents\\KnowledgeBase"
+-- 	local cmd = "cmd /c cd /d " .. projectDir .. " && npm run start"
+-- 	vim.fn.jobstart(cmd, { detach = true })
+-- end
+
+function OpenInDocusaurus()
+	local projectDir = "C:\\Users\\dylan\\Documents\\KnowledgeBase\\Docs"
+	local filePath = vim.fn.expand("%:p") -- Get the full path of the current file
+
+	-- Extract the relative path, replace backslashes with forward slashes
+	local relativePath = filePath:sub(#projectDir + 2):gsub("\\", "/")
+
+	-- Extract the directory path and the filename
+	local dirPath, filename = relativePath:match("(.*/)([^/]+)$")
+
+	-- Remove file extension from the filename
+	if filename then
+		filename = filename:gsub("%..*$", "")
+	end
+
+	-- URL encode the filename
+	local encodedFilename = filename:gsub(" ", "%%20")
+
+	-- Construct the full URL
+	local url = "http://localhost:3000/" .. (dirPath or "") .. encodedFilename
+
+	print("Opening URL: " .. url) -- Optional: For debugging
+	vim.fn.system({ "cmd", "/c", "start", "", url })
+end
+
 -- they are not available
 function _G.search_and_replace()
 	local word = vim.fn.expand("<cword>")
@@ -12,6 +46,7 @@ function _G.search_and_replace()
 end
 
 -- for autocommand on open
+-- NOTE: escape sequence are probably way better than this
 function _G.rename_tmux_pane()
 	local current_file = vim.fn.expand("%:t") -- Get the current file name
 	local parent_dir = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h:t") -- Get the parent directory name

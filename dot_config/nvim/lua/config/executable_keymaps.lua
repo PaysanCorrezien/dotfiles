@@ -76,18 +76,31 @@ vim.keymap.set("n", "<C-e>", function()
 	harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
 
-vim.keymap.set("n", "<C-h>", function()
-	harpoon:list():select(1)
-end)
-vim.keymap.set("n", "<C-j>", function()
-	harpoon:list():select(2)
-end)
-vim.keymap.set("n", "<C-k>", function()
-	harpoon:list():select(3)
-end)
-vim.keymap.set("n", "<C-l>", function()
-	harpoon:list():select(4)
-end)
+-- TODO : use ctrl number to nav harpoon ?
+-- vim.keymap.set("n", "<C-h>", function()
+-- 	harpoon:list():select(1)
+-- end)
+-- vim.keymap.set("n", "<C-j>", function()
+-- 	harpoon:list():select(2)
+-- end)
+-- vim.keymap.set("n", "<C-k>", function()
+-- 	harpoon:list():select(3)
+-- end)
+-- vim.keymap.set("n", "<C-l>", function()
+-- 	harpoon:list():select(4)
+-- end)
+--
+-- Move Lines
+vim.keymap.set("n", "<C-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+vim.keymap.set("n", "<C-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+vim.keymap.set("i", "<C-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+vim.keymap.set("i", "<C-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+vim.keymap.set("v", "<C-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+vim.keymap.set("v", "<C-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+vim.keymap.set("n", "<leader>b", function()
+	require("mini.bufremove").delete(0, true)
+end, { desc = "Delete Buffer (Force)" })
+
 -- Toggle previous & next buffers stored within Harpoon list
 -- vim.keymap.set("n", "<C-S-P>", function()
 -- 	harpoon:list():prev()
@@ -95,3 +108,16 @@ end)
 -- vim.keymap.set("n", "<C-S-N>", function()
 -- 	harpoon:list():next()
 -- end)
+
+-- Replace this path with the actual path to your project
+local projectPath = "C:\\users\\dylan\\Documents\\KnowledgeBase\\"
+
+-- Mapping to start the Docusaurus server
+vim.keymap.set("n", "<leader>zX", function()
+	StartDocusaurusServer()
+end, { desc = "Start Docusaurus Server" })
+
+-- Mapping to open the current file in Docusaurus
+vim.keymap.set("n", "<leader>zo", function()
+	OpenInDocusaurus()
+end, { desc = "Open in Docusaurus" })

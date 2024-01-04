@@ -1,3 +1,4 @@
+-- File where i ovveride default presets
 return {
 	{
 		"nvim-lualine/lualine.nvim",
@@ -47,13 +48,16 @@ return {
 			opts.options.numbers = "ordinal"
 		end,
 	},
+
 	{
 		"nvim-telescope/telescope.nvim",
 		keys = {
       -- add a keymap to browse plugin files
       -- stylua: ignore
       { "<leader>/" , false },
-			{ "<leader>fn", false },
+
+			{ "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Search Word in Dir" },
+			{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Find Help" },
 			{ "<leader>r", "<cmd>Telescope oldfiles<cr>", desc = "Recent files" },
 			{
 				"<leader>fp",
@@ -62,7 +66,13 @@ return {
 				end,
 				desc = "Find Plugin File",
 			},
-			-- TEST:
+			{
+				"<leader>fP",
+				function()
+					require("telescope.builtin").live_grep({ cwd = require("lazy.core.config").options.root })
+				end,
+				desc = "Find Plugin File",
+			},
 			{
 				"<leader>fD",
 				function()

@@ -1,4 +1,5 @@
 local os_utils = require("utils.os_utils")
+local cmp = require("cmp")
 
 -- TODO: find a way to make this automatic with a single array and automatic conversion with a function
 local home = os.getenv("HOME") or "~"
@@ -79,7 +80,6 @@ local ltex_extra_cwd = os_utils.get_setting(ltex_extra_plugin_cwd)
 
 return {
 	{
-		-- BUG: find where cmp is broken and fix it
 		"barreiroleo/ltex_extra.nvim",
 		-- TODO: remove when PR merged
 		commit = "6d00bf2fbd6fcecafd052c0e0f768b67ceb3307f",
@@ -91,7 +91,7 @@ return {
 				-- your_ltex_extra_opts,
 				-- table <string> : languages for witch dictionaries will be loaded, e.g. { "es-AR", "en-US" }
 				-- https://valentjn.github.io/ltex/supported-languages.html#natural-languages
-				load_langs = { "fr" }, -- en-US as default
+				load_langs = { "fr", "en" }, -- en-US as default
 				-- boolean : whether to load dictionaries on startup
 				init_check = true,
 				-- string : relative or absolute paths to store dictionaries
@@ -143,10 +143,6 @@ return {
 		config = function()
 			require("dictionary").setup({
 				dictionary_paths = {
-					-- home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
-					-- home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
-					-- home .. "/.config/lvim/dict/ltex.dictionary.fr.txt",
-					-- home .. "/.config/lvim/dict/spell.utf-8.add",
 					remote_ltex_ls,
 					remote_spell,
 					local_ltex_ls,
@@ -160,14 +156,39 @@ return {
 					max_spell_suggestions = 10,
 					filetypes = { "markdown", "tex" },
 					priority = 20000,
-					name = "mydictionary",
+					name = "dictionary",
 					source_label = "[Dict]",
 					-- kind_icon = cmp.lsp.CompletionItemKind.Event, -- Icon for suggestions
-					-- kind_icon = " "
+					-- kind_icon = " ", -- Icon need to be registered on lsp icons
 				},
 			})
 		end,
 	},
+	-- register custom cmp for dict
+	{
+		"nvim-cmp",
+		dependencies = {},
+		opts = function(_, opts)
+			-- Add the dictionary source to CMP
+			table.insert(opts.sources, 1, {
+				name = "dictionary",
+				priority = 20000, -- Custom priority
+			})
+
+			-- Custom formatting for dictionary items
+			local existing_formatting_function = opts.formatting.format
+			opts.formatting.format = function(entry, vim_item)
+				if entry.source.name == "dictionary" then
+					-- vim_item.kind = cmp.lsp.CompletionItemKind.Text -- this make crash
+					vim_item.menu = "[Dict]" -- Custom label
+				elseif existing_formatting_function then
+					vim_item = existing_formatting_function(entry, vim_item)
+				end
+				return vim_item
+			end
+		end,
+	},
+
 	{
 		-- dir = pdf_plugin_path, -- DEV : use local path
 		"paysancorrezien/pdf.nvim", -- PROD : use remote path
@@ -177,9 +198,6 @@ return {
 		},
 		config = function()
 			require("pdf").setup({
-				-- Your configuration here
-				-- pdf_path = "/mnt/c/Users/dylan/Documents/Obsidian Vault/Zettelkasten/Files",
-				-- image_path = "/mnt/c/Users/dylan/Documents/Obsidian Vault/Zettelkasten/Files",
 				pdf_path = obsidian_attachments_path,
 				image_path = obsidian_attachments_path,
 				pdftoppm_path = pdftoppm__path,
@@ -197,15 +215,20 @@ return {
 				home = obsidian_vault_path,
 			})
 		end,
+
+		init = function()
+			local wk = require("which-key")
+
+			wk.register({
+				["<leader>z"] = { name = "+NoteTaking" },
+			})
+		end,
 		keys = {
 			{ "z", name = "+goto" },
 			{ "<leader>zf", ":lua require('telekasten').find_notes()<CR>", desc = "Find Notes" },
-			-- { "<leader>zP", ":lua PushNotes()<CR>", desc = "Push Notes" },
 			{ "<leader>zg", ":lua require('telekasten').search_notes()<CR>", desc = "Search W under cursor in notes" },
 			{ "<leader>zz", ":lua require('telekasten').follow_link()<CR>", desc = "Follow Link" },
-			-- { "<leader>zT", ":lua require('telekasten').goto_today()<CR>", desc = "Open Daily" },
 			{ "<leader>zy", ":lua require('telekasten').yank_notelink()<CR>", desc = "Yank Notelink" },
-			-- { "<leader>zi", ":lua require('telekasten').paste_img_and_link()<CR>", desc = "Paste Img and Link" },
 			{ "<leader>zb", ":lua require('telekasten').show_backlinks()<CR>", desc = "Show Backlinks" },
 			{ "<leader>zI", "<cmd>ObsidianPasteImg<CR>", desc = "Insert IMG" },
 			{ "<leader>zR", "<cmd>ObsidianRename<CR>", desc = "Rename" },
@@ -213,10 +236,14 @@ return {
 			{ "<leader>zn", "<Cmd>lua CreateNote()<CR>", desc = "Create Note In Daily" },
 			{ "<leader>zN", "<Cmd>lua NewNoteWithCustomTemplate()<CR>", desc = "New Note With Custom Template" },
 			{ "<leader>zr", "<Cmd>lua find_recent_note()<CR>", desc = "Open Recent Notes" },
-			{ "<leader>zF", "<cmd>ChatGPTRun french<cr>", desc = "AI - Syntax Correction FR" },
+			{ "<leader>zZ", "<cmd>ChatGPTRun french<cr>", desc = "AI - Syntax Correction FR" },
 			{ "<leader>zL", "<cmd>ChatGPTRun markdownFormatter<cr>", desc = "AI - Format MD Note" },
 			{ "<leader>zS", "<cmd>ChatGPTRun completeFromSkeleton<cr>", desc = "AI - Draft Post" },
 			{ "<leader>zC", "<Cmd>lua PdfToImage()<CR>", desc = "Convert PDF to Image" },
+			{ "<leader>zL", "<cmd>DictionaryPickLang<CR>", desc = "Change LSP Lang" },
+			{ "<leader>gU", "<cmd>DictionaryUpdate<CR>", desc = "Edit Dicts" },
+			{ "<leader>zF", "<cmd>DictionaryUpdateLspLang fr<CR>", desc = "LspLang French" },
+			{ "<leader>zE", "<cmd>DictionaryUpdateLspLang en<CR>", desc = "LspLang English" },
 		},
 	},
 }
