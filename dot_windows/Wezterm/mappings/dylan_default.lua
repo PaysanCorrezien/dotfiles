@@ -120,9 +120,37 @@ local keys = {
   -- NOTE: Windows elevation is problematic it need a new window to be spawned
   -- Windows terminal cant do it either
   -- Maybe try https://github.com/wez/wezterm/issues/167
-  -- ["<leader>E"] = act.SpawnCommandInNewTab {
+  -- ["<4eader>E"] = act.SpawnCommandInNewTab {
   --   args = { "-Verb Runas" },
   -- },
+  ["<C-1>"] = act.SendKey {
+    key = "1",
+    mods = "CTRL",
+  },
+  ["<C-2>"] = act.SendKey {
+    key = "2",
+    mods = "CTRL",
+  },
+  ["<C-3>"] = act.SendKey {
+    key = "3",
+    mods = "CTRL",
+  },
+  ["<C-4>"] = act.SendKey {
+    key = "4",
+    mods = "CTRL",
+  },
+  ["<C-5>"] = act.SendKey {
+    key = "5",
+    mods = "CTRL",
+  },
+  ["<C-6>"] = act.SendKey {
+    key = "6",
+    mods = "CTRL",
+  },
+  ["<C-7>"] = act.SendKey {
+    key = "7",
+    mods = "CTRL",
+  },
 }
 
 Config.keys = {}
