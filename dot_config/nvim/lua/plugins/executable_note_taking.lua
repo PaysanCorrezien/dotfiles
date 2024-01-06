@@ -169,6 +169,11 @@ return {
 		"nvim-cmp",
 		dependencies = {},
 		opts = function(_, opts)
+			-- Add the obsidian sources to CMP
+			-- table.insert(opts.sources, { name = "obsidian", priority = 100 })
+			-- table.insert(opts.sources, { name = "obsidian_new", priority = 100 })
+			-- table.insert(opts.sources, { name = "obsidian_tags", priority = 100 })
+
 			-- Add the dictionary source to CMP
 			table.insert(opts.sources, 1, {
 				name = "dictionary",
@@ -215,7 +220,158 @@ return {
 				home = obsidian_vault_path,
 			})
 		end,
+	},
+	{
+		"epwalsh/obsidian.nvim",
+		lazy = false,
+		-- event = { "BufReadPre /home/dylan/Documents/Vault/**.md" },
+		-- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand':
+		-- event = { "BufReadPre " .. obsidian_vault_path .. "/**.md" },
+		dependencies = {
+			-- Required.
+			"nvim-lua/plenary.nvim",
 
+			-- Optional, for completion.
+			"hrsh7th/nvim-cmp",
+
+			-- Optional, for search and quick-switch functionality.
+			"nvim-telescope/telescope.nvim",
+
+			-- Optional, alternative to nvim-treesitter for syntax highlighting.
+			-- "godlygeek/tabular",
+			-- "preservim/vim-markdown",
+		},
+		opts = {
+			-- dir = "~/Documents/KnowledgeBase",
+			-- dir = obsidian_vault_path, -- no need to call 'vim.fn.expand' here
+			workspaces = {
+				{
+					name = "personal",
+					path = obsidian_vault_path,
+					overrides = {
+						notes_subdir = "Docs/KnowledgeBase", --TODO: inline function for this ?
+					},
+				},
+				{
+					name = "work",
+					path = "~/Documents/Notes",
+				},
+			},
+			-- Optional, if you keep daily notes in a separate directory.
+			daily_notes = {
+				folder = "Tasks",
+			},
+
+			-- Optional, comtruepletion.
+			--  BUG: dot work on windows ?
+			--
+			-- completion = {
+			nvim_cmp = false, -- if using nvim-cmp, otherwise set to false
+			-- new_notes_location = "current_dir",
+			new_notes_location = "notes_subdir",
+			use_path_only = true,
+			-- Trigger completion at 2 chars.
+			min_chars = 1,
+			-- },
+			attachments = {
+				-- The default folder to place images in via `:ObsidianPasteImg`.
+				-- If this is a relative path it will be interpreted as relative to the vault root.
+				-- You can always override this per image by passing a full path to the command instead of just a filename.
+				img_folder = obsidian_attachments_path, -- This is the default
+				-- A function that determines the text to insert in the note when pasting an image.
+				-- It takes two arguments, the `obsidian.Client` and a plenary `Path` to the image file.
+				-- This is the default implementation.
+				---@param client obsidian.Client
+				---@param path Path the absolute path to the image file
+				---@return string
+				img_text_func = function(client, path)
+					local link_path
+					local vault_relative_path = client:vault_relative_path(path)
+					if vault_relative_path ~= nil then
+						-- Use the modified path if the image is saved in the vault dir.
+						-- Strip off unwanted parts of the path and keep only '/img/' and the file name
+						link_path = string.match(vault_relative_path, "/img/.+$")
+					else
+						-- For absolute paths, extract only the '/img/' part and the file name.
+						link_path = string.match(tostring(path), "/img/.+$")
+					end
+					if not link_path then
+						-- Fallback in case the desired pattern is not found
+						link_path = tostring(path)
+					end
+					local display_name = vim.fs.basename(link_path)
+					return string.format("![%s](%s)", display_name, link_path)
+				end,
+			},
+			-- Optional, customize how names/IDs for new notes are created.
+			note_id_func = function(title)
+				-- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
+				-- In this case a note with the title 'My new note' will given an ID that looks
+				-- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
+				--
+				local suffix = ""
+				if title ~= nil then
+					-- If title is given, transform it into valid file name.
+					suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+				else
+					-- If title is nil, just add 4 random uppercase letters to the suffix.
+				end
+				return suffix
+			end,
+			-- Optional, boolean or a function that takes a filename and returns a boolean.
+			-- `true` indicates that you don't want obsidian.nvim to manage frontmatter.
+			--TODO :
+			-- maybe make use ok note_frontmatter_func = function(note)
+			-- Optional, alternatively you can customize the frontmatter data.
+			note_frontmatter_func = function(note)
+				-- Create an output table for the frontmatter
+				local out = {}
+
+				out["title"] = note.id -- or any other string you want to use as the title
+				out["tags"] = note.tags
+				out["date"] = os.date("%Y-%m-%d %H:%M") -- Formats the date as "YYYY-MM-DD"
+				out["personal_only"] = true
+
+				-- Add any manually added fields from note.metadata
+				if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+					for k, v in pairs(note.metadata) do
+						out[k] = v
+					end
+				end
+				-- Return the customized frontmatter
+				return out
+			end,
+
+			templates = {
+				subdir = "Projets/Templates",
+				date_format = "%Y-%m-%d",
+				time_format = "%H:%M",
+			},
+			-- use_advanced_uri = true,
+			finder = "telescope.nvim",
+			sort_by = "modified",
+			sort_reversed = true,
+
+			-- Optional, configure key mappings. These are the defaults. If you don't want to set any keymappings this
+			-- way then set 'mappings = {}'.
+			mappings = {
+				-- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
+				["gf"] = {
+					action = function()
+						return require("obsidian").util.gf_passthrough()
+					end,
+					opts = { noremap = false, expr = true, buffer = true },
+				},
+				-- -- Toggle check-boxes.
+				-- ["<leader>zx"] = {
+				-- 	action = function()
+				-- 		return require("obsidian").util.toggle_checkbox()
+				-- 	end,
+				-- 	opts = { buffer = true },
+				-- },
+			},
+			-- log_level = vim.log.levels.TRACE,
+		},
 		init = function()
 			local wk = require("which-key")
 
@@ -224,26 +380,69 @@ return {
 			})
 		end,
 		keys = {
-			{ "z", name = "+goto" },
-			{ "<leader>zf", ":lua require('telekasten').find_notes()<CR>", desc = "Find Notes" },
-			{ "<leader>zg", ":lua require('telekasten').search_notes()<CR>", desc = "Search W under cursor in notes" },
-			{ "<leader>zz", ":lua require('telekasten').follow_link()<CR>", desc = "Follow Link" },
-			{ "<leader>zy", ":lua require('telekasten').yank_notelink()<CR>", desc = "Yank Notelink" },
-			{ "<leader>zb", ":lua require('telekasten').show_backlinks()<CR>", desc = "Show Backlinks" },
-			{ "<leader>zI", "<cmd>ObsidianPasteImg<CR>", desc = "Insert IMG" },
+
+			{ "<leader>zf", "<cmd>ObsidianQuickSwitch<CR>", desc = "Find Notes" },
+			{ "<leader>zG", "<cmd>ObsidianSearch<CR>", desc = "Grep Notes" },
+			{ "<leader>zg", "<cmd>ObsidianFollowLink<CR>", desc = "Follow Link", mode = { "n", "v" } },
+			{ "<leader>zz", "<cmd>ObsidianBacklinks<CR>", desc = "List Link" },
+			{ "<leader>zC", "<cmd>ObsidianCheck<CR>", desc = "Checks" },
+			{ "<leader>zi", "<cmd>ObsidianPasteImg<CR>", desc = "Insert IMG" },
 			{ "<leader>zR", "<cmd>ObsidianRename<CR>", desc = "Rename" },
-			{ "<leader>zx", "<cmd>:lua require('telekasten').toggle_todo()<CR>", desc = "Toggle Todo" },
-			{ "<leader>zn", "<Cmd>lua CreateNote()<CR>", desc = "Create Note In Daily" },
-			{ "<leader>zN", "<Cmd>lua NewNoteWithCustomTemplate()<CR>", desc = "New Note With Custom Template" },
-			{ "<leader>zr", "<Cmd>lua find_recent_note()<CR>", desc = "Open Recent Notes" },
-			{ "<leader>zZ", "<cmd>ChatGPTRun french<cr>", desc = "AI - Syntax Correction FR" },
-			{ "<leader>zL", "<cmd>ChatGPTRun markdownFormatter<cr>", desc = "AI - Format MD Note" },
-			{ "<leader>zS", "<cmd>ChatGPTRun completeFromSkeleton<cr>", desc = "AI - Draft Post" },
+			{ "<leader>zt", "<cmd>ObsidianTemplate<CR>", desc = "Template" },
+			{ "<leader>zT", "<cmd>ObsidianTemplate knowledge.md<CR>", desc = "Default Template" },
+			{
+				"<leader>zn",
+				function()
+					local input = vim.fn.input("Enter note title: ")
+					if input ~= "" then
+						vim.cmd("ObsidianNew " .. input)
+					end
+				end,
+				desc = "New Note in Docs/KnowledgeBase with input prompt",
+			},
+
+			{ "<leader>zB", "<cmd>ObsidianBacklinks<CR>", desc = "Backlinks" },
+			{ "<leader>zL", "<cmd>ObsidianLink<CR>", desc = "Link", mode = { "n", "v" } },
+			{ "<leader>zl", "<cmd>ObsidianLinkNew<CR>", desc = "Link New", mode = { "n", "v" } },
+			-- { "<leader>zn", "<Cmd>lua CreateNote()<CR>", desc = "Create Note In Daily" },
+			-- { "<leader>zN", "<Cmd>lua NewNoteWithCustomTemplate()<CR>", desc = "New Note With Custom Template" },
+			-- { "<leader>zr", "<Cmd>lua find_recent_note()<CR>", desc = "Open Recent Notes" },
+			{ "<leader>zZ", "<cmd>ChatGPTRun french<cr>", desc = "AI - Syntax Correction FR", mode = { "n", "v" } },
+			{
+				"<leader>zL",
+				"<cmd>ChatGPTRun markdownFormatter<cr>",
+				desc = "AI - Format MD Note",
+				mode = { "n", "v" },
+			},
+			{
+				"<leader>zS",
+				"<cmd>ChatGPTRun completeFromSkeleton<cr>",
+				desc = "AI - Draft Post",
+				mode = { "n", "v" },
+			},
 			{ "<leader>zC", "<Cmd>lua PdfToImage()<CR>", desc = "Convert PDF to Image" },
 			{ "<leader>zL", "<cmd>DictionaryPickLang<CR>", desc = "Change LSP Lang" },
 			{ "<leader>gU", "<cmd>DictionaryUpdate<CR>", desc = "Edit Dicts" },
 			{ "<leader>zF", "<cmd>DictionaryUpdateLspLang fr<CR>", desc = "LspLang French" },
 			{ "<leader>zE", "<cmd>DictionaryUpdateLspLang en<CR>", desc = "LspLang English" },
+			{
+				"<leader>zW",
+				function()
+					local input = vim.fn.input("Enter workspace name: ")
+					if input ~= "" then
+						vim.cmd("ObsidianWorkspace " .. input)
+					end
+				end,
+				desc = "Workspace Switch",
+			},
+
+			{
+				"<leader>zx",
+				function()
+					return require("obsidian").util.toggle_checkbox()
+				end,
+				desc = "Toggle Checkbox",
+			},
 		},
 	},
 }

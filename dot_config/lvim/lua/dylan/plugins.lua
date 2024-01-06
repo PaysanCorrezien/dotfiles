@@ -75,8 +75,8 @@ local ltex_extra_plugin_cwd = {
 	Linux = home .. "/.config/lvim/dict",
 }
 local gptnvim_action_paths = {
-  Windows = "L:\\home\\dylan\\.config\\lvim\\correct_french.json",
-  Linux = home .. "/.config/lvim/correct_french.json",
+	Windows = "L:\\home\\dylan\\.config\\lvim\\correct_french.json",
+	Linux = home .. "/.config/lvim/correct_french.json",
 }
 local gptnvim_action_path = os_utils.get_setting(gptnvim_action_paths)
 
@@ -85,7 +85,7 @@ local ltex_extra_cwd = os_utils.get_setting(ltex_extra_plugin_cwd)
 lvim.plugins = {
 	{
 		-- dir = dictionary_plugin_path, -- DEV : use local path
-    "paysancorrezien/dictionary.nvim", -- PROD : use remote path
+		"paysancorrezien/dictionary.nvim", -- PROD : use remote path
 		ft = "markdown",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -120,7 +120,7 @@ lvim.plugins = {
 	},
 	{
 		-- dir = pdf_plugin_path, -- DEV : use local path
-    "paysancorrezien/pdf.nvim", -- PROD : use remote path
+		"paysancorrezien/pdf.nvim", -- PROD : use remote path
 		ft = "markdown",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -281,21 +281,38 @@ lvim.plugins = {
 					-- If title is given, transform it into valid file name.
 					suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
 				else
-					-- If title is nil, just add 4 random uppercase letters to the suffix.
-					for _ = 1, 4 do
-						suffix = suffix .. string.char(math.random(65, 90))
+					suffix = title
+				end
+				return suffix
+			end,
+
+			-- Optional, boolean or a function that takes a filename and returns a boolean.
+			-- `true` indicates that you don't want obsidian.nvim to manage frontmatter.
+			disable_frontmatter = false,
+
+			-- Optional, alternatively you can customize the frontmatter data.
+			note_frontmatter_func = function(note)
+				-- This is equivalent to the default frontmatter function.
+				local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+				-- `note.metadata` contains any manually added fields in the frontmatter.
+				-- So here we just make sure those fields are kept in the frontmatter.
+				if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+					for k, v in pairs(note.metadata) do
+						out[k] = v
 					end
 				end
-				return tostring(os.time()) .. "-" .. suffix
+				return out
 			end,
 
 			templates = {
 				subdir = "Projets/Templates",
-				-- date_format = "%Y-%m-%d-%a",
-				-- time_format = "%H:%M",
+				date_format = "%Y-%m-%d-%a",
+				time_format = "%H:%M",
 			},
 			-- use_advanced_uri = true,
 			finder = "telescope.nvim",
+			sort_by = "modified",
+			sort_reversed = true,
 		},
 		config = function(_, opts)
 			require("obsidian").setup(opts)
@@ -575,7 +592,7 @@ lvim.plugins = {
 			"rcarriga/nvim-dap-ui",
 		},
 		config = function(_, opts)
-      --TODO : adapt paths
+			--TODO : adapt paths
 			local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
 			require("dap-python").setup(path)
 			-- require("core.utils").load_mappings("dap_python")

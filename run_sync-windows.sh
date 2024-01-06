@@ -45,7 +45,7 @@ destDir="${windowsPath}/.config/wezterm"
 check_and_create_dir "$destDir"
 # Find all directories in the source directory and replicate them in the destination
 # mkdir -p "${destDir}/Fonts"
-rsync -au --ignore-existing "${sourceDir}/" "${destDir}/"
+rsync -au "${sourceDir}/" "${destDir}/"
 
 # Define source and destination directories
 sourceDir="$HOME/.config/nvim"

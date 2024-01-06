@@ -1,59 +1,90 @@
+local os_utils = require("utils.os_utils")
+local powershell_parser_paths = {
+	Windows = "C:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\tree-sitter-powershell\\",
+	Linux = "/mnt/c/users/dylan/Documents/Projet/Work/Projet/nvim-treesitter-powershell/",
+}
+local parser_path = os_utils.get_setting(powershell_parser_paths)
+
 return {
-  -- Extend nvim-treesitter configuration
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      -- Ensure nested tables exist before extending
-      opts.textobjects = opts.textobjects or {}
-      opts.textobjects.move = opts.textobjects.move or {}
-
-      -- Merge additional text object configurations
-      opts.textobjects.move = vim.tbl_deep_extend("force", opts.textobjects.move, {
-        goto_next_start = {
-          ["]f"] = "@function.outer",
-          ["]c"] = "@class.outer",
-          -- Add your custom mappings here
-        },
-        goto_next_end = {
-          ["]F"] = "@function.outer",
-          ["]C"] = "@class.outer",
-          -- Add your custom mappings here
-        },
-        goto_previous_start = {
-          ["[f"] = "@function.outer",
-          ["[c"] = "@class.outer",
-          -- Add your custom mappings here
-        },
-        goto_previous_end = {
-          ["[F"] = "@function.outer",
-          ["[C"] = "@class.outer",
-          -- Add your custom mappings here
-        },
-        -- Add any other custom text object configurations here
-      })
-
-      -- Ensure nested tables exist before extending
-      opts.textobjects = opts.textobjects or {}
-      opts.textobjects.select = opts.textobjects.select or {}
-      opts.textobjects.select.keymaps = opts.textobjects.select.keymaps or {}
-
-      -- Directly define and merge custom text object mappings
-      opts.textobjects.select.keymaps = vim.tbl_deep_extend("force", opts.textobjects.select.keymaps, {
-        ["aa"] = { query = "@parameter.outer", desc = "Select outer part of a parameter" },
-        ["ia"] = { query = "@parameter.inner", desc = "Select inner part of a parameter" },
-        ["af"] = { query = "@function.outer", desc = "Select outer part of a function" },
-        ["if"] = { query = "@function.inner", desc = "Select inner part of a function" },
-        ["ac"] = { query = "@class.outer", desc = "Select outer part of a class" },
-        ["ic"] = { query = "@class.inner", desc = "Select inner part of a class" },
-        ["ii"] = { query = "@conditional.inner", desc = "Select inner part of a conditional" },
-        ["ai"] = { query = "@conditional.outer", desc = "Select outer part of a conditional" },
-        ["il"] = { query = "@loop.inner", desc = "Select inner part of a loop" },
-        ["al"] = { query = "@loop.outer", desc = "Select outer part of a loop" },
-        ["ak"] = { query = "@comment.outer", desc = "Select outer part of a comment" },
-        ["ik"] = { query = "@comment.inner", desc = "Select inner part of a comment" },
-        -- Add any other custom text object configurations here
-      })
-      return opts
-    end,
-  },
+	-- ADD WIP PowerShell parser
+	{
+		"nvim-treesitter/nvim-treesitter",
+		config = function()
+			-- Set preferred compiler order
+			local install = require("nvim-treesitter.install")
+			install.compilers = { "zig", "gcc" }
+			local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+			parser_config.powershell = {
+				install_info = {
+					url = parser_path, -- Directory of the installed parser
+					files = { "src/parser.c", "src/scanner.c" },
+					branch = "main",
+				},
+				filetype = "ps1", -- Associate the parser with 'ps1' files
+			}
+		end,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		keys = {
+			{ "<c-i>", desc = "Increment selection" },
+			{ "<bs>", desc = "Decrement selection", mode = "x" },
+		},
+		---@type TSConfig
+		---@diagnostic disable-next-line: missing-fields
+		opts = {
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = "<C-i>",
+					node_incremental = "<C-i>",
+					scope_incremental = false,
+					node_decremental = "<bs>",
+				},
+			},
+		},
+		textobjects = {
+			move = {
+				enable = true,
+				set_jumps = true, -- whether to set jumps in the jumplist
+				goto_next_start = {
+					["]f"] = "@function.outer",
+					["]c"] = "@class.outer",
+					["]k"] = "@comment.outer",
+					["]A"] = "@parameter.inner",
+					["]m"] = "@function.outer",
+					["]o"] = "@loop.*",
+					["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
+					["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
+				},
+				goto_next_end = {
+					["]F"] = "@function.outer",
+					["]C"] = "@class.outer",
+					["]M"] = "@function.outer",
+				},
+				goto_previous_start = {
+					["[f"] = "@function.outer",
+					["[c"] = "@class.outer",
+					["[k"] = "@comment.outer",
+					["[A"] = "@parameter.inner",
+					["[m"] = "@function.outer",
+				},
+				goto_previous_end = {
+					["[F"] = "@function.outer",
+					["[C"] = "@class.outer",
+					["[M"] = "@function.outer",
+				},
+				goto_next = {
+					["]D"] = "@conditional.outer",
+				},
+				goto_previous = {
+					["[D"] = "@conditional.outer",
+				},
+			},
+		},
+		---@param opts TSConfig
+		config = function(_, opts)
+			require("nvim-treesitter.configs").setup(opts)
+		end,
+	},
 }

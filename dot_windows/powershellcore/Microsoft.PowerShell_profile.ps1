@@ -279,11 +279,11 @@ function Reload-Powershell
       Write-Host "Reloading profile $profilePath"
       . $profilePath
     }
-  }
+  }
 }
 
 # make windows git cli use SSH AGENT correctly :
-$env:GIT_SSH_COMMAND = "C:\Program Files\OpenSSH\ssh.exe"
+$env:GIT_SSH_COMMAND = '"C:\\Program Files\\OpenSSH\\ssh.exe"'
 
 
 # We don't need these any more; they were just temporary variables to get to $isAdmin. 

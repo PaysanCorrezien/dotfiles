@@ -2,7 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 -- Changelog removal
-vim.keymap.del("n", "L")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -36,13 +35,7 @@ vim.api.nvim_set_keymap("n", "<C-a>", ':lua vim.cmd("normal! ggVG")<CR>', { nore
 --   "Todo on All Project"
 -- )
 -- Normal mode mappings
-vim.keymap.set(
-	"n",
-	"<leader>8",
-	"<cmd>:TodoTrouble cwd=/mnt/c/Users/dylan/Documents/Projet/Work/Projet/<CR>",
-	{ desc = "Todo on All Project" }
-)
-vim.keymap.set("n", "<leader>I", "<cmd>IconPickerInsert<CR>", { desc = "Icon Picker" })
+-- vim.keymap.set("n", "<leader>I", "<cmd>IconPickerInsert<CR>", { desc = "Icon Picker" }) wezterm builtin now
 vim.keymap.set("n", "<leader>S", ":lua search_and_replace()<CR>", { desc = "Search and replace" })
 -- vim.keymap.set("n", "<leader>A", "<cmd>:lua require('harpoon.mark').add_file()<CR>", { desc = "Harp Add" })
 -- vim.keymap.set("n", "<leader>H", "<cmd>:Telescope harpoon marks<CR>", { desc = "List Harp Mark" })
@@ -66,30 +59,6 @@ end
 
 -- Visual mode mapping
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy Y", silent = true })
-
--- harpoon mapping
-local harpoon = require("harpoon")
-vim.keymap.set("n", "<leader>a", function()
-	harpoon:list():append()
-end)
-vim.keymap.set("n", "<C-e>", function()
-	harpoon.ui:toggle_quick_menu(harpoon:list())
-end)
-
--- TODO : use ctrl number to nav harpoon ?
--- vim.keymap.set("n", "<C-h>", function()
--- 	harpoon:list():select(1)
--- end)
--- vim.keymap.set("n", "<C-j>", function()
--- 	harpoon:list():select(2)
--- end)
--- vim.keymap.set("n", "<C-k>", function()
--- 	harpoon:list():select(3)
--- end)
--- vim.keymap.set("n", "<C-l>", function()
--- 	harpoon:list():select(4)
--- end)
---
 -- Move Lines
 vim.keymap.set("n", "<C-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
 vim.keymap.set("n", "<C-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
@@ -97,25 +66,11 @@ vim.keymap.set("i", "<C-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
 vim.keymap.set("i", "<C-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
 vim.keymap.set("v", "<C-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 vim.keymap.set("v", "<C-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
-vim.keymap.set("n", "<leader>b", function()
-	require("mini.bufremove").delete(0, true)
-end, { desc = "Delete Buffer (Force)" })
 
--- Toggle previous & next buffers stored within Harpoon list
--- vim.keymap.set("n", "<C-S-P>", function()
--- 	harpoon:list():prev()
--- end)
--- vim.keymap.set("n", "<C-S-N>", function()
--- 	harpoon:list():next()
--- end)
-
--- Replace this path with the actual path to your project
-local projectPath = "C:\\users\\dylan\\Documents\\KnowledgeBase\\"
-
--- Mapping to start the Docusaurus server
-vim.keymap.set("n", "<leader>zX", function()
-	StartDocusaurusServer()
-end, { desc = "Start Docusaurus Server" })
+-- -- Mapping to start the Docusaurus server
+-- vim.keymap.set("n", "<leader>zX", function()
+-- 	StartDocusaurusServer()
+-- end, { desc = "Start Docusaurus Server" })
 
 -- Mapping to open the current file in Docusaurus
 vim.keymap.set("n", "<leader>zo", function()

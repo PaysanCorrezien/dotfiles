@@ -55,6 +55,23 @@ return {
       -- add a keymap to browse plugin files
       -- stylua: ignore
       { "<leader>/" , false },
+			{ "<leader>b", false },
+			{ "<leader>bd", false },
+			{ "<leader>bd", false },
+			{ "<leader>bD", false },
+			{ "<leader>be", false },
+			{ "<leader>bl", false },
+			{ "<leader>bo", false },
+			{ "<leader>bp", false },
+			{ "<leader>bP", false },
+			{ "<leader>br", false },
+			{
+				"<leader>b",
+				function()
+					require("mini.bufremove").delete(0, true)
+				end,
+				desc = "Delete Buffer (Force)",
+			},
 
 			{ "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Search Word in Dir" },
 			{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Find Help" },
@@ -93,108 +110,136 @@ return {
 			},
 		},
 	},
-
+	{
+		"echasnovski/mini.ai",
+		event = "VeryLazy",
+		opts = function()
+			local ai = require("mini.ai")
+			return {
+				n_lines = 500,
+				custom_textobjects = {
+					o = ai.gen_spec.treesitter({
+						a = { "@block.outer", "@conditional.outer", "@loop.outer" },
+						i = { "@block.inner", "@conditional.inner", "@loop.inner" },
+					}, {}),
+					f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
+					c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
+					t = { "<([%p%w]-)%f[^<%w][^<>]->.-</%1>", "^<.->().*()</[^/]->$" },
+					-- Define the comment text object inline
+					k = ai.gen_spec.treesitter({ a = "@comment.outer", i = "@comment.inner" }, {}),
+					P = ai.gen_spec.treesitter({
+						a = { "@param.outer", "@assignment.outer" },
+						i = { "@param.inner", "@assignment.inner" },
+					}, {}),
+				},
+			}
+		end,
+		config = function(_, opts)
+			require("mini.ai").setup(opts)
+			-- register all text objects with which-key
+			require("lazyvim.util").on_load("which-key.nvim", function()
+				---@type table<string, string|table>
+				local i = {
+					[" "] = "Whitespace",
+					['"'] = 'Balanced "',
+					["'"] = "Balanced '",
+					["`"] = "Balanced `",
+					["("] = "Balanced (",
+					[")"] = "Balanced ) including white-space",
+					[">"] = "Balanced > including white-space",
+					["<lt>"] = "Balanced <",
+					["]"] = "Balanced ] including white-space",
+					["["] = "Balanced [",
+					["}"] = "Balanced } including white-space",
+					["{"] = "Balanced {",
+					["?"] = "User Prompt",
+					_ = "Underscore",
+					a = "Argument",
+					b = "Balanced ), ], }",
+					c = "Class",
+					f = "Function",
+					o = "Block, conditional, loop",
+					q = "Quote `, \", '",
+					t = "Tag",
+					k = "Comment",
+					P = "exp/params",
+				}
+				local a = vim.deepcopy(i)
+				for k, v in pairs(a) do
+					a[k] = v:gsub(" including.*", "")
+				end
+				local ic = vim.deepcopy(i)
+				local ac = vim.deepcopy(a)
+				for key, name in pairs({ n = "Next", l = "Last" }) do
+					i[key] = vim.tbl_extend("force", { name = "Inside " .. name .. " textobject" }, ic)
+					a[key] = vim.tbl_extend("force", { name = "Around " .. name .. " textobject" }, ac)
+				end
+				require("which-key").register({
+					mode = { "o", "x" },
+					i = i,
+					a = a,
+				})
+			end)
+		end,
+	},
 	-- {
-	--   "nvim-lualine/lualine.nvim",
-	--   event = "VeryLazy",
-	--   init = function()
-	--     vim.g.lualine_laststatus = vim.o.laststatus
-	--     if vim.fn.argc(-1) > 0 then
-	--       -- set an empty statusline till lualine loads
-	--       vim.o.statusline = " "
-	--     else
-	--       -- hide the statusline on the starter page
-	--       vim.o.laststatus = 0
-	--     end
-	--   end,
-	--   opts = function()
-	--     -- PERF: we don't need this lualine require madness 🤷
-	--     local lualine_require = require("lualine_require")
-	--     lualine_require.require = require
+	-- 	"nvim-treesitter/nvim-treesitter",
+	-- 	-- event = { "LazyFile", "VeryLazy" },
 	--
-	--     local icons = require("lazyvim.config").icons
+	-- 	-- Other configurations (like `version`, `build`, `event`, etc.) go here.
+	-- 	-- ...
 	--
-	--     vim.o.laststatus = vim.g.lualine_laststatus
+	-- 	-- Custom function to set up keymaps for incremental selection
+	-- 	opts = {
 	--
-	--     return {
-	--       options = {
-	--         theme = "auto",
-	--         globalstatus = true,
-	--         disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
-	--       },
-	--       sections = {
-	--         lualine_a = { "mode" },
-	--         lualine_b = { "branch" },
-	--
-	--         lualine_c = {
-	--           Util.lualine.root_dir(),
-	--           {
-	--             "diagnostics",
-	--             symbols = {
-	--               error = icons.diagnostics.Error,
-	--               warn = icons.diagnostics.Warn,
-	--               info = icons.diagnostics.Info,
-	--               hint = icons.diagnostics.Hint,
-	--             },
-	--           },
-	--           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-	--           { Util.lualine.pretty_path() },
-	--         },
-	--         lualine_x = {
-	--         -- stylua: ignore
-	--         {
-	--           function() return require("noice").api.status.command.get() end,
-	--           cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-	--           color = Util.ui.fg("Statement"),
-	--         },
-	--         -- stylua: ignore
-	--         {
-	--           function() return require("noice").api.status.mode.get() end,
-	--           cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-	--           color = Util.ui.fg("Constant"),
-	--         },
-	--         -- stylua: ignore
-	--         {
-	--           function() return "  " .. require("dap").status() end,
-	--           cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
-	--           color = Util.ui.fg("Debug"),
-	--         },
-	--           {
-	--             require("lazy.status").updates,
-	--             cond = require("lazy.status").has_updates,
-	--             color = Util.ui.fg("Special"),
-	--           },
-	--           {
-	--             "diff",
-	--             symbols = {
-	--               added = icons.git.added,
-	--               modified = icons.git.modified,
-	--               removed = icons.git.removed,
-	--             },
-	--             source = function()
-	--               local gitsigns = vim.b.gitsigns_status_dict
-	--               if gitsigns then
-	--                 return {
-	--                   added = gitsigns.added,
-	--                   modified = gitsigns.changed,
-	--                   removed = gitsigns.removed,
-	--                 }
-	--               end
-	--             end,
-	--           },
-	--         },
-	--         lualine_y = {
-	--           { "progress", separator = " ", padding = { left = 1, right = 0 } },
-	--           { "location", padding = { left = 0, right = 1 } },
-	--         },
-	--         -- lualine_z = {
-	--         --   function()
-	--         --     return " " .. os.date("%R")
-	--         --   end,
-	--         -- },
-	--       },
-	--       extensions = { "neo-tree", "lazy" },
-	--     }
-	--   end,
+	-- 		highlight = { enable = true },
+	-- 		indent = { enable = true },
+	-- 		ensure_installed = {
+	-- 			"bash",
+	-- 			"c",
+	-- 			"diff",
+	-- 			"html",
+	-- 			"javascript",
+	-- 			"jsdoc",
+	-- 			"json",
+	-- 			"jsonc",
+	-- 			"lua",
+	-- 			"luadoc",
+	-- 			"luap",
+	-- 			"markdown",
+	-- 			"markdown_inline",
+	-- 			"python",
+	-- 			"query",
+	-- 			"regex",
+	-- 			"toml",
+	-- 			"tsx",
+	-- 			"typescript",
+	-- 			"vim",
+	-- 			"vimdoc",
+	-- 			"yaml",
+	-- 		},
+	-- 		incremental_selection = {
+	-- 			enable = true,
+	-- 			keymaps = {
+	-- 				init_selection = "<c-i>",
+	-- 				node_incremental = "<c-i>",
+	-- 				scope_incremental = false,
+	-- 				node_decremental = "<bs>",
+	-- 			},
+	-- 		},
+	-- 		textobjects = {
+	-- 			move = {
+	-- 				enable = true,
+	-- 				goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer" },
+	-- 				goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer" },
+	-- 				goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer" },
+	-- 				goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer" },
+	-- 			},
+	-- 		},
+	-- 	},
+	-- 	keys = {
+	-- 		{ "<c-i>", desc = "Increment selection" },
+	-- 		{ "<bs>", desc = "Decrement selection", mode = "x" },
+	-- 	},
 	-- },
 }

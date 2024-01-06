@@ -14,6 +14,10 @@ Set-PSReadLineKeyHandler -Key '"',"'" `
   param($key, $arg)
 
   $quote = $key.KeyChar
+  if ([Microsoft.PowerShell.PSConsoleReadLine]::IsLastCommandPaste()) {
+    [Microsoft.PowerShell.PSConsoleReadLine]::Insert($key.KeyChar)
+    return
+  }
 
   $selectionStart = $null
   $selectionLength = $null
@@ -137,6 +141,10 @@ Set-PSReadLineKeyHandler -Key '(','{','[' `
     }
   }
 
+  if ([Microsoft.PowerShell.PSConsoleReadLine]::IsLastCommandPaste()) {
+    [Microsoft.PowerShell.PSConsoleReadLine]::Insert($key.KeyChar)
+    return
+  }
   $selectionStart = $null
   $selectionLength = $null
   [Microsoft.PowerShell.PSConsoleReadLine]::GetSelectionState([ref]$selectionStart, [ref]$selectionLength)
@@ -285,7 +293,7 @@ Set-PSReadLineKeyHandler -Chord "Ctrl+``" `
 $global:PSReadLineMarks = @{}
 
 # Set a mark with 'm' followed by a key
-Set-PSReadLineKeyHandler -Key 'Ctrl+m' `
+Set-PSReadLineKeyHandler -Key 'Ctrl+M' `
   -BriefDescription MarkDirectory `
   -LongDescription "Mark the current directory" `
   -ScriptBlock {
@@ -296,7 +304,7 @@ Set-PSReadLineKeyHandler -Key 'Ctrl+m' `
 }
 
 # Go to a mark with '`' followed by a key
-Set-PSReadLineKeyHandler -Key 'Ctrl+`' `
+Set-PSReadLineKeyHandler -Key 'Ctrl+m' `
   -BriefDescription JumpDirectory `
   -LongDescription "Go to the marked directory" `
   -ScriptBlock {

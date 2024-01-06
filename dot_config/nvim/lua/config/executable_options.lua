@@ -57,3 +57,5 @@ vim.opt.spelllang = { "fr" }
 vim.opt.spellsuggest = { "double", 9 }
 
 vim.opt.cursorline = false -- highlight the current line
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
