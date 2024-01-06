@@ -113,7 +113,7 @@ return {
 					settings = {
 						ltex = {
 							-- cmd = { "/home/dylan/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin/ltex-ls" },
-							language = "fr",
+							language = "en",
 							diagnosticSeverity = "information",
 							setenceCacheSize = 2000,
 							additionalRules = {
@@ -387,7 +387,16 @@ return {
 			{ "<leader>zz", "<cmd>ObsidianBacklinks<CR>", desc = "List Link" },
 			{ "<leader>zC", "<cmd>ObsidianCheck<CR>", desc = "Checks" },
 			{ "<leader>zi", "<cmd>ObsidianPasteImg<CR>", desc = "Insert IMG" },
-			{ "<leader>zR", "<cmd>ObsidianRename<CR>", desc = "Rename" },
+			{
+				"<leader>zR", -- BUG:  cant rename my notes ? path issue maybe
+				function()
+					local input = vim.fn.input("Enter new note title: ")
+					if input ~= "" then
+						vim.cmd("ObsidianRename" .. input)
+					end
+				end,
+				desc = "Rename",
+			},
 			{ "<leader>zt", "<cmd>ObsidianTemplate<CR>", desc = "Template" },
 			{ "<leader>zT", "<cmd>ObsidianTemplate knowledge.md<CR>", desc = "Default Template" },
 			{
@@ -422,7 +431,8 @@ return {
 			},
 			{ "<leader>zC", "<Cmd>lua PdfToImage()<CR>", desc = "Convert PDF to Image" },
 			{ "<leader>zL", "<cmd>DictionaryPickLang<CR>", desc = "Change LSP Lang" },
-			{ "<leader>gU", "<cmd>DictionaryUpdate<CR>", desc = "Edit Dicts" },
+			{ "<leader>zU", "<cmd>DictionaryUpdate<CR>", desc = "Edit Dicts" },
+
 			{ "<leader>zF", "<cmd>DictionaryUpdateLspLang fr<CR>", desc = "LspLang French" },
 			{ "<leader>zE", "<cmd>DictionaryUpdateLspLang en<CR>", desc = "LspLang English" },
 			{

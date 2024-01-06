@@ -30,6 +30,8 @@ return {
 			{ "<leader>gG", "<cmd>Git fetch --all<CR>", desc = "Git Fetch All" },
 			{ "<leader>gl", "<cmd>Git log<CR>", desc = "Git Log" },
 			{ "<leader>gr", "<cmd>Gread<CR>", desc = "Git Reset file" },
+			{ "<leader>gw", "<cmd>GRebase -i main<CR>", desc = "Git rebase to main" },
+			{ "<leader>gW", "<cmd>GRebase<CR>", desc = "Git rebase " },
 			{ "<leader>ga", "<cmd>Gwrite<CR>", desc = "Git add File" },
 			{ "<leader>gR", "<cmd>Gremove<CR>", desc = "Git Remove" },
 			{ "<leader>gm", "<cmd>Gmove<CR>", desc = "Git Move" },
