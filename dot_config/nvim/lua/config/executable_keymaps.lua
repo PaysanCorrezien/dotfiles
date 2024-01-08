@@ -45,8 +45,8 @@ vim.keymap.set("n", "<leader>W", ":lua SudoSave()<CR>", { desc = "Save with Sudo
 vim.keymap.set("n", "<leader>M", ":lua SaveWindowsCreds()<CR>", { desc = "Save with Windows Credentials" })
 vim.keymap.set("n", "<leader>R", ":lua reload_config()<CR>", { desc = "Reload Conf" })
 vim.keymap.set("n", "<leader>G", "<cmd>Git<CR>", { desc = "Git" })
-vim.keymap.set("n", "<leader>gv", "<cmd>!git commit <CR>", { desc = "Git commit" })
-vim.keymap.set("n", "<leader>ga", "<cmd>Git add .<CR>", { desc = "Git Add ALL" })
+-- vim.keymap.set("n", "<leader>gv", "<cmd>!git commit <CR>", { desc = "Git commit" })
+-- vim.keymap.set("n", "<leader>ga", "<cmd>Git add .<CR>", { desc = "Git Add ALL" })
 vim.keymap.set("n", "<leader>gL", "<cmd>Gitsigns setloclist<CR>", { desc = "Git LocList" })
 
 -- Visual mode mappings
@@ -67,6 +67,8 @@ vim.keymap.set("i", "<C-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
 vim.keymap.set("v", "<C-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 vim.keymap.set("v", "<C-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
+-- vim.keymap.set("n", "<leader>cP", "<cmd>put =expand('%:p:h')<CR>", { desc = "Full Path" })
+vim.keymap.set("n", "<leader>cP", "<cmd>put =expand('%:h')<CR>", { desc = "Copy CWD" })
 -- -- Mapping to start the Docusaurus server
 -- vim.keymap.set("n", "<leader>zX", function()
 -- 	StartDocusaurusServer()

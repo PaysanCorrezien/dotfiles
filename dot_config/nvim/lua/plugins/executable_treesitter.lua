@@ -124,8 +124,8 @@ return {
 				incremental_selection = {
 					enable = true,
 					keymaps = {
-						init_selection = "<C-i>",
-						node_incremental = "<C-i>",
+						init_selection = "<C-m>",
+						node_incremental = "<C-m>",
 						scope_incremental = false,
 						node_decremental = "<bs>",
 					},
@@ -178,7 +178,7 @@ return {
 		end,
 		-- Keybindings and other specifications
 		keys = {
-			{ "<c-i>", desc = "Increment selection" },
+			{ "<c-m>", desc = "Increment selection" },
 			{ "<bs>", desc = "Decrement selection", mode = "x" },
 		},
 	},

@@ -16,8 +16,11 @@ return {
 			-- NOTE : Last commit date
 			table.insert(opts.sections.lualine_b, {
 				function()
+					-- Define the Git command
+					local git_command = 'git log -1 --format="%cd" --date=format:"%d/%m %H:%M" 2> nul' -- Adjusted for Windows
+
 					-- Attempt to execute the Git command
-					local handle = io.popen('git log -1 --format="%cd" --date=format:"%d/%m %H:%M" 2> /dev/null')
+					local handle, err = io.popen(git_command)
 
 					-- Check if the command execution was successful
 					if handle then
@@ -33,6 +36,8 @@ return {
 						-- Return the git icon and formatted date or an empty string if result is empty
 						return (result ~= "" and git_icon .. result) or ""
 					else
+						-- Log the error for debugging
+						print("Error executing git command: " .. tostring(err))
 						-- Return an empty string if handle is nil (command execution failed)
 						return ""
 					end

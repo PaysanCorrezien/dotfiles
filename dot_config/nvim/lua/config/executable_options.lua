@@ -41,7 +41,8 @@ if current_os == "Windows" then
 	vim.api.nvim_set_var("sqlite_clib_path", sqlite_clib_path)
 	-- Set shell to PowerShell and the command flag
 	vim.opt.shell = "pwsh.exe"
-	vim.opt.shellcmdflag = "-c"
+	vim.opt.shellcmdflag = "-nologo -noprofile -ExecutionPolicy RemoteSigned -command Invoke-PlainCommand"
+	vim.opt.shellxquote = ""
 	vim.opt.runtimepath:append("L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\")
 end
 
@@ -52,8 +53,7 @@ vim.opt.clipboard = ""
 vim.opt.spellfile = remote_spell
 --BUG: Fix this for en ?
 vim.opt.spell = true
-vim.opt.spelllang = { "fr" }
-vim.opt.spelllang = { "fr" }
+vim.opt.spelllang = { "en", "fr" }
 vim.opt.spellsuggest = { "double", 9 }
 
 vim.opt.cursorline = false -- highlight the current line

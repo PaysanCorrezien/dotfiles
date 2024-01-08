@@ -1,0 +1,1095 @@
+  [2m2023-11-25T23:41:44.744317Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-25T23:45:58.569782Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-25T23:45:58.621314Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-25T23:46:18.915162Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-25T23:46:22.248598Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-25T23:46:22.311128Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-25T23:46:30.022653Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T00:44:11.921309Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T00:44:11.973038Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:45.381552Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:45.433658Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:47.766389Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:47.813140Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:49.487569Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:49.644907Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:49.756462Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:49.916464Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:50.057621Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:50.198896Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:50.358858Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:50.757304Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:50.944173Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:51.151641Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T09:13:51.606695Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T11:56:05.529668Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [L:\dev\ptmx, L:\dev\console, L:\dev\sdc, L:\dev\sg2, L:\dev\sdb, L:\dev\sg1, L:\dev\sda, L:\dev\sg0, L:\dev\btrfs-control][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T11:56:05.568182Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [L:\dev\ptmx, L:\dev\console, L:\dev\sdc, L:\dev\sg2, L:\dev\sdb, L:\dev\sg1, L:\dev\sda, L:\dev\sg0, L:\dev\btrfs-control][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:43.755744Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:43.797632Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:44.127159Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:44.613523Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:44.911701Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:45.021715Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:45.306396Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:46.220197Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:46.377944Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:51.757449Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:52.305141Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:52.322679Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:52.367911Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:52.387239Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:52.431049Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:52.450224Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:52.493129Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:52.512065Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:52.556309Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:52.619435Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:52.730065Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:52.747600Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:21:52.793067Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:22:13.051403Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:22:13.104805Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:22:14.779864Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:22:17.798134Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:23:00.526419Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:50.787176Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:52.475134Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:52.517872Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:53.116226Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:53.618975Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:53.758306Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:54.011362Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:54.120271Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:54.245164Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:54.371353Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:54.639683Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:54.764745Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:56.133823Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:56.305185Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:56.809026Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:56.826727Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:56.872150Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:56.890449Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:56.935217Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:56.996681Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:57.075941Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:57.094117Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:25:57.139208Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:26:16.923239Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:26:17.355618Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:26:17.395023Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:30:38.817079Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T17:30:38.859354Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\hiberfil.sys, C:\pagefile.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T18:08:23.735002Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T18:08:23.924789Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T18:08:24.285892Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T18:08:24.677866Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T18:08:24.836064Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T18:08:24.962461Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T18:08:25.104697Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T18:08:25.340855Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T18:08:25.499156Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T18:08:25.609805Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T18:08:28.835016Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:10.674947Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:10.713914Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:11.490026Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:11.993939Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:12.013782Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:12.057693Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:12.076065Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:12.122055Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:12.392464Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:12.548556Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:12.770210Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:12.914060Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:13.039983Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:13.168235Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:13.466484Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:13.622321Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:13.749315Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:13.891871Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:14.033561Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:14.113743Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:14.352154Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:15.377789Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:15.993783Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:16.727999Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:16.883795Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:17.040609Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:17.229725Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:17.419686Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:18.054091Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-11-26T22:39:18.165896Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:33.527624Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:33.576372Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:33.989681Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:34.305277Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:34.416339Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:34.909421Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:34.971963Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:35.035941Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:35.056659Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:35.097996Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:35.161028Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:35.223163Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:35.286149Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:35.871316Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:36.076342Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:36.424239Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\DumpStack.log.tmp, C:\pagefile.sys, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:38.119281Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:38.292365Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:39.003339Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:39.146310Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:39.302291Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:39.555378Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:40.430176Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:40.477932Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:40.541993Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:40.699313Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:41.205635Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:41.331263Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:41.353566Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:41.394013Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:41.456039Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:41.520302Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:41.599353Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:41.789458Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:43.254372Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:43.317062Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:43.337520Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:43.380363Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:43.474304Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:43.536845Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:43.556459Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:43.599809Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:43.620382Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:43.662844Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:43.726950Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:43.773264Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:44.010317Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:44.519226Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:44.582194Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:44.601812Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:44.602121Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:44.644902Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:44.708114Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:44.820538Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:44.842519Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:44.882063Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:44.943995Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:45.119367Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:45.915347Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:46.425375Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:46.568294Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:46.631046Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:46.651587Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:46.654499Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:46.693938Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:46.715897Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:46.756953Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:46.778123Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:46.818885Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:46.881837Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:46.928555Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:46.951187Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:46.992073Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:47.012312Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:47.055084Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:49.031275Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:49.524338Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:49.586877Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:49.649967Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:49.712910Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:49.776003Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:49.839129Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:49.886243Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:49.948253Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:49.968559Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:50.010359Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:50.031129Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:50.073533Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:50.136464Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:50.262830Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:50.285678Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:50.326435Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:50.389702Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:50.453728Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:50.739754Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:51.248156Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:51.250403Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:51.250788Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:51.296727Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:51.727785Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:51.902903Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:52.455705Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:52.455888Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:52.457999Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:52.504807Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:53.299798Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:53.362635Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:53.425331Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:53.488548Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:53.935641Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:53.937410Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:53.979994Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:54.043808Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:54.181928Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:54.181928Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:54.182972Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:54.218849Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-01T06:28:55.701755Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms, C:\Users\dylan\ntuser.dat.LOG1, C:\Users\dylan\ntuser.dat.LOG2][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T12:41:02.911655Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T12:41:03.307944Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T12:41:04.005801Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:11.084026Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:19.285660Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:19.336896Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:19.400313Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:19.665673Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:19.824721Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:20.123485Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:20.363182Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:20.487436Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:21.503998Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:21.544320Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:21.607282Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:22.096719Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:23.085454Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:23.226350Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:23.486435Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:23.486688Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:23.529298Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:23.656349Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:23.656562Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:23.705361Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:24.055531Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:24.055563Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:24.102777Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-02T19:06:24.342118Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\hiberfil.sys, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-03T00:04:17.098803Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-03T00:21:49.666600Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-13T23:01:36.913645Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\hiberfil.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-13T23:01:36.955461Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\swapfile.sys, C:\hiberfil.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:08.781982Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.285486Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.348363Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.411501Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.521946Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.539026Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.584215Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.646943Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.710016Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.789409Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.806184Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.851356Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.869022Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.914268Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.931487Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:09.975701Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:10.037477Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:10.099014Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:10.160759Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:10.223090Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:10.285270Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:10.348152Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:10.521838Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:11.781446Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:19.166623Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:19.670609Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:19.687350Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:19.733184Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:19.796378Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:19.859148Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:19.921989Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:19.984843Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:20.048287Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:20.111867Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:20.174529Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:20.192444Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:20.236876Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:20.299557Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:20.317493Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:20.361910Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:20.424053Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-18T23:33:20.486220Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-26T22:10:32.487903Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-26T22:10:32.628073Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-26T22:10:44.050375Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-26T22:10:44.051823Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2023-12-26T22:10:44.100512Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-01T05:43:35.727349Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-01T05:43:36.058763Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-01T05:43:36.668640Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-01T05:43:36.890583Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-01T05:43:37.218470Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-01T05:43:46.320668Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-01T05:43:46.368233Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-01T05:43:49.635600Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-01T05:43:49.840429Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-01T05:43:50.612786Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-01T05:43:54.578072Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-01T05:43:54.623495Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-01T05:43:56.498936Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\pagefile.sys, C:\hiberfil.sys, C:\swapfile.sys, C:\DumpStack.log.tmp, C:\DumpStack.log][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-02T22:53:35.023538Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-02T22:53:35.380941Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-02T22:53:39.078244Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-02T22:53:42.363768Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-03T21:05:43.235813Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-03T21:05:43.376580Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-03T21:05:43.548766Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-03T21:05:43.814555Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-03T21:05:43.954973Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-03T21:05:44.236676Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:09.338812Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:09.671113Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:09.875992Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:10.176659Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:10.538568Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:10.946362Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:11.103271Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:11.574327Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:11.729215Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:12.043669Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:12.499954Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:13.003280Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:13.021248Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:13.063871Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:13.125663Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:13.188896Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:13.266734Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:13.598721Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-04T14:36:14.193314Z[0m [31mERROR[0m [1;31mcore::external::file[0m[31m: [31mfailed to get mime types: [C:\Users\dylan\NTUSER.DAT, C:\Users\dylan\NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf][0m
+    [2;3mat[0m core\src\external\file.rs:32
+
+  [2m2024-01-06T02:42:41.536225Z[0m [35mTRACE[0m [1;35mcore::tasks::tasks[0m[35m: [35mfile_cut: same file, skipping L:\home\dylan\.config\nvim\queries\powershell\textobjects.scm[0m
+    [2;3mat[0m core\src\tasks\tasks.rs:163
+
+  [2m2024-01-06T02:42:45.904274Z[0m [35mTRACE[0m [1;35mcore::tasks::tasks[0m[35m: [35mfile_cut: same file, skipping L:\home\dylan\.config\nvim\queries\powershell\textobjects.scm[0m
+    [2;3mat[0m core\src\tasks\tasks.rs:163
+
+  [2m2024-01-06T02:42:46.105278Z[0m [35mTRACE[0m [1;35mcore::tasks::tasks[0m[35m: [35mfile_cut: same file, skipping L:\home\dylan\.config\nvim\queries\powershell\textobjects.scm[0m
+    [2;3mat[0m core\src\tasks\tasks.rs:163
+

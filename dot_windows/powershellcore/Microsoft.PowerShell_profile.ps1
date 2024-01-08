@@ -204,6 +204,13 @@ function prompt
 #   $Host.UI.RawUI.WindowTitle += " [ADMIN]"
 # }
 # Yazi cd on quit
+# For nvim ! command
+function Invoke-PlainCommand {
+    param([string]$Command)
+    $output = & pwsh -Command $Command
+    $output -replace '\e\[\d+;?\d*m', ''
+}
+
 function ya
 {
   $tmp = [System.IO.Path]::GetTempFileName()

@@ -134,8 +134,8 @@ return {
 		end,
 	},
 	{
-		dir = dictionary_plugin_path, -- DEV : use local path
-		-- "paysancorrezien/dictionary.nvim", -- PROD : use remote path
+		-- dir = dictionary_plugin_path, -- DEV : use local path
+		"paysancorrezien/dictionary.nvim", -- PROD : use remote path
 		ft = "markdown",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -212,15 +212,15 @@ return {
 			})
 		end,
 	},
-	{
-		"renerocksai/telekasten.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
-		config = function()
-			require("telekasten").setup({
-				home = obsidian_vault_path,
-			})
-		end,
-	},
+	-- {
+	-- 	"renerocksai/telekasten.nvim",
+	-- 	dependencies = { "nvim-telescope/telescope.nvim" },
+	-- 	config = function()
+	-- 		require("telekasten").setup({
+	-- 			home = obsidian_vault_path,
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"epwalsh/obsidian.nvim",
 		lazy = false,
@@ -265,14 +265,14 @@ return {
 			-- Optional, comtruepletion.
 			--  BUG: dot work on windows ?
 			--
-			-- completion = {
-			nvim_cmp = false, -- if using nvim-cmp, otherwise set to false
-			-- new_notes_location = "current_dir",
-			new_notes_location = "notes_subdir",
-			use_path_only = true,
-			-- Trigger completion at 2 chars.
-			min_chars = 1,
-			-- },
+			completion = {
+				nvim_cmp = false, -- if using nvim-cmp, otherwise set to false
+				-- new_notes_location = "current_dir",
+				new_notes_location = "notes_subdir",
+				use_path_only = true,
+				-- Trigger completion at 2 chars.
+				-- min_chars = 1,
+			},
 			attachments = {
 				-- The default folder to place images in via `:ObsidianPasteImg`.
 				-- If this is a relative path it will be interpreted as relative to the vault root.
@@ -341,6 +341,9 @@ return {
 				-- Return the customized frontmatter
 				return out
 			end,
+			ui = {
+				enable = false, -- set to false to disable all additional syntax features
+			},
 
 			templates = {
 				subdir = "Projets/Templates",
@@ -455,4 +458,5 @@ return {
 			},
 		},
 	},
+	-- { "mrjones2014/smart-splits.nvim" }, --TODO
 }
