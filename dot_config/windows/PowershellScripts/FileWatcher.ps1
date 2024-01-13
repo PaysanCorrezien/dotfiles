@@ -1,5 +1,5 @@
 # Define the path to your repository
-$repoPath = "C:\Users\dylan\Documents\KnowledgeBase"
+$repoPath = "C:\repo\KnowledgeBase"
 
 # NOTE: to run, schedule a task :
 # program : "C:\Program Files\PowerShell\7\pwsh.exe" 

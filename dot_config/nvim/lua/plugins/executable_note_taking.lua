@@ -8,20 +8,20 @@ local home = os.getenv("HOME") or "~"
 obsidiannvim_settings = {
 	vault_paths = {
 		-- Windows = "C:/Users/dylan/Documents/KnowledgeBase/",
-		Windows = "~/Documents/KnowledgeBase",
-		Linux = "/mnt/c/users/dylan/Documents/KnowledgeBase/",
+		Windows = "C:\\repo\\KnowledgeBase",
+		Linux = "/mnt/c/repo/KnowledgeBase/",
 	},
 	attachments_paths = {
-		Windows = "C:\\Users\\dylan\\Documents\\KnowledgeBase\\static\\img\\",
-		Linux = "/mnt/c/users/dylan/Documents/KnowledgeBase/static/img/",
+		Windows = "C:\\repo\\KnowledgeBase\\static\\img\\",
+		Linux = "/mnt/c/repo/KnowledgeBase/static/img/",
 	},
 	pdftoppm_paths = {
 		Windows = "C:\\Users\\dylan\\scoop\\shims\\pdftoppm.exe",
 		Linux = "/usr/bin/pdftoppm",
 	},
 	templates_paths = {
-		Windows = "C:\\Users\\dylan\\Documents\\KnowledgeBase\\Projets\\Templates\\",
-		Linux = "/mnt/c/users/dylan/Documents/KnowledgeBase/Projets/Templates/",
+		Windows = "C:\\repo\\KnowledgeBase\\Projets\\Templates\\",
+		Linux = "/mnt/c/repo/KnowledgeBase/Projets/Templates/",
 	},
 }
 
@@ -36,14 +36,14 @@ local templates_path = os_utils.get_setting(obsidiannvim_settings.templates_path
 
 local pdf_paths = {
 	Windows = "C:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\pdf.nvim",
-	Linux = "/mnt/c/users/dylan/Documents/Projet/Work/Projet/pdf.nvim/",
+	Linux = "/mnt/c/repo/Projet/Work/Projet/pdf.nvim/",
 }
 
 local pdf_plugin_path = os_utils.get_setting(pdf_paths)
 
 local dictionary_path = {
 	Windows = "C:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\dictionary.nvim",
-	Linux = "/mnt/c/users/dylan/Documents/Projet/Work/Projet/dictionary.nvim/",
+	Linux = "/mnt/c/repo/Projet/Work/Projet/dictionary.nvim/",
 }
 local dictionary_plugin_path = os_utils.get_setting(dictionary_path)
 

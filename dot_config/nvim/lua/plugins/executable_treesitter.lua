@@ -1,7 +1,7 @@
 local os_utils = require("utils.os_utils")
 local powershell_parser_paths = {
-	Windows = "C:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\tree-sitter-powershell\\",
-	Linux = "/mnt/c/users/dylan/Documents/Projet/Work/Projet/nvim-treesitter-powershell/",
+	Windows = "C:\\repo\\tree-sitter-powershell\\",
+	Linux = "/mnt/c/repo/nvim-treesitter-powershell/",
 }
 local parser_path = os_utils.get_setting(powershell_parser_paths)
 
