@@ -17,10 +17,9 @@ ueberzug_scale = 1
 ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
-edit = [
-  { exec = '$EDITOR "$@"', block = true, for = "unix" },
-  { exec = 'nvim -w "%*"', block = true, for = "windows" },
-]
+edit = [{ exec = '$EDITOR "$@"', block = true, for = "unix" }, { exec = '''
+  pwsh.exe -NoProfile -Command "& nvim %*"
+''', block = true, for = "windows" }]
 open = [
   { exec = 'xdg-open "$@"', desc = "Open", for = "linux" },
   { exec = 'open "$@"', desc = "Open", for = "macos" },
@@ -107,11 +106,254 @@ rules = [
     "extract",
     "reveal",
   ] },
+  # PowerShell Scripts
+  { mime = "text/x-powershell", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "application/x-powershell", use = [
+    "edit",
+    "reveal",
+  ] },
+  #
+  # Batch Files
+  { mime = "application/bat", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "application/x-bat", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "text/plain", name = "*.bat", use = [
+    "edit",
+    "reveal",
+  ] },
 
+  # Text Files
+  { mime = "text/plain", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # .config Files
+  { mime = "application/xml", name = "*.config", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Makefiles
+  { mime = "text/x-makefile", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "text/plain", name = "Makefile", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Dockerfiles
+  { mime = "text/x-dockerfile", use = [
+    "edit",
+    "reveal",
+  ] },
+  #
+  # INI Files
+  { mime = "text/plain", name = "*.ini", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # .env Files
+  { mime = "text/plain", name = "*.env", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Java Properties Files
+  { mime = "text/x-java-properties", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Apache Configuration Files (.htaccess)
+  { mime = "text/plain", name = ".htaccess", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Shell Profiles (like .bashrc, .zshrc)
+  { mime = "application/x-shellscript", name = ".*rc", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Git Configuration Files (.gitignore, .gitconfig)
+  { mime = "text/plain", name = ".gitignore", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "text/plain", name = ".gitconfig", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Vim Configuration Files (.vimrc)
+  { mime = "text/plain", name = ".vimrc", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # C and C++
+  { mime = "text/x-c", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "text/x-c++", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "text/x-chdr", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "text/x-c++hdr", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "text/x-csrc", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "text/x-c++src", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # C#
+  { mime = "text/x-csharp", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Java
+  { mime = "text/x-java", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Python
+  { mime = "text/x-python", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # TypeScript
+  { mime = "application/typescript", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # PHP
+  { mime = "application/x-httpd-php", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Ruby
+  { mime = "application/x-ruby", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Go
+  { mime = "text/x-go", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Rust
+  { mime = "text/rust", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Shell Scripts
+  { mime = "application/x-shellscript", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Perl
+  { mime = "text/x-perl", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Lua
+  { mime = "text/x-lua", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # YAML
+  { mime = "text/yaml", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # TOML
+  { mime = "application/toml", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # JSON
+  { mime = "application/json", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # XML
+  { mime = "application/xml", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # HTML
+  { mime = "text/html", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # CSS
+  { mime = "text/css", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Markdown
+  { mime = "text/markdown", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # SQL
+  { mime = "application/sql", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  # Bash/Zsh
+  { mime = "application/x-shellscript", use = [
+    "edit",
+    "reveal",
+  ] },
   { mime = "*", use = [
     "open",
     "reveal",
   ] },
+
 ]
 
 [tasks]

@@ -40,9 +40,12 @@ if current_os == "Windows" then
 	local sqlite_clib_path = "C:/Users/" .. windows_username .. "/AppData/Roaming/sqlite-dll/sqlite3.dll"
 	vim.api.nvim_set_var("sqlite_clib_path", sqlite_clib_path)
 	-- Set shell to PowerShell and the command flag
-	vim.opt.shell = "pwsh.exe"
-	vim.opt.shellcmdflag = "-nologo -noprofile -ExecutionPolicy RemoteSigned -command Invoke-PlainCommand"
-	vim.opt.shellxquote = ""
+	-- vim.opt.shell = "pwsh.exe"
+	-- vim.opt.shellcmdflag = "-nologo -noprofile -ExecutionPolicy RemoteSigned -command Invoke-PlainCommand"
+	-- vim.opt.shellcmdflag = "-nologo -noprofile"
+	-- -- vim.opt.shellcmdflag =
+	-- -- 	[[-nologo -noprofile -ExecutionPolicy RemoteSigned -command "& {param([string]$Command) $output = & pwsh -Command $Command; $output -replace '\\e\\[\\d+;?\\d*m', ''}"]]
+	-- vim.opt.shellxquote = ""
 	vim.opt.runtimepath:append("L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\")
 end
 

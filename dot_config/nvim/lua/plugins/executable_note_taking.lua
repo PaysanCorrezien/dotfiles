@@ -81,7 +81,9 @@ local ltex_extra_cwd = os_utils.get_setting(ltex_extra_plugin_cwd)
 return {
 	{
 		"barreiroleo/ltex_extra.nvim",
+		lazy = true,
 		-- TODO: remove when PR merged
+
 		commit = "6d00bf2fbd6fcecafd052c0e0f768b67ceb3307f",
 		ft = { "markdown", "tex" },
 		dependencies = { "neovim/nvim-lspconfig" },
@@ -223,7 +225,9 @@ return {
 	-- },
 	{
 		"epwalsh/obsidian.nvim",
-		lazy = false,
+		version = "*", -- recommended, use latest release instead of latest commit
+		lazy = true,
+		ft = "markdown",
 		-- event = { "BufReadPre /home/dylan/Documents/Vault/**.md" },
 		-- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand':
 		-- event = { "BufReadPre " .. obsidian_vault_path .. "/**.md" },

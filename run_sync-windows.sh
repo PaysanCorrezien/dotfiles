@@ -50,9 +50,14 @@ rsync -au "${sourceDir}/" "${destDir}/"
 # Define source and destination directories
 sourceDir="$HOME/.config/nvim"
 destDir="${windowsPath}/AppData/Local/nvim"
-
 # Call the function for the destination directory
 check_and_create_dir "$destDir"
-
+# Use rsync to synchronize, excluding the session folder
+rsync -au --exclude 'session' "${sourceDir}/" "${destDir}/"
+#yazi file explorer
+sourceDir="$HOME/.local/share/chezmoi/dot_windows/yazi"
+destDir="${windowsPath}/AppData/roaming/yazi"
+# Call the function for the destination directory
+check_and_create_dir "$destDir"
 # Use rsync to synchronize, excluding the session folder
 rsync -au --exclude 'session' "${sourceDir}/" "${destDir}/"

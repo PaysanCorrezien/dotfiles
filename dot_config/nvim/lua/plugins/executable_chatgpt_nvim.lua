@@ -2,7 +2,8 @@ local gptnvim_action_path = "L:\\home\\dylan\\.config\\lvim\\correct_french.json
 
 return {
 	"jackMort/ChatGPT.nvim",
-	event = "VeryLazy",
+	lazy = true,
+	-- event = "VeryLazy",
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 		"nvim-lua/plenary.nvim",
