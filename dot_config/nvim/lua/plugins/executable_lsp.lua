@@ -48,5 +48,13 @@ return {
 		-- 		debounce_hours = 10, -- at least 5 hours between attempts to install/update
 		-- 	})
 		-- end,
+		--TODO : use this instead to ensure install :
+		--     {
+		--   "williamboman/mason.nvim",
+		--   opts = function(_, opts)
+		--     opts.ensure_installed = opts.ensure_installed or {}
+		--     vim.list_extend(opts.ensure_installed, { "markdownlint", "marksman" })
+		--   end,
+		-- },
 	},
 }

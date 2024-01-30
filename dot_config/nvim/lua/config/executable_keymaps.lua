@@ -78,3 +78,8 @@ vim.keymap.set("n", "<leader>cP", "<cmd>put =expand('%:h')<CR>", { desc = "Copy 
 vim.keymap.set("n", "<leader>zo", function()
 	OpenInDocusaurus()
 end, { desc = "Open in Docusaurus" })
+
+vim.api.nvim_set_keymap("n", "<leader>zD", ":lua StartDocusaurusServer()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>zd", ":lua StopDocusaurusServer()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>zX", ":lua GetDocusaurusBufferInfo()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>zN", ":lua CreateNote()<CR>", { noremap = true, silent = true })

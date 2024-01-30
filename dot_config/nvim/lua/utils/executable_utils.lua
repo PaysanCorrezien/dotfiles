@@ -1,15 +1,173 @@
---BUG: not in RTP ?
---
-
 -- TODO:
 -- function _G.StartDocusaurusServer()
--- 	local projectDir = "C:\\Users\\dylan\\Documents\\KnowledgeBase"
+-- 	local projectDir = "D:\\Users\\dylan\\Documents\\KnowledgeBase"
 -- 	local cmd = "cmd /c cd /d " .. projectDir .. " && npm run start"
 -- 	vim.fn.jobstart(cmd, { detach = true })
 -- end
+local function openFile()
+	-- Parameters
+	-- TODO: make this a global configurable variable
+	-- local base_path = "/mnt/c/Users/dylan/Mes documents/Obsidian Vault/Tasks/"
+	local base_path = "D:\\notes\\Tasks\\"
+
+	-- Date format
+	local date = os.date("*t")
+	local year = date.year
+	local month = string.format("%02d-%s", date.month, os.date("%B"))
+	local day = string.format("%04d-%02d-%02d-%s", year, date.month, date.day, os.date("%A"))
+
+	-- File path
+	local file_path = string.format("%s%s/%s/%s.md", base_path, year, month, day)
+	local expanded_file_path = vim.fn.expand(file_path)
+
+	-- Create directories if they do not exist
+	local dir_path = vim.fn.expand(string.format("%s%s/%s", base_path, year, month))
+	if vim.fn.isdirectory(dir_path) ~= 1 then
+		vim.fn.mkdir(dir_path, "p")
+	end
+
+	-- Open the file
+	vim.cmd(string.format("edit %s", file_path))
+end
+
+function _G.CreateDailyTask()
+	openFile()
+
+	-- Parameters
+	local task_heading = "## Taches"
+	local task_format = "- [ ] #task"
+
+	-- Find the task heading
+	local task_heading_line = -1
+	for i = 1, vim.fn.line("$") do
+		if vim.fn.getline(i) == task_heading then
+			task_heading_line = i
+			break
+		end
+	end
+
+	-- Add a new task below the heading and enter insert mode
+	if task_heading_line ~= -1 then
+		vim.fn.append(task_heading_line, task_format)
+		vim.cmd(string.format("normal! %dG", task_heading_line + 1))
+		vim.cmd("startinsert!")
+	else
+		vim.api.nvim_notify("Task heading not found.", 2, {})
+	end
+end
+
+-- Creates a note below the "## Notes" heading.
+-- If the heading is not found, a notification is sent.
+function _G.CreateNote()
+	openFile()
+
+	-- Heading to find
+	local heading = "## Notes"
+
+	-- Find the heading
+	local heading_line = -1
+	for i = 1, vim.fn.line("$") do
+		if vim.fn.getline(i) == heading then
+			heading_line = i
+			break
+		end
+	end
+
+	-- Create a new line below the heading and enter insert mode
+	if heading_line ~= -1 then
+		vim.fn.append(heading_line, "")
+		vim.cmd(string.format("normal! %dG", heading_line + 1))
+		vim.cmd("startinsert!")
+	else
+		vim.api.nvim_notify("Heading not found.", 2, {})
+	end
+end
+
+function _G.StartDocusaurusServer()
+	-- Change directory
+	vim.cmd("cd D:\\notes\\")
+
+	-- Create a hidden buffer for the terminal
+	local bufnr = vim.api.nvim_create_buf(false, true)
+	vim.notify("Created buffer: " .. bufnr, vim.log.levels.DEBUG)
+
+	-- Define a callback function to handle job output and exit
+	local on_exit = function(job_id, exit_code, event_type)
+		vim.schedule(function()
+			if exit_code == 0 then
+				vim.notify("Node server started successfully!", vim.log.levels.INFO)
+			else
+				vim.notify("Node server failed to start. See :messages for details.", vim.log.levels.ERROR)
+			end
+		end)
+	end
+
+	-- Configure the hidden buffer options
+	vim.api.nvim_buf_call(bufnr, function()
+		vim.opt_local.buflisted = false -- Make the buffer unlisted
+		vim.opt_local.bufhidden = "hide" -- Hide the buffer when not in use
+		vim.notify("Buffer configured: " .. bufnr, vim.log.levels.DEBUG)
+
+		-- Start the Node server in the hidden terminal buffer
+		local job_id = vim.fn.termopen("npm run start", {
+			on_exit = on_exit,
+			on_stderr = function(_, data, _)
+				vim.schedule(function()
+					-- Capture and log the stderr for errors
+					if data then
+						for _, line in ipairs(data) do
+							if line ~= "" then
+								vim.notify(line, vim.log.levels.ERROR)
+							end
+						end
+					end
+				end)
+			end,
+		})
+		-- After starting the job:
+		vim.g.docusaurus_jobid = job_id
+		vim.g.docusaurus_buffer = bufnr
+
+		-- Debug: Notify about job start
+		if job_id then
+			vim.notify("Job started: " .. job_id .. ", in buffer: " .. bufnr, vim.log.levels.DEBUG)
+			vim.notify("Attempting to start Node server...", vim.log.levels.INFO)
+		else
+			vim.notify("Failed to start Node server job!", vim.log.levels.ERROR)
+		end
+	end)
+end
+
+function _G.StopDocusaurusServer()
+	local jobid = vim.g.docusaurus_jobid
+	if jobid and vim.fn.jobwait({ jobid }, 0)[1] == -1 then -- Check if job is still running
+		local stop_result = vim.fn.jobstop(jobid)
+		if stop_result == 1 then
+			vim.notify("Docusaurus server stopped successfully.", vim.log.levels.INFO)
+		else
+			vim.notify("Failed to stop Docusaurus server.", vim.log.levels.ERROR)
+		end
+	else
+		vim.notify("Docusaurus server is not running.", vim.log.levels.INFO)
+	end
+end
+
+function _G.GetDocusaurusBufferInfo()
+	local bufnr = vim.g.docusaurus_buffer
+	if bufnr and vim.api.nvim_buf_is_valid(bufnr) then
+		local bufname = vim.api.nvim_buf_get_name(bufnr)
+		vim.notify(
+			"Docusaurus server is running in buffer: " .. bufnr .. "\nBuffer Name: " .. bufname,
+			vim.log.levels.INFO
+		)
+	else
+		vim.notify("Docusaurus server buffer does not exist or is not valid.", vim.log.levels.ERROR)
+	end
+end
 
 function OpenInDocusaurus()
-	local projectDir = "C:\\Users\\dylan\\Documents\\KnowledgeBase\\Docs"
+	local projectDir = "D:\\notes\\KnowledgeBase\\Docs"
+	-- local projectDir = "D:\\Users\\dylan\\Documents\\KnowledgeBase\\Docs"
 	local filePath = vim.fn.expand("%:p") -- Get the full path of the current file
 
 	-- Extract the relative path, replace backslashes with forward slashes

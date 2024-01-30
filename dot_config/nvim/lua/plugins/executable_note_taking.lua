@@ -7,21 +7,21 @@ local home = os.getenv("HOME") or "~"
 -- Settings with paths
 obsidiannvim_settings = {
 	vault_paths = {
-		-- Windows = "C:/Users/dylan/Documents/KnowledgeBase/",
-		Windows = "C:\\repo\\KnowledgeBase",
-		Linux = "/mnt/c/repo/KnowledgeBase/",
+		-- Windows = "D:/Users/dylan/Documents//",
+		Windows = "D:\\notes\\",
+		Linux = "/mnt/d/notes//",
 	},
 	attachments_paths = {
-		Windows = "C:\\repo\\KnowledgeBase\\static\\img\\",
-		Linux = "/mnt/c/repo/KnowledgeBase/static/img/",
+		Windows = "D:\\notes\\\\static\\img\\",
+		Linux = "/mnt/d/notes//static/img/",
 	},
 	pdftoppm_paths = {
-		Windows = "C:\\Users\\dylan\\scoop\\shims\\pdftoppm.exe",
+		Windows = "D:\\Users\\dylan\\scoop\\shims\\pdftoppm.exe",
 		Linux = "/usr/bin/pdftoppm",
 	},
 	templates_paths = {
-		Windows = "C:\\repo\\KnowledgeBase\\Projets\\Templates\\",
-		Linux = "/mnt/c/repo/KnowledgeBase/Projets/Templates/",
+		Windows = "D:\\notes\\\\Projets\\Templates\\",
+		Linux = "/mnt/d/notes//Projets/Templates/",
 	},
 }
 
@@ -35,15 +35,15 @@ local templates_path = os_utils.get_setting(obsidiannvim_settings.templates_path
 -- local obsidian_vault_path = os_utils.get_setting(obsidiannvim_paths)
 
 local pdf_paths = {
-	Windows = "C:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\pdf.nvim",
-	Linux = "/mnt/c/repo/Projet/Work/Projet/pdf.nvim/",
+	Windows = "c:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\pdf.nvim",
+	Linux = "/mnt/c/user/dylan/Documents/Projet/Work/Projet/pdf.nvim/",
 }
 
 local pdf_plugin_path = os_utils.get_setting(pdf_paths)
 
 local dictionary_path = {
 	Windows = "C:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\dictionary.nvim",
-	Linux = "/mnt/c/repo/Projet/Work/Projet/dictionary.nvim/",
+	Linux = "/mnt/c/notes/Projet/Work/Projet/dictionary.nvim/",
 }
 local dictionary_plugin_path = os_utils.get_setting(dictionary_path)
 
@@ -246,14 +246,15 @@ return {
 			-- "preservim/vim-markdown",
 		},
 		opts = {
-			-- dir = "~/Documents/KnowledgeBase",
+			-- dir = "~/Documents/",
 			-- dir = obsidian_vault_path, -- no need to call 'vim.fn.expand' here
 			workspaces = {
 				{
 					name = "personal",
-					path = obsidian_vault_path,
+					-- path = obsidian_vault_path,
+					path = "D:\\notes\\",
 					overrides = {
-						notes_subdir = "Docs/KnowledgeBase", --TODO: inline function for this ?
+						notes_subdir = "Docs/", --TODO: inline function for this ?
 					},
 				},
 				{
@@ -462,5 +463,37 @@ return {
 			},
 		},
 	},
+	{
+		"mfussenegger/nvim-lint",
+		optional = true,
+		opts = {
+			linters_by_ft = {
+				markdown = { "markdownlint" },
+			},
+		},
+		config = function()
+			local markdownlint_config_path = vim.fn.stdpath("config") .. "\\extconfigs\\markdownlint.jsonc"
+			require("lint").linters.markdownlint = {
+				cmd = "markdownlint",
+				stdin = false,
+				args = { "--config", markdownlint_config_path, "%filepath" },
+			}
+		end,
+	},
+	{
+		"neovim/nvim-lspconfig",
+		opts = {
+			servers = {
+				marksman = {},
+			},
+		},
+		-- TODO :make it use conf without breaking lsp
+		-- config = function()
+		--   local marksman_config_path = vim.fn.stdpath("config") .. "\\extconfigs\\marksman.toml"
+		--   print("Marksman config path: " .. marksman_config_path) -- Debug print
+		--   require("lspconfig").marksman.setup({})
+		-- end,
+	},
+
 	-- { "mrjones2014/smart-splits.nvim" }, --TODO
 }
