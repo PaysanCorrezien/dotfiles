@@ -254,7 +254,7 @@ return {
 					-- path = obsidian_vault_path,
 					path = "D:\\notes\\",
 					overrides = {
-						notes_subdir = "Docs/", --TODO: inline function for this ?
+						notes_subdir = "Docs/KnowledgeBase", --TODO: inline function for this ?
 					},
 				},
 				{
@@ -295,10 +295,10 @@ return {
 					if vault_relative_path ~= nil then
 						-- Use the modified path if the image is saved in the vault dir.
 						-- Strip off unwanted parts of the path and keep only '/img/' and the file name
-						link_path = string.match(vault_relative_path, "/img/.+$")
+						link_path = string.match(vault_relative_path, "../../static/img/.+$")
 					else
 						-- For absolute paths, extract only the '/img/' part and the file name.
-						link_path = string.match(tostring(path), "/img/.+$")
+						link_path = string.match(tostring(path), "../static/img/.+$")
 					end
 					if not link_path then
 						-- Fallback in case the desired pattern is not found
