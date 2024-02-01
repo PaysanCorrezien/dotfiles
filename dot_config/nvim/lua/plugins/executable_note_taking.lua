@@ -254,7 +254,7 @@ return {
 					-- path = obsidian_vault_path,
 					path = "D:\\notes\\",
 					overrides = {
-						notes_subdir = "Docs/KnowledgeBase", --TODO: inline function for this ?
+						notes_subdir = "Docs\\KnowledgeBase", --TODO: inline function for this ?
 					},
 				},
 				{
