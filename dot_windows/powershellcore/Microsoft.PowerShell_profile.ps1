@@ -39,9 +39,13 @@ $env:FZF_CTRL_R_OPTS=@"
 "@
 
 
-$env:GIT_SSH_COMMAND = '"C:\\Program Files\\OpenSSH\\ssh.exe"'
+# $env:GIT_SSH_COMMAND = '"C:\\Program Files\\OpenSSH\\ssh.exe"'
 
 
+#BUG: GH cli completions
+# Dont work properly
+# $profileDir = Split-Path -Parent $PROFILE
+# . (Join-Path $profileDir 'completions/gh-cli.ps1')
 function c
 { Start-Process -FilePath "C:\VSCode\Code.exe" 
 }
@@ -293,6 +297,7 @@ function Reload-Powershell
 $env:GIT_SSH_COMMAND = '"C:\\Program Files\\OpenSSH\\ssh.exe"'
 
 
+
 # We don't need these any more; they were just temporary variables to get to $isAdmin. 
 # Delete them to prevent cluttering up the user profile. 
 Remove-Variable identity

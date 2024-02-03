@@ -15,13 +15,15 @@ check_and_create_dir() {
 }
 
 # Sync PowerShell Core Profile
+sourceDir="$HOME/.local/share/chezmoi/dot_windows/powershellcore"
 destDir="${windowsPath}/Documents/PowerShell"
 check_and_create_dir "$destDir"
-cp ~/.local/share/chezmoi/dot_windows/powershellcore/Microsoft.PowerShell_profile.ps1 "${destDir}/Microsoft.PowerShell_profile.ps1"
-cp ~/.local/share/chezmoi/dot_windows/powershellcore/bindings.ps1 "${destDir}/bindings.ps1"
-cp ~/.local/share/chezmoi/dot_windows/powershellcore/psreadlinebindings.ps1 "${destDir}/psreadlinebindings.ps1"
-# Sync Autocommit script to windows location
-cp ~/.local/share/chezmoi/dot_config/windows/PowershellScripts/FileWatcher.ps1 "${destDir}/FileWatcher.ps1"
+# cp ~/.local/share/chezmoi/dot_windows/powershellcore/Microsoft.PowerShell_profile.ps1 "${destDir}/Microsoft.PowerShell_profile.ps1"
+# cp ~/.local/share/chezmoi/dot_windows/powershellcore/bindings.ps1 "${destDir}/bindings.ps1"
+# cp ~/.local/share/chezmoi/dot_windows/powershellcore/psreadlinebindings.ps1 "${destDir}/psreadlinebindings.ps1"
+# # Sync Autocommit script to windows location
+# cp ~/.local/share/chezmoi/dot_config/windows/PowershellScripts/FileWatcher.ps1 "${destDir}/FileWatcher.ps1"
+rsync -au "${sourceDir}/" "${destDir}/"
 
 # Sync Windows Terminal settings
 destDir="${windowsPath}/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState"

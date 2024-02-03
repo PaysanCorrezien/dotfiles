@@ -430,7 +430,7 @@ keymap = [
     "g",
     "p",
   ], exec = '''
-    shell 'pwsh.exe -ex Bypass -C "& env:APPDATA\yazi\WindowsEnhancement\PowershellSession.ps1 %1 "' --confirm
+    shell 'pwsh.exe -ex Bypass -C "& $env:APPDATA\yazi\WindowsEnhancement\PowershellSession.ps1 %1 "' --confirm
   ''', desc = "Open PowerShell Here" },
   # Open Powershell As Admin / Will Prompt UAC 
   # TODO : Open in default terminal not classic powershell
@@ -449,6 +449,11 @@ keymap = [
   ], exec = '''
     shell 'pwsh.exe -ex Bypass -C "& $env:APPDATA\yazi\WindowsEnhancement\OpenInWSLTmux.ps1 %1"' --confirm
   ''', desc = "Open File In TMUX EDITOR" },
+  # NOTE: Plugins keys
+  # https://github.com/DreamMaoMao/keyjump.yazi
+  { on = [
+    "i",
+  ], exec = "plugin keyjump --sync --args='sync-init'", desc = "keyjump" },
 ]
 
 
