@@ -65,6 +65,9 @@ function Open-Lvim
 }
 Set-Alias -Name lvim -Value Open-Lvim
 Set-Alias -Name v -Value Open-Lvim
+function ai {
+    sgpt --repl temp --shell $args
+}
 
 $env:EDITOR = "$env:USERPROFILE\.local\bin\lvim.ps1"
 
@@ -137,46 +140,46 @@ $isAdmin = $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administ
 # Set up command prompt and window title. Use UNIX-style convention for identifying 
 # whether user is elevated (root) or not. Window title shows current version of PowerShell
 # and appends [ADMIN] if appropriate for easy taskbar identification
-function prompt
-{
-  $p = $executionContext.SessionState.Path.CurrentLocation
-  $ansi_escape = [char]27
-  $osc7 = ""
-  $osc2 = ""
-
-  if ($p.Provider.Name -eq "FileSystem")
-  {
-    # Get the current directory and its parent
-    $provider_path = $p.ProviderPath -Replace "\\", "/"
-    $currentDir = Split-Path $provider_path -Leaf
-    $parentDir = Split-Path $provider_path -Parent | Split-Path -Leaf
-
-    # Concatenate parent and current directory
-    $dirDisplay = "$parentDir\$currentDir"
-
-    # Prepare OSC 7 sequence for current directory
-    $osc7_path = "file://${env:COMPUTERNAME}/${provider_path}"
-    $osc7 = "$ansi_escape]7;$osc7_path$ansi_escape\"
-
-    # Prepare OSC 2 sequence for window title
-    $windowTitle = "PWSH - $dirDisplay"
-    if ($isAdmin)
-    {
-      $windowTitle += " [ADMIN]"
-      $osc7_path += " [ADMIN]"
-      $adminTag = "[ADMIN]"
-    }
-
-    $osc2 = "$ansi_escape]2;$windowTitle$ansi_escape\"
-
-    # Update OSC 7 sequence with admin tag if necessary
-    $osc7 = "$ansi_escape]7;$osc7_path$ansi_escape\"
-  }
-
-  # Output OSC 7 and OSC 2 sequences
-  # Custom prompt format: PS parentdir\currentdir -->
-  $osc7 + $osc2 + "PS ($dirDisplay)$adminTag --> "
-}
+# function prompt
+# {
+#   $p = $executionContext.SessionState.Path.CurrentLocation
+#   $ansi_escape = [char]27
+#   $osc7 = ""
+#   $osc2 = ""
+# 
+#   if ($p.Provider.Name -eq "FileSystem")
+#   {
+#     # Get the current directory and its parent
+#     $provider_path = $p.ProviderPath -Replace "\\", "/"
+#     $currentDir = Split-Path $provider_path -Leaf
+#     $parentDir = Split-Path $provider_path -Parent | Split-Path -Leaf
+# 
+#     # Concatenate parent and current directory
+#     $dirDisplay = "$parentDir\$currentDir"
+# 
+#     # Prepare OSC 7 sequence for current directory
+#     $osc7_path = "file://${env:COMPUTERNAME}/${provider_path}"
+#     $osc7 = "$ansi_escape]7;$osc7_path$ansi_escape\"
+# 
+#     # Prepare OSC 2 sequence for window title
+#     $windowTitle = "PWSH - $dirDisplay"
+#     if ($isAdmin)
+#     {
+#       $windowTitle += " [ADMIN]"
+#       $osc7_path += " [ADMIN]"
+#       $adminTag = "[ADMIN]"
+#     }
+# 
+#     $osc2 = "$ansi_escape]2;$windowTitle$ansi_escape\"
+# 
+#     # Update OSC 7 sequence with admin tag if necessary
+#     $osc7 = "$ansi_escape]7;$osc7_path$ansi_escape\"
+#   }
+# 
+#   # Output OSC 7 and OSC 2 sequences
+#   # Custom prompt format: PS parentdir\currentdir -->
+#   $osc7 + $osc2 + "PS ($dirDisplay)$adminTag --> "
+# }
 
 #   # Wezterm need osc7 to set the current directory
 #   # https://wezfurlong.org/wezterm/shell-integration.html#osc-7-on-windows-with-cmdexe 
@@ -209,13 +212,13 @@ function prompt
 # }
 # Yazi cd on quit
 # For nvim ! command
-function Invoke-PlainCommand {
-    param([string]$Command)
-    $output = & pwsh -Command $Command
-    $output -replace '\e\[\d+;?\d*m', ''
-}
+# function Invoke-PlainCommand {
+#     param([string]$Command)
+#     $output = & pwsh -Command $Command
+#     $output -replace '\e\[\d+;?\d*m', ''
+# }
 
-function ya
+function y
 {
   $tmp = [System.IO.Path]::GetTempFileName()
   yazi --cwd-file="$tmp"
@@ -296,7 +299,32 @@ function Reload-Powershell
 # make windows git cli use SSH AGENT correctly :
 $env:GIT_SSH_COMMAND = '"C:\\Program Files\\OpenSSH\\ssh.exe"'
 
-
+# Set the location of the Starship configuration
+$ENV:STARSHIP_CONFIG = "$env:USERPROFILE\.config\starship\starship.toml"
+
+# Define the function to set OSC 7 escape sequence
+function Invoke-Starship-PreCommand {
+    $current_location = $executionContext.SessionState.Path.CurrentLocation
+    if ($current_location.Provider.Name -eq "FileSystem") {
+        $ansi_escape = [char]27
+        $provider_path = $current_location.ProviderPath -replace "\\", "/"
+        $prompt = "$ansi_escape]7;file://${env:COMPUTERNAME}/${provider_path}$ansi_escape\"
+        $host.ui.Write($prompt)
+    }
+}
+
+# Define a custom Prompt function that integrates Starship and sets OSC 7
+function Prompt {
+    # Call the function to set OSC 7 before Starship renders the prompt
+    Invoke-Starship-PreCommand
+
+    # Let Starship render the prompt
+    $global:LASTEXITCODE = $?
+    Invoke-Expression (&starship prompt --status=$LASTEXITCODE --jobs=(Get-Job -State Running).Count)
+}
+
+# Initialize Starship
+Invoke-Expression (&starship init powershell)
 
 # We don't need these any more; they were just temporary variables to get to $isAdmin. 
 # Delete them to prevent cluttering up the user profile. 

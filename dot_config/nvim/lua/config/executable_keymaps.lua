@@ -67,8 +67,10 @@ vim.keymap.set("i", "<C-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
 vim.keymap.set("v", "<C-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 vim.keymap.set("v", "<C-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
+--BUG: not working
 -- vim.keymap.set("n", "<leader>cP", "<cmd>put =expand('%:p:h')<CR>", { desc = "Full Path" })
-vim.keymap.set("n", "<leader>cP", "<cmd>put =expand('%:h')<CR>", { desc = "Copy CWD" })
+-- vim.keymap.set("n", "<leader>cP", "<cmd>put =expand('%:h')<CR>", { desc = "Copy CWD" })
+
 -- -- Mapping to start the Docusaurus server
 -- vim.keymap.set("n", "<leader>zX", function()
 -- 	StartDocusaurusServer()

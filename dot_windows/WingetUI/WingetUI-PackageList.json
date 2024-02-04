@@ -1,0 +1,2758 @@
+{
+    "export_version": 2.0,
+    "packages": [
+        {
+            "Id": "dotnet-tools-outdated",
+            "Name": "Dotnet Tools Outdated",
+            "Version": "0.7.1",
+            "Source": ".NET Tool",
+            "ManagerName": ".NET Tool",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "7zip",
+            "Name": "7zip",
+            "Version": "23.1.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "7zip.commandline",
+            "Name": "7zip Commandline",
+            "Version": "16.2.0.20170209",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "7zip.install",
+            "Name": "7zip Install",
+            "Version": "23.1.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "7zip.portable",
+            "Name": "7zip Portable",
+            "Version": "23.1.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "autohotkey",
+            "Name": "Autohotkey",
+            "Version": "1.1.37.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "autohotkey.install",
+            "Name": "Autohotkey Install",
+            "Version": "1.1.37.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "bottom",
+            "Name": "Bottom",
+            "Version": "0.9.6",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Boxstarter",
+            "Name": "Boxstarter",
+            "Version": "3.0.3",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Boxstarter.Bootstrapper",
+            "Name": "Boxstarter Bootstrapper",
+            "Version": "3.0.3",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Boxstarter.Chocolatey",
+            "Name": "Boxstarter Chocolatey",
+            "Version": "3.0.3",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Boxstarter.Common",
+            "Name": "Boxstarter Common",
+            "Version": "3.0.3",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Boxstarter.HyperV",
+            "Name": "Boxstarter Hyperv",
+            "Version": "3.0.3",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Boxstarter.WinConfig",
+            "Name": "Boxstarter Winconfig",
+            "Version": "3.0.3",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "brave",
+            "Name": "Brave",
+            "Version": "1.57.49",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "chocolatey",
+            "Name": "Chocolatey",
+            "Version": "2.2.2",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "chocolatey-compatibility.extension",
+            "Name": "Chocolatey Compatibility Extension",
+            "Version": "1.0.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "chocolatey-core.extension",
+            "Name": "Chocolatey Core Extension",
+            "Version": "1.4.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "chocolatey-windowsupdate.extension",
+            "Name": "Chocolatey Windowsupdate Extension",
+            "Version": "1.0.5",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "crystaldiskinfo.portable",
+            "Name": "Crystaldiskinfo Portable",
+            "Version": "9.1.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "DotNet3.5",
+            "Name": "Dotnet3 5",
+            "Version": "3.5.20160716",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "dotnet-7.0-desktopruntime",
+            "Name": "Dotnet 7 0 Desktopruntime",
+            "Version": "7.0.10",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "dotnet-desktopruntime",
+            "Name": "Dotnet Desktopruntime",
+            "Version": "7.0.10",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "espanso",
+            "Name": "Espanso",
+            "Version": "2.2.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "exiftool",
+            "Name": "Exiftool",
+            "Version": "12.74.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "files",
+            "Name": "Files",
+            "Version": "2.5.21",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "fzf",
+            "Name": "Fzf",
+            "Version": "0.42.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "git",
+            "Name": "Git",
+            "Version": "2.41.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "git.install",
+            "Name": "Git Install",
+            "Version": "2.41.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "github-desktop",
+            "Name": "Github Desktop",
+            "Version": "3.2.7",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "greenshot",
+            "Name": "Greenshot",
+            "Version": "1.2.10.6",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "gsudo",
+            "Name": "Gsudo",
+            "Version": "2.4.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "helix",
+            "Name": "Helix",
+            "Version": "23.10.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "hyperfine",
+            "Name": "Hyperfine",
+            "Version": "1.18.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "KB2919355",
+            "Name": "Kb2919355",
+            "Version": "1.0.20160915",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "KB2919442",
+            "Name": "Kb2919442",
+            "Version": "1.0.20160915",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "KB2999226",
+            "Name": "Kb2999226",
+            "Version": "1.0.20181019",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "KB3033929",
+            "Name": "Kb3033929",
+            "Version": "1.0.5",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "KB3035131",
+            "Name": "Kb3035131",
+            "Version": "1.0.3",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "KB3063858",
+            "Name": "Kb3063858",
+            "Version": "1.0.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "KB3118401",
+            "Name": "Kb3118401",
+            "Version": "1.0.5",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "keepassxc",
+            "Name": "Keepassxc",
+            "Version": "2.7.6",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "llvm",
+            "Name": "Llvm",
+            "Version": "17.0.6",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "logparser",
+            "Name": "Logparser",
+            "Version": "2.2.0.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "make",
+            "Name": "Make",
+            "Version": "4.4.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "mingw",
+            "Name": "Mingw",
+            "Version": "12.2.0.3042023",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "mRemoteNG",
+            "Name": "Mremoteng",
+            "Version": "1.76.20.24615",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "neovim",
+            "Name": "Neovim",
+            "Version": "0.9.5",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "nextcloud-client",
+            "Name": "Nextcloud Client",
+            "Version": "3.9.2",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "obsidian",
+            "Name": "Obsidian",
+            "Version": "1.3.7",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "pandoc",
+            "Name": "Pandoc",
+            "Version": "3.1.6.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "powershell-core",
+            "Name": "Powershell Core",
+            "Version": "7.3.6",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "powertoys",
+            "Name": "Powertoys",
+            "Version": "0.72.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "procmon",
+            "Name": "Procmon",
+            "Version": "3.95.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "putty",
+            "Name": "Putty",
+            "Version": "0.78.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "putty.portable",
+            "Name": "Putty Portable",
+            "Version": "0.78.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "python",
+            "Name": "Python",
+            "Version": "3.12.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "python3",
+            "Name": "Python3",
+            "Version": "3.12.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "python312",
+            "Name": "Python312",
+            "Version": "3.12.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "quicklook",
+            "Name": "Quicklook",
+            "Version": "3.7.3",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "RegShot",
+            "Name": "Regshot",
+            "Version": "1.9.3",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "sql-server-management-studio",
+            "Name": "Sql Server Management Studio",
+            "Version": "19.1.56",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "starship",
+            "Name": "Starship",
+            "Version": "1.17.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "starship.install",
+            "Name": "Starship Install",
+            "Version": "1.17.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "teamviewer",
+            "Name": "Teamviewer",
+            "Version": "15.44.7",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Temurin",
+            "Name": "Temurin",
+            "Version": "21.0.1.1200",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "tesseract",
+            "Name": "Tesseract",
+            "Version": "5.3.3.20231005",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "treesizefree",
+            "Name": "Treesizefree",
+            "Version": "4.7.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "vcredist140",
+            "Name": "Vcredist140",
+            "Version": "14.36.32532",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "vcredist2005",
+            "Name": "Vcredist2005",
+            "Version": "8.0.50727.619501",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "vcredist2008",
+            "Name": "Vcredist2008",
+            "Version": "9.0.30729.616104",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "vcredist2010",
+            "Name": "Vcredist2010",
+            "Version": "10.0.40219.32503",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "vcredist2012",
+            "Name": "Vcredist2012",
+            "Version": "11.0.61031.20230518",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "vcredist2013",
+            "Name": "Vcredist2013",
+            "Version": "12.0.40660.20180427",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "vcredist2015",
+            "Name": "Vcredist2015",
+            "Version": "14.0.24215.20170201",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "vcredist2017",
+            "Name": "Vcredist2017",
+            "Version": "14.16.27033",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "vcredist-all",
+            "Name": "Vcredist All",
+            "Version": "1.0.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "watchman",
+            "Name": "Watchman",
+            "Version": "2023.10.9",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "wingetui",
+            "Name": "Wingetui",
+            "Version": "2.2.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "winlogbeat",
+            "Name": "Winlogbeat",
+            "Version": "7.15.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "win-vind",
+            "Name": "Win Vind",
+            "Version": "5.4.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "wireshark",
+            "Name": "Wireshark",
+            "Version": "4.0.7",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "zig",
+            "Name": "Zig",
+            "Version": "0.11.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "zoxide",
+            "Name": "Zoxide",
+            "Version": "0.9.2",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "aiohttp",
+            "Name": "Aiohttp",
+            "Version": "3.9.3",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "aiosignal",
+            "Name": "Aiosignal",
+            "Version": "1.3.1",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "annotated-types",
+            "Name": "Annotated Types",
+            "Version": "0.6.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "anyio",
+            "Name": "Anyio",
+            "Version": "4.2.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "argcomplete",
+            "Name": "Argcomplete",
+            "Version": "3.2.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "attrs",
+            "Name": "Attrs",
+            "Version": "23.2.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "beautifulsoup4",
+            "Name": "Beautifulsoup4",
+            "Version": "4.12.3",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "bs4",
+            "Name": "Bs4",
+            "Version": "0.0.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "certifi",
+            "Name": "Certifi",
+            "Version": "2023.11.17",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "charset-normalizer",
+            "Name": "Charset Normalizer",
+            "Version": "3.3.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "click",
+            "Name": "Click",
+            "Version": "8.1.7",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "colorama",
+            "Name": "Colorama",
+            "Version": "0.4.6",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "distro",
+            "Name": "Distro",
+            "Version": "1.9.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "docstring-parser",
+            "Name": "Docstring Parser",
+            "Version": "0.15",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "frozenlist",
+            "Name": "Frozenlist",
+            "Version": "1.4.1",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "h11",
+            "Name": "H11",
+            "Version": "0.14.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "httpcore",
+            "Name": "Httpcore",
+            "Version": "1.0.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "httpx",
+            "Name": "Httpx",
+            "Version": "0.26.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "idna",
+            "Name": "Idna",
+            "Version": "3.6",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "instructor",
+            "Name": "Instructor",
+            "Version": "0.4.8",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "markdown-it-py",
+            "Name": "Markdown It Py",
+            "Version": "3.0.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "mdurl",
+            "Name": "Mdurl",
+            "Version": "0.1.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "multidict",
+            "Name": "Multidict",
+            "Version": "6.0.5",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "openai",
+            "Name": "Openai",
+            "Version": "1.11.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "packaging",
+            "Name": "Packaging",
+            "Version": "23.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "parse_pip_search",
+            "Name": "Parse Pip Search",
+            "Version": "0.0.1",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "pillow",
+            "Name": "Pillow",
+            "Version": "10.2.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "pip",
+            "Name": "Pip",
+            "Version": "23.3.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "pipx",
+            "Name": "Pipx",
+            "Version": "1.4.3",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "platformdirs",
+            "Name": "Platformdirs",
+            "Version": "4.2.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "pydantic",
+            "Name": "Pydantic",
+            "Version": "2.6.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "pydantic_core",
+            "Name": "Pydantic Core",
+            "Version": "2.16.1",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Pygments",
+            "Name": "Pygments",
+            "Version": "2.17.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "pyperclip",
+            "Name": "Pyperclip",
+            "Version": "1.8.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "pyreadline3",
+            "Name": "Pyreadline3",
+            "Version": "3.4.1",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "pytesseract",
+            "Name": "Pytesseract",
+            "Version": "0.3.10",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "requests",
+            "Name": "Requests",
+            "Version": "2.31.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "rich",
+            "Name": "Rich",
+            "Version": "13.7.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "shell_gpt",
+            "Name": "Shell Gpt",
+            "Version": "1.2.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "sniffio",
+            "Name": "Sniffio",
+            "Version": "1.3.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "soupsieve",
+            "Name": "Soupsieve",
+            "Version": "2.5",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "tqdm",
+            "Name": "Tqdm",
+            "Version": "4.66.1",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "typer",
+            "Name": "Typer",
+            "Version": "0.9.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "typing_extensions",
+            "Name": "Typing Extensions",
+            "Version": "4.9.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "urllib3",
+            "Name": "Urllib3",
+            "Version": "2.1.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "userpath",
+            "Name": "Userpath",
+            "Version": "1.9.1",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "yarl",
+            "Name": "Yarl",
+            "Version": "1.9.4",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        }
+    ],
+    "incompatible_packages_info": "Incompatible packages cannot be installed from WingetUI, but they have been listed here for logging purposes.",
+    "incompatible_packages": []
+}

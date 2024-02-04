@@ -151,6 +151,10 @@ local keys = {
     key = "7",
     mods = "CTRL",
   },
+  ["<C-m>"] = act.SendKey {
+    key = "m",
+    mods = "CTRL",
+  },
 }
 
 Config.keys = {}

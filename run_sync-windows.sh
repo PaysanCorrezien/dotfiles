@@ -36,6 +36,12 @@ destDir="${windowsPath}/.glaze-wm"
 check_and_create_dir "$destDir"
 cp "${sourceDir}/config.yaml" "${destDir}/config.yaml"
 
+#Startship Prompt
+sourceDir="$HOME/.local/share/chezmoi/dot_windows/starship"
+destDir="${windowsPath}/.config/starship"
+check_and_create_dir "$destDir"
+rsync -au "${sourceDir}/" "${destDir}/"
+
 # New section to copy Desktop Shortcuts
 sourceDir="$HOME/.local/share/chezmoi/dot_windows/DesktopShortcut"
 destDir="${windowsPath}/Desktop"
