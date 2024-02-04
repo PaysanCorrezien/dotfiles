@@ -451,9 +451,13 @@ keymap = [
   ''', desc = "Open File In TMUX EDITOR" },
   # NOTE: Plugins keys
   # https://github.com/DreamMaoMao/keyjump.yazi
-  { on = [
-    "i",
-  ], exec = "plugin keyjump --sync --args='sync-init'", desc = "keyjump" },
+  # { on = [
+  #   "i",
+  # ], exec = "plugin keyjump --sync --args='sync-init'", desc = "keyjump" },
+  { on = [ "i"], exec = "plugin keyjump --sync --args='sync-init keep'", desc = "keyjump" },
+
+	# normal mode, when select a item, it will auto leave keyjump mode
+	# { on = [ "i"], exec = "plugin keyjump --sync --args='sync-init normal'", desc = "keyjump" },
 ]
 
 
