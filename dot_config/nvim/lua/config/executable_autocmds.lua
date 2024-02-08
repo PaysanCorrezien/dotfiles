@@ -4,13 +4,14 @@
 local function augroup(name)
 	return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
--- Autocommand to set local working directory when entering a buffer
-vim.api.nvim_create_autocmd("BufEnter", {
-	group = augroup("set_cwd_buffer"),
+
+-- Autcommand to configure word wrap and spell checking for certain filetypes
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	group = vim.api.nvim_create_augroup("edit_text", { clear = true }),
+	pattern = { "gitcommit", "markdown", "txt" },
+	desc = "Enable spell checking and text wrapping for certain filetypes",
 	callback = function()
-		-- Use vim.fn.expand to get the file's directory
-		local dir = vim.fn.expand("%:p:h")
-		-- Change the local working directory
-		vim.cmd("silent! lcd " .. dir)
+		vim.opt_local.wrap = true
+		-- vim.opt_local.spell = true
 	end,
 })
