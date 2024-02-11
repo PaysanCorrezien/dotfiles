@@ -4,13 +4,8 @@ add_newline = false
 # move the rest of the prompt to the right
 # format = "$shell$status$directory$git_branch$git_status$time"
 # Custom format for the prompt
-format = """$shell$custom$time$status$directory$git_branch$git_status$lua$docker_context$conda$hostname$localip$cmd_duration
+format = """$shell$time$status$directory$git_branch$git_status$lua$docker_context$conda$hostname$localip$cmd_duration
 $character"""
-
-[custom.separator]
-command = "echo '➤'" # The separator character
-when = "true"        # Always display the separator
-style = "bold blue"  # Customize the color and style here
 
 
 [line_break]

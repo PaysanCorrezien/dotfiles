@@ -454,11 +454,35 @@ keymap = [
   # { on = [
   #   "i",
   # ], exec = "plugin keyjump --sync --args='sync-init'", desc = "keyjump" },
-  { on = [ "i"], exec = "plugin keyjump --sync --args='sync-init keep'", desc = "keyjump" },
+  # { on = [ "i"], exec = "plugin keyjump --sync --args='sync-init keep'", desc = "keyjump" },
 
-	# normal mode, when select a item, it will auto leave keyjump mode
-	# { on = [ "i"], exec = "plugin keyjump --sync --args='sync-init normal'", desc = "keyjump" },
+  # normal mode, when select a item, it will auto leave keyjump mode
+  # { on = [ "i"], exec = "plugin keyjump --sync --args='sync-init normal'", desc = "keyjump" },
 ]
+
+[[manager.prepend_keymap]]
+on = ["I"]
+exec = "plugin keyjump --sync --args=keep"
+desc = "Keyjump (Keep mode)"
+[[manager.prepend_keymap]]
+on = ["i", "i"]
+exec = "plugin keyjump --sync --args=keep"
+desc = "Keyjump (Keep mode)"
+
+[[manager.prepend_keymap]]
+on = ["i", "k"]
+exec = "plugin keyjump --sync --args=keep"
+desc = "Keyjump (Keep mode)"
+
+[[manager.prepend_keymap]]
+on = ["i", "n"]
+exec = "plugin keyjump --sync"
+desc = "Keyjump (Normal mode)"
+
+[[manager.prepend_keymap]]
+on = ["i", "s"]
+exec = "plugin keyjump --sync --args=select"
+desc = "Keyjump (Normal mode)"
 
 
 [tasks]
