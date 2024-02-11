@@ -7,7 +7,13 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "NZzzv")
---une erreur de syntaxe
+vim.keymap.set("n", "%", "%zz")
+vim.keymap.set("n", "{", "{zz")
+vim.keymap.set("n", "}", "}zz")
+vim.keymap.set("n", "G", "Gzz")
+vim.keymap.set("n", "gg", "ggzz")
+vim.keymap.set("n", "J", "mzJ`z")
+
 vim.keymap.set("n", "zj", "o<Esc>k") -- insert line down without leaver n mode
 vim.keymap.set("n", "zk", "O<Esc>j") -- insert line up without leaver n mode
 -- vim.keymap.set("n", "<leader>Zd", '"_d')
@@ -21,7 +27,6 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 -- vim.keymap.set("i", "<leader>cu", "<esc>mzgUiw`za") --current word in huppercase in insert mode a
 -- vim.keymap.set("i", "<leader>cl", "<esc>mzguiw`za") --set current word in lowercase in insert mode
 --
--- -- vim.api.nvim_set_keymap('n', '<leader>S', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gIc<Left><Left><Left><Left><Left>]], { noremap = true, silent = false })
 -- vim.keymap.set("n", "<leader>S", "<cmd>%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gIc<Left><Left><Left><Left><Left><cr>") -- search and replace with highlight and confirmation
 vim.keymap.set("n", "<S-Up>", "ddkP") --move line up on normal mode with shift
 vim.keymap.set("n", "<S-Down>", "ddp") --move line down on normal mode with shift
@@ -35,8 +40,30 @@ vim.api.nvim_set_keymap("n", "<C-a>", ':lua vim.cmd("normal! ggVG")<CR>', { nore
 --   "Todo on All Project"
 -- )
 -- Normal mode mappings
--- vim.keymap.set("n", "<leader>I", "<cmd>IconPickerInsert<CR>", { desc = "Icon Picker" }) wezterm builtin now
-vim.keymap.set("n", "<leader>S", ":lua search_and_replace()<CR>", { desc = "Search and replace" })
+-- vim.keymap.set("n", "<leader>S", ":lua search_and_replace()<CR>", { desc = "Search and replace" })
+vim.keymap.set("n", "<leader>S", function()
+	local cmd = ":%s/<C-r><C-w>/<C-r><C-w>/gcI<Left><Left><Left>"
+	local keys = vim.api.nvim_replace_termcodes(cmd, true, false, true)
+	vim.api.nvim_feedkeys(keys, "n", false)
+end, { desc = "Search and replace" })
+-- Open Spectre for global find/replace
+-- NOTE: sr on lazyvim
+-- vim.keymap.set("n", "<leader>S", function()
+-- 	require("spectre").toggle()
+-- end, { desc = "Spectre" })
+
+-- vim.keymap.set("n", "<leader>/", function()
+-- 	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+-- 		previewer = false,
+-- 	}))
+-- end, { desc = "[/] Fuzzily search in current buffer]" })
+
+vim.keymap.set("n", "<leader>zs", function()
+	require("telescope.builtin").spell_suggest(require("telescope.themes").get_dropdown({
+		previewer = false,
+	}))
+end, { desc = "[S]earch [S]pelling suggestions" })
+
 -- vim.keymap.set("n", "<leader>A", "<cmd>:lua require('harpoon.mark').add_file()<CR>", { desc = "Harp Add" })
 -- vim.keymap.set("n", "<leader>H", "<cmd>:Telescope harpoon marks<CR>", { desc = "List Harp Mark" })
 vim.keymap.set("n", "<leader>j", "<cmd>Telescope jumplist<CR>", { desc = "Jumplist" })

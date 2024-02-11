@@ -93,7 +93,7 @@ return {
 				function()
 					require("telescope.builtin").live_grep({ cwd = require("lazy.core.config").options.root })
 				end,
-				desc = "Find Plugin File",
+				desc = "Grep Plugin File",
 			},
 			{
 				"<leader>fD",
