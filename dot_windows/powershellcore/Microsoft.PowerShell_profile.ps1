@@ -136,87 +136,12 @@ function sha256
 $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
 $principal = New-Object Security.Principal.WindowsPrincipal $identity
 $isAdmin = $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
-
-# Set up command prompt and window title. Use UNIX-style convention for identifying 
-# whether user is elevated (root) or not. Window title shows current version of PowerShell
-# and appends [ADMIN] if appropriate for easy taskbar identification
-# function prompt
-# {
-#   $p = $executionContext.SessionState.Path.CurrentLocation
-#   $ansi_escape = [char]27
-#   $osc7 = ""
-#   $osc2 = ""
-# 
-#   if ($p.Provider.Name -eq "FileSystem")
-#   {
-#     # Get the current directory and its parent
-#     $provider_path = $p.ProviderPath -Replace "\\", "/"
-#     $currentDir = Split-Path $provider_path -Leaf
-#     $parentDir = Split-Path $provider_path -Parent | Split-Path -Leaf
-# 
-#     # Concatenate parent and current directory
-#     $dirDisplay = "$parentDir\$currentDir"
-# 
-#     # Prepare OSC 7 sequence for current directory
-#     $osc7_path = "file://${env:COMPUTERNAME}/${provider_path}"
-#     $osc7 = "$ansi_escape]7;$osc7_path$ansi_escape\"
-# 
-#     # Prepare OSC 2 sequence for window title
-#     $windowTitle = "PWSH - $dirDisplay"
-#     if ($isAdmin)
-#     {
-#       $windowTitle += " [ADMIN]"
-#       $osc7_path += " [ADMIN]"
-#       $adminTag = "[ADMIN]"
-#     }
-# 
-#     $osc2 = "$ansi_escape]2;$windowTitle$ansi_escape\"
-# 
-#     # Update OSC 7 sequence with admin tag if necessary
-#     $osc7 = "$ansi_escape]7;$osc7_path$ansi_escape\"
-#   }
-# 
-#   # Output OSC 7 and OSC 2 sequences
-#   # Custom prompt format: PS parentdir\currentdir -->
-#   $osc7 + $osc2 + "PS ($dirDisplay)$adminTag --> "
-# }
-
-#   # Wezterm need osc7 to set the current directory
-#   # https://wezfurlong.org/wezterm/shell-integration.html#osc-7-on-windows-with-cmdexe 
-#   # dont work with starship
-#   $p = $executionContext.SessionState.Path.CurrentLocation
-#   $osc7 = ""
-#   if ($p.Provider.Name -eq "FileSystem")
-#   {
-#     $ansi_escape = [char]27
-#     $provider_path = $p.ProviderPath -Replace "\\", "/"
-#     $osc7 = "$ansi_escape]7;file://${env:COMPUTERNAME}/${provider_path}${ansi_escape}\"
-#   }
-#   "${osc7}PS $p$('>' * ($nestedPromptLevel + 1)) ";
-#   # Custom logic for admins for the prompt for the prompt for the prompt for the prompt
-#
-#   if ($isAdmin)
-#   {
-#     "PS [" + (Get-Location) + "] # -->" 
-#   } else
-#   {
-#     "PS [" + (Get-Location) + "] $ -->"
-#   }
-#   $host.UI.RawUI.WindowTitle = "PowerShell - " + (Get-Location).Path
-#   "PS " + (Get-Location).Path + ">"
-# }
-# $Host.UI.RawUI.WindowTitle = "PowerShell {0}" -f $PSVersionTable.PSVersion.ToString()
-# if ($isAdmin)
-# {
-#   $Host.UI.RawUI.WindowTitle += " [ADMIN]"
-# }
-# Yazi cd on quit
-# For nvim ! command
-# function Invoke-PlainCommand {
-#     param([string]$Command)
-#     $output = & pwsh -Command $Command
-#     $output -replace '\e\[\d+;?\d*m', ''
-# }
+
+function Invoke-LsDeluxe {
+    lsd @args
+}
+
+Set-Alias -Name ls -Value Invoke-LsDeluxe -Option AllScope
 
 function y
 {
