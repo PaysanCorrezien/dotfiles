@@ -1,0 +1,39 @@
+theme = "kanagawa"
+
+[editor]
+line-number = "relative"
+completion-trigger-len= 0
+shell = ["pwsh.exe","-NoLogo","-NoProfile","-NoProfileLoadTime","-Command","$PSStyle.OutputRendering='PlainText';"]
+bufferline = "multiple"
+color-modes = true
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+
+[editor.file-picker]
+hidden = true
+
+[keys.normal]
+C-s = ":w" # Maps Ctrl-s to the typable command :w which is an alias for :write (save file)
+# C-o = ":open ~/.config/helix/config.toml" # Maps Ctrl-o to opening of the helix config file
+# a = "move_char_left" # Maps the 'a' key to the move_char_left command
+# w = "move_line_up" # Maps the 'w' key move_line_up
+"ret" = ["open_below", "normal_mode"] # Maps the enter key to open_below then re-enter normal mode
+
+[keys.insert]
+"A-x" = "normal_mode"     # Maps Alt-X to enter normal mode
+j = { k = "normal_mode" } # Maps `jk` to exit insert mode
+
+# invert `j` and `k` in view mode
+[keys.normal.z]
+j = "scroll_up"
+k = "scroll_down"
+
+# create a new minor mode bound to `+`
+[keys.normal."+"]
+m = ":run-shell-command make"
+c = ":run-shell-command cargo build"
+t = ":run-shell-command cargo test"
+
