@@ -112,3 +112,32 @@ vim.api.nvim_set_keymap("n", "<leader>zD", ":lua StartDocusaurusServer()<CR>", {
 vim.api.nvim_set_keymap("n", "<leader>zd", ":lua StopDocusaurusServer()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>zX", ":lua GetDocusaurusBufferInfo()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>zN", ":lua CreateNote()<CR>", { noremap = true, silent = true })
+
+-- Comment toggle auto for multimode in a single key
+local function comment_toggle()
+	local mode = vim.fn.mode()
+
+	-- print("mode before the action " .. mode)
+	if mode == "n" then
+		-- Normal mode
+		-- No count, current line
+		return "<Plug>(comment_toggle_linewise_current)"
+	elseif mode == "v" then
+		-- Visual mode
+		-- Correcting the toggle for visual mode
+		return "<Plug>(comment_toggle_linewise_visual)gv"
+	elseif mode == "V" then
+		-- Visual mode
+		-- Correcting the toggle for visual mode
+		return "<Plug>(comment_toggle_linewise_visual)gv"
+	elseif mode == "CTRL-V" then
+		-- Visual block mode
+		return "<Plug>(comment_toggle_blockwise_visual)gv"
+	elseif mode == "i" then
+		-- Insert mode
+		-- Comment the current line and return to normal mode
+		return "<Esc><Plug>(comment_toggle_linewise_current)"
+	end
+end
+
+vim.keymap.set({ "n", "x", "i" }, "<C-z>", comment_toggle, { expr = true, silent = true })
