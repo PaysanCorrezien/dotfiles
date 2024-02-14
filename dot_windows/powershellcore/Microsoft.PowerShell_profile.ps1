@@ -221,6 +221,7 @@ function Reload-Powershell
   }
 }
 
+
 # make windows git cli use SSH AGENT correctly :
 $env:GIT_SSH_COMMAND = '"C:\\Program Files\\OpenSSH\\ssh.exe"'
 
@@ -246,6 +247,19 @@ function Prompt {
     # Let Starship render the prompt
     $global:LASTEXITCODE = $?
     Invoke-Expression (&starship prompt --status=$LASTEXITCODE --jobs=(Get-Job -State Running).Count)
+}
+#NOTE: Command completion
+# Get the directory of the current script
+$currentScriptDirectory = Split-Path -Parent $MyInvocation.MyCommand.Definition
+$completionsDirectory = Join-Path $currentScriptDirectory "completions"
+if (Test-Path $completionsDirectory) {
+    $completionFiles = Get-ChildItem -Path $completionsDirectory -Filter *.ps1
+    # Iterate over each file and dot-source it
+    foreach ($file in $completionFiles) {
+        . $file.FullName
+    }
+} else {
+    Write-Host "Completions directory not found: $completionsDirectory"
 }
 
 # Initialize Starship
