@@ -198,10 +198,10 @@ window_rules:
     match_process_name: "OUTLOOK.EXE"
 
   # Word always float and move to workspace 6
-  - commands:
-      - "set floating"
-      - "move to workspace 6"
-    match_process_name: "WINWORD.EXE"
+  # - commands:
+  #     - "set floating"
+  #     - "move to workspace 6"
+  #   match_process_name: "WINWORD.EXE"
 
   # Excel files starting with "listing" always float
   - command: "set floating"
@@ -214,23 +214,24 @@ window_rules:
 
   - command: "set floating"
     match_process_name: "/Todoist/"
+
   - command: "set floating"
     match_process_name: "/WingetUI/"
   # - command: "set floating"
   #   match_process_name: "wezterm-gui"
   # match_title: "/^TUI.*/"
 
-  - command:
-      - "move to workspace 2"
-      - "set floating"
-      - "focus"
-    match_process_name: "mstsc.exe"
-
-  - command:
-      - "move to workspace 10"
-      - "set floating"
-      - "focus"
-    match_process_name: "vncviewer.exe"
+  # - command:
+  #     - "move to workspace 2"
+  #     - "set floating"
+  #     - "focus"
+  #   match_process_name: "mstsc.exe"
+  #
+  # - command:
+  #     - "move to workspace 10"
+  #     - "set floating"
+  #     - "focus"
+  #   match_process_name: "vncviewer.exe"
 
   # Powershell Menu always float
   - command: "set floating"
