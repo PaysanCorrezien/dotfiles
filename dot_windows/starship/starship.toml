@@ -4,11 +4,25 @@ add_newline = false
 # move the rest of the prompt to the right
 # format = "$shell$status$directory$git_branch$git_status$time"
 # Custom format for the prompt
-format = """$shell$time$status$directory$git_branch$git_status$lua$docker_context$conda$hostname$localip$cmd_duration
+format = """$shell$time$status$directory$git_branch$git_status$lua$docker_context$conda$hostname$localip$cmd_duration$username$sudo
 $character"""
 
 [line_break]
 disabled = true
+
+#TODO : faire un truc moi ou patcher le code
+# [sudo]
+# allow_windows = true
+# disabled = false
+# style = 'bold red'
+# symbol = '💀ADMIN 💀'
+
+[username]
+style_user = 'white bold'
+style_root = 'blue bold'
+format = '🦸[$user]($style) '
+disabled = false
+show_always = true
 
 # Directory
 [directory]

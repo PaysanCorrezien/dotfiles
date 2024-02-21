@@ -64,6 +64,12 @@ Set-Alias -Name v -Value Open-Lvim
 function ai {
     sgpt --repl temp --shell $args
 }
+function s {
+  gsudo --copyNS $args
+}
+function ss {
+gsudo status
+}
 
 $env:EDITOR = "$env:USERPROFILE\.local\bin\lvim.ps1"
 
