@@ -38,10 +38,6 @@ $env:FZF_CTRL_R_OPTS=@"
   --header 'Press CTRL-Y to copy command into clipboard'
 "@
 
-
-# $env:GIT_SSH_COMMAND = '"C:\\Program Files\\OpenSSH\\ssh.exe"'
-
-
 #BUG: GH cli completions
 # Dont work properly
 # $profileDir = Split-Path -Parent $PROFILE
@@ -227,6 +223,9 @@ $env:GIT_SSH_COMMAND = '"C:\\Program Files\\OpenSSH\\ssh.exe"'
 
 # Set the location of the Starship configuration
 $ENV:STARSHIP_CONFIG = "$env:USERPROFILE\.config\starship\starship.toml"
+
+#NOTE: create an automatic variables to reach psreadlines history file
+$history = (Get-PSReadLineOption).HistorySavePath
 
 # Define the function to set OSC 7 escape sequence
 function Invoke-Starship-PreCommand {

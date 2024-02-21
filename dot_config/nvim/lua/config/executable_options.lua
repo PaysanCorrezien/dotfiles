@@ -46,6 +46,19 @@ if current_os == "Windows" then
 	-- -- vim.opt.shellcmdflag =
 	-- -- 	[[-nologo -noprofile -ExecutionPolicy RemoteSigned -command "& {param([string]$Command) $output = & pwsh -Command $Command; $output -replace '\\e\\[\\d+;?\\d*m', ''}"]]
 	-- vim.opt.shellxquote = ""
+
+	-- local powershell_options = {
+	-- 	shell = vim.fn.executable("pwsh") == 1 and "pwsh" or "powershell",
+	-- 	shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
+	-- 	shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
+	-- 	shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
+	-- 	shellquote = "",
+	-- 	shellxquote = "",
+	-- }
+	--
+	-- for option, value in pairs(powershell_options) do
+	-- 	vim.opt[option] = value
+	-- end
 	vim.opt.runtimepath:append("L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\")
 end
 
@@ -54,7 +67,6 @@ vim.opt.clipboard = ""
 -- vim.opt.updatetime = 70 -- faster completion
 --
 vim.opt.spellfile = remote_spell
---BUG: Fix this for en ?
 vim.opt.spell = true
 vim.opt.spelllang = { "en", "fr" }
 vim.opt.spellsuggest = { "double", 9 }

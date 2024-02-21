@@ -111,6 +111,14 @@ workspaces:
     # display_name: "Teams"
   - name: "9"
     # display_name: "Mail"
+  # Uniquely identifies the workspace and is used as the label for the workspace in the bar if
+  # `display_name` is not provided.
+  - name: "10"
+    # Optional override for the workspace label in the bar. Does not need to be unique.
+    display_name: "VNC"
+
+    # Optionally prevent workspace from being deactivated when empty.
+    keep_alive: false
 
 window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
@@ -139,6 +147,9 @@ window_rules:
   - command: "move to workspace 4"
     match_process_name: "explorer"
 
+  # Example using match_title for illustration, adjust according to your window manager's capabilities
+  - command: "move to workspace 5"
+    match_title: "/Brave/"
   # New rule for sending Discord to workspace 6
   - command: "move to workspace 6"
     match_process_name: "Discord"
@@ -178,13 +189,128 @@ window_rules:
     match_process_name: "WindowsTerminal"
     match_title: "/^FZF-.*/"
 
+  # Excel to workspace 6
+  - command: "move to workspace 6"
+    match_process_name: "EXCEL.EXE"
+
+  # Outlook to workspace 9
+  - command: "move to workspace 9"
+    match_process_name: "OUTLOOK.EXE"
+
+  # Word always float and move to workspace 6
+  - commands:
+      - "set floating"
+      - "move to workspace 6"
+    match_process_name: "WINWORD.EXE"
+
+  # Excel files starting with "listing" always float
+  - command: "set floating"
+    match_process_name: "EXCEL.EXE"
+    match_title: "/^listing/"
+
+  # Specific app always float
+  - command: "set floating"
+    match_process_name: "Console.exe"
+
+  - command: "set floating"
+    match_process_name: "/Todoist/"
+  - command: "set floating"
+    match_process_name: "/WingetUI/"
   # - command: "set floating"
   #   match_process_name: "wezterm-gui"
-    # match_title: "/^TUI.*/"
+  # match_title: "/^TUI.*/"
+
+  - command:
+      - "move to workspace 2"
+      - "set floating"
+      - "focus"
+    match_process_name: "mstsc.exe"
+
+  - command:
+      - "move to workspace 10"
+      - "set floating"
+      - "focus"
+    match_process_name: "vncviewer.exe"
 
   # Powershell Menu always float
   - command: "set floating"
     match_title: "/MenuList/"
+
+  # NOTE: https://github.com/glzr-io/glazewm/issues/105#issuecomment-1235289741
+  - command: set floating
+    match_process_name: 1Password
+  - command: set floating
+    match_title: Window Spy
+  - command: set floating
+    match_title: Calculator
+  - command: set floating
+    match_title: Calculatrice
+  - command: set floating
+    match_process_name: CredentialUIBroker
+  - command: set floating
+    match_class_name: Chrome_RenderWidgetHostHWND
+  - command: set floating
+    match_class_name: TApplication
+  - command: set floating
+    match_class_name: TWizardForm
+  - command: set floating
+    match_class_name: SunAwtDialog
+  - command: set floating
+    match_process_name: LogiBolt
+  - command: set floating
+    match_process_name: LogiTune
+  - command: set floating
+    match_process_name: LogiOptionsUI
+  - command: set floating
+    match_class_name: _WwB
+  - command: set floating
+    match_title: Microsoft Teams Notifications
+  - command: set floating
+    match_class_name: _WwB
+  - command: set floating
+    match_class_name: MozillaTaskbarPreviewClass
+  - command: set floating
+    match_process_name: NohBoard
+  - command: set floating
+    match_process_name: Paradox Launcher
+  - command: set floating
+    match_process_name: PowerToys.ColorPickerUI
+  - command: set floating
+    match_process_name: PowerToys.ImageResizer
+  - command: set floating
+    match_process_name: ProcessHacker
+  - command: set floating
+    match_class_name: SunAwtDialog
+  - command: set floating
+    match_process_name: QuickLook
+  - command: set floating
+    match_process_name: RepoZ
+  - command: set floating
+    match_process_name: RoundedTB
+  - command: set floating
+    match_class_name: Chrome_RenderWidgetHostHWND
+  - command: set floating
+    match_class_name: Chrome_RenderWidgetHostHWND
+  - command: set floating
+    match_class_name: Shell_Dialog
+  - command: set floating
+    match_class_name: TaskManagerWindow
+  - command: set floating
+    match_process_name: tcconfig
+  - command: set floating
+    match_process_name: TranslucentTB
+  - command: set floating
+    match_class_name: OperationStatusWindow
+  - command: set floating
+    match_title: Control Panel
+  - command: set floating
+    match_class_name: MsiDialogCloseClass
+  - command: set floating
+    match_title: Hotkey sink
+  - command: set floating
+    match_process_name: Zoom
+  - command: set floating
+    match_process_name: ueli
 
 binding_modes:
   - name: "resize"
@@ -238,9 +364,9 @@ keybindings:
   - command: "binding mode resize"
     binding: "Alt+R"
 
-  # Change tiling direction. This determines where new tiling windows will be inserted.
-  - command: "tiling direction toggle"
-    binding: "Alt+V"
+  # # Change tiling direction. This determines where new tiling windows will be inserted.
+  # - command: "tiling direction toggle"
+  #   binding: "Alt+V"
 
   # Change focus between floating / tiling windows.
   - command: "focus mode toggle"
@@ -303,8 +429,14 @@ keybindings:
   - command: "focus workspace 8"
     binding: "Alt+8"
   - command: "focus workspace 9"
-    binding: "Alt+9"
+    binding:
+      "Alt+9"
 
+      #NOTE: VNC WORKSPACE
+  - command: "focus workspace 10"
+    binding: "Alt+V"
+  - commands: ["move to workspace 10", "focus workspace 10"]
+    bindings: ["Alt+Shift+V"]
   # Move focused workspace to a monitor in a given direction.
   - command: "move workspace left"
     binding: "Alt+A"

@@ -7,7 +7,6 @@ add_newline = false
 format = """$shell$time$status$directory$git_branch$git_status$lua$docker_context$conda$hostname$localip$cmd_duration
 $character"""
 
-
 [line_break]
 disabled = true
 
@@ -21,7 +20,7 @@ format = '[\[📁$path\]]($style) '
 # Git Branch
 [git_branch]
 symbol = '🌱 '
-truncation_length = 4
+# truncation_length = 4
 truncation_symbol = ''
 
 [git_status]
