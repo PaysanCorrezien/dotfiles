@@ -56,7 +56,7 @@ p() {
 tmux new-window -n powershell "cmd.exe /K \\\\\\\\wsl.localhost\\\\Debian\\\\home\\\\dylan\\\\.config\\\\windows\\\\launchpwsh.bat"
 }
 
-function ya() {
+function y() {
 	tmp="$(mktemp -t "yazi-cwd.XXXXX")"
 	yazi --cwd-file="$tmp"
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
