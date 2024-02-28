@@ -101,17 +101,24 @@ function which($name)
 # Simple function to start a new elevated process. If arguments are supplied then 
 # a single command is started with admin rights; if not then a new admin instance
 # of PowerShell is started.
-function admin
-{
-  if ($args.Count -gt 0)
-  {   
-    $argList = "& '" + $args + "'"
-    Start-Process "$psHome\pwsh.exe" -Verb runAs -ArgumentList $argList
-  } else
-  {
-    Start-Process "$psHome\pwsh.exe" -Verb runAs
-  }
-}
+function admin {
+    # Define the path to WezTerm executable
+    $wezTermPath = "C:\Program Files\WezTerm\wezterm-gui.exe"
+
+    # Check if arguments are passed
+    if ($args.Count -gt 0) {
+        # Concatenate arguments for PowerShell
+        $argList = $args -join ' '
+        # Prepare the command to run inside WezTerm
+        $commandToRun = "pwsh.exe -NoExit -Command $argList"
+    } else {
+        # Default to just opening PowerShell if no arguments are provided
+        $commandToRun = "pwsh.exe -NoExit"
+    }
+
+    # Launch WezTerm as an administrator with the specified command
+    Start-Process $wezTermPath -Verb RunAs -ArgumentList "start --always-new-process -- $commandToRun"
+}
 
 # Set UNIX-like aliases for the admin command, so sudo <command> will run the command
 # with elevated rights. 
