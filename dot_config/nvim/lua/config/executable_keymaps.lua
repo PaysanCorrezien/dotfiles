@@ -21,28 +21,15 @@ vim.keymap.set("n", "zk", "O<Esc>j") -- insert line up without leaver n mode
 -- Use <C-B> (or <C-S-b> in some terminals) for visual block mode
 vim.keymap.set("n", "<C-b>", "<C-v>")
 
--- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
-
--- vim.keymap.set("i", "<leader>cu", "<esc>mzgUiw`za") --current word in huppercase in insert mode a
--- vim.keymap.set("i", "<leader>cl", "<esc>mzguiw`za") --set current word in lowercase in insert mode
---
 -- vim.keymap.set("n", "<leader>S", "<cmd>%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gIc<Left><Left><Left><Left><Left><cr>") -- search and replace with highlight and confirmation
 vim.keymap.set("n", "<S-Up>", "ddkP") --move line up on normal mode with shift
 vim.keymap.set("n", "<S-Down>", "ddp") --move line down on normal mode with shift
 vim.api.nvim_set_keymap("n", "<C-a>", ':lua vim.cmd("normal! ggVG")<CR>', { noremap = true }) -- Select ALL
 -- Normal mode mappings
--- TODO : correct this path
--- vim.set_keymap(
---   "n",
---   "<leader>8",
---   "<cmd>:TodoTrouble cwd=/mnt/c/Users/dylan/Documents/Projet/Work/Projet/<CR>",
---   "Todo on All Project"
--- )
--- Normal mode mappings
--- vim.keymap.set("n", "<leader>S", ":lua search_and_replace()<CR>", { desc = "Search and replace" })
+vim.keymap.set("n", "<leader>8", "<cmd>TodoTelescope<cr>", { desc = "Todo Current Project" })
 vim.keymap.set("n", "<leader>S", function()
-	local cmd = ":%s/<C-r><C-w>/<C-r><C-w>/gcI<Left><Left><Left>"
+	local cmd = ":%s/<C-r><C-w>/<C-r><C-w>/gcI<Left><Left><Left><Left>"
 	local keys = vim.api.nvim_replace_termcodes(cmd, true, false, true)
 	vim.api.nvim_feedkeys(keys, "n", false)
 end, { desc = "Search and replace" })
