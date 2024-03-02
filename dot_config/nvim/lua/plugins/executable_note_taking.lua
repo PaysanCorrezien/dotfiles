@@ -135,66 +135,66 @@ return {
 			})
 		end,
 	},
-	{
-		-- dir = dictionary_plugin_path, -- DEV : use local path
-		"paysancorrezien/dictionary.nvim", -- PROD : use remote path
-		ft = "markdown",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			require("dictionary").setup({
-				dictionary_paths = {
-					remote_ltex_ls,
-					remote_spell,
-					local_ltex_ls,
-					local_spell,
-				},
-				override_zg = true,
-				ltex_dictionary = true, -- if you are use ltex-ls extra and want to use zg to also update ltex-ls dictionary
-				cmp = {
-					enabled = true,
-					custom_dict_path = local_ltex_ls,
-					max_spell_suggestions = 10,
-					filetypes = { "markdown", "tex" },
-					priority = 20000,
-					name = "dictionary",
-					source_label = "[Dict]",
-					-- kind_icon = cmp.lsp.CompletionItemKind.Event, -- Icon for suggestions
-					-- kind_icon = " ", -- Icon need to be registered on lsp icons
-				},
-			})
-		end,
-	},
-	-- register custom cmp for dict
-	{
-		"nvim-cmp",
-		dependencies = {},
-		opts = function(_, opts)
-			-- Add the obsidian sources to CMP
-			-- table.insert(opts.sources, { name = "obsidian", priority = 100 })
-			-- table.insert(opts.sources, { name = "obsidian_new", priority = 100 })
-			-- table.insert(opts.sources, { name = "obsidian_tags", priority = 100 })
-
-			-- Add the dictionary source to CMP
-			table.insert(opts.sources, 1, {
-				name = "dictionary",
-				priority = 20000, -- Custom priority
-			})
-
-			-- Custom formatting for dictionary items
-			local existing_formatting_function = opts.formatting.format
-			opts.formatting.format = function(entry, vim_item)
-				if entry.source.name == "dictionary" then
-					-- vim_item.kind = cmp.lsp.CompletionItemKind.Text -- this make crash
-					vim_item.menu = "[Dict]" -- Custom label
-				elseif existing_formatting_function then
-					vim_item = existing_formatting_function(entry, vim_item)
-				end
-				return vim_item
-			end
-		end,
-	},
+	-- {
+	-- 	-- dir = dictionary_plugin_path, -- DEV : use local path
+	-- 	"paysancorrezien/dictionary.nvim", -- PROD : use remote path
+	-- 	ft = "markdown",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 	},
+	-- 	config = function()
+	-- 		require("dictionary").setup({
+	-- 			dictionary_paths = {
+	-- 				remote_ltex_ls,
+	-- 				remote_spell,
+	-- 				local_ltex_ls,
+	-- 				local_spell,
+	-- 			},
+	-- 			override_zg = true,
+	-- 			ltex_dictionary = true, -- if you are use ltex-ls extra and want to use zg to also update ltex-ls dictionary
+	-- 			cmp = {
+	-- 				enabled = true,
+	-- 				custom_dict_path = local_ltex_ls,
+	-- 				max_spell_suggestions = 10,
+	-- 				filetypes = { "markdown", "tex" },
+	-- 				priority = 20000,
+	-- 				name = "dictionary",
+	-- 				source_label = "[Dict]",
+	-- 				-- kind_icon = cmp.lsp.CompletionItemKind.Event, -- Icon for suggestions
+	-- 				-- kind_icon = " ", -- Icon need to be registered on lsp icons
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
+	-- -- register custom cmp for dict
+	-- {
+	-- 	"nvim-cmp",
+	-- 	dependencies = {},
+	-- 	opts = function(_, opts)
+	-- 		-- Add the obsidian sources to CMP
+	-- 		-- table.insert(opts.sources, { name = "obsidian", priority = 100 })
+	-- 		-- table.insert(opts.sources, { name = "obsidian_new", priority = 100 })
+	-- 		-- table.insert(opts.sources, { name = "obsidian_tags", priority = 100 })
+	--
+	-- 		-- Add the dictionary source to CMP
+	-- 		table.insert(opts.sources, 1, {
+	-- 			name = "dictionary",
+	-- 			priority = 20000, -- Custom priority
+	-- 		})
+	--
+	-- 		-- Custom formatting for dictionary items
+	-- 		local existing_formatting_function = opts.formatting.format
+	-- 		opts.formatting.format = function(entry, vim_item)
+	-- 			if entry.source.name == "dictionary" then
+	-- 				-- vim_item.kind = cmp.lsp.CompletionItemKind.Text -- this make crash
+	-- 				vim_item.menu = "[Dict]" -- Custom label
+	-- 			elseif existing_formatting_function then
+	-- 				vim_item = existing_formatting_function(entry, vim_item)
+	-- 			end
+	-- 			return vim_item
+	-- 		end
+	-- 	end,
+	-- },
 
 	{
 		-- dir = pdf_plugin_path, -- DEV : use local path
