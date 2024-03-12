@@ -35,6 +35,7 @@ local current_os = os_utils.get_os()
 -- Check if the current OS is Windows
 if current_os == "Windows" then
 	-- Retrieve the Windows username dynamically
+
 	local windows_username = os_utils.get_windows_username()
 	-- Set the sqlite_clib_path with dynamic username
 	local sqlite_clib_path = "C:/Users/" .. windows_username .. "/AppData/Roaming/sqlite-dll/sqlite3.dll"
@@ -60,6 +61,7 @@ if current_os == "Windows" then
 	-- 	vim.opt[option] = value
 	-- end
 	vim.opt.runtimepath:append("L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\")
+	vim.g.python3_host_prog = "C:\\python312\\python.exe"
 end
 
 vim.log.level = "warn"

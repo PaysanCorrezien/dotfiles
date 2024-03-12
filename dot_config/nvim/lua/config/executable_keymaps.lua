@@ -139,3 +139,6 @@ vim.api.nvim_create_user_command("OverseerRestartLast", function()
 	end
 end, {})
 vim.keymap.set("n", "<leader>cR", ":OverseerRestartLast<CR>", { desc = "Restart last task" })
+
+vim.keymap.set("n", "<leader>cT", "<cmd>TroubleToggle workspace_diagnostic<CR>", { desc = "TroubleProjet" })
+vim.keymap.set("n", "<leader>ct", "<cmd>TroubleToggle document_diagnostic<CR>", { desc = "TroubleLocal" })

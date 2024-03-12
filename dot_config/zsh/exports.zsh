@@ -7,7 +7,7 @@ export PATH="/snap/bin:$PATH"
 
 # export TERM=xterm-256color
 # [[ $TMUX != "" ]] && export TERM="screen-256color"
-export EDITOR="lvim"
+export EDITOR="nvim"
 export PATH="$PATH:/var/lib/snapd/desktop/applications"
 export PATH="$PATH:$HOME/bin/"
 export PATH="$PATH:/usr/bin/"
@@ -65,4 +65,18 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+
+# Check if running inside WSL (Windows Subsystem for Linux)
+if grep -qEi "(Microsoft|WSL)" /proc/version &>/dev/null; then
+    echo "Setting up for WSL environment..."
+
+    # Set DISPLAY variable to use the host Windows IP
+    # export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0
+    # FIXME: done because i hardocst router nameserver in resolv.conf
+    export DISPLAY=$(hostname -I | awk '{print $1}'):0
+
+    # Force XFCE and other applications to use X11 instead of Wayland
+    export GDK_BACKEND=x11
+
+fi
 

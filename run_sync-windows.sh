@@ -42,6 +42,12 @@ destDir="${windowsPath}/.config/starship"
 check_and_create_dir "$destDir"
 rsync -au "${sourceDir}/" "${destDir}/"
 
+# New section to copy VcXsrv
+sourceDir="$HOME/.local/share/chezmoi/dot_windows/VcXsrv"
+destDir="${windowsPath}/.config/VcXsrv"
+check_and_create_dir "$destDir"
+rsync -au "${sourceDir}/" "${destDir}/"
+
 # New section to copy Desktop Shortcuts
 sourceDir="$HOME/.local/share/chezmoi/dot_windows/DesktopShortcut"
 destDir="${windowsPath}/Desktop"

@@ -101,48 +101,85 @@ return {
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
-		opts = {
-			show_help = "yes", -- Show help text for CopilotChatInPlace, default: yes
-			debug = false, -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
-			disable_extra_info = "no", -- Disable extra information (e.g: system prompt) in the response.
-			language = "English", -- Copilot answer language settings when using default prompts. Default language is English.
-			-- proxy = "socks5://127.0.0.1:3000", -- Proxies requests via https or socks.
-			-- temperature = 0.1,
+		branch = "canary",
+		dependencies = {
+			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
-		build = function()
-			vim.notify("Please update the remote plugins by running ':UpdateRemotePlugins', then restart Neovim.")
-		end,
-		event = "VeryLazy",
+		opts = {
+			debug = true, -- Enable debugging
+			-- See Configuration section for rest
+		},
+		-- See Commands section for default commands if you want to lazy load on them
 		keys = {
-			{ "<leader>ccb", ":CopilotChatBuffer ", desc = "CopilotChat - Chat with current buffer" },
-			{ "<leader>cce", "<cmd>CopilotChatExplain<cr>", desc = "CopilotChat - Explain code" },
-			{ "<leader>cct", "<cmd>CopilotChatTests<cr>", desc = "CopilotChat - Generate tests" },
+			{ "<leader>cce", "<cmd>CopilotChatExplain<cr>", desc = "Explain code" },
+			{ "<leader>cct", "<cmd>CopilotChatTests<cr>", desc = "Generate tests" },
+			{ "<leader>ccr", "<cmd>CopilotChatReset<cr>", desc = "Reset chat" },
 			{
-				"<leader>ccT",
-				"<cmd>CopilotChatVsplitToggle<cr>",
-				desc = "CopilotChat - Toggle Vsplit", -- Toggle vertical split
+
+				"<leader>ccq",
+				function()
+					local input = vim.fn.input("Quick Chat: ")
+					if input ~= "" then
+						require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+					end
+				end,
+				desc = "Quick chat",
+			},
+			-- Show help actions with telescope
+			{
+				"<leader>cch",
+				function()
+					local actions = require("CopilotChat.actions")
+					require("CopilotChat.integrations.telescope").pick(actions.help_actions())
+				end,
+				desc = "Telescope Help actions",
+			},
+
+			-- Show prompts actions with telescope
+			{
+				"<leader>ccp",
+				function()
+					local actions = require("CopilotChat.actions")
+					require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+				end,
+				desc = "Telescope - Prompt actions",
+			},
+			-- { "<leader>cco", "<cmd>CopilotChatOpen<cr>", desc = "CopilotChat - Open chat window" },
+			-- { "<leader>ccc", "<cmd>CopilotChatClose<cr>", desc = "CopilotChat - Close chat window" },
+			{ "<leader>h", "<cmd>CopilotChatToggle<cr>", desc = "Toggle chat window" },
+			{ "<leader>ccd", "<cmd>CopilotChatDebugInfo<cr>", desc = "Show debug information" },
+			{ "<leader>ccx", "<cmd>CopilotChatFix<cr>", mode = { "n", "x" }, desc = "Fix the code" },
+			{ "<leader>ccX", "<cmd>CopilotChatFixDiagnostic<cr>", mode = { "n", "x" }, desc = "Fix the code" },
+			{ "<leader>cco", "<cmd>CopilotChatOptimize<cr>", mode = { "n", "x" }, desc = "Optimize the code" }, -- Note: 'cco' is duplicated, consider an alternative key combination.
+			{ "<leader>ccD", "<cmd>CopilotChatDocs<cr>", mode = { "n", "x" }, desc = "Document the code" },
+			{ "<leader>ccC", "<cmd>CopilotChatCommit<cr>", desc = "Write commit message" },
+			{
+				"<leader>ccS",
+				"<cmd>CopilotChatCommitStaged<cr>",
+				desc = "Write commit message for staged changes",
 			},
 			{
 				"<leader>ccv",
-				":CopilotChatVisual ",
-				mode = "x",
-				desc = "CopilotChat - Open in vertical split",
+				function()
+					local prefix = vim.fn.input("Prefix Input: ")
+					local chat = require("CopilotChat")
+					-- Directly use the prefix as the prompt, assuming `select.visual` automatically appends the visual selection
+					chat.ask(prefix, { selection = require("CopilotChat.select").visual })
+				end,
+				mode = "x", -- This key mapping will be available in visual mode
+				desc = "Chat with visual selection",
 			},
 			{
-				"<leader>ccx",
-				":CopilotChatInPlace<cr>",
-				mode = "x",
-				desc = "CopilotChat - Run in-place code",
-			},
-			{
-				"<leader>ccf",
-				"<cmd>CopilotChatFixDiagnostic<cr>", -- Get a fix for the diagnostic message under the cursor.
-				desc = "CopilotChat - Fix diagnostic",
-			},
-			{
-				"<leader>ccr",
-				"<cmd>CopilotChatReset<cr>", -- Reset chat history and clear buffer.
-				desc = "CopilotChat - Reset chat history and clear buffer",
+				"<leader>ccb",
+				function()
+					local prefix = vim.fn.input("Prefix Input: ")
+					local chat = require("CopilotChat")
+					-- Directly use the prefix as the prompt, assuming `select.buffer` automatically appends the buffer content
+					chat.ask(prefix, { selection = require("CopilotChat.select").buffer })
+				end,
+				mode = "n", -- This key mapping will be available in normal mode
+				desc = "Chat with buffer ",
 			},
 		},
 	},
