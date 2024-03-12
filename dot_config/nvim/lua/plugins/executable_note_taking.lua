@@ -257,10 +257,10 @@ return {
 						notes_subdir = "Docs\\KnowledgeBase", --TODO: inline function for this ?
 					},
 				},
-				{
-					name = "work",
-					path = "~/Documents/Notes",
-				},
+				-- {
+				--   name = "work",
+				--   path = "~/Documents/Notes",
+				-- },
 			},
 			-- Optional, if you keep daily notes in a separate directory.
 			daily_notes = {
@@ -271,13 +271,13 @@ return {
 			--  BUG: dot work on windows ?
 			--
 			completion = {
-				nvim_cmp = false, -- if using nvim-cmp, otherwise set to false
-				-- new_notes_location = "current_dir",
-				new_notes_location = "notes_subdir",
-				use_path_only = true,
-				-- Trigger completion at 2 chars.
-				-- min_chars = 1,
+				nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+				min_chars = 1,
 			},
+			-- wiki_link_func = function(opts)
+			--   return string.format("[[%s]]", opts.path)
+			-- end,
+			-- Specify how to handle attachments.
 			attachments = {
 				-- The default folder to place images in via `:ObsidianPasteImg`.
 				-- If this is a relative path it will be interpreted as relative to the vault root.
@@ -347,7 +347,7 @@ return {
 				return out
 			end,
 			ui = {
-				enable = false, -- set to false to disable all additional syntax features
+				enable = true, -- set to false to disable all additional syntax features
 			},
 
 			templates = {

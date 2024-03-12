@@ -164,6 +164,12 @@ function y
   Remove-Item -Path $tmp
 }
 
+# NOTE: The function executes the 'ls -alt' command when called.
+# 'ls -alt' lists all files and directories in the current directory,
+# sorted by modification time, with the most recently modified items first.
+function l {
+    ls -alt
+}
 function Reload-Powershell
 {
   # Blacklist of module names that should not be removed
