@@ -150,7 +150,7 @@ return {
 			{ "<leader>h", "<cmd>CopilotChatToggle<cr>", desc = "Toggle chat window" },
 			{ "<leader>ccd", "<cmd>CopilotChatDebugInfo<cr>", desc = "Show debug information" },
 			{ "<leader>ccx", "<cmd>CopilotChatFix<cr>", mode = { "n", "x" }, desc = "Fix the code" },
-			{ "<leader>ccX", "<cmd>CopilotChatFixDiagnostic<cr>", mode = { "n", "x" }, desc = "Fix the code" },
+			{ "<leader>ccX", "<cmd>CopilotChatFixDiagnostic<cr>", mode = { "n", "x" }, desc = "Fix the Diagnostic" },
 			{ "<leader>cco", "<cmd>CopilotChatOptimize<cr>", mode = { "n", "x" }, desc = "Optimize the code" }, -- Note: 'cco' is duplicated, consider an alternative key combination.
 			{ "<leader>ccD", "<cmd>CopilotChatDocs<cr>", mode = { "n", "x" }, desc = "Document the code" },
 			{ "<leader>ccC", "<cmd>CopilotChatCommit<cr>", desc = "Write commit message" },

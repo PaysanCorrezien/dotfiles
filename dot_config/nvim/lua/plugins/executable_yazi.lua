@@ -17,15 +17,13 @@ return {
 		enabled = false,
 	},
 	{
-		-- dir = "c:/repo/yazi.nvim", -- DEV : use local path
-		"paysancorrezien/yazi.nvim",
-		dependencies = {
-			"nvim-telescope/telescope.nvim",
-			"nvim-lua/plenary.nvim",
-		},
-
-		keys = {
-			{ "<leader>e", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
-		},
+		"rolv-apneseth/tfm.nvim",
+		config = function()
+			-- Set keymap so you can open the default terminal file manager (yazi)
+			vim.api.nvim_set_keymap("n", "<leader>e", "", {
+				noremap = true,
+				callback = require("tfm").open,
+			})
+		end,
 	},
 }

@@ -142,3 +142,21 @@ vim.keymap.set("n", "<leader>cR", ":OverseerRestartLast<CR>", { desc = "Restart 
 
 vim.keymap.set("n", "<leader>cT", "<cmd>TroubleToggle workspace_diagnostic<CR>", { desc = "TroubleProjet" })
 vim.keymap.set("n", "<leader>ct", "<cmd>TroubleToggle document_diagnostic<CR>", { desc = "TroubleLocal" })
+
+local function copyDiagnosticsToClipboard()
+	local bufnr = vim.api.nvim_get_current_buf()
+	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+	local diagnostics = vim.diagnostic.get(bufnr, { lnum = line - 1 })
+
+	local messages = {}
+	for _, diag in ipairs(diagnostics) do
+		table.insert(messages, diag.message)
+	end
+
+	local final_message = table.concat(messages, "\n")
+	vim.fn.setreg("+", final_message) -- Copy to clipboard
+
+	print("Diagnostics copied to clipboard") -- Optional: Confirmation message
+end
+
+vim.keymap.set("n", "<leader>cz", copyDiagnosticsToClipboard, { desc = "Copy LSP Diagnostics to Clipboard" })
