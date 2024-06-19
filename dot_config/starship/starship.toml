@@ -1,0 +1,106 @@
+add_newline = false
+# ~/.config/starship.toml
+# A minimal left prompt
+# move the rest of the prompt to the right
+# format = "$shell$status$directory$git_branch$git_status$time"
+# Custom format for the prompt
+format = """$shell$time$status$directory$git_branch$git_status$lua$docker_context$conda$hostname$localip$cmd_duration$username$sudo
+$character"""
+
+[line_break]
+disabled = true
+
+#TODO : faire un truc moi ou patcher le code
+# [sudo]
+# allow_windows = true
+# disabled = false
+# style = 'bold red'
+# symbol = '💀ADMIN 💀'
+
+[username]
+style_user = 'white bold'
+style_root = 'blue bold'
+format = '🦸[$user]($style) '
+disabled = false
+show_always = true
+
+# Directory
+[directory]
+truncation_length = 3            # Show only 3 directories: the current one and up to 2 parents.
+truncate_to_repo = true          # Truncate the path to the root of the git repo
+read_only = '🔒'                  # Symbol indicating the directory is read-only
+fish_style_pwd_dir_length = 0    # Set to 0 to show the full name of each directory
+format = '[\[📁$path\]]($style) '
+# Git Branch
+[git_branch]
+symbol = '🌱 '
+# truncation_length = 4
+truncation_symbol = ''
+
+[git_status]
+conflicted = '🏳'
+ahead = '🏎💨'
+behind = '😰'
+diverged = '😵'
+up_to_date = '✓'
+untracked = '🤷'
+stashed = '📦'
+modified = '📝'
+staged = '[++\($count\)](green)'
+renamed = '👅'
+deleted = '🗑'
+
+[git_metrics]
+added_style = 'bold blue'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[docker_context]
+format = 'via [🐋 $context](blue bold)'
+
+[python]
+symbol = '👾 '
+pyenv_version_name = true
+
+[conda]
+format = '[$symbol$environment](dimmed green) '
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue) [\(💻$hostname ➜](bold cyan) '
+# trim_at = '.companyname.com'
+ssh_symbol = '🌏 '
+disabled = false
+
+[character]
+success_symbol = '[➜](bold green)'
+disabled = true
+
+[lua]
+
+[status]
+disabled = false
+
+[shell]
+disabled = false
+fish_indicator = '󰈺 '
+powershell_indicator = '_ PS'
+# style = 'orange bold strickethrough underline'
+format = '[$indicator]($style) '
+
+[rust]
+
+[cmd_duration]
+disabled = false
+min_time = 2_000                 # Only show command duration if command takes longer than 2 seconds to execute
+format = "[🏃$duration]($style) " # Customize the format here
+
+[localip]
+ssh_only = false
+format = '[🌍$localipv4\)](bold cyan) '
+disabled = false
+
+[time]
+disabled = false
+style = 'bold yellow'
+format = '[🕙 $time]($style) '
+time_format = '%T'
