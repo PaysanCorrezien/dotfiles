@@ -1,0 +1,47 @@
+sanitise tridactyllocal tridactylsync
+" Seetings for the tridactyl.rc file
+"set newtab about:blank
+
+" UWU catppuccin everywhere https://github.com/lonepie/catppuccin-tridactyl
+
+"set colours --url https://raw.githubusercontent.com/paysancorrezien/catppuccin-tridactyl/main/catppuccin.css catppuccin
+colourscheme --url https://raw.githubusercontent.com/paysancorrezien/catppuccin-tridactyl/main/catppuccin.css catppuccin
+
+
+"set browser firefox-developer-edition
+"set allowautofocus false
+set editorcmd $HOME/.nix-profile/bin/nvim
+set smoothscroll true
+set newtabfocus page
+set searchurls.amazon https://www.amazon.fr/s?k=%s
+set searchurls.ddg https://duckduckgo.co.uk/?q=%s
+set searchurls.gh https://github.com/search?q=%s
+set searchurls.wb https://web.archive.org/web/*/%s
+set searchurls.yt https://youtube.com/search?q=%s
+set searchurls.red https://www.reddit.com/search/?q=%s
+
+
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind n findnext 1
+bind N findnext -1
+
+" reader mod with binding !
+bind r reader
+" temp fix for chatgpt but not working perfectly
+bind i js document.querySelector('div.w-full.text-token-text-primary').setAttribute('tabindex', '-1'); document.querySelector('div.w-full.text-token-text-primary').style.scrollBehavior = 'auto'; document.querySelector('div.w-full.text-token-text-primary').focus()
+
+unbind <C-6>
+unbind <C-D>
+bind <C-D> open about:downloads
+bind <C-X> open about:preferences
+bind <C-E> open about:addons
+bind <C-R> fillcmdline open https://www.reverso.net/orthographe/correcteur-francais/#text=
+" right arow autocomplete
+bind --mode=ex <ArrowRight> ex.insert_completion
+
+" send js 
+command loudecho_oneword js -p window.alert(JS_ARG)
+" loudecho_oneword LOUD
+command loudecho_morewords js -dŐ window.alert(JS_ARGS.join(" "))Ő
+" loudecho_morewords THIS IS LOUD
