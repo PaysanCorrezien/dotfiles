@@ -6,24 +6,28 @@ local home = os.getenv("HOME") or "~"
 -- Define OS-specific paths for both the vault and attachments
 -- Settings with paths
 obsidiannvim_settings = {
-	vault_paths = {
-		-- Windows = "D:/Users/dylan/Documents//",
-		Windows = "D:\\notes\\",
-		Linux = "/mnt/d/notes//",
-	},
-	attachments_paths = {
-		Windows = "D:\\notes\\\\static\\img\\",
-		Linux = "/mnt/d/notes//static/img/",
-	},
-	pdftoppm_paths = {
-		Windows = "D:\\Users\\dylan\\scoop\\shims\\pdftoppm.exe",
-		Linux = "/usr/bin/pdftoppm",
-	},
-	templates_paths = {
-		Windows = "D:\\notes\\\\Projets\\Templates\\",
-		Linux = "/mnt/d/notes//Projets/Templates/",
-	},
+  vault_paths = {
+    Windows = "D:\\notes\\",
+    WSL = "/mnt/d/notes//",
+    Linux = home .. "/Documents/notes/",
+  },
+  attachments_paths = {
+    Windows = "D:\\notes\\\\static\\img\\",
+    WSL = "/mnt/d/notes//static/img/",
+    Linux = home .. "/documents/notes/static/img/",
+  },
+  pdftoppm_paths = {
+    Windows = "D:\\Users\\dylan\\scoop\\shims\\pdftoppm.exe",
+    WSL = "/usr/bin/pdftoppm",
+    Linux = "/usr/bin/pdftoppm",
+  },
+  templates_paths = {
+    Windows = "D:\\notes\\\\Projets\\Templates\\",
+    WSL = "/mnt/d/notes//Projets/Templates/",
+    Linux = home .. "/documents/notes/Projets/Templates/",
+  },
 }
+
 
 -- Retrieve the correct paths based on the OS
 local obsidian_vault_path = os_utils.get_setting(obsidiannvim_settings.vault_paths)
@@ -35,35 +39,43 @@ local templates_path = os_utils.get_setting(obsidiannvim_settings.templates_path
 -- local obsidian_vault_path = os_utils.get_setting(obsidiannvim_paths)
 
 local pdf_paths = {
-	Windows = "c:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\pdf.nvim",
-	Linux = "/mnt/c/user/dylan/Documents/Projet/Work/Projet/pdf.nvim/",
+  Windows = "c:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\pdf.nvim",
+  WSL = "/mnt/c/user/dylan/Documents/Projet/Work/Projet/pdf.nvim/",
+  Linux = home .. "/documents/Projet/Work/Projet/pdf.nvim/",
 }
 
 local pdf_plugin_path = os_utils.get_setting(pdf_paths)
 
 local dictionary_path = {
-	Windows = "C:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\dictionary.nvim",
-	Linux = "/mnt/c/notes/Projet/Work/Projet/dictionary.nvim/",
+  Windows = "C:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\dictionary.nvim",
+  WSL = "/mnt/c/notes/Projet/Work/Projet/dictionary.nvim/",
+  Linux = home .. "/documents/Projet/Work/Projet/dictionary.nvim/",
 }
+
 local dictionary_plugin_path = os_utils.get_setting(dictionary_path)
 
 local dictionaries_files_path = {
-	remote_ltex_ls = {
-		Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\ltex.dictionary.fr.txt",
-		Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
-	},
-	remote_spell = {
-		Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\spell.utf-8.add",
-		Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
-	},
-	local_ltex_ls = {
-		Windows = "L:\\home\\dylan\\.config\\lvim\\dict\\ltex.dictionary.fr.txt",
-		Linux = home .. "/.config/lvim/dict/ltex.dictionary.fr.txt",
-	},
-	local_spell = {
-		Windows = "L:\\home\\dylan\\.config\\lvim\\dict\\spell.utf-8.add",
-		Linux = home .. "/.config/lvim/dict/spell.utf-8.add",
-	},
+  remote_ltex_ls = {
+    Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\ltex.dictionary.fr.txt",
+    WSL = home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
+    Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
+  },
+  remote_spell = {
+    Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\spell.utf-8.add",
+    WSL = home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
+    Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
+  },
+  local_ltex_ls = {
+    Windows = "L:\\home\\dylan\\.config\\lvim\\dict\\ltex.dictionary.fr.txt",
+    --TODO: thise need to be changed
+    WSL = home .. "/.config/lvim/dict/ltex.dictionary.fr.txt",
+    Linux = home .. "/.config/lvim/dict/ltex.dictionary.fr.txt",
+  },
+  local_spell = {
+    Windows = "L:\\home\\dylan\\.config\\lvim\\dict\\spell.utf-8.add",
+    WSL = home .. "/.config/lvim/dict/spell.utf-8.add",
+    Linux = home .. "/.config/lvim/dict/spell.utf-8.add",
+  },
 }
 local remote_ltex_ls = os_utils.get_setting(dictionaries_files_path.remote_ltex_ls)
 local remote_spell = os_utils.get_setting(dictionaries_files_path.remote_spell)
@@ -73,6 +85,7 @@ local local_spell = os_utils.get_setting(dictionaries_files_path.local_spell)
 local ltex_extra_plugin_cwd = {
 
 	Windows = "L:\\home\\dylan\\.config\\lvim\\dict",
+	Linux = home .. "/.config/lvim/dict",
 	Linux = home .. "/.config/lvim/dict",
 }
 
@@ -252,7 +265,7 @@ return {
 				{
 					name = "personal",
 					-- path = obsidian_vault_path,
-					path = "D:\\notes\\",
+					path = obsidian_vault_path .. "\\" ,
 					overrides = {
 						notes_subdir = "Docs\\KnowledgeBase", --TODO: inline function for this ?
 					},

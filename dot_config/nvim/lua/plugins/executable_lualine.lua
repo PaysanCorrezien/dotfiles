@@ -17,7 +17,10 @@ return {
 			table.insert(opts.sections.lualine_b, {
 				function()
 					-- Define the Git command
-					local git_command = 'git log -1 --format="%cd" --date=format:"%d/%m %H:%M" 2> nul' -- Adjusted for Windows
+					-- local git_command = 'git log -1 --format="%cd" --date=format:"%d/%m %H:%M" 2> nul' -- Adjusted for Windows
+          -- Existing configuration and imports
+
+          local git_command = 'git log -1 --format="%cd" --date=format:"%d/%m %H:%M" 2> /dev/null' -- Adjusted for Unix-like systems
 
 					-- Attempt to execute the Git command
 					local handle, err = io.popen(git_command)

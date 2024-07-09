@@ -5,7 +5,22 @@
 local M = {}
 function M.get_os()
   local uname = vim.loop.os_uname()
-  return (uname.sysname == "Windows_NT") and "Windows" or "Linux"
+  local sysname = uname.sysname
+
+  if sysname == "Windows_NT" then
+    return "Windows"
+  else
+    -- Check if it is WSL
+    local file = io.open("/proc/version", "r")
+    if file then
+      local version_info = file:read("*a")
+      file:close()
+      if version_info:find("Microsoft") then
+        return "WSL"
+      end
+    end
+    return "Linux"
+  end
 end
 
 -- Function to get the current Windows username

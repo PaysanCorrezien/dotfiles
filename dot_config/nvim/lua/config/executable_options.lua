@@ -3,24 +3,29 @@
 -- Add any additional options here
 local os_utils = require("utils.os_utils")
 local home = os.getenv("HOME") or "~"
+-- TODO: python not setup properly with this
 vim.g.python3_host_prog = home .. "/.pyenv/versions/3.10.4/bin/python"
 local dictionaries_files_path = {
-	remote_ltex_ls = {
-		Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\ltex.dictionary.fr.txt",
-		Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
-	},
-	remote_spell = {
-		Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\spell.utf-8.add",
-		Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
-	},
-	chezmoi = {
-		Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\executable_config.lua",
-		Linux = home .. "/.local/share/chezmoi/dot_config/lvim/executable_config.lua",
-	},
-	ltex_ls_folder = {
-		Windows = "\\wsl.localhost\\Debian\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\",
-		Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/",
-	},
+  remote_ltex_ls = {
+    Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\ltex.dictionary.fr.txt",
+    WSL = home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
+    Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
+  },
+  remote_spell = {
+    Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\spell.utf-8.add",
+    WSL = home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
+    Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
+  },
+  chezmoi = {
+    Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\executable_config.lua",
+    WSL = home .. "/.local/share/chezmoi/dot_config/lvim/executable_config.lua",
+    Linux = home .. "/.local/share/chezmoi/dot_config/lvim/executable_config.lua",
+  },
+  ltex_ls_folder = {
+    Windows = "\\wsl.localhost\\Debian\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\",
+    WSL = home .. "/.local/share/chezmoi/dot_config/lvim/dict/",
+    Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/",
+  },
 }
 
 local remote_ltex_ls = os_utils.get_setting(dictionaries_files_path.remote_ltex_ls)

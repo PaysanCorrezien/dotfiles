@@ -1,7 +1,8 @@
 local os_utils = require("utils.os_utils")
 local powershell_parser_paths = {
 	Windows = "C:\\repo\\tree-sitter-powershell\\",
-	Linux = "/mnt/c/repo/nvim-treesitter-powershell/",
+	--	Linux = "/mnt/c/repo/nvim-treesitter-powershell/",
+	Linux = "/home/dylan/repo/nvim-treesitter-powershell/",
 }
 local parser_path = os_utils.get_setting(powershell_parser_paths)
 
@@ -102,22 +103,22 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		-- Using init function to set up PowerShell parser
-		init = function(plugin)
-			-- Manually configure the PowerShell parser
-			local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-			parser_config.powershell = {
-				install_info = {
-					url = parser_path, -- Directory of the installed parser
-					files = { "src/parser.c", "src/scanner.c" },
-					branch = "main",
-				},
-				filetype = "ps1", -- Associate the parser with 'ps1' files
-			}
-
-			-- Set preferred compiler order
-			local install = require("nvim-treesitter.install")
-			install.compilers = { "zig", "gcc" }
-		end,
+--		init = function(plugin)
+--			-- Manually configure the PowerShell parser
+--			local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+--			parser_config.powershell = {
+--				install_info = {
+--					url = parser_path, -- Directory of the installed parser
+--					files = { "src/parser.c", "src/scanner.c" },
+--					branch = "main",
+--				},
+--				filetype = "ps1", -- Associate the parser with 'ps1' files
+--			}
+--
+--			-- Set preferred compiler order
+--			local install = require("nvim-treesitter.install")
+--			install.compilers = { "zig", "gcc" }
+--		end,
 		-- Configuring the rest of nvim-treesitter settings
 		config = function(plugin, opts)
 			opts = {
@@ -171,8 +172,8 @@ return {
 				},
 			}
 			-- Ensure PowerShell parser is installed
-			opts.ensure_installed = opts.ensure_installed or {}
-			table.insert(opts.ensure_installed, "powershell")
+			-- opts.ensure_installed = opts.ensure_installed or {}
+			-- table.insert(opts.ensure_installed, "powershell")
 			-- Apply the configurations
 			require("nvim-treesitter.configs").setup(opts)
 		end,
