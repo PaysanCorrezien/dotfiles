@@ -1,26 +1,27 @@
 
-alias v="lvim"
+alias v="nvim"
 alias n="nvim"
-alias icat="kitty +kitten icat"
+# alias icat="kitty +kitten icat"
 # alias obsidian='sudo -- sh -c ~/.local/bin/Obsidian.AppImage'
-alias obsidian="/home/dylan/share/applications/Obsidian.AppImage"
+# alias obsidian="/home/dylan/share/applications/Obsidian.AppImage"
 alias ai="sgpt --repl temp --shell"
 # alias ll='ls -l'
 # alias la='ls -A'
 # alias l='ls -CF'
 alias md="mkdir"
 alias mcd='f() { mkdir -p "$1" && cd "$1"; unset -f f; }; f'
-alias cat='batcat'
-alias bat='batcat'
-alias h='lvim $HISTFILE'
+alias cat='bat'
+# alias h='lvim $HISTFILE'
 
 # general use
 # alias l='exa -lbF --git --icons'                                               # list, size, type, git
 # alias ll='exa -lbGF --git --icons'                                             # long list
-alias ls='exa -lbGF --git --sort=modified --icons'                            # long list, modified date sort
+# alias ls='exa -lbGF --git --sort=modified --icons'                            # long list, modified date sort
+alias ls='lsd'
+
 # alias llm='exa -lbGF --git --sort=modified --icons'                            # long list, modified date sort
-alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'  # all list
-alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons' # all + extended list
+# alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'  # all list
+# alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons' # all + extended list
 alias s='sudo'
 
 # speciality views
@@ -78,9 +79,10 @@ alias syss="systemctl status"
 alias systa="sudo systemctl start"
 alias systo="sudo systemctl stop"
 # tmux
-alias tmux="tmux -u"
-alias tmuxm="tmux new-session \; split-window -h \; split-window -v \; attach"
-alias t="tmux list-sessions &> /dev/null && tmux attach || tmux new-session"
+# alias tmux="tmux -u"
+# alias tmuxm="tmux new-session \; split-window -h \; split-window -v \; attach"
+alias t="todoist"
+alias ta="todoist add"
 
 alias dk="lazydocker"
 

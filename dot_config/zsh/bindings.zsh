@@ -98,3 +98,12 @@ bindkey '^Y' redo
 # List choices for completion based on current input
 bindkey '^O' beginning-of-line
 
+# work but we cant do anything with it
+# select-whole-line() {
+#   zle beginning-of-line
+#   zle set-mark-command
+#   zle end-of-line
+# }
+# zle -N select-whole-line
+# bindkey '^A' select-whole-line
+#
