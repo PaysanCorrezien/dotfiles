@@ -32,7 +32,10 @@ bind r reader
 bind i js document.querySelector('div.w-full.text-token-text-primary').setAttribute('tabindex', '-1'); document.querySelector('div.w-full.text-token-text-primary').style.scrollBehavior = 'auto'; document.querySelector('div.w-full.text-token-text-primary').focus()
 
 unbind <C-6>
+" still zoom on azerty broken
+bind --mode=browser <C-6> tab #
 unbind <C-D>
+unbind <C-->
 bind <C-D> open about:downloads
 bind <C-X> open about:preferences
 bind <C-E> open about:addons
