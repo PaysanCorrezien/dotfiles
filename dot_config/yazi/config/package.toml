@@ -1,0 +1,2 @@
+[plugin]
+deps = [{ use = "Reledia/glow", commit = "=536185a" }]

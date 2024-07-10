@@ -155,6 +155,42 @@ local keys = {
     key = "m",
     mods = "CTRL",
   },
+  -- Lua and wezterm magic open pane in neovim 
+  -- inspired by https://www.reddit.com/r/neovim/comments/18keepr/how_to_launch_nvim_in_current_terminal_and_show/
+  ["<C-S-y>"] = wez.action_callback(function(window, pane)
+    -- get all text (including color)
+    -- wez.log_info("trying to open nvim buff")
+    local success, stdout, stderr = wez.run_child_process({
+      "wezterm",
+      "cli",
+      "get-text",
+      "--escapes",
+    })
+    
+    if not success then
+      wez.log_error("Failed to get text: " .. (stderr or ""))
+      return
+    end
+
+    -- Write text to temp file
+    local fn = os.tmpname()
+    local f = io.open(fn, 'w+b')
+    if not f then
+      wez.log_error("Failed to open temporary file")
+      return
+    end
+    f:write(stdout)
+    f:flush()
+    f:close()
+
+    -- Launch nvim in a new tab and cat the file
+    window:perform_action(
+      act.SpawnCommandInNewTab {
+        args = { 'nvim', '-c', string.format("terminal cat %s && rm %s", fn, fn) },
+      },
+      pane
+    )
+  end),
 }
 
 Config.keys = {}

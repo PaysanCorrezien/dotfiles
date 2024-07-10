@@ -1,0 +1,11 @@
+layout_connected: "us"
+variant_connected: "altgr-intl"
+layout_disconnected: "fr"
+variant_disconnected: ""
+keyboards:
+  - name: "Elora Keyboard"
+    vendor_id: "8d1d"
+    model_id: "9d9d"
+  - name: "Cocot46plus"
+    vendor_id: "1727"
+    model_id: "0003"

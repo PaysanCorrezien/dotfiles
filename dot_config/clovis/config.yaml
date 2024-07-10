@@ -1,0 +1,11 @@
+home:
+- obsidian.desktop
+- org.wezfurlong.wezterm.desktop
+- org.keepassxc.KeePassXC.desktop
+work:
+- firefox.desktop
+- discord.desktop
+- thunderbird.desktop
+- org.remmina.Remmina.desktop
+- linphone.desktop
+- microsoft-edge.desktop
