@@ -2,6 +2,9 @@ home:
 - obsidian.desktop
 - org.wezfurlong.wezterm.desktop
 - org.keepassxc.KeePassXC.desktop
+- firefox.desktop
+- discord.desktop
+- thunderbird.desktop
 work:
 - firefox.desktop
 - discord.desktop
