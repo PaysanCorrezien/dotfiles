@@ -10,7 +10,7 @@ alias ai="sgpt --repl temp --shell"
 # alias l='ls -CF'
 alias md="mkdir"
 alias mcd='f() { mkdir -p "$1" && cd "$1"; unset -f f; }; f'
-alias cat='bat'
+# alias cat='bat'
 # alias h='lvim $HISTFILE'
 
 # general use
