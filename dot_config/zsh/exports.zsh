@@ -5,7 +5,8 @@ export PATH=$HOME/.config/rofi/scripts:$PATH
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/snap/bin:$PATH"
 
-# export TERM=xterm-256color
+export TERM=xterm-256color
+export COLORTERM=truecolor
 # [[ $TMUX != "" ]] && export TERM="screen-256color"
 export EDITOR="nvim"
 export PATH="$PATH:/var/lib/snapd/desktop/applications"
@@ -71,6 +72,11 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+if ! pgrep -u "$USER" gpg-agent > /dev/null; then
+  eval "$(gpg-agent --daemon)"
+fi
+
+export GPG_TTY=$(tty)
 
 # Check if running inside WSL (Windows Subsystem for Linux)
 if grep -qEi "(Microsoft|WSL)" /proc/version &>/dev/null; then
