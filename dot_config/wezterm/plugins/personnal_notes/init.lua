@@ -10,10 +10,12 @@ function M.SwitchToNotesWorkspace()
   -- Retrieve environment variables
   local editor = os.getenv "editor" or "nvim" -- Default to nvim if $editor is not set
   local userprofile = os.getenv "userprofile"
-  local knowledgeBasePath = userprofile and (userprofile .. "\\Documents\\KnowledgeBase")
-    or "C:\\Users\\dylan\\Documents\\KnowledgeBase"
-  -- TODO: maybe replace with a finder by recency like telekasten find recent ?
-  local neovim_command = "Telescope find_files"
+  -- local knowledgeBasePath = userprofile and (userprofile .. "\\Documents\\KnowledgeBase")
+  --   or "C:\\Users\\dylan\\Documents\\KnowledgeBase"
+  local knowledgeBasePath = "/home/dylan/Documents/Notes/"
+
+  -- local neovim_command = "Telescope find_files"
+  local neovim_command = "FzfLua files { rg_opts = '--files --glob \"*.md\"' }"
 
   return wezterm.action_callback(function(window, pane)
     local workspace_exists = false
