@@ -13,4 +13,6 @@ return {
 --		},
 --	},
 --	{ "kkharji/sqlite.lua", enabled = true },
+--	NOTE: a
+
 }

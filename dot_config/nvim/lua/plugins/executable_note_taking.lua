@@ -6,28 +6,30 @@ local home = os.getenv("HOME") or "~"
 -- Define OS-specific paths for both the vault and attachments
 -- Settings with paths
 obsidiannvim_settings = {
-  vault_paths = {
-    Windows = "D:\\notes\\",
-    WSL = "/mnt/d/notes//",
-    Linux = home .. "/Documents/notes/",
-  },
-  attachments_paths = {
-    Windows = "D:\\notes\\\\static\\img\\",
-    WSL = "/mnt/d/notes//static/img/",
-    Linux = home .. "/documents/notes/static/img/",
-  },
-  pdftoppm_paths = {
-    Windows = "D:\\Users\\dylan\\scoop\\shims\\pdftoppm.exe",
-    WSL = "/usr/bin/pdftoppm",
-    Linux = "/usr/bin/pdftoppm",
-  },
-  templates_paths = {
-    Windows = "D:\\notes\\\\Projets\\Templates\\",
-    WSL = "/mnt/d/notes//Projets/Templates/",
-    Linux = home .. "/documents/notes/Projets/Templates/",
-  },
+	vault_paths = {
+		Windows = "D:\\notes\\",
+		WSL = "/mnt/d/notes//",
+		Linux = home .. "/Documents/Notes",
+	},
+	attachments_paths = {
+		Windows = "D:\\notes\\\\static\\img\\",
+		WSL = "/mnt/d/notes//static/img/",
+		Linux = home .. "/Documents/Notes/3-Ressources/Images",
+	},
+	pdftoppm_paths = {
+		Windows = "D:\\Users\\dylan\\scoop\\shims\\pdftoppm.exe",
+		WSL = "/usr/bin/pdftoppm",
+		-- Linux = "/usr/bin/pdftoppm",
+		--TODO: add special case for nix x_x
+		Linux = home .. "/.nixprofile/bin/pdftoppm",
+	},
+	templates_paths = {
+		Windows = "D:\\notes\\\\Projets\\Templates\\",
+		WSL = "/mnt/d/notes//Projets/Templates/",
+		Linux = home .. "/Documents/Notes/3-Ressources/Templates/",
+		-- Linux = home .. "/documents/Notes/Projets/Templates/",
+	},
 }
-
 
 -- Retrieve the correct paths based on the OS
 local obsidian_vault_path = os_utils.get_setting(obsidiannvim_settings.vault_paths)
@@ -39,43 +41,43 @@ local templates_path = os_utils.get_setting(obsidiannvim_settings.templates_path
 -- local obsidian_vault_path = os_utils.get_setting(obsidiannvim_paths)
 
 local pdf_paths = {
-  Windows = "c:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\pdf.nvim",
-  WSL = "/mnt/c/user/dylan/Documents/Projet/Work/Projet/pdf.nvim/",
-  Linux = home .. "/documents/Projet/Work/Projet/pdf.nvim/",
+	Windows = "c:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\pdf.nvim",
+	WSL = "/mnt/c/user/dylan/Documents/Projet/Work/Projet/pdf.nvim/",
+	Linux = home .. "/documents/Projet/Work/Projet/pdf.nvim/",
 }
 
 local pdf_plugin_path = os_utils.get_setting(pdf_paths)
 
 local dictionary_path = {
-  Windows = "C:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\dictionary.nvim",
-  WSL = "/mnt/c/notes/Projet/Work/Projet/dictionary.nvim/",
-  Linux = home .. "/documents/Projet/Work/Projet/dictionary.nvim/",
+	Windows = "C:\\Users\\dylan\\Documents\\Projet\\Work\\Projet\\dictionary.nvim",
+	WSL = "/mnt/c/notes/Projet/Work/Projet/dictionary.nvim/",
+	Linux = home .. "/documents/Projet/Work/Projet/dictionary.nvim/",
 }
 
 local dictionary_plugin_path = os_utils.get_setting(dictionary_path)
 
 local dictionaries_files_path = {
-  remote_ltex_ls = {
-    Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\ltex.dictionary.fr.txt",
-    WSL = home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
-    Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
-  },
-  remote_spell = {
-    Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\spell.utf-8.add",
-    WSL = home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
-    Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
-  },
-  local_ltex_ls = {
-    Windows = "L:\\home\\dylan\\.config\\lvim\\dict\\ltex.dictionary.fr.txt",
-    --TODO: thise need to be changed
-    WSL = home .. "/.config/lvim/dict/ltex.dictionary.fr.txt",
-    Linux = home .. "/.config/lvim/dict/ltex.dictionary.fr.txt",
-  },
-  local_spell = {
-    Windows = "L:\\home\\dylan\\.config\\lvim\\dict\\spell.utf-8.add",
-    WSL = home .. "/.config/lvim/dict/spell.utf-8.add",
-    Linux = home .. "/.config/lvim/dict/spell.utf-8.add",
-  },
+	remote_ltex_ls = {
+		Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\ltex.dictionary.fr.txt",
+		WSL = home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
+		Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/ltex.dictionary.fr.txt",
+	},
+	remote_spell = {
+		Windows = "L:\\home\\dylan\\.local\\share\\chezmoi\\dot_config\\lvim\\dict\\spell.utf-8.add",
+		WSL = home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
+		Linux = home .. "/.local/share/chezmoi/dot_config/lvim/dict/spell.utf-8.add",
+	},
+	local_ltex_ls = {
+		Windows = "L:\\home\\dylan\\.config\\lvim\\dict\\ltex.dictionary.fr.txt",
+		--TODO: thise need to be changed
+		WSL = home .. "/.config/lvim/dict/ltex.dictionary.fr.txt",
+		Linux = home .. "/.config/lvim/dict/ltex.dictionary.fr.txt",
+	},
+	local_spell = {
+		Windows = "L:\\home\\dylan\\.config\\lvim\\dict\\spell.utf-8.add",
+		WSL = home .. "/.config/lvim/dict/spell.utf-8.add",
+		Linux = home .. "/.config/lvim/dict/spell.utf-8.add",
+	},
 }
 local remote_ltex_ls = os_utils.get_setting(dictionaries_files_path.remote_ltex_ls)
 local remote_spell = os_utils.get_setting(dictionaries_files_path.remote_spell)
@@ -85,7 +87,6 @@ local local_spell = os_utils.get_setting(dictionaries_files_path.local_spell)
 local ltex_extra_plugin_cwd = {
 
 	Windows = "L:\\home\\dylan\\.config\\lvim\\dict",
-	Linux = home .. "/.config/lvim/dict",
 	Linux = home .. "/.config/lvim/dict",
 }
 
@@ -222,7 +223,7 @@ return {
 				image_path = obsidian_attachments_path,
 				pdftoppm_path = pdftoppm__path,
 				new_link_format = function(prefix, text, generated_image_file)
-					return prefix .. "[" .. text .. "](/img/" .. generated_image_file .. ")"
+					return prefix .. "[" .. text .. "](/3-Ressources/Images/" .. generated_image_file .. ")"
 				end,
 			})
 		end,
@@ -264,11 +265,11 @@ return {
 			workspaces = {
 				{
 					name = "personal",
-					-- path = obsidian_vault_path,
-					path = obsidian_vault_path .. "\\" ,
-					overrides = {
-						notes_subdir = "Docs\\KnowledgeBase", --TODO: inline function for this ?
-					},
+					path = obsidian_vault_path,
+					-- path = obsidian_vault_path .. "\\",
+					-- overrides = {
+					-- 	notes_subdir = "2-Area\\", --TODO: inline function for this ?
+					-- },
 				},
 				-- {
 				--   name = "work",
@@ -276,9 +277,9 @@ return {
 				-- },
 			},
 			-- Optional, if you keep daily notes in a separate directory.
-			daily_notes = {
-				folder = "Tasks",
-			},
+			-- daily_notes = {
+			-- 	folder = "Tasks",
+			-- },
 
 			-- Optional, comtruepletion.
 			--  BUG: dot work on windows ?
@@ -303,39 +304,25 @@ return {
 				---@param path Path the absolute path to the image file
 				---@return string
 				img_text_func = function(client, path)
-					local link_path
-					local vault_relative_path = client:vault_relative_path(path)
-					if vault_relative_path ~= nil then
-						-- Use the modified path if the image is saved in the vault dir.
-						-- Strip off unwanted parts of the path and keep only '/img/' and the file name
-						link_path = string.match(vault_relative_path, "../../static/img/.+$")
-					else
-						-- For absolute paths, extract only the '/img/' part and the file name.
-						link_path = string.match(tostring(path), "../static/img/.+$")
-					end
-					if not link_path then
-						-- Fallback in case the desired pattern is not found
-						link_path = tostring(path)
-					end
-					local display_name = vim.fs.basename(link_path)
-					return string.format("![%s](%s)", display_name, link_path)
+					path = client:vault_relative_path(path) or path
+					return string.format("![%s](%s)", path.name, path)
 				end,
 			},
 			-- Optional, customize how names/IDs for new notes are created.
-			note_id_func = function(title)
-				-- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
-				-- In this case a note with the title 'My new note' will given an ID that looks
-				-- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
-				--
-				local suffix = ""
-				if title ~= nil then
-					-- If title is given, transform it into valid file name.
-					suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
-				else
-					-- If title is nil, just add 4 random uppercase letters to the suffix.
-				end
-				return suffix
-			end,
+			-- note_id_func = function(title)
+			-- 	-- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
+			-- 	-- In this case a note with the title 'My new note' will given an ID that looks
+			-- 	-- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
+			-- 	--
+			-- 	local suffix = ""
+			-- 	if title ~= nil then
+			-- 		-- If title is given, transform it into valid file name.
+			-- 		suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+			-- 	else
+			-- 		-- If title is nil, just add 4 random uppercase letters to the suffix.
+			-- 	end
+			-- 	return suffix
+			-- end,
 			-- Optional, boolean or a function that takes a filename and returns a boolean.
 			-- `true` indicates that you don't want obsidian.nvim to manage frontmatter.
 			--TODO :
@@ -362,14 +349,14 @@ return {
 			ui = {
 				enable = true, -- set to false to disable all additional syntax features
 			},
-
+			--
 			templates = {
-				subdir = "Projets/Templates",
+				subdir = templates_path,
 				date_format = "%Y-%m-%d",
 				time_format = "%H:%M",
 			},
 			-- use_advanced_uri = true,
-			finder = "telescope.nvim",
+			-- finder = "telescope.nvim",
 			sort_by = "modified",
 			sort_reversed = true,
 
@@ -383,21 +370,21 @@ return {
 					end,
 					opts = { noremap = false, expr = true, buffer = true },
 				},
-				-- -- Toggle check-boxes.
-				-- ["<leader>zx"] = {
-				-- 	action = function()
-				-- 		return require("obsidian").util.toggle_checkbox()
-				-- 	end,
-				-- 	opts = { buffer = true },
-				-- },
+				-- Toggle check-boxes.
+				["<leader>zx"] = {
+					action = function()
+						return require("obsidian").util.toggle_checkbox()
+					end,
+					opts = { buffer = true },
+				},
 			},
 			-- log_level = vim.log.levels.TRACE,
 		},
 		init = function()
 			local wk = require("which-key")
 
-			wk.register({
-				["<leader>z"] = { name = "+NoteTaking" },
+			wk.add({
+				{ "<leader>z", group = "+NoteTaking", icon = " " },
 			})
 		end,
 		keys = {
@@ -434,22 +421,13 @@ return {
 			{ "<leader>zB", "<cmd>ObsidianBacklinks<CR>", desc = "Backlinks" },
 			{ "<leader>zL", "<cmd>ObsidianLink<CR>", desc = "Link", mode = { "n", "v" } },
 			{ "<leader>zl", "<cmd>ObsidianLinkNew<CR>", desc = "Link New", mode = { "n", "v" } },
-			-- { "<leader>zn", "<Cmd>lua CreateNote()<CR>", desc = "Create Note In Daily" },
-			-- { "<leader>zN", "<Cmd>lua NewNoteWithCustomTemplate()<CR>", desc = "New Note With Custom Template" },
-			-- { "<leader>zr", "<Cmd>lua find_recent_note()<CR>", desc = "Open Recent Notes" },
-			{ "<leader>zZ", "<cmd>ChatGPTRun french<cr>", desc = "AI - Syntax Correction FR", mode = { "n", "v" } },
-			{
-				"<leader>zL",
-				"<cmd>ChatGPTRun markdownFormatter<cr>",
-				desc = "AI - Format MD Note",
-				mode = { "n", "v" },
-			},
-			{
-				"<leader>zS",
-				"<cmd>ChatGPTRun completeFromSkeleton<cr>",
-				desc = "AI - Draft Post",
-				mode = { "n", "v" },
-			},
+			-- TODO: Replace this with copilichatprompt
+			-- {
+			-- 	"<leader>zS",
+			-- 	"<cmd>ChatGPTRun completeFromSkeleton<cr>",
+			-- 	desc = "AI - Draft Post",
+			-- 	mode = { "n", "v" },
+			-- },
 			{ "<leader>zC", "<Cmd>lua PdfToImage()<CR>", desc = "Convert PDF to Image" },
 			{ "<leader>zL", "<cmd>DictionaryPickLang<CR>", desc = "Change LSP Lang" },
 			{ "<leader>zU", "<cmd>DictionaryUpdate<CR>", desc = "Edit Dicts" },

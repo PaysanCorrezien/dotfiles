@@ -1,4 +1,4 @@
--- return {
+return {
 -- 	--NOTE: patch umtil https://github.com/LazyVim/LazyVim/pull/2198 is merged
 -- 	-- {
 -- 	-- 	"mrcjkb/rustaceanvim",
@@ -216,4 +216,4 @@
 -- 			})
 -- 		end,
 -- 	},
--- }
+}

@@ -11,14 +11,33 @@ require("lazy").setup({
 		-- add LazyVim and import its plugins
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 		-- import any extras modules here
-		{ import = "lazyvim.plugins.extras.lang.typescript" },
-		{ import = "lazyvim.plugins.extras.lang.json" },
+		{ import = "lazyvim.plugins.extras.coding.copilot" },
+		{ import = "lazyvim.plugins.extras.coding.copilot-chat" },
+		{ import = "lazyvim.plugins.extras.coding.mini-comment" }, -- comment with count ect
+		{ import = "lazyvim.plugins.extras.coding.neogen" },
+    { import = "lazyvim.plugins.extras.coding.mini-surround" },
+
 		{ import = "lazyvim.plugins.extras.dap.core" },
 		{ import = "lazyvim.plugins.extras.dap.nlua" },
-		{ import = "lazyvim.plugins.extras.editor.aerial" },
-		{ import = "lazyvim.plugins.extras.editor.leap" },
+		-- { import = "lazyvim.plugins.extras.editor.aerial" },
+		{ import = "lazyvim.plugins.extras.editor.leap" }, --NOTE: SS tier navigation
+		{ import = "lazyvim.plugins.extras.editor.fzf" }, -- NOTE: fzf replace telescope
+		{ import = "lazyvim.plugins.extras.editor.inc-rename" }, -- NOTE: better lsp rename
+		{ import = "lazyvim.plugins.extras.editor.harpoon2" },
+		{ import = "lazyvim.plugins.extras.editor.illuminate" }, --NOTE: make the focused word occurence colored
+		{ import = "lazyvim.plugins.extras.editor.navic" }, --NOTE: topbar symbol info 
+		{ import = "lazyvim.plugins.extras.editor.outline" },--NOTE: add symbol menu
+		{ import = "lazyvim.plugins.extras.editor.overseer" },
+    { import = "lazyvim.plugins.extras.editor.refactoring" },
+    { import = "lazyvim.plugins.extras.editor.dial" },
+    -- 
+		{ import = "lazyvim.plugins.extras.lsp.neoconf" },
+
+		{ import = "lazyvim.plugins.extras.lsp.none-ls" },
+
 		{ import = "lazyvim.plugins.extras.formatting.black" },
 		{ import = "lazyvim.plugins.extras.formatting.prettier" },
+
 		{ import = "lazyvim.plugins.extras.lang.cmake" },
 		{ import = "lazyvim.plugins.extras.lang.docker" },
 		{ import = "lazyvim.plugins.extras.lang.json" },
@@ -29,15 +48,22 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.toml" },
 		{ import = "lazyvim.plugins.extras.lang.nix" },
-		{ import = "lazyvim.plugins.extras.util.octo" },
-		{ import = "lazyvim.plugins.extras.util.gitui" },
 		{ import = "lazyvim.plugins.extras.lang.sql" },
 		{ import = "lazyvim.plugins.extras.lang.yaml" },
+		{ import = "lazyvim.plugins.extras.lang.typescript" },
+		{ import = "lazyvim.plugins.extras.lang.json" },
 		{ import = "lazyvim.plugins.extras.linting.eslint" },
-		{ import = "lazyvim.plugins.extras.lsp.none-ls" },
+
 		{ import = "lazyvim.plugins.extras.test.core" },
+
 		{ import = "lazyvim.plugins.extras.ui.alpha" },
+		{ import = "lazyvim.plugins.extras.ui.mini-animate" },
+		{ import = "lazyvim.plugins.extras.ui.mini-indentscope" },
+		{ import = "lazyvim.plugins.extras.ui.treesitter-context" },
+
 		{ import = "lazyvim.plugins.extras.util.dot" },
+		{ import = "lazyvim.plugins.extras.util.octo" },
+		{ import = "lazyvim.plugins.extras.util.chezmoi" },
 		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 
 		-- import/override with your plugins
