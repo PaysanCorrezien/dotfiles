@@ -13,6 +13,7 @@ lvim.log.level = "info"
 vim.opt.colorcolumn = "99999"
 vim.opt.relativenumber = true
 vim.opt.mouse = "a" -- allow the mouse to be used in Neovim
+vim.opt.termguicolors = true 
 -- highlight
 -- lvim.lsp.document_highlight = false
 --
