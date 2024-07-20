@@ -1,6 +1,7 @@
 sanitise tridactyllocal tridactylsync
 " Seetings for the tridactyl.rc file
 "set newtab about:blank
+set newtab http://127.0.0.1:5678
 
 " UWU catppuccin everywhere https://github.com/lonepie/catppuccin-tridactyl
 
@@ -44,7 +45,12 @@ bind <C-R> fillcmdline open https://www.reverso.net/orthographe/correcteur-franc
 bind --mode=ex <ArrowRight> ex.insert_completion
 
 " send js 
-command loudecho_oneword js -p window.alert(JS_ARG)
+" command loudecho_oneword js -p window.alert(JS_ARG)
 " loudecho_oneword LOUD
-command loudecho_morewords js -dŐ window.alert(JS_ARGS.join(" "))Ő
+" command loudecho_morewords js -dŐ window.alert(JS_ARGS.join(" "))Ő
 " loudecho_morewords THIS IS LOUD
+" stipt ytb-dlp autodownloader
+unbind <C-Y>
+" bind Y composite get_current_url | shellescape | exclaim_quiet /home/dylan/.config/tridactyl/tridactyl.sh
+bind <C-Y> composite get_current_url | shellescape | exclaim_quiet /home/dylan/.config/tridactyl/tridactyl.sh
+
