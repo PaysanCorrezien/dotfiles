@@ -4,7 +4,6 @@ local act = wezterm.action
 local M = {}
 
 -- HACK: Custom function made for my personnal use that open my notes
--- Open telescope in Notes folder !
 -- TODO: make resolve path on WSL ?
 function M.SwitchToNotesWorkspace()
   -- Retrieve environment variables
@@ -13,7 +12,6 @@ function M.SwitchToNotesWorkspace()
   -- local knowledgeBasePath = userprofile and (userprofile .. "\\Documents\\KnowledgeBase")
   --   or "C:\\Users\\dylan\\Documents\\KnowledgeBase"
   local knowledgeBasePath = "/home/dylan/Documents/Notes/"
-
   -- local neovim_command = "Telescope find_files"
   local neovim_command = "FzfLua files { rg_opts = '--files --glob \"*.md\"' }"
 

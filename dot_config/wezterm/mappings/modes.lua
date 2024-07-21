@@ -28,6 +28,8 @@ local key_tables = {
     ["g"] = act.CopyMode "MoveToScrollbackTop",
     ["h"] = act.CopyMode "MoveLeft",
     ["j"] = act.CopyMode "MoveDown",
+    -- ["a"] = act.CopyMode "ScrollToPrompt(-1)",
+    -- ["A"] = act.CopyMode "ScrollToPrompt(+1)",
     ["k"] = act.CopyMode "MoveUp",
     ["l"] = act.CopyMode "MoveRight",
     ["H"] = act.CopyMode "MoveToViewportTop",
@@ -35,7 +37,8 @@ local key_tables = {
     ["M"] = act.CopyMode "MoveToViewportMiddle",
     ["V"] = act.CopyMode { SetSelectionMode = "Line" },
     ["v"] = act.CopyMode { SetSelectionMode = "Cell" },
-    ["<C-v>"] = act.CopyMode { SetSelectionMode = "Block" },
+    ["<C-b>"] = act.CopyMode { SetSelectionMode = "Block" },
+    ["<C-s>"] = act.CopyMode { SetSelectionMode = "SemanticZone" },
     ["O"] = act.CopyMode "MoveToSelectionOtherEndHoriz",
     ["o"] = act.CopyMode "MoveToSelectionOtherEnd",
     ["b"] = act.CopyMode "MoveBackwardWord",
@@ -107,4 +110,3 @@ for mode, key_table in pairs(key_tables) do
 end
 
 return Config
-
