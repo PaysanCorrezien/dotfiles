@@ -60,7 +60,7 @@ alias gmv="git mv"
 alias gmx="git merge -X ours"
 alias gsv="git status -v"
 alias gtop='cd "$(git rev-parse --show-toplevel)"'
-alias grep="grep --color=auto"
+# alias grep="grep --color=auto"
 # kitty
 # alias icat="kitty +kitten icat"
 # alias s="kitty +kitten ssh"
