@@ -12,6 +12,11 @@ function ll
 }
 
 
+# Check if Psfzf module is installed
+if (-not (Get-Module -ListAvailable -Name Psfzf)) {
+    # If not installed, install Psfzf from the PowerShell Gallery
+    Install-Module -Name Psfzf -Repository PSGallery -Scope CurrentUser -Force
+}
 $ENV:FZF_DEFAULT_OPTS=@"
 --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796
 --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6
@@ -46,7 +51,6 @@ function c
 { Start-Process -FilePath "C:\VSCode\Code.exe" 
 }
 
-$env:LUNARVIM_CONFIG_DIR = "\\wsl.localhost\Debian\home\dylan\.config\lvim"
 # Neovim
 $configPath = "\\wsl.localhost\Debian\home\dylan\.config\nvim\init.lua"
 function Open-NvimWithConfig
@@ -55,12 +59,6 @@ function Open-NvimWithConfig
 }
 set-alias -name n -value Open-NvimWithConfig
 
-function Open-Lvim
-{
-  & "$($env:USERPROFILE)\.local\bin\lvim.ps1" $args
-}
-Set-Alias -Name lvim -Value Open-Lvim
-Set-Alias -Name v -Value Open-Lvim
 function ai {
     sgpt --repl temp --shell $args
 }
@@ -71,7 +69,7 @@ function ss {
 gsudo status
 }
 
-$env:EDITOR = "$env:USERPROFILE\.local\bin\lvim.ps1"
+$env:EDITOR = "nvim"
 
 if (Test-Path -Path "$env:USERPROFILE\Documents\Projet\Work\Projet\WSLExplorer\OpenFileProperty.ps1")
 {
@@ -83,16 +81,21 @@ if (Test-Path -Path "$env:USERPROFILE\Documents\PowerShell\.secret.ps1")
   Import-Module "$env:USERPROFILE\Documents\PowerShell\.secret.ps1"
 }
 #Bindings 
-if (Test-Path -Path "$env:USERPROFILE\Documents\PowerShell\Bindings.ps1")
-{
-  Import-Module "$env:USERPROFILE\Documents\PowerShell\Bindings.ps1"
-}
-
-if (Test-Path -Path "$env:USERPROFILE\Documents\PowerShell\Bindings.ps1")
-{
-  Import-Module "$env:USERPROFILE\Documents\PowerShell\psreadlinebindings.ps1"
-}
-
+if ($PSVersionTable.Platform -eq "Unix") {
+    $bindingsPath = "/home/dylan/.local/share/chezmoi/dot_windows/powershellcore/bindings.ps1"
+    $psreadlinebindingsPath = "/home/dylan/.local/share/chezmoi/dot_windows/powershellcore/psreadlinebindings.ps1"
+} else {
+    $bindingsPath = "$env:USERPROFILE\Documents\PowerShell\Bindings.ps1"
+    $psreadlinebindingsPath = "$env:USERPROFILE\Documents\PowerShell/psreadlinebindings.ps1"
+}
+
+if (Test-Path -Path $bindingsPath) {
+    Import-Module $bindingsPath
+}
+
+if (Test-Path -Path $psreadlinebindingsPath) {
+    Import-Module $psreadlinebindingsPath
+}
 function which($name)
 {
   Get-Command $name | Select-Object -ExpandProperty Definition

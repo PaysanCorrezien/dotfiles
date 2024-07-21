@@ -46,7 +46,6 @@ function c
 { Start-Process -FilePath "C:\VSCode\Code.exe" 
 }
 
-$env:LUNARVIM_CONFIG_DIR = "\\wsl.localhost\Debian\home\dylan\.config\lvim"
 # Neovim
 $configPath = "\\wsl.localhost\Debian\home\dylan\.config\nvim\init.lua"
 function Open-NvimWithConfig
@@ -55,12 +54,6 @@ function Open-NvimWithConfig
 }
 set-alias -name n -value Open-NvimWithConfig
 
-function Open-Lvim
-{
-  & "$($env:USERPROFILE)\.local\bin\lvim.ps1" $args
-}
-Set-Alias -Name lvim -Value Open-Lvim
-Set-Alias -Name v -Value Open-Lvim
 function ai {
     sgpt --repl temp --shell $args
 }
