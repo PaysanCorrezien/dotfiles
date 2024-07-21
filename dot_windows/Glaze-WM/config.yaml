@@ -238,6 +238,7 @@ window_rules:
     match_title: "/MenuList/"
 
   # NOTE: https://github.com/glzr-io/glazewm/issues/105#issuecomment-1235289741
+
   - command: set floating
     match_process_name: 1Password
   - command: set floating
@@ -312,6 +313,9 @@ window_rules:
     match_process_name: Zoom
   - command: set floating
     match_process_name: ueli
+  - command: "ignore"
+    match_process_name: "Teams"
+    match_title: "Microsoft Teams Notification"
 
 binding_modes:
   - name: "resize"
