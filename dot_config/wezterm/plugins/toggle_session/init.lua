@@ -2,38 +2,8 @@ local wezterm = require "wezterm"
 local act = wezterm.action
 local M = {}
 
--- Initialize the cache as part of the module
-M.last_workspace_cache = {}
-
--- Function to save cache to a file
-local function save_cache()
-  local file = io.open(wezterm.home_dir .. "/.wezterm_session_cache", "w")
-  if file then
-    for session, workspace in pairs(M.last_workspace_cache) do
-      file:write(session .. ":" .. workspace .. "\n")
-    end
-    file:close()
-  end
-  wezterm.log_info "Cache saved"
-end
-
--- Function to load cache from a file
-local function load_cache()
-  local file = io.open(wezterm.home_dir .. "/.wezterm_session_cache", "r")
-  if file then
-    for line in file:lines() do
-      local session, workspace = line:match "(.+):(.+)"
-      if session and workspace then
-        M.last_workspace_cache[session] = workspace
-      end
-    end
-    file:close()
-  end
-  wezterm.log_info "Cache loaded"
-end
-
--- Load cache when the module is required
-load_cache()
+-- Initialize the cache in wezterm.GLOBAL
+wezterm.GLOBAL.last_workspace_cache = wezterm.GLOBAL.last_workspace_cache or {}
 
 function M.toggle_session(config)
   return wezterm.action_callback(function(window, pane)
@@ -43,7 +13,7 @@ function M.toggle_session(config)
 
     if current_workspace == config.name then
       -- We're in the target session, switch back to the cached workspace
-      local last_workspace = M.last_workspace_cache[config.name]
+      local last_workspace = wezterm.GLOBAL.last_workspace_cache[config.name]
       wezterm.log_info(
         "Attempting to switch back. Last workspace:",
         last_workspace or "nil"
@@ -60,8 +30,7 @@ function M.toggle_session(config)
       -- We're not in the target session, switch to it
       wezterm.log_info("Switching to target session:", config.name)
       -- Save current workspace before switching
-      M.last_workspace_cache[config.name] = current_workspace
-      save_cache() -- Persist the cache
+      wezterm.GLOBAL.last_workspace_cache[config.name] = current_workspace
 
       local workspace_exists = false
       for _, name in ipairs(wezterm.mux.get_workspace_names()) do
