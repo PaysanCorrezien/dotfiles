@@ -1,9 +1,9 @@
 -- local fun = require "utils.fun" ---@class Fun
 local wez = require "wezterm"
 local dylan = require "utils.dylan" ---@class Dylan
-local inspect = require "plugins.inspect" ---@class Inspect
-local ssh = require "plugins.ssh_menu" ---@class SSH
-local marks = require "plugins.marks" ---@class Marks
+local inspect = require "plugins.inspect"
+local ssh = require "plugins.ssh_menu"
+local marks = require "plugins.marks"
 local workspace_manager = require "plugins.workspace_manager" ---@class WorkspaceManager
 local personnal_notes = require "plugins.personnal_notes" ---@class PersonnalNotes
 -- local music = require "plugins.music" ---@class Music
@@ -12,7 +12,7 @@ local toggle_session = require "plugins.toggle_session" ---@class ToggleSession
 local workspace_switcher =
   -- zoxide + workspace switcher
   wez.plugin.require "https://github.com/MLFlexer/smart_workspace_switcher.wezterm"
-local semantic_escape = require "plugins.semantic_escape" ---@class SemanticEscape
+local semantic_escape = require "plugins.semantic_escape"
 ---@class Config
 local Config = {}
 
@@ -106,7 +106,7 @@ local keys = {
     copy_to = "ClipboardAndPrimarySelection",
   },
   ["<C-S-w>"] = act.CloseCurrentTab { confirm = true },
-  ["<C-S-z>"] = act.TogglePaneZoomState,
+  -- ["<C-S-z>"] = act.TogglePaneZoomState,
   ["<PageUp>"] = act.ScrollByPage(-1),
   ["<PageDown>"] = act.ScrollByPage(1),
   ["<C-S-Insert>"] = act.PasteFrom "PrimarySelection",
@@ -236,6 +236,7 @@ local keys = {
   -- Maybe try https://github.com/wez/wezterm/issues/167
   -- ["<4eader>E"] = act.SpawnCommandIkknNewTab {
   --   args = { "-Verb Runas" },
+  --
   -- },
   ["<C-1>"] = act.SendKey {
     key = "1",
@@ -306,8 +307,14 @@ local keys = {
     )
   end),
   -- ["<C-a>"] = wez.action.EmitEvent "select-current-command",
-  ["<C-S-a>"] = wez.action_callback(semantic_escape.parse_semantic_zones),
   -- ["<C-S-a>"] = wez.action_callback(function(window, pane)
+  --
+  -- New key binding for Ctrl+A to select the current command
+  -- ["<C-a>"] = wez.action_callback(function(window, pane)
+  --  using zle for this isntead
+  --   window:perform_action(wez.action.SelectTextAtMouseCursor "SemanticZone", pane)
+  -- end),
+
   --   local zones = pane:get_semantic_zones()
   --   for _, zone in ipairs(zones) do
   --     local text = pane:get_text_from_semantic_zone(zone)
@@ -315,6 +322,28 @@ local keys = {
   --   end
   -- end),
   -- -- ["<C-S-a>"] = wez.action.ScrollToPrompt(+1),
+  ["<C-S-o>"] = wez.action_callback(function(window, pane)
+    local output = semantic_escape.get_last_command_output(pane)
+    if output then
+      -- window:set_clipboard(output)
+      window:copy_to_clipboard(output)
+      window:toast_notification(
+        "WezTerm",
+        "Last command output copied to clipboard",
+        nil,
+        2000
+      )
+    else
+      window:toast_notification("WezTerm", "No command output found", nil, 4000)
+    end
+  end),
+  ["<C-,>"] = wez.action_callback(function(window, pane)
+    return semantic_escape.select_output_zone(window, pane, "previous")
+  end),
+  ["<C-.>"] = wez.action_callback(function(window, pane)
+    return semantic_escape.select_output_zone(window, pane, "next")
+  end),
+  -- ["<C-S-a>"] = wez.action_callback(function(window, pane)
 }
 
 Config.keys = {}
