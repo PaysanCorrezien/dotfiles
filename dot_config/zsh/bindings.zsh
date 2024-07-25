@@ -1,68 +1,123 @@
-# # Copy current prompt to clipboard with ctrl A
-# # if [[ -n $DISPLAY ]]; then
-# #     copy_line_to_x_clipboard() {
-# #         echo -n $BUFFER | xclip -selection clipboard
-# #         zle reset-prompt
-# #     }
-# #     zle -N copy_line_to_x_clipboard
-# #     bindkey '^A' copy_line_to_x_clipboard
-# # fi
-# #
-# # Move to the end of the current/next word
-# bindkey '^F' forward-word
-
-# # Move to the start of the current/previous word
-# bindkey '^B' backward-word
-
-# # Delete the word before the cursor
-# bindkey '^W' backward-kill-word
-
-# # Clear the current line
-# bindkey '^U' kill-whole-line
-
-# # Delete the word after the cursor
-# bindkey '^D' kill-word
-
-# # bindkey '^T' 
-# # FZF search
-
-# # bindkey R
-# # fzf history
-# #
-# # bindkey C
-# # cancel action 
-# #
-# # CTRL S not available block screen
-
-# # Undo the last editing command
-# bindkey '^Z' undo
-
-# # Redo the last undone editing command (might depend on your Zsh version/configuration)
-# bindkey '^Y' redo
-
-# bindkey '^O' down-line-or-history
-# bindkey '^P' up-line-or-history
-
-# # Move to the end of the line
-# bindkey '^E' end-of-line
-
-
-# # TODO: 
-# autoload -Uz push-line
-# zle -N push-line
-# bindkey '^G' push-line
-
-# bindkey '^_' beginning-of-line
-# bindkey '^A' beginning-of-line
-# Updated Key Bindings
-
-# # Unbind Ctrl+I (Tab)
-# bindkey -r '^I'
-# Move to the beginning of the line
-# bindkey '^I' beginning-of-line
+# NOTE: amazing post about zsh where got most of the code :
+# https://stackoverflow.com/questions/5407916/zsh-zle-shift-selection
 #
-# bindkey '^N' edit-command-line
-# Undo the last editing command
+# Define functions for region handling
+#
+r-delregion() {
+  if ((REGION_ACTIVE)); then
+    zle kill-region
+  else
+    local widget_name=$1
+    shift
+    zle $widget_name -- $@
+  fi
+}
+
+r-deselect() {
+  ((REGION_ACTIVE = 0))
+  local widget_name=$1
+  shift
+  zle $widget_name -- $@
+}
+
+r-select() {
+  ((REGION_ACTIVE)) || zle set-mark-command
+  local widget_name=$1
+  shift
+  zle $widget_name -- $@
+}
+
+# Function to select the entire line
+select-entire-line() {
+  zle beginning-of-line
+  zle set-mark-command
+  zle end-of-line
+}
+
+# Create the zle widget for selecting the entire line
+zle -N select-entire-line
+
+# Bind Ctrl+A to select the entire line
+bindkey '^A' select-entire-line
+
+# Bind keys for region handling
+for key kcap seq mode widget (
+  sleft kLFT $'\e[1;2D' select backward-char
+  sright kRIT $'\e[1;2C' select forward-char
+  sup kri $'\e[1;2A' select up-line-or-history
+  sdown kind $'\e[1;2B' select down-line-or-history
+
+  send kEND $'\E[1;2F' select end-of-line
+  send2 x $'\E[4;2~' select end-of-line
+
+  shome kHOM $'\E[1;2H' select beginning-of-line
+  shome2 x $'\E[1;2~' select beginning-of-line
+
+  left kcub1 $'\EOD' deselect backward-char
+  right kcuf1 $'\EOC' deselect forward-char
+
+  end kend $'\EOF' deselect end-of-line
+  end2 x $'\E4~' deselect end-of-line
+
+  home khome $'\EOH' deselect beginning-of-line
+  home2 x $'\E1~' deselect beginning-of-line
+
+  csleft x $'\E[1;6D' select backward-word
+  csright x $'\E[1;6C' select forward-word
+  csend x $'\E[1;6F' select end-of-line
+  cshome x $'\E[1;6H' select beginning-of-line
+
+  cleft x $'\E[1;5D' deselect backward-word
+  cright x $'\E[1;5C' deselect forward-word
+
+  del kdch1 $'\E[3~' delregion delete-char
+  bs x $'^?' delregion backward-delete-char
+) {
+  eval "key-$key() {
+    r-$mode $widget \$@
+  }"
+  zle -N key-$key
+  bindkey ${terminfo[$kcap]-$seq} key-$key
+}
+
+# Restore backward-delete-char for Backspace in the incremental search keymap
+bindkey -M isearch '^?' backward-delete-char
+
+# Function to select the entire command, including multiline
+zle -N widget::select-all
+function widget::select-all() {
+    local buflen=$(echo -n "$BUFFER" | wc -m | bc)
+    CURSOR=$buflen   # If this is messing up try: CURSOR=9999999
+    zle set-mark-command
+    while [[ $CURSOR > 0 ]]; do
+        zle beginning-of-line
+    done
+}
+
+# Function to cut selected text to clipboard using xclip
+zle -N widget::cut-selection
+function widget::cut-selection() {
+    if ((REGION_ACTIVE)); then
+        zle kill-region
+        printf "%s" "$CUTBUFFER" | xclip -selection clipboard
+    fi
+}
+# Function to copy selected text to clipboard using xclip
+zle -N widget::copy-selection
+function widget::copy-selection {
+    if ((REGION_ACTIVE)); then
+        zle copy-region-as-kill
+        printf "%s" $CUTBUFFER | xclip -selection clipboard
+    fi
+}
+bindkey '^Y' widget::copy-selection
+
+# Bind Ctrl+A to select the entire command
+bindkey '^A' widget::select-all
+
+# Bind Ctrl+X to cut the selected text to clipboard
+bindkey '^X' widget::cut-selection
+
 bindkey '^U' undo
 
 # Open line in editor
@@ -89,21 +144,17 @@ bindkey '^F' forward-word
 # Delete the word after the cursor
 bindkey '^W' kill-word
 
-# Delete the word before the cursor
-bindkey '^X' backward-kill-word
-
-# Redo the last undone editing command
-bindkey '^Y' redo
+# Redo the last undone editing command / CTRL R is not acailable its the standard history search
+bindkey '^H' redo
 
 # List choices for completion based on current input
-bindkey '^O' beginning-of-line
+# bindkey '^O' beginning-of-line
+# Delete the word before the cursor
+# bindkey '^X' backward-kill-word
 
-# work but we cant do anything with it
-# select-whole-line() {
-#   zle beginning-of-line
-#   zle set-mark-command
-#   zle end-of-line
-# }
-# zle -N select-whole-line
-# bindkey '^A' select-whole-line
-#
+bindkey '^[[1;5F' autosuggest-accept
+
+# Bind Ctrl+P and Ctrl+N for history substring search
+# TODO: maybe make ti launchfzf history to previous one instead ?
+bindkey '^P' history-substring-search-up
+bindkey '^N' history-substring-search-down
