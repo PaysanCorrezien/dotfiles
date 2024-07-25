@@ -2,6 +2,7 @@ local wez = require "wezterm" ---@class WezTerm
 local act = wez.action
 
 local fun = require "utils.fun" ---@class Fun
+local semantic_escape = require "plugins.semantic_escape"
 
 ---@class Config
 local Config = {}
