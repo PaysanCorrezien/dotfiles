@@ -1,7 +1,7 @@
 [user]
-  name = "{{ .git.name | default "Your Name" }}"
-  email = "{{ .git.email | default "your.email@example.com" }}"
-  signingkey = "{{ .git.gpg | default "YOUR_GPG_KEY_ID" }}"
+   name = {{ if hasKey . "git" }}{{ if hasKey .git "name" }}{{ .git.name }}{{ else }}Your Name{{ end }}{{ else }}Your Name{{ end }}
+   email = {{ if hasKey . "git" }}{{ if hasKey .git "email" }}{{ .git.email }}{{ else }}your.email@example.com{{ end }}{{ else }}your.email@example.com{{ end }}
+   signingkey = {{ if hasKey . "git" }}{{ if hasKey .git "gpg" }}{{ .git.gpg }}{{ else }}YOUR_GPG_KEY_ID{{ end }}{{ else }}YOUR_GPG_KEY_ID{{ end }}
 
 [core]
     editor = nvim
@@ -60,6 +60,16 @@
 
 [fetch]
     prune = true
+
+
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+
+[url "git@gitlab.com:"]
+  insteadOf = https://gitlab.com/
+
+[url "git@bitbucket.org:"]
+  insteadOf = https://bitbucket.org/
 
 [gpg "program"]
     gpg = gpg
