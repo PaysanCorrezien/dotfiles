@@ -27,11 +27,11 @@ vim.keymap.set("n", "<S-Down>", "ddp") --move line down on normal mode with shif
 vim.api.nvim_set_keymap("n", "<C-a>", ':lua vim.cmd("normal! ggVG")<CR>', { noremap = true }) -- Select ALL
 -- Normal mode mappings
 -- vim.keymap.set("n", "<leader>8", "<cmd>TodoTelescope<cr>", { desc = "Todo Current Project" })
-vim.keymap.set("n", "<leader>S", function()
-	local cmd = ":%s/<C-r><C-w>/<C-r><C-w>/gcI<Left><Left><Left><Left>"
-	local keys = vim.api.nvim_replace_termcodes(cmd, true, false, true)
-	vim.api.nvim_feedkeys(keys, "n", false)
-end, { desc = "Search and replace" })
+-- vim.keymap.set("n", "<leader>S", function()
+-- 	local cmd = ":%s/<C-r><C-w>/<C-r><C-w>/gcI<Left><Left><Left><Left>"
+-- 	local keys = vim.api.nvim_replace_termcodes(cmd, true, false, true)
+-- 	vim.api.nvim_feedkeys(keys, "n", false)
+-- end, { desc = "Search and replace" })
 -- Open Spectre for global find/replace
 -- NOTE: sr on lazyvim
 -- vim.keymap.set("n", "<leader>S", function()
@@ -161,3 +161,13 @@ local function copyDiagnosticsToClipboard()
 end
 
 vim.keymap.set("n", "<leader>cz", copyDiagnosticsToClipboard, { desc = "Copy LSP Diagnostics to Clipboard" })
+
+vim.keymap.set("n", "<leader>S", function()
+	local grug_far = require("grug-far")
+	grug_far.grug_far({
+		prefills = {
+			search = vim.fn.expand("<cword>"),
+			paths = vim.fn.expand("%"),
+		},
+	})
+end, { desc = "Search current word in current file with grug-far" })
