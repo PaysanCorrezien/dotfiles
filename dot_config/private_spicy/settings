@@ -1,0 +1,17 @@
+[general]
+grab-keyboard=true
+grab-mouse=true
+scaling=true
+auto-clipboard=true
+sync-modifiers=true
+# doing a github search for "path:config/spicy/settings" shows that this is a common path for spicy settings
+# https://github.com/search?q=path%3Aconfig%2Fspicy%2Fsettings&type=code
+#  found someone smarter than me
+# https://github.com/infokiller/config-public/blob/939e5c3735762ba15c298d8ce37a1b48461d2e72/.config/spicy/settings#L6
+# where he found it
+# https://gitlab.freedesktop.org/spice/spice-gtk/-/blob/2ed5f940f6ce559ce483a83d7c36bcce2886dee9/tools/spicy.c#L667
+grab-sequence=Alt_L+End
+
+[ui]
+toolbar=true
+statusbar=true
