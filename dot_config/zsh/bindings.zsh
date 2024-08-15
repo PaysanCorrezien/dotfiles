@@ -110,6 +110,9 @@ function widget::copy-selection {
         printf "%s" $CUTBUFFER | xclip -selection clipboard
     fi
 }
+
+# bindkey '^_' aichat_zsh
+
 bindkey '^Y' widget::copy-selection
 
 # Bind Ctrl+A to select the entire command

@@ -24,9 +24,17 @@ restore_previous_workspace() {
 	fi
 }
 
-# Function to focus the active window on the current workspace
+# Updated function to focus the active window on the current workspace
 focus_active_window() {
-	xdotool windowactivate $(xdotool getactivewindow)
+	local current_workspace=$(xdotool get_desktop)
+	local window_id=$(xdotool search --desktop $current_workspace --onlyvisible "" 2>/dev/null | head -n 1)
+
+	if [[ -n "$window_id" ]]; then
+		xdotool windowactivate $window_id
+		echo "Focused window $window_id on workspace $current_workspace"
+	else
+		echo "No visible window found on workspace $current_workspace"
+	fi
 }
 
 # Main logic
@@ -39,6 +47,7 @@ main() {
 		# We're not on the target workspace, switch to it
 		save_current_workspace
 		switch_to_workspace $TARGET_WORKSPACE
+		sleep 0.2 # Add a small delay to ensure workspace switch is complete
 		focus_active_window
 	fi
 }
