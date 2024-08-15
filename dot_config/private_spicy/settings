@@ -11,6 +11,7 @@ sync-modifiers=true
 # where he found it
 # https://gitlab.freedesktop.org/spice/spice-gtk/-/blob/2ed5f940f6ce559ce483a83d7c36bcce2886dee9/tools/spicy.c#L667
 grab-sequence=Alt_L+End
+resize-guest=true
 
 [ui]
 toolbar=true
