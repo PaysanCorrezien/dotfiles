@@ -1,4 +1,3 @@
-
 #NOTE: top tier aliases
 alias q="exit"
 alias rm="rm -irv"
@@ -8,7 +7,7 @@ alias s='sudo'
 alias n="nvim"
 alias mcd='f() { mkdir -p "$1" && cd "$1"; unset -f f; }; f'
 alias l='lsd -l --size default --classify --icon auto'
-alias lg = 'lazygit'
+alias lg="lazygit"
 alias dk="lazydocker"
 
 
