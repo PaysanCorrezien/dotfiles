@@ -1,38 +1,23 @@
 
-alias v="nvim"
-alias n="nvim"
-# alias icat="kitty +kitten icat"
-# alias obsidian='sudo -- sh -c ~/.local/bin/Obsidian.AppImage'
-# alias obsidian="/home/dylan/share/applications/Obsidian.AppImage"
-alias ai="sgpt --repl temp --shell"
-# alias ll='ls -l'
-# alias la='ls -A'
-# alias l='ls -CF'
-alias md="mkdir"
-alias mcd='f() { mkdir -p "$1" && cd "$1"; unset -f f; }; f'
-# alias cat='bat'
-# alias h='lvim $HISTFILE'
-
-# general use
-# alias l='exa -lbF --git --icons'                                               # list, size, type, git
-# alias ll='exa -lbGF --git --icons'                                             # long list
-# alias ls='exa -lbGF --git --sort=modified --icons'                            # long list, modified date sort
-alias ls='lsd'
-
-# alias llm='exa -lbGF --git --sort=modified --icons'                            # long list, modified date sort
-# alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'  # all list
-# alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons' # all + extended list
+#NOTE: top tier aliases
+alias q="exit"
+alias rm="rm -irv"
+alias rmf="rm -rf"
+alias x="chmod +x"
 alias s='sudo'
+alias n="nvim"
+alias mcd='f() { mkdir -p "$1" && cd "$1"; unset -f f; }; f'
+alias l='lsd -l --size default --classify --icon auto'
+alias lg = 'lazygit'
+alias dk="lazydocker"
 
-# speciality views
-alias lS='exa -1 --icons'			                                                  # one column, just names
-alias lt='exa --tree --level=2 --icons'                                         # tree
-# apt part
-alias apti="sudo apt install"
-alias apts="apt search"
-alias aptr="sudo apt remove"
-alias aptq="apt show"
-alias aptu="sudo apt update && sudo apt upgrade"
+
+alias md="mkdir -p"
+# general use
+alias ll='lsd -l --classify --icon auto'
+alias ls='lsd -l --classify --icon auto --sort time'
+alias lS='lsd -1 --icon=never'			                                                  # one column, just names
+alias lt='lsd --tree --depth=2 --icon=auto'                                         # tree
 
 alias aran="autorandr -l"
 # git 
@@ -60,16 +45,7 @@ alias gmv="git mv"
 alias gmx="git merge -X ours"
 alias gsv="git status -v"
 alias gtop='cd "$(git rev-parse --show-toplevel)"'
-# alias grep="grep --color=auto"
-# kitty
-# alias icat="kitty +kitten icat"
-# alias s="kitty +kitten ssh"
 
-alias q="exit"
-alias rm="rm -irv"
-alias rmf="rm -rf"
-
-alias x="chmod +x"
 
 # systemd
 alias sysd="sudo systemctl disable"
@@ -81,10 +57,9 @@ alias systo="sudo systemctl stop"
 # tmux
 # alias tmux="tmux -u"
 # alias tmuxm="tmux new-session \; split-window -h \; split-window -v \; attach"
-alias t="todoist"
-alias ta="todoist add"
+# alias t="todoist"
+# alias ta="todoist add"
 
-alias dk="lazydocker"
 
 # BUG:
 alias sync='chezmoi apply && tmux source-file ~/.tmux.conf && source ~/.zshrc'
