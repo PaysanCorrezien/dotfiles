@@ -102,3 +102,4 @@ alias cme='chezmoi edit'
 alias cmi='chezmoi init'
 
 alias ssh-with-passwd='ssh -o IdentitiesOnly=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no'
+alias scp-with-passwd='scp -o IdentitiesOnly=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no'
