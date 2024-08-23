@@ -9,8 +9,8 @@ local M = {}
 ---@return string home path to the suer home directory.
 function M.get_home()
   -- Attempt to get the home directory from different environment variables
-  local home = os.getenv("HOME")
-    or os.getenv("USERPROFILE")
+  local home = os.getenv "HOME"
+    or os.getenv "USERPROFILE"
     or wez and wez.home_dir -- Check if wez is defined before attempting to access home_dir
     or ""
 
@@ -167,7 +167,7 @@ end
 ---@return '"kanagawa-wave"'|'"kanagawa-lotus"' colorscheme name of the colorscheme
 M.get_scheme = function()
   -- if (wez.gui and wez.gui.get_appearance() or "Dark"):find "Dark" then
-    return "kanagawa-wave"
+  return "kanagawa-wave"
   -- end
   -- return "kanagawa-lotus"
 end
