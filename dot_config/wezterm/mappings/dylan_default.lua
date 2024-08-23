@@ -9,8 +9,12 @@ local personnal_notes = require "plugins.personnal_notes" ---@class PersonnalNot
 -- local music = require "plugins.music" ---@class Music
 local vim_keymap = require "plugins.vim_keymap" ---@class VimKeymap
 local toggle_session = require "plugins.toggle_session" ---@class ToggleSession
+--NOTE: https://github.com/wez/wezterm/issues/4488
+--fail because of git config
+--HACK: remove the git replacement , restart wezterm and then it download the plugins
+local resurrect = wez.plugin.require "https://github.com/MLFlexer/resurrect.wezterm"
+--
 local workspace_switcher =
-  -- zoxide + workspace switcher
   wez.plugin.require "https://github.com/MLFlexer/smart_workspace_switcher.wezterm"
 local semantic_escape = require "plugins.semantic_escape"
 ---@class Config
@@ -157,22 +161,87 @@ local keys = {
   ["<leader>F"] = workspace_switcher.switch_workspace(),
   ["<leader>f"] = workspace_manager.SwitchPanes(),
   ["<leader>r"] = workspace_manager.RenameWorkspace(),
-  ["<leader>S"] = wez.action_callback(function(window)
-    session_manager.save_state(window)
+  --   local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
+  --
+  -- config.keys = {
+  --   -- ...
+  --   {
+  --     key = "w",
+  --     mods = "ALT",
+  --     action = wezterm.action_callback(function(win, pane)
+  --         resurrect.save_state(resurrect.workspace_state.get_workspace_state())
+  --       end),
+  --   },
+  --   {
+  --     key = "W",
+  --     mods = "ALT",
+  --     action = resurrect.window_state.save_window_action(),
+  --   },
+  --   {
+  --     key = "s",
+  --     mods = "ALT",
+  --     action = wezterm.action_callback(function(win, pane)
+  --         resurrect.save_state(resurrect.workspace_state.get_workspace_state())
+  --         resurrect.window_state.save_window_action()
+  --       end),
+  --   },
+  -- }
+  ["<leader>S"] = wez.action_callback(function(window, pane)
+    -- session_manager.save_state(window)
+    resurrect.save_state(resurrect.workspace_state.get_workspace_state())
   end),
-  ["<leader>O"] = wez.action_callback(function(window)
-    session_manager.load_state(window)
+  ["<leader>O"] = wez.action_callback(function(window, pane)
+    -- session_manager.load_state(window)
+    resurrect.fuzzy_load(window, pane, function(id, label)
+      local type = string.match(id, "^([^/]+)") -- match before '/'
+      id = string.match(id, "([^/]+)$") -- match after '/'
+      id = string.match(id, "(.+)%..+$") -- remove file extension
+      local state
+      if type == "workspace" then
+        state = resurrect.load_state(id, "workspace")
+        resurrect.workspace_state.restore_workspace(state, {
+          relative = true,
+          restore_text = true,
+          on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+        })
+      elseif type == "window" then
+        state = resurrect.load_state(id, "window")
+        resurrect.window_state.restore_window(window:mux_window(), state, {
+          relative = true,
+          restore_text = true,
+          on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+          -- uncomment this line to use active tab when restoring
+          -- tab = win:active_tab(),
+        })
+      end
+    end)
   end),
-  ["<leader>R"] = wez.action_callback(function(window)
-    session_manager.restore_state(window)
-  end),
+  -- ["<leader>O"] = wez.action_callback(function(window, pane)
+  --   resurrect.fuzzy_load(window, pane, function(id, label)
+  --     local type = string.match(id, "^([^/]+)") -- match before '/'
+  --     if type == "workspace" then
+  --       id = string.match(id, "([^/]+)$") -- match after '/'
+  --       id = string.match(id, "(.+)%..+$") -- remove file extension
+  --       local state = resurrect.load_state(id, "workspace")
+  --       resurrect.workspace_state.restore_workspace(state, {
+  --         relative = true,
+  --         restore_text = true,
+  --         on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+  --       })
+  --     end
+  --   end)
+  -- end),
+
+  -- ["<leader>R"] = wez.action_callback(function(window)
+  --   session_manager.restore_state(window)
+  -- end),
   -- ["<leader>N"] = dylan.RenameWorkspace "SuperTest", -- NOTE: test work just fine
-  ["<leader>d"] = wez.action_callback(function(window)
-    session_manager.delete_saved_session(window)
-  end),
-  ["<leader>B"] = wez.action_callback(function(window)
-    session_manager.resurrect_all_sessions(window)
-  end),
+  -- ["<leader>d"] = wez.action_callback(function(window)
+  --   session_manager.delete_saved_session(window)
+  -- end),
+  -- ["<leader>B"] = wez.action_callback(function(window)
+  --   session_manager.resurrect_all_sessions(window)
+  -- end),
   -- ["<leader>N"] = personnal_notes.SwitchToNotesWorkspace(),
   ["<leader>N"] = toggle_session.toggle_session {
     name = "Notes",
@@ -345,6 +414,32 @@ local keys = {
   end),
   -- ["<C-S-a>"] = wez.action_callback(function(window, pane)
 }
+-- NOTE: added from resurrect
+-- loads the state whenever I create a new workspace
+wez.on(
+  "smart_workspace_switcher.workspace_switcher.created",
+  function(window, path, label)
+    local workspace_state = resurrect.workspace_state
+
+    workspace_state.restore_workspace(resurrect.load_state(label, "workspace"), {
+      window = window,
+      relative = true,
+      restore_text = true,
+      on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+    })
+  end
+)
+
+-- Saves the state whenever I select a workspace
+wez.on(
+  "smart_workspace_switcher.workspace_switcher.selected",
+  function(window, path, label)
+    local workspace_state = resurrect.workspace_state
+    resurrect.save_state(workspace_state.get_workspace_state())
+  end
+)
+--NOTE: configure auto save every 15 minutes by default
+resurrect.periodic_save()
 
 Config.keys = {}
 for lhs, rhs in pairs(keys) do
