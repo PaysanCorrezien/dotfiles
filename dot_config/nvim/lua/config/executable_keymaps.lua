@@ -25,6 +25,8 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<S-Up>", "ddkP") --move line up on normal mode with shift
 vim.keymap.set("n", "<S-Down>", "ddp") --move line down on normal mode with shift
 vim.api.nvim_set_keymap("n", "<C-a>", ':lua vim.cmd("normal! ggVG")<CR>', { noremap = true }) -- Select ALL
+
+vim.keymap.set("n", "L", "vg_", { desc = "Select to end of line" })
 -- Normal mode mappings
 -- vim.keymap.set("n", "<leader>8", "<cmd>TodoTelescope<cr>", { desc = "Todo Current Project" })
 -- vim.keymap.set("n", "<leader>S", function()
@@ -171,3 +173,10 @@ vim.keymap.set("n", "<leader>S", function()
 		},
 	})
 end, { desc = "Search current word in current file with grug-far" })
+
+vim.keymap.set(
+	"n",
+	"<leader>fN",
+	':let @+ = expand("%:p")<cr>:lua print("Copied path to: " .. vim.fn.expand("%:p"))<cr>',
+	{ desc = "Copy current file name and path", silent = false }
+)

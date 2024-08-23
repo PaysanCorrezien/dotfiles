@@ -15,7 +15,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.coding.copilot-chat" },
 		{ import = "lazyvim.plugins.extras.coding.mini-comment" }, -- comment with count ect
 		{ import = "lazyvim.plugins.extras.coding.neogen" },
-    { import = "lazyvim.plugins.extras.coding.mini-surround" },
+		{ import = "lazyvim.plugins.extras.coding.mini-surround" },
 
 		{ import = "lazyvim.plugins.extras.dap.core" },
 		{ import = "lazyvim.plugins.extras.dap.nlua" },
@@ -23,14 +23,14 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.editor.leap" }, --NOTE: SS tier navigation
 		{ import = "lazyvim.plugins.extras.editor.fzf" }, -- NOTE: fzf replace telescope
 		{ import = "lazyvim.plugins.extras.editor.inc-rename" }, -- NOTE: better lsp rename
-		{ import = "lazyvim.plugins.extras.editor.harpoon2" },
+		-- { import = "lazyvim.plugins.extras.editor.harpoon2" },
 		{ import = "lazyvim.plugins.extras.editor.illuminate" }, --NOTE: make the focused word occurence colored
-		{ import = "lazyvim.plugins.extras.editor.navic" }, --NOTE: topbar symbol info 
-		{ import = "lazyvim.plugins.extras.editor.outline" },--NOTE: add symbol menu
+		{ import = "lazyvim.plugins.extras.editor.navic" }, --NOTE: topbar symbol info
+		{ import = "lazyvim.plugins.extras.editor.outline" }, --NOTE: add symbol menu
 		{ import = "lazyvim.plugins.extras.editor.overseer" },
-    { import = "lazyvim.plugins.extras.editor.refactoring" },
-    { import = "lazyvim.plugins.extras.editor.dial" },
-    -- 
+		{ import = "lazyvim.plugins.extras.editor.refactoring" },
+		{ import = "lazyvim.plugins.extras.editor.dial" },
+		--
 		{ import = "lazyvim.plugins.extras.lsp.neoconf" },
 
 		{ import = "lazyvim.plugins.extras.lsp.none-ls" },
