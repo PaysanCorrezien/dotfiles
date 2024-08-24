@@ -89,7 +89,7 @@ end
 
 wez.on("select-current-command", select_current_command)
 
-Config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
+Config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 500 }
 
 local keys = {
   ["<C-Tab>"] = act.ActivateTabRelative(1),
@@ -99,8 +99,8 @@ local keys = {
   -- ["<C-c>"] = act.CopyTo "Clipboard",
   ["<C-v>"] = act.PasteFrom "Clipboard",
   -- ["<C-S-f>"] = act.Search "CurrentSelectionOrEmptyString",
-  ["<C-S-k>"] = act.ClearScrollback "ScrollbackOnly",
-  ["<C-S-l>"] = act.ShowDebugOverlay,
+  -- ["<C-S-k>"] = act.ClearScrollback "ScrollbackOnly",
+  ["<C-S-d>"] = act.ShowDebugOverlay,
   ["<C-S-n>"] = act.SpawnWindow,
   ["<C-S-p>"] = act.ActivateCommandPalette,
   ["<C-S-r>"] = act.ReloadConfiguration,
@@ -144,10 +144,14 @@ local keys = {
   ["<leader>j"] = act { ActivatePaneDirection = "Down" },
   ["<leader>k"] = act { ActivatePaneDirection = "Up" },
   ["<leader>l"] = act { ActivatePaneDirection = "Right" },
-  ["<leader>H"] = act { AdjustPaneSize = { "Left", 5 } },
-  ["<leader>J"] = act { AdjustPaneSize = { "Down", 5 } },
-  ["<leader>K"] = act { AdjustPaneSize = { "Up", 5 } },
-  ["<leader>L"] = act { AdjustPaneSize = { "Right", 5 } },
+  ["<leader>H"] = act { AdjustPaneSize = { "Left", 10 } },
+  ["<leader>J"] = act { AdjustPaneSize = { "Down", 10 } },
+  ["<leader>K"] = act { AdjustPaneSize = { "Up", 10 } },
+  ["<C-S-h>"] = act { AdjustPaneSize = { "Left", 10 } },
+  ["<C-S-j>"] = act { AdjustPaneSize = { "Down", 10 } },
+  ["<C-S-k>"] = act { AdjustPaneSize = { "Up", 10 } },
+  ["<C-S-l>"] = act { AdjustPaneSize = { "Right", 10 } },
+  ["<leader>L"] = act { AdjustPaneSize = { "Right", 10 } },
   ["<leader>1"] = act { ActivateTab = 0 },
   ["<leader>2"] = act { ActivateTab = 1 },
   ["<leader>3"] = act { ActivateTab = 2 },
@@ -440,6 +444,27 @@ wez.on(
 )
 --NOTE: configure auto save every 15 minutes by default
 resurrect.periodic_save()
+
+--NOTE:adding smart-split to unify nvm and wez window management
+local smart_splits = wez.plugin.require "https://github.com/mrjones2014/smart-splits.nvim"
+local config = wez.config_builder()
+-- you can put the rest of your Wezterm config here
+smart_splits.apply_to_config(config, {
+  -- the default config is here, if you'd like to use the default keys,
+  -- you can omit this configuration table parameter and just use
+  -- smart_splits.apply_to_config(config)
+
+  -- directional keys to use in order of: left, down, up, right
+  direction_keys = { "h", "j", "k", "l" },
+  -- if you want to use separate direction keys for move vs. resize, you
+  -- can also do this:
+  -- direction keys = { move = { 'h', 'j', 'k', 'l' }, resize = { 'Left', 'Down', 'Up', 'Right' }, },
+  -- modifier keys to combine with direction_keys
+  modifiers = {
+    move = "CTRL", -- modifier to use for pane movement, e.g. CTRL+h to move left
+    resize = "CTRL|SHIFT", -- modifier to use for pane resize, e.g. META+h to resize to the left
+  },
+})
 
 Config.keys = {}
 for lhs, rhs in pairs(keys) do
