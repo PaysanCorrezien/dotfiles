@@ -71,9 +71,9 @@ vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy Y" })
 -- for tab number
 --
 --NOTE: trying to unlearn bad habit
--- for i = 1, 7 do
--- 	vim.keymap.set("n", "<leader>" .. i, "<cmd>BufferLineGoToBuffer " .. i .. "<CR>", { desc = "Go To Tab " .. i })
--- end
+for i = 1, 7 do
+	vim.keymap.set("n", "<leader>" .. i, "<cmd>BufferLineGoToBuffer " .. i .. "<CR>", { desc = "Go To Tab " .. i })
+end
 
 -- Move Lines
 vim.keymap.set("n", "<C-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
@@ -180,3 +180,23 @@ vim.keymap.set(
 	':let @+ = expand("%:p")<cr>:lua print("Copied path to: " .. vim.fn.expand("%:p"))<cr>',
 	{ desc = "Copy current file name and path", silent = false }
 )
+
+-- recommended mappings
+-- resizing splits
+-- these keymaps will also accept a range,
+-- for example `10<A-h>` will `resize_left` by `(10 * config.default_amount)`
+vim.keymap.set("n", "<C-S-h>", require("smart-splits").resize_left)
+vim.keymap.set("n", "<C-S-j>", require("smart-splits").resize_down)
+vim.keymap.set("n", "<C-S-k>", require("smart-splits").resize_up)
+vim.keymap.set("n", "<C-S-l>", require("smart-splits").resize_right)
+-- moving between splits
+vim.keymap.set("n", "<C-h>", require("smart-splits").move_cursor_left)
+vim.keymap.set("n", "<C-j>", require("smart-splits").move_cursor_down)
+vim.keymap.set("n", "<C-k>", require("smart-splits").move_cursor_up)
+vim.keymap.set("n", "<C-l>", require("smart-splits").move_cursor_right)
+-- vim.keymap.set("n", "<C-\\>", require("smart-splits").move_cursor_previous)
+-- swapping buffers between windows
+-- vim.keymap.set("n", "<leader><leader>h", require("smart-splits").swap_buf_left)
+-- vim.keymap.set("n", "<leader><leader>j", require("smart-splits").swap_buf_down)
+-- vim.keymap.set("n", "<leader><leader>k", require("smart-splits").swap_buf_up)
+-- vim.keymap.set("n", "<leader><leader>l", require("smart-splits").swap_buf_right)
