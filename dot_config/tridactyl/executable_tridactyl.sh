@@ -7,7 +7,7 @@ if ! command -v yt-dlp &>/dev/null || ! command -v notify-send &>/dev/null; then
 fi
 
 # Directory to save the downloaded audio
-MUSIC_DIR="$HOME/Musique"
+MUSIC_DIR="$HOME/Documents/Music/"
 LOG_FILE="$MUSIC_DIR/yt-dlp-download.log"
 
 # Ensure the music directory exists
