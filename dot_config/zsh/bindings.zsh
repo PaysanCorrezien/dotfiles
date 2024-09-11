@@ -143,6 +143,8 @@ bindkey '^B' backward-word
 
 # Move to the end of the next word (originally on 'L')
 bindkey '^F' forward-word
+# right arrow accept
+bindkey '^[[C' autosuggest-accept
 
 # Delete the word after the cursor
 bindkey '^W' kill-word
@@ -155,6 +157,7 @@ bindkey '^H' redo
 # Delete the word before the cursor
 # bindkey '^X' backward-kill-word
 
+# ctrl + end accept
 bindkey '^[[1;5F' autosuggest-accept
 
 # Bind Ctrl+P and Ctrl+N for history substring search
