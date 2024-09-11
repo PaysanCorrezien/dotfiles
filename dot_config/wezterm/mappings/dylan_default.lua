@@ -250,18 +250,26 @@ local keys = {
   ["<leader>N"] = toggle_session.toggle_session {
     name = "Notes",
     action = {
-      args = { "nvim", "-c", "FzfLua files { rg_opts = '--files --glob \"*.md\"' }" },
+      args = {
+        "zsh",
+        "-c",
+        'source ~/.zshrc && nvim -c "FzfLua files { rg_opts = \'--files --glob \\"*.md\\"\'}"',
+      },
       cwd = "/home/dylan/Documents/Notes/",
       env = { EDITOR = "nvim" },
     },
   },
-  --FIXME: this doennt filter properly on filetypes
+
   ["<leader>n"] = toggle_session.toggle_session {
     name = "NixOs",
     action = {
-      args = { "nvim", "-c", "FzfLua files { rg_opts = '--files --glob \"*.nix\"' }" },
+      args = {
+        "zsh",
+        "-c",
+        'source ~/.zshrc && nvim -c "FzfLua files { rg_opts = \'--files --glob \\"*.nix\\"\'}"',
+      },
       cwd = "/home/dylan/.config/nix/",
-      env = { EDITOR = "nvim" },
+      -- env = { EDITOR = "nvim" },
     },
   },
   -- ["<leader>N"] = toggle_session.toggle_session {

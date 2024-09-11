@@ -51,9 +51,12 @@ function M.toggle_session(config)
           cwd = config.action.cwd,
         }
 
-        if config.action.env then
-          spawn_config.set_environment_variables = config.action.env
-        end
+        -- if config.action.env then
+        --   spawn_config.set_environment_variables = config.action.env
+        -- else
+        --   spawn_config.set_environment_variables = wezterm.home_dir .. "/.zshrc"
+        --
+        -- end
 
         window:perform_action(
           act.SwitchToWorkspace {
@@ -62,6 +65,14 @@ function M.toggle_session(config)
           },
           pane
         )
+        --TODO: make something cleaner than this
+        -- window:perform_action(
+        --   act.SendString(
+        --     "source ~/.zshrc && " .. table.concat(config.action.args or {}, " ")
+        --   ),
+        --   pane
+        -- )
+        -- window:perform_action(act.SendKey { key = "Enter" }, pane)
 
         if config.action.post_spawn then
           for _, cmd in ipairs(config.action.post_spawn) do
