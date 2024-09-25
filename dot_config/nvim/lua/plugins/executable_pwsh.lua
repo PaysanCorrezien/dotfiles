@@ -1,0 +1,83 @@
+-- local lspconfig = require("lspconfig")
+--
+-- local function get_editor_services_path()
+-- 	local path = os.getenv("POWERSHELL_EDITOR_SERVICES_PATH")
+-- 	if path then
+-- 		return path .. "/modules/PowerShellEditorServices/Start-EditorServices.ps1"
+-- 	end
+-- 	print("Error: POWERSHELL_EDITOR_SERVICES_PATH environment variable is not set")
+-- 	return nil
+-- end
+--
+-- local editor_services_path = get_editor_services_path()
+--
+-- if editor_services_path == nil then
+-- 	return {}
+-- end
+--
+-- local on_attach = function(client, bufnr)
+-- 	print("PowerShell LSP attached!")
+-- 	-- You can add more functionality here if needed
+-- end
+--
+return {
+	-- {
+	-- 	"neovim/nvim-lspconfig",
+	-- 	config = function()
+	-- 		lspconfig.powershell_es.setup({
+	-- 			on_attach = on_attach,
+	-- 			bundle_path = editor_services_path:gsub("/Start%-EditorServices%.ps1$", ""),
+	-- 			shell = "pwsh",
+	-- 			cmd = {
+	-- 				"pwsh",
+	-- 				"-NoLogo",
+	-- 				"-NoProfile",
+	-- 				"-NonInteractive",
+	-- 				"-ExecutionPolicy",
+	-- 				"Bypass",
+	-- 				"-Command",
+	-- 				string.format(
+	-- 					"& '%s' -HostName 'nvim' -HostProfileId 'PowerShell' -HostVersion '1.0.0' -LogLevel 'Verbose' -LogPath '%s' -BundledModulesPath '%s' -EnableConsoleRepl -SessionDetailsPath '%s'",
+	-- 					editor_services_path,
+	-- 					vim.fn.stdpath("cache") .. "/powershell_es.log",
+	-- 					editor_services_path:gsub("/Start%-EditorServices%.ps1$", ""),
+	-- 					vim.fn.stdpath("cache") .. "/powershell_session_details.json"
+	-- 				),
+	-- 			},
+	-- 			on_new_config = function(new_config, _)
+	-- 				local session_file = vim.fn.stdpath("cache") .. "/powershell_session_details.json"
+	-- 				if vim.fn.filereadable(session_file) ~= 0 then
+	-- 					local content = vim.fn.json_decode(vim.fn.readfile(session_file))
+	-- 					new_config.cmd = {
+	-- 						"pwsh",
+	-- 						"-NoLogo",
+	-- 						"-NoProfile",
+	-- 						"-Command",
+	-- 						string.format(
+	-- 							"& { $pipe = [System.IO.Pipes.NamedPipeClientStream]::new('%s'); $pipe.Connect(); $reader = [System.IO.StreamReader]::new($pipe); $writer = [System.IO.StreamWriter]::new($pipe); $writer.AutoFlush = $true; while ($true) { $line = $reader.ReadLine(); if ($line -eq $null) { break }; $response = (Invoke-Expression -Command $line | Out-String).Trim(); $writer.WriteLine($response) } }",
+	-- 							content.languageServicePipeName
+	-- 						),
+	-- 					}
+	-- 				end
+	-- 			end,
+	-- 			filetypes = { "ps1", "psm1", "psd1" },
+	-- 			flags = {
+	-- 				debounce_text_changes = 150,
+	-- 			},
+	-- 			settings = {
+	-- 				powershell = {
+	-- 					enableProfileLoading = true,
+	-- 					scriptAnalysis = {
+	-- 						enable = true,
+	-- 					},
+	-- 					codeFormatting = {
+	-- 						enable = true,
+	-- 					},
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 		vim.lsp.set_log_level("debug")
+	-- 		require("vim.lsp.log").set_format_func(vim.inspect)
+	-- 	end,
+	-- },
+}
