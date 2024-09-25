@@ -4,7 +4,8 @@ return {
 		event = "VeryLazy",
 		lazy = false,
 		opts = {
-			provider = "copilot",
+			-- provider = "copilot",
+			provder = "claude",
 		},
 		keys = {
 			{
