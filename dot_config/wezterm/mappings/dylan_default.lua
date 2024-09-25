@@ -6,6 +6,7 @@ local ssh = require "plugins.ssh_menu"
 local marks = require "plugins.marks"
 local workspace_manager = require "plugins.workspace_manager" ---@class WorkspaceManager
 local personnal_notes = require "plugins.personnal_notes" ---@class PersonnalNotes
+local previous_workspace = require "plugins.previous_workspace"
 -- local music = require "plugins.music" ---@class Music
 local vim_keymap = require "plugins.vim_keymap" ---@class VimKeymap
 local toggle_session = require "plugins.toggle_session" ---@class ToggleSession
@@ -415,7 +416,7 @@ local keys = {
         2000
       )
     else
-      window:toast_notification("WezTerm", "No command output found", nil, 4000)
+      window.toast_notification("WezTerm", "No command output found", nil, 4000)
     end
   end),
   ["<C-,>"] = wez.action_callback(function(window, pane)
@@ -425,6 +426,7 @@ local keys = {
     return semantic_escape.select_output_zone(window, pane, "next")
   end),
   -- ["<C-S-a>"] = wez.action_callback(function(window, pane)
+  ["<leader>b"] = previous_workspace.switch_to_previous_workspace(),
 }
 -- NOTE: added from resurrect
 -- loads the state whenever I create a new workspace
