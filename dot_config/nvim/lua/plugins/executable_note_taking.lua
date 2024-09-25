@@ -543,37 +543,37 @@ return {
 			},
 		},
 	},
-	{
-		"mfussenegger/nvim-lint",
-		optional = true,
-		opts = {
-			linters_by_ft = {
-				markdown = { "markdownlint" },
-			},
-		},
-		config = function()
-			local markdownlint_config_path = vim.fn.stdpath("config") .. "\\extconfigs\\markdownlint.jsonc"
-			require("lint").linters.markdownlint = {
-				cmd = "markdownlint",
-				stdin = false,
-				args = { "--config", markdownlint_config_path, "%filepath" },
-			}
-		end,
-	},
-	{
-		"neovim/nvim-lspconfig",
-		opts = {
-			servers = {
-				marksman = {},
-			},
-		},
-		-- TODO :make it use conf without breaking lsp
-		-- config = function()
-		--   local marksman_config_path = vim.fn.stdpath("config") .. "\\extconfigs\\marksman.toml"
-		--   print("Marksman config path: " .. marksman_config_path) -- Debug print
-		--   require("lspconfig").marksman.setup({})
-		-- end,
-	},
+	-- {
+	-- 	"mfussenegger/nvim-lint",
+	-- 	optional = true,
+	-- 	opts = {
+	-- 		linters_by_ft = {
+	-- 			markdown = { "markdownlint" },
+	-- 		},
+	-- 	},
+	-- 	config = function()
+	-- 		local markdownlint_config_path = vim.fn.stdpath("config") .. "\\extconfigs\\markdownlint.jsonc"
+	-- 		require("lint").linters.markdownlint = {
+	-- 			cmd = "markdownlint",
+	-- 			stdin = false,
+	-- 			args = { "--config", markdownlint_config_path, "%filepath" },
+	-- 		}
+	-- 	end,
+	-- },
+	-- {
+	-- 	"neovim/nvim-lspconfig",
+	-- 	opts = {
+	-- 		servers = {
+	-- 			marksman = {},
+	-- 		},
+	-- 	},
+	-- 	-- TODO :make it use conf without breaking lsp
+	-- 	-- config = function()
+	-- 	--   local marksman_config_path = vim.fn.stdpath("config") .. "\\extconfigs\\marksman.toml"
+	-- 	--   print("Marksman config path: " .. marksman_config_path) -- Debug print
+	-- 	--   require("lspconfig").marksman.setup({})
+	-- 	-- end,
+	-- },
 
 	-- { "mrjones2014/smart-splits.nvim" }, --TODO
 }
