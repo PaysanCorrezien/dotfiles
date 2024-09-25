@@ -1,57 +1,46 @@
-add_newline = false
-# ~/.config/starship.toml
-# A minimal left prompt
-# move the rest of the prompt to the right
-# format = "$shell$status$directory$git_branch$git_status$time"
-# Custom format for the prompt
-format = """$shell$time$status$directory$git_branch$git_status$lua$docker_context$conda$hostname$localip$cmd_duration$username$sudo
+add_newline = true
+# format = """$shell$status$directory$git_branch$git_status$git_metrics$lua$docker_context$conda$hostname$localip$cmd_duration$sudo
+# $character"""
+format = """$all$shell$directory$status$git_branch$git_status$git_metrics$lua$docker_context$conda$hostname$localip$cmd_duration$sudo
 $character"""
+
+right_format = "$time"
 
 [line_break]
 disabled = true
 
-#TODO : faire un truc moi ou patcher le code
-# [sudo]
-# allow_windows = true
-# disabled = false
-# style = 'bold red'
-# symbol = '💀ADMIN 💀'
-
-[username]
-style_user = 'white bold'
-style_root = 'blue bold'
-format = '🦸[$user]($style) '
-disabled = false
-show_always = true
-
-# Directory
 [directory]
-truncation_length = 3            # Show only 3 directories: the current one and up to 2 parents.
-truncate_to_repo = true          # Truncate the path to the root of the git repo
-read_only = '🔒'                  # Symbol indicating the directory is read-only
-fish_style_pwd_dir_length = 0    # Set to 0 to show the full name of each directory
+truncation_length = 3
+truncate_to_repo = true
+read_only = '🔒'
+fish_style_pwd_dir_length = 0
 format = '[\[📁$path\]]($style) '
-# Git Branch
+
 [git_branch]
-symbol = '🌱 '
-# truncation_length = 4
-truncation_symbol = ''
+symbol = '🌿 '
+format = '[$symbol$branch]($style) '
 
 [git_status]
-conflicted = '🏳'
-ahead = '🏎💨'
-behind = '😰'
-diverged = '😵'
-up_to_date = '✓'
-untracked = '🤷'
+format = '([\[$all_status$ahead_behind\]]($style) )'
+conflicted = '🚩'
+ahead = '⬆️ ${count}'
+behind = '⬇️ ${count}'
+diverged = '↕️ ⬆️ ${ahead_count}⬇️ ${behind_count}'
+up_to_date = '✅'
+untracked = '❓${count}'
 stashed = '📦'
-modified = '📝'
-staged = '[++\($count\)](green)'
-renamed = '👅'
-deleted = '🗑'
+modified = '📝${count}'
+staged = '🟢${count}'
+renamed = '🔄${count}'
+deleted = '🗑️${count}'
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
 
 [git_metrics]
-added_style = 'bold blue'
+added_style = 'bold green'
+deleted_style = 'bold red'
 format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
 [docker_context]
@@ -67,32 +56,43 @@ format = '[$symbol$environment](dimmed green) '
 [hostname]
 ssh_only = false
 format = '[$ssh_symbol](bold blue) [\(💻$hostname ➜](bold cyan) '
-# trim_at = '.companyname.com'
 ssh_symbol = '🌏 '
 disabled = false
 
+# [character]
+# success_symbol = '[➜](bold green)'
+# error_symbol = '[✗](bold red)'
+# disabled = false
 [character]
-success_symbol = '[➜](bold green)'
-disabled = true
+success_symbol = ""
+error_symbol = ""
 
 [lua]
+
+[golang]
+
+[nodejs]
 
 [status]
 disabled = false
 
 [shell]
 disabled = false
-fish_indicator = '󰈺 '
-powershell_indicator = '_ PS'
-# style = 'orange bold strickethrough underline'
+powershell_indicator = '_ PS'
 format = '[$indicator]($style) '
+bash_indicator = " BASH"
+zsh_indicator = "⚡ZSH"
+cmd_indicator = "  cmd"
+nu_indicator = "🔥 NU"
+unknown_indicator = "❓ SHELL"
+style = "white bold"
 
 [rust]
 
 [cmd_duration]
 disabled = false
-min_time = 2_000                 # Only show command duration if command takes longer than 2 seconds to execute
-format = "[🏃$duration]($style) " # Customize the format here
+min_time = 2000
+format = "[🏃$duration]($style) "
 
 [localip]
 ssh_only = false
@@ -102,5 +102,10 @@ disabled = false
 [time]
 disabled = false
 style = 'bold yellow'
-format = '[🕙 $time]($style) '
+format = '[🕙 $time]($style)'
 time_format = '%T'
+
+# [sudo]
+# style = 'bold red'
+# symbol = '💀ADMIN'
+# disabled = false
