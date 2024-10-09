@@ -46,10 +46,15 @@ vim.keymap.set("n", "L", "vg_", { desc = "Select to end of line" })
 -- 	}))
 -- end, { desc = "[/] Fuzzily search in current buffer]" })
 
+-- vim.keymap.set("n", "<leader>zs", function()
+-- 	require("fzf-lua").spell_suggest({
+-- 		previewer = true,
+-- 	})
+-- end, { desc = "Spell suggestions" })
 vim.keymap.set("n", "<leader>zs", function()
-	require("fzf-lua").spell_suggest({
+	require("telescope.builtin").spell_suggest(require("telescope.themes").get_dropdown({
 		previewer = true,
-	})
+	}))
 end, { desc = "Spell suggestions" })
 
 -- vim.keymap.set("n", "<leader>A", "<cmd>:lua require('harpoon.mark').add_file()<CR>", { desc = "Harp Add" })

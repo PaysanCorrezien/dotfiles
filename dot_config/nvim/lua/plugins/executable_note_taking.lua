@@ -471,42 +471,47 @@ return {
 						end
 					end
 
-					-- Use fzf-lua to select a folder
-					require("fzf-lua").fzf_exec(all_subdirs, {
-						prompt = "Select folder for new note: ",
-						actions = {
-							["default"] = function(selected)
-								local folder = selected[1]
+					-- Use Telescope to select a folder
+					require("telescope.pickers")
+						.new({}, {
+							prompt_title = "Select folder for new note",
+							finder = require("telescope.finders").new_table({
+								results = all_subdirs,
+							}),
+							sorter = require("telescope.config").values.generic_sorter({}),
+							attach_mappings = function(prompt_bufnr, map)
+								map("i", "<CR>", function()
+									local selection = require("telescope.actions.state").get_selected_entry()
+									require("telescope.actions").close(prompt_bufnr)
 
-								-- Prompt for note name
-								local note_name = vim.fn.input("Enter note name: ")
-								if note_name == "" then
-									print("Note creation cancelled")
-									return
-								end
-
-								-- Create the new file
-								local file_path = folder .. "/" .. note_name .. ".md"
-								local file = io.open(file_path, "w")
-								if file then
-									file:close()
-									print("Created new note: " .. file_path)
-
-									-- Open the new file
-									vim.cmd("edit " .. vim.fn.fnameescape(file_path))
-
-									-- Run ObsidianTemplate to select a template
-									vim.cmd("ObsidianTemplate")
-								else
-									print("Failed to create note: " .. file_path)
-								end
+									local folder = selection[1]
+									-- Prompt for note name
+									local note_name = vim.fn.input("Enter note name: ")
+									if note_name == "" then
+										print("Note creation cancelled")
+										return
+									end
+									-- Create the new file
+									local file_path = folder .. "/" .. note_name .. ".md"
+									local file = io.open(file_path, "w")
+									if file then
+										file:close()
+										print("Created new note: " .. file_path)
+										-- Open the new file
+										vim.cmd("edit " .. vim.fn.fnameescape(file_path))
+										-- Run ObsidianTemplate to select a template
+										vim.cmd("ObsidianTemplate")
+									else
+										print("Failed to create note: " .. file_path)
+									end
+								end)
+								return true
 							end,
-						},
-					})
+						})
+						:find()
 				end,
 				desc = "Create custom Obsidian note",
 			},
-
 			{ "<leader>zB", "<cmd>ObsidianBacklinks<CR>", desc = "Backlinks" },
 			{ "<leader>zL", "<cmd>ObsidianLink<CR>", desc = "Link", mode = { "n", "v" } },
 			{ "<leader>zl", "<cmd>ObsidianLinkNew<CR>", desc = "Link New", mode = { "n", "v" } },

@@ -254,29 +254,24 @@ local keys = {
       args = {
         "zsh",
         "-c",
-        'source ~/.zshrc && nvim -c "FzfLua files { rg_opts = \'--files --glob \\"*.md\\"\'}"',
+        "source ~/.zshrc && nvim -c \"lua require('telescope.builtin').find_files({cwd = '/home/dylan/Documents/Notes/', file_ignore_patterns = {'^%.git/'}, search_file_pattern = '*.md'})\"",
       },
       cwd = "/home/dylan/Documents/Notes/",
       env = { EDITOR = "nvim" },
     },
   },
-
   ["<leader>n"] = toggle_session.toggle_session {
     name = "NixOs",
     action = {
       args = {
         "zsh",
         "-c",
-        'source ~/.zshrc && nvim -c "FzfLua files { rg_opts = \'--files --glob \\"*.nix\\"\'}"',
+        "source ~/.zshrc && nvim -c \"lua require('telescope.builtin').find_files({cwd = '/home/dylan/.config/nix/', file_ignore_patterns = {'^%.git/'}})\"",
       },
       cwd = "/home/dylan/.config/nix/",
       -- env = { EDITOR = "nvim" },
     },
   },
-  -- ["<leader>N"] = toggle_session.toggle_session {
-  --   name = "Notes",
-  --   action = {
-  --     on_launch = {
   --       act {
   --         SendString = 'nvim -c "FzfLua files { rg_opts = \'--files --glob \\"*.md\\"\'}"',
   --       },

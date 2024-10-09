@@ -21,7 +21,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.dap.nlua" },
 		-- { import = "lazyvim.plugins.extras.editor.aerial" },
 		{ import = "lazyvim.plugins.extras.editor.leap" }, --NOTE: SS tier navigation
-		{ import = "lazyvim.plugins.extras.editor.fzf" }, -- NOTE: fzf replace telescope
+		-- { import = "lazyvim.plugins.extras.editor.fzf" }, -- NOTE: fzf replace telescope
 		{ import = "lazyvim.plugins.extras.editor.inc-rename" }, -- NOTE: better lsp rename
 		-- { import = "lazyvim.plugins.extras.editor.harpoon2" },
 		{ import = "lazyvim.plugins.extras.editor.illuminate" }, --NOTE: make the focused word occurence colored
