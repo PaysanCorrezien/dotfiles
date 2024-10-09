@@ -7,13 +7,12 @@ local wezterm = require "wezterm"
 local config = {}
 
 config.color_scheme = "rose-pine"
-config.window_background_image =
-  "/home/dylan/.config/nix/modules/home-manager/gnome/backgrounds/wallpaper_leaves.png"
+config.window_background_image = "/home/dylan/.wallpaper.png"
 
 config.background = {
   {
     source = {
-      File = "/home/dylan/.config/nix/modules/home-manager/gnome/backgrounds/wallpaper_leaves.png",
+      File = "/home/dylan/.wallpaper.png",
     },
     height = "Cover",
     width = "Cover",
