@@ -54,3 +54,4 @@ unbind <C-Y>
 " bind Y composite get_current_url | shellescape | exclaim_quiet /home/dylan/.config/tridactyl/tridactyl.sh
 bind <C-Y> composite get_current_url | shellescape | exclaim_quiet /home/dylan/.config/tridactyl/tridactyl.sh
 
+autocmd DocStart ^https://cad\.onshape\.com mode ignore

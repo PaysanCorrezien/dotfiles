@@ -1,3 +1,0 @@
-#!/usr/bin/env bash 
-#desc : check upgrade run par cron 
-apt list --upgradable | wc -l > ~/.config/polybar/forest/scripts/upgrade
