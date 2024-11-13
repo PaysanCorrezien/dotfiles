@@ -210,7 +210,7 @@ window_rules:
 
   # Specific app always float
   - command: "set floating"
-    match_process_name: "Console.exe"
+    match_process_name: "Console2010.exe"
 
   - command: "set floating"
     match_process_name: "/Todoist/"

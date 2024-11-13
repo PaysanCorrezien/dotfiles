@@ -2,11 +2,9 @@
 print_status() {
 	echo "🔄 $1"
 }
-
 print_success() {
 	echo "✅ $1"
 }
-
 print_error() {
 	echo "❌ $1"
 	exit 1
@@ -29,7 +27,6 @@ setup_repo() {
 	local repo_name=$1
 	local visibility=$2
 	username=$(gh api user -q '.login')
-
 	# Check if repo exists
 	if gh repo view "$username/$repo_name" &>/dev/null; then
 		print_status "Repository already exists, setting up remote..."
@@ -39,7 +36,6 @@ setup_repo() {
 		gh repo create "$repo_name" --source=. "--$visibility" || print_error "Failed to create repository"
 		repo_url="https://github.com/$username/$repo_name.git"
 	fi
-
 	if ! git remote get-url origin &>/dev/null; then
 		git remote add origin "$repo_url"
 	else
@@ -53,7 +49,6 @@ print_status "Checking required tools..."
 if ! command -v gh &>/dev/null; then
 	print_error "GitHub CLI is not installed. Please install it first."
 fi
-
 if ! command -v gum &>/dev/null; then
 	print_error "Gum is not installed. Please install it first. (brew install gum)"
 fi
@@ -71,7 +66,6 @@ if ! git rev-parse --is-inside-work-tree &>/dev/null; then
 	print_status "Not in a git repository. Initializing..."
 	git init
 	print_success "Git repository initialized!"
-
 	# Initial commit
 	print_status "Preparing initial commit..."
 	if [ -z "$(git status --porcelain)" ]; then
@@ -80,7 +74,6 @@ if ! git rev-parse --is-inside-work-tree &>/dev/null; then
 	else
 		git add .
 	fi
-
 	commit_message=$(gum input --placeholder "Enter commit message" --value "Initial commit")
 	git commit -m "$commit_message"
 	print_success "Initial commit created!"
@@ -88,15 +81,22 @@ else
 	print_success "Already in a git repository!"
 fi
 
-# Handle repository setup
-repo_name=$(basename $(pwd))
-visibility=$(gum choose "public" "private")
+# Get repository name with current folder name as default
+current_folder=$(basename $(pwd))
+repo_name=$(gum input --placeholder "Enter repository name" --value "$current_folder")
+
+# Choose visibility with private as default
+visibility=$(gum choose --selected "private" "private" "public")
+
 setup_repo "$repo_name" "$visibility"
+
 # Convert to SSH first
 convert_to_ssh
+
 # Push to GitHub after SSH conversion
 print_status "Pushing to GitHub..."
 git push -u origin $(git rev-parse --abbrev-ref HEAD)
+
 # Verify remote configuration
 print_status "Verifying remote configuration..."
 if git remote get-url origin &>/dev/null; then
